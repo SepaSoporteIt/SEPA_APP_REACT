@@ -1,17 +1,28 @@
 {
-  "name": "sepa-app",
-  "version": "0.0.0",
-  "description": "Description for sepaApp",
-  "private": true,
-  "license": "UNLICENSED",
-  "cacheDirectories": [
-    "node_modules"
-  ],
-  "devDependencies": {
-    "generator-jhipster": "6.4.1",
-    "@openapitools/openapi-generator-cli": "0.0.14-4.0.2"
+  "name": "sepa_app_react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
-  "engines": {
-    "node": ">=8.9.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SepaSoporteIt/SEPA_APP_REACT.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SepaSoporteIt/SEPA_APP_REACT/issues"
+  },
+  "homepage": "https://github.com/SepaSoporteIt/SEPA_APP_REACT#readme",
+  "dependencies": {
+    "next": "^9.1.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "yo": "^3.1.1"
   }
 }
