@@ -14,53 +14,6 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-eureka:
-  client:
-    enabled: true
-    healthcheck:
-      enabled: true
-    fetch-registry: true
-    register-with-eureka: true
-    instance-info-replication-interval-seconds: 10
-    registry-fetch-interval-seconds: 10
-  instance:
-    appname: sepaapp
-    instanceId: sepaapp:${spring.application.instance-id:${random.value}}
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 10
-    status-page-url-path: ${management.endpoints.web.base-path}/info
-    health-check-url-path: ${management.endpoints.web.base-path}/health
-    metadata-map:
-      zone: primary # This is needed for the load balancer
-      profile: ${spring.profiles.active}
-      version: #project.version#
-      git-version: ${git.commit.id.describe:}
-      git-commit: ${git.commit.id.abbrev:}
-      git-branch: ${git.branch:}
-ribbon:
-  eureka:
-    enabled: true
-feign:
-  hystrix:
-    enabled: true
-  # client:
-  #     config:
-  #         default:
-  #             connectTimeout: 5000
-  #             readTimeout: 5000
-
-# See https://github.com/Netflix/Hystrix/wiki/Configuration
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          strategy: SEMAPHORE
-          # See https://github.com/spring-cloud/spring-cloud-netflix/issues/1330
-          # thread:
-          #     timeoutInMilliseconds: 10000
-  shareSecurityContext: true
-
 management:
   endpoints:
     web:
@@ -103,8 +56,15 @@ management:
         auto-time-requests: true
 
 spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchAutoConfiguration,org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration
   application:
-    name: sepaApp
+    name: sepa
+  profiles:
+    # The commented value for `active` can be replaced with valid Spring profiles to load.
+    # Otherwise, it will be filled in by maven when building the JAR file
+    # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
+    active: #spring.profiles.active#
   jmx:
     enabled: false
   data:
@@ -129,13 +89,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: sepa-app-task-
+      thread-name-prefix: sepa-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: sepa-app-scheduling-
+      thread-name-prefix: sepa-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -173,11 +133,11 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: sepaApp@localhost
+    from: sepa@localhost
   swagger:
     default-include-pattern: /api/.*
-    title: sepaApp API
-    description: sepaApp API documentation
+    title: sepa API
+    description: sepa API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

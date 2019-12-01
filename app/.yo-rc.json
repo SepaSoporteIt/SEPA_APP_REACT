@@ -2,44 +2,41 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "com.mycompany.myapp",
-      "nativeLanguage": "es"
+      "nativeLanguage": "en"
     },
-    "jhipsterVersion": "6.4.1",
-    "applicationType": "microservice",
-    "baseName": "sepaApp",
+    "jhipsterVersion": "6.5.1",
+    "applicationType": "monolith",
+    "baseName": "sepa",
     "packageName": "com.mycompany.myapp",
     "packageFolder": "com/mycompany/myapp",
-    "serverPort": "3000",
+    "serverPort": "8080",
     "authenticationType": "jwt",
-    "cacheProvider": "hazelcast",
+    "cacheProvider": "ehcache",
     "enableHibernateCache": true,
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
     "prodDatabaseType": "mysql",
-    "searchEngine": false,
+    "searchEngine": "elasticsearch",
     "messageBroker": false,
-    "serviceDiscoveryType": "eureka",
+    "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "NzZkZGJiMzMzYjMzM2JkOWFkYzQzNTk3ZjIzMjhjYzEwNjAxYzM4YmI0ODE5NjQ2NTQwZjQ3NjY5NDIzNjkwOGY0ZmNiOTVkZTc2MmY3ZjEwY2ZiNjY1OTkzYTQ3MThiNDUxYjNlZmVkZWE5ZjNjYjMyN2IzZDhmZDc3ZDg5NTA=",
+    "jwtSecretKey": "NDIxNzE1ZGIyM2Y5YTQ1YjJkY2FlODRkMWFiNTY0ZWYyMGE3NmUwNjQwYTYwMDQ2OGYwMzczNDMzMGIxOWEwZWNiNDRiNjdkY2FiY2U2NjI1YWU2YzAwODYyMWJiMTRhNTkzNjM2NjYyNDhhNjJiNzU3NzdjYjUyNWQ4ZjBmNTk=",
     "embeddableLaunchScript": false,
-    "testFrameworks": [
-      "gatling"
-    ],
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "cosmo",
+    "clientThemeVariant": "dark",
+    "testFrameworks": ["cucumber"],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
     "enableTranslation": true,
-    "clientPackageManager": "npm",
-    "nativeLanguage": "es",
-    "languages": [
-      "es",
-      "en"
-    ],
-    "blueprints": [],
-    "skipClient": true,
-    "skipUserManagement": true
+    "nativeLanguage": "en",
+    "languages": ["en", "es"],
+    "blueprints": []
   }
 }
