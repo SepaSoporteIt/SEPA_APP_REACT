@@ -1,103 +1,180 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>JHipster microservice homepage</title>
-    <style>
-        ::-moz-selection {
-            background: #b3d4fc;
-            text-shadow: none;
-        }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
 
-        ::selection {
-            background: #b3d4fc;
-            text-shadow: none;
-        }
+    <title>SEPA</title>
+    <%= csrf_meta_tags %>
 
-        html {
-            padding: 30px 10px;
-            font-size: 20px;
-            line-height: 1.4;
-            color: #737373;
-            background: #262c31;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-        }
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> 
+  </head>
 
-        html,
-        input {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            max-width: 1000px;
-            _width: 500px;
-            padding: 30px 20px 50px;
-            border: 1px solid #b3b3b3;
-            border-radius: 4px;
-            margin: 0 auto;
-            box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-            background: #fcfcfc;
-        }
-
-        h1 {
-            margin: 0 10px;
-            font-size: 50px;
-            text-align: center;
-        }
-
-        h1 span {
-            color: #bbb;
-        }
-
-        h3 {
-            margin: 1.5em 0 0.5em;
-        }
-
-        p {
-            margin: 1em 0;
-        }
-
-        ul {
-            padding: 0 0 0 40px;
-            margin: 1em 0;
-        }
-
-        .container {
-            max-width: 800px;
-            _width: 380px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
 <body>
-<div class="container">
-    <h1>Welcome, Java Hipster!</h1>
+<div id="layout">
+    <a href="#menu" id="menuLink" class="menu-link"></a>
+	<div class = "logo">
+    	<img src="/logosepa.jpg" style="width:188px;height:70px;padding:10px;background-color:white">
+	</div>
+    <div id="menu">
+        <div class="pure-menu custom-restricted-width" style="background-color:white">
+            <a class="pure-menu-heading" href="#"><b>Menu Principal</b></a>
+            <ul class="pure-menu-list">
+                 <li class="pure-menu-item"><button class="dropdown-btn">Personal - Profesionales</button>
 
-    <p>This application is a microservice, which has been generated using <a href="https://www.jhipster.tech/">JHipster</a>.</p>
+                   <div class="dropdown-container">
 
-    <ul>
-        <li>It does not have a front-end. The front-end should be generated on a JHipster gateway</li>
-        <li>It is serving REST APIs, under the '/api' URLs.</li>
-        <li>Swagger documentation endpoint for those APIs is at <a href="./v2/api-docs">/v2/api-docs</a>, but if you want access to the full Swagger UI, you should use a JHipster gateway, which will serve as an API developer portal</li>
-    </ul>
+                   <%= link_to '■ Todos', employees_path, :class => "pure-menu-link" %>
+                   <%= link_to '■ Externo', employees_path(tipo: '1'), :class => "pure-menu-link" %>
+                   <%= link_to '■ Interno', employees_path(tipo: '0'), :class => "pure-menu-link" %>
+                   <%= link_to '■ Nuevo', new_employee_path, :class => "pure-menu-link" %>
 
-    <h2>
-        If you have any question on JHipster:
-    </h2>
+                    </div>
 
-    <ul>
-        <li><a href="https://www.jhipster.tech/" target="_blank">JHipster homepage</a></li>
-        <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank">JHipster on Stack Overflow</a></li>
-        <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank">JHipster bug tracker</a></li>
-        <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank">JHipster public chat room</a></li>
-        <li><a href="https://twitter.com/jhipster" target="_blank">follow @jhipster on Twitter</a></li>
-    </ul>
+                 <li class="pure-menu-item"><button class="dropdown-btn">Clientes</button>
 
-    <p>
-        <span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank">GitHub</a>!
-    </p>
+                   <div class="dropdown-container">
 
+                   <%= link_to '■ Todos',companies_path, :class => "pure-menu-link" %>
+                   <%= link_to '■ Con HyS', companies_path(suscription: '1'), :class => "pure-menu-link" %>
+                   <%= link_to '■ Sin HyS', companies_path(suscription: '0'), :class => "pure-menu-link" %>
+                   <%= link_to '■ Nuevo',new_company_path, :class => "pure-menu-link" %>
+
+
+                    </div>
+
+                 <li class="pure-menu-item"><button class="dropdown-btn">
+                 Vencimientos</button>
+
+                  <div class="dropdown-container">
+
+                   <%= link_to '■ Todos', expirations_path, :class => "pure-menu-link" %>
+                   <%= link_to '■ Vigentes', expirations_path(status: 'vigente'), :class => "pure-menu-link" %>
+                  <%= link_to '■ Vencidos', expirations_path(status: 'vencido'), :class => "pure-menu-link" %>
+                  <%= link_to '■ Nuevo', new_expiration_path, :class => "pure-menu-link" %>
+
+                  </div>
+
+                <li class="pure-menu-item"><a href="/acts" class="pure-menu-link">Actas</a></li>
+                <li class="pure-menu-item"><a href="/comments" class="pure-menu-link">Comentarios</a></li>
+
+                <li ><a></a>
+                </li>
+
+                <li class="pure-menu-item">
+
+                    <a href="/backoffice/index" class="pure-menu-link">
+                    Configuracion
+                    </a>
+
+                </li>
+
+
+ <!--				<li class="pure-menu-item"><a href="/visit_types" class="pure-menu-link">Tipos de Tareas</a></li>-->
+<!--                <li class="pure-menu-item"><a href="/industry_types" class="pure-menu-link">Rubro/Actividad</a></li>
+                -->
+ <!--           <li class="pure-menu-item"><br/></li> -->
+<!--	         	<li class="pure-menu-item"><a href="/ordenes" class="pure-menu-link">O de Trabajo</a></li> -->
+ <!--               <li class="pure-menu-item"><a href="/visits/soon" class="pure-menu-link">Proximas Tareas</a></li> -->
+<!--	            <li class="pure-menu-item"><a href="/visits" class="pure-menu-link">Tareas</a></li> -->
+<!--                <li class="pure-menu-item"><br/></li> 
+                <li class="pure-menu-item"><a href="/frecuencies" class="pure-menu-link">Frecuencias</a></li>
+                -->
+ <!--               <li class="pure-menu-item"><br/></li>-->
+ <!--               <li class="pure-menu-item"><a href="/ambitos" class="pure-menu-link">Ambitos</a></li>-->
+ <!--               <li class="pure-menu-item"><a href="/autoridads" class="pure-menu-link">Autoridades</a></li>-->
+ <!--               <li class="pure-menu-item"><a href="/legislacions" class="pure-menu-link">Legislaciones</a></li>-->
+  <!--              <li class="pure-menu-item"><a href="/solicitadors" class="pure-menu-link">Solicitantes</a></li>-->
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="main">
+    	<%= yield %>
+    </div>
 </div>
+
+<script src="/ui.js"></script>
 </body>
 </html>
+<style >
+
+     /* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 9px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: black;
+   background: #f5f5f5;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: #1f8dd6;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  color: red;
+  background-color: #f5f5f5;
+  padding-left: 8px;
+}
+</style>
+
+<script >
+    
+//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+} 
+
+
+</script>
