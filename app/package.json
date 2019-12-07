@@ -1,7 +1,7 @@
 {
-  "name": "app-2",
+  "name": "app",
   "version": "0.0.0",
-  "description": "Description for app2",
+  "description": "Description for app",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

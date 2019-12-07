@@ -24,18 +24,18 @@ import java.util.Collection;
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 @EnableDiscoveryClient
-public class App2App implements InitializingBean {
+public class AppApp implements InitializingBean {
 
-    private static final Logger log = LoggerFactory.getLogger(App2App.class);
+    private static final Logger log = LoggerFactory.getLogger(AppApp.class);
 
     private final Environment env;
 
-    public App2App(Environment env) {
+    public AppApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes app2.
+     * Initializes app.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -60,7 +60,7 @@ public class App2App implements InitializingBean {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(App2App.class);
+        SpringApplication app = new SpringApplication(AppApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);

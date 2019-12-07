@@ -95,7 +95,7 @@ if (OperatingSystem.current().isWindows()) {
 defaultTasks "bootRun"
 
 springBoot {
-    mainClassName = "com.mycompany.myapp.App2App"
+    mainClassName = "com.mycompany.myapp.AppApp"
 }
 
 test {
@@ -116,6 +116,7 @@ task integrationTest(type: Test) {
     description = "Execute integration tests."
     group = "verification"
     include "**/*IT*", "**/*IntTest*"
+    exclude "**/*CucumberIT*"
 
     testLogging {
         events 'FAILED', 'SKIPPED'
@@ -125,6 +126,19 @@ task integrationTest(type: Test) {
     // ignoreFailures true
     reports.html.enabled = false
 }
+
+task cucumberTest(type: Test) {
+    description = "Execute cucumber BDD tests."
+    group = "verification"
+    include "**/*CucumberIT*"
+
+    // uncomment if the tests reports are not generated
+    // see https://github.com/jhipster/generator-jhipster/pull/2771 and https://github.com/jhipster/generator-jhipster/pull/4484
+    // ignoreFailures true
+    reports.html.enabled = false
+}
+
+check.dependsOn cucumberTest
 
 check.dependsOn integrationTest
 task testReport(type: TestReport) {
@@ -137,6 +151,11 @@ task integrationTestReport(type: TestReport) {
     reportOn integrationTest
 }
 
+task cucumberTestReport(type: TestReport) {
+    destinationDir = file("$buildDir/reports/tests")
+    reportOn cucumberTest
+}
+
 if (!project.hasProperty("runList")) {
     project.ext.runList = "main"
 }
@@ -146,9 +165,9 @@ project.ext.diffChangelogFile = "src/main/resources/config/liquibase/changelog/"
 liquibase {
     activities {
         main {
-            driver "org.h2.Driver"
-            url "jdbc:h2:file:./build/h2db/db/app2"
-            username "app2"
+            driver ""
+            url ""
+            username "app"
             password ""
             changeLogFile "src/main/resources/config/liquibase/master.xml"
             defaultSchemaName ""
@@ -156,12 +175,12 @@ liquibase {
             classpath "src/main/resources/"
         }
         diffLog {
-            driver "org.h2.Driver"
-            url "jdbc:h2:file:./build/h2db/db/app2"
-            username "app2"
+            driver ""
+            url ""
+            username "app"
             password ""
             changeLogFile project.ext.diffChangelogFile
-            referenceUrl "hibernate:spring:com.mycompany.myapp.domain?dialect=org.hibernate.dialect.H2Dialect&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
+            referenceUrl "hibernate:spring:com.mycompany.myapp.domain?dialect=&hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy"
             defaultSchemaName ""
             logLevel "debug"
             classpath "$buildDir/classes/java/main"
@@ -273,6 +292,8 @@ dependencies {
         exclude group: "com.vaadin.external.google", module: "android-json"
     }
     testImplementation "com.jayway.jsonpath:json-path"
+    testImplementation "io.cucumber:cucumber-junit"
+    testImplementation "io.cucumber:cucumber-spring"
     testImplementation ("org.springframework.boot:spring-boot-starter-test") {
         exclude module: "junit"
         exclude group: "com.vaadin.external.google", module: "android-json"
@@ -280,6 +301,7 @@ dependencies {
     testImplementation "org.springframework.security:spring-security-test"
     testImplementation "org.springframework.boot:spring-boot-test"
     testImplementation "org.junit.jupiter:junit-jupiter-engine"
+    testImplementation "org.junit.vintage:junit-vintage-engine"
     testImplementation "com.tngtech.archunit:archunit-junit5-api:${archunit_junit5_version}"
     testRuntimeOnly "com.tngtech.archunit:archunit-junit5-engine:${archunit_junit5_version}"
     testImplementation "org.assertj:assertj-core"

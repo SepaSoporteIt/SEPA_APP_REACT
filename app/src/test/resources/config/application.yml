@@ -17,15 +17,15 @@ eureka:
   client:
     enabled: false
   instance:
-    appname: app2
-    instanceId: app2:${spring.application.instance-id:${random.value}}
+    appname: app
+    instanceId: app:${spring.application.instance-id:${random.value}}
 
 spring:
   application:
-    name: app2
+    name: app
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:app2;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:app;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -54,6 +54,9 @@ spring:
       properties:
         path:
           home: build/elasticsearch
+        # See https://github.com/jhipster/generator-jhipster/issues/10302
+        node:
+          max_local_storage_nodes: 2
   liquibase:
     contexts: test
   mail:
@@ -67,13 +70,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: app-2-task-
+      thread-name-prefix: app-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: app-2-scheduling-
+      thread-name-prefix: app-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -91,7 +94,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'app2App'
+    name: 'appApp'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -104,7 +107,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: YzVjMTAwZWZkMDIzYjMyYWQwNGYxZTJiMzVmMDdlYjIwNDBhZTExZDJhYzk2NWEwMjQ1NzQ1OWVjMTYzNzBmYTY0NzFlNTI3MGMyYjIxMjVkOGY0YzA5MjNiOGNhZGFhODUyN2MwZTBkMzcxMjVjNmNhN2JlNjE2M2QwMjcyMzI=
+        base64-secret: MjEyNGQ5YjkzMWE5OWFjYWRjZTQ1NWViZWQzNjI3NmY5YWIwMGNjYjUzNzU3ZWIzZjEyOGU3ZThjNzNlOTZlNzliYjM5OThlZWEyOTQ4ZTczYmI3ZGY5ZjI4ZWNiYmIwMmUxZjk2Zjk5YjM2MDY1ODQxOGNmZDU4YTNkZGQ4ODU=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:

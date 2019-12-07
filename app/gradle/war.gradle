@@ -1,7 +1,7 @@
 apply plugin: "war"
 
 bootWar {
-    mainClassName = "com.mycompany.myapp.App2App"
+    mainClassName = "com.mycompany.myapp.AppApp"
     includes = ["WEB-INF/**", "META-INF/**"]
 }
 
