@@ -1,22 +1,29 @@
 version: '2'
 services:
-  sepa-app:
-    image: sepa
+  app2-app:
+    image: app2
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,swagger
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://sepa-mysql:3306/sepa?useUnicode=true&characterEncoding=utf8&useSSL=false
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+      - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+      - SPRING_DATASOURCE_URL=jdbc:mysql://app2-mysql:3306/app2?useUnicode=true&characterEncoding=utf8&useSSL=false
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
-      - SPRING_DATA_JEST_URI=http://sepa-elasticsearch:9200
-      - SPRING_ELASTICSEARCH_REST_URIS=http://sepa-elasticsearch:9200
-    ports:
-      - 8080:8080
-  sepa-mysql:
+      - SPRING_DATA_JEST_URI=http://app2-elasticsearch:9200
+      - SPRING_ELASTICSEARCH_REST_URIS=http://app2-elasticsearch:9200
+  app2-mysql:
     extends:
       file: mysql.yml
-      service: sepa-mysql
-  sepa-elasticsearch:
+      service: app2-mysql
+  app2-elasticsearch:
     extends:
       file: elasticsearch.yml
-      service: sepa-elasticsearch
+      service: app2-elasticsearch
+  jhipster-registry:
+    extends:
+      file: jhipster-registry.yml
+      service: jhipster-registry
+    environment:
+      - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_TYPE=native
+      - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_SEARCH_LOCATIONS=file:./central-config/docker-config/

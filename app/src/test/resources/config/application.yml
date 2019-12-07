@@ -13,12 +13,19 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+eureka:
+  client:
+    enabled: false
+  instance:
+    appname: app2
+    instanceId: app2:${spring.application.instance-id:${random.value}}
+
 spring:
   application:
-    name: sepa
+    name: app2
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:sepa;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:app2;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -46,10 +53,7 @@ spring:
     elasticsearch:
       properties:
         path:
-          home: target/elasticsearch
-        # See https://github.com/jhipster/generator-jhipster/issues/10302
-        node:
-          max_local_storage_nodes: 2
+          home: build/elasticsearch
   liquibase:
     contexts: test
   mail:
@@ -63,13 +67,13 @@ spring:
       enabled: false
   task:
     execution:
-      thread-name-prefix: sepa-task-
+      thread-name-prefix: app-2-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: sepa-scheduling-
+      thread-name-prefix: app-2-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -87,7 +91,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'sepaApp'
+    name: 'app2App'
   logging:
     # To test json console appender
     use-json-format: true # By default, logs are in Json format
@@ -96,14 +100,11 @@ jhipster:
       host: localhost
       port: 5000
       queue-size: 512
-  mail:
-    from: test@localhost
-    base-url: http://127.0.0.1:8080
   security:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: NDIxNzE1ZGIyM2Y5YTQ1YjJkY2FlODRkMWFiNTY0ZWYyMGE3NmUwNjQwYTYwMDQ2OGYwMzczNDMzMGIxOWEwZWNiNDRiNjdkY2FiY2U2NjI1YWU2YzAwODYyMWJiMTRhNTkzNjM2NjYyNDhhNjJiNzU3NzdjYjUyNWQ4ZjBmNTk=
+        base64-secret: YzVjMTAwZWZkMDIzYjMyYWQwNGYxZTJiMzVmMDdlYjIwNDBhZTExZDJhYzk2NWEwMjQ1NzQ1OWVjMTYzNzBmYTY0NzFlNTI3MGMyYjIxMjVkOGY0YzA5MjNiOGNhZGFhODUyN2MwZTBkMzcxMjVjNmNhN2JlNjE2M2QwMjcyMzI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:
