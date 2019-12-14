@@ -5,11 +5,11 @@
       "nativeLanguage": "en"
     },
     "jhipsterVersion": "6.5.1",
-    "applicationType": "microservice",
+    "applicationType": "monolith",
     "baseName": "sepa",
     "packageName": "com.mycompany.myapp",
     "packageFolder": "com/mycompany/myapp",
-    "serverPort": "3000",
+    "serverPort": "8080",
     "authenticationType": "jwt",
     "cacheProvider": "ehcache",
     "enableHibernateCache": true,
@@ -19,27 +19,24 @@
     "prodDatabaseType": "mysql",
     "searchEngine": "elasticsearch",
     "messageBroker": false,
-    "serviceDiscoveryType": "eureka",
+    "serviceDiscoveryType": false,
     "buildTool": "gradle",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "ODM1ZGJhOWE3OWU2YTQ4OTgyYTQ2NzM0NDNmZjI1MzJmMDVlMDNkZTMxODgyYzgxOTM5ZjczYTg1Y2RjMjBhODQ5MGIzY2QyYzU3ZjhjZDA1ZTA2NzE1NjdkYjIxN2JiMGFhMmY2NWNiNzVkZDM0YzE5ZWNkNjQwMGUzYWIxOTg=",
+    "jwtSecretKey": "NTg1OWZjOTBhMjIwNzFkNzMxNTc5NDNlNWNmNzA5ODlmYzhkZjc2YTc1MTMwOTg3OWQ3OGUzZjgwZDdmMTQyMTYxMWQ2NTg0YjRjYmVhMmZlOWQ2MzgxNjAwOTNiNjU5Y2FjMTUxMmYwNTFkMzIxNmM1MDIxYzZmNzJjZGZhNjM=",
     "embeddableLaunchScript": false,
-    "testFrameworks": [
-      "cucumber"
-    ],
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "cerulean",
+    "clientThemeVariant": "primary",
+    "testFrameworks": ["cucumber"],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
     "enableTranslation": true,
-    "clientPackageManager": "npm",
     "nativeLanguage": "en",
-    "languages": [
-      "en",
-      "es"
-    ],
-    "blueprints": [],
-    "skipClient": true,
-    "skipUserManagement": true
+    "languages": ["en", "es"],
+    "blueprints": []
   }
 }

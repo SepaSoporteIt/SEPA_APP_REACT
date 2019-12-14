@@ -13,13 +13,6 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-eureka:
-  client:
-    enabled: false
-  instance:
-    appname: sepa
-    instanceId: sepa:${spring.application.instance-id:${random.value}}
-
 spring:
   application:
     name: sepa
@@ -103,11 +96,14 @@ jhipster:
       host: localhost
       port: 5000
       queue-size: 512
+  mail:
+    from: test@localhost
+    base-url: http://127.0.0.1:8080
   security:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: ODM1ZGJhOWE3OWU2YTQ4OTgyYTQ2NzM0NDNmZjI1MzJmMDVlMDNkZTMxODgyYzgxOTM5ZjczYTg1Y2RjMjBhODQ5MGIzY2QyYzU3ZjhjZDA1ZTA2NzE1NjdkYjIxN2JiMGFhMmY2NWNiNzVkZDM0YzE5ZWNkNjQwMGUzYWIxOTg=
+        base64-secret: NTg1OWZjOTBhMjIwNzFkNzMxNTc5NDNlNWNmNzA5ODlmYzhkZjc2YTc1MTMwOTg3OWQ3OGUzZjgwZDdmMTQyMTYxMWQ2NTg0YjRjYmVhMmZlOWQ2MzgxNjAwOTNiNjU5Y2FjMTUxMmYwNTFkMzIxNmM1MDIxYzZmNzJjZGZhNjM=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:

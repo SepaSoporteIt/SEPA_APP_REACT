@@ -19,13 +19,6 @@ logging:
     io.github.jhipster: DEBUG
     com.mycompany.myapp: DEBUG
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
-
 management:
   health:
     elasticsearch:
@@ -85,18 +78,9 @@ spring:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   thymeleaf:
     cache: false
-  sleuth:
-    sampler:
-      probability: 1 # report 100% of traces
-  zipkin: # Use the "zipkin" Maven profile to have the Spring Cloud Zipkin dependencies
-    base-url: http://localhost:9411
-    enabled: false
-    locator:
-      discovery:
-        enabled: true
 
 server:
-  port: 3000
+  port: 8080
 
 # ===================================================================
 # JHipster specific properties
@@ -109,25 +93,24 @@ jhipster:
     ehcache: # Ehcache configuration
       time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
       max-entries: 100 # Number of objects in each cache entry
-  # CORS is disabled by default on microservices, as you should access them through a gateway.
-  # If you want to enable it, please uncomment the configuration below.
-  # cors:
-  #     allowed-origins: "*"
-  #     allowed-methods: "*"
-  #     allowed-headers: "*"
-  #     exposed-headers: "Authorization,Link,X-Total-Count"
-  #     allow-credentials: true
-  #     max-age: 1800
+  # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
+  cors:
+    allowed-origins: '*'
+    allowed-methods: '*'
+    allowed-headers: '*'
+    exposed-headers: 'Authorization,Link,X-Total-Count'
+    allow-credentials: true
+    max-age: 1800
   security:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: ODM1ZGJhOWE3OWU2YTQ4OTgyYTQ2NzM0NDNmZjI1MzJmMDVlMDNkZTMxODgyYzgxOTM5ZjczYTg1Y2RjMjBhODQ5MGIzY2QyYzU3ZjhjZDA1ZTA2NzE1NjdkYjIxN2JiMGFhMmY2NWNiNzVkZDM0YzE5ZWNkNjQwMGUzYWIxOTg=
+        base64-secret: NTg1OWZjOTBhMjIwNzFkNzMxNTc5NDNlNWNmNzA5ODlmYzhkZjc2YTc1MTMwOTg3OWQ3OGUzZjgwZDdmMTQyMTYxMWQ2NTg0YjRjYmVhMmZlOWQ2MzgxNjAwOTNiNjU5Y2FjMTUxMmYwNTFkMzIxNmM1MDIxYzZmNzJjZGZhNjM=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://127.0.0.1:3000
+    base-url: http://127.0.0.1:8080
   metrics:
     logs: # Reports metrics in the logs
       enabled: false
