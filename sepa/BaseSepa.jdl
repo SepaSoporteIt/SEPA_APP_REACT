@@ -1,97 +1,25 @@
-entity Company {
-	name String required,
-    email String,
-    addressDirection String required,
-    addressNumber String required,
-    floor String,
-    departament String,
-    cuit String required,
-    isSubscripted Boolean,
-    comment String,
-    fantasyName String,
-    postalCode String,
-    tlf String,
-    internalTlf String,
-    contact String,
-    companyType String required,
-    cellphone String,
-    visitsQtyMin Integer,
-    visitsQtyMax Integer,
-    habPrim String,
-    habSec String,
-        
-	employeeId Integer required,
-    industryTypeId Integer required,
-    localidadId Integer required,
-    partidoId Integer required,
-    legislationId Integer,
-    solicitadorId Integer,
-    ambitoId Integer,
-    autoridadId Integer,
-    frecuencyTypeId Integer,
-    
-    createdAt Instant,
-    updatedAt Instant
+entity Blog {
+  name String required minlength(3),
+  handle String required minlength(2)
 }
 
-entity IndustryType {
-	name String required,
-    ciiu String required,
-    createdAt Instant,
-    updatedAt Instant
+entity Entry {
+  title String required,
+  content TextBlob required,
+  date Instant required
 }
 
-entity Employee {
-	name String required,
-    surname String required,
-    email String,
-    tlf String,
-    tipo Boolean,
-	matNumber String required,
-    cuit String required,
-	addressDirection String,
-    addressNumber String,
-	floor String,
-	departament String,
-    degree String,
-    localidad String,
-    partido String,
-    especializacion String,
-    celular String,
-    comentario String,
-    
-    createdAt Instant,
-    updatedAt Instant
+entity Tag {
+  name String required minlength(2)
 }
 
-entity Expiration {
-	companyId Integer,
-    employeeId Integer,
-    studyId Integer,
-    startDate Instant,
-    endDate Instant,
-    status String,
-    comments Long  
+relationship ManyToOne {
+  Blog{user(login)} to User,
+  Entry{blog(name)} to Blog
 }
 
-entity Study {
-	name String required,
-    resolution String required,
-    legislation String required
+relationship ManyToMany {
+  Entry{tag(name)} to Tag{entry}
 }
 
-enum Language {
-    ENGLISH, SPANISH
-}
-
-relationship OneToOne {
-Company {employee} to Employee
-Company {industryTipe} to IndustryType
-Expiration {company} to Company
-Expiration {employee} to Employee
-Expiration {study} to Study
-}
-
-// Set pagination options
-paginate Company, Employee, Expiration with infinite-scroll
-paginate Study, IndustryType with pagination
+paginate Entry, Tag with infinite-scroll
