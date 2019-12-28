@@ -100,7 +100,7 @@
     "stripcomment-loader": "0.1.0",
     "style-loader": "0.23.1",
     "swagger-ui": "^3.24.3",
-    "terser-webpack-plugin": "^2.3.0",
+    "terser-webpack-plugin": "^2.3.1",
     "thread-loader": "2.1.2",
     "to-string-loader": "1.1.5",
     "ts-jest": "24.0.0",
