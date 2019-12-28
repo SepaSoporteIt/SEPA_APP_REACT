@@ -1,0 +1,29 @@
+{
+  "sepaApp": {
+    "expiration": {
+      "home": {
+        "title": "Expirations",
+        "createLabel": "Crear nuevo Expiration",
+        "createOrEditLabel": "Crear o editar Expiration",
+        "search": "Buscar Expiration",
+        "notFound": "Ningún Expirations encontrado"
+      },
+      "created": "Un nuevo Expiration ha sido creado con el identificador {{ param }}",
+      "updated": "Un Expiration ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Expiration ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Expiration {{ id }}?"
+      },
+      "detail": {
+        "title": "Expiration"
+      },
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "status": "Status",
+      "comments": "Comments",
+      "company": "Company",
+      "employee": "Employee",
+      "study": "Study"
+    }
+  }
+}

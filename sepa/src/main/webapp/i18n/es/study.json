@@ -1,0 +1,25 @@
+{
+  "sepaApp": {
+    "study": {
+      "home": {
+        "title": "Studies",
+        "createLabel": "Crear nuevo Study",
+        "createOrEditLabel": "Crear o editar Study",
+        "search": "Buscar Study",
+        "notFound": "Ningún Studies encontrado"
+      },
+      "created": "Un nuevo Study ha sido creado con el identificador {{ param }}",
+      "updated": "Un Study ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Study ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Study {{ id }}?"
+      },
+      "detail": {
+        "title": "Study"
+      },
+      "name": "Name",
+      "resolution": "Resolution",
+      "legislation": "Legislation"
+    }
+  }
+}

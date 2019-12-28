@@ -1,0 +1,51 @@
+{
+  "sepaApp": {
+    "company": {
+      "home": {
+        "title": "Companies",
+        "createLabel": "Create a new Company",
+        "createOrEditLabel": "Create or edit a Company",
+        "search": "Search for Company",
+        "notFound": "No Companies found"
+      },
+      "created": "A new Company is created with identifier {{ param }}",
+      "updated": "A Company is updated with identifier {{ param }}",
+      "deleted": "A Company is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Company {{ id }}?"
+      },
+      "detail": {
+        "title": "Company"
+      },
+      "name": "Name",
+      "email": "Email",
+      "addressDirection": "Address Direction",
+      "addressNumber": "Address Number",
+      "floor": "Floor",
+      "departament": "Departament",
+      "cuit": "Cuit",
+      "isSubscripted": "Is Subscripted",
+      "comment": "Comment",
+      "fantasyName": "Fantasy Name",
+      "postalCode": "Postal Code",
+      "tlf": "Tlf",
+      "internalTlf": "Internal Tlf",
+      "contact": "Contact",
+      "cellphone": "Cellphone",
+      "visitsQtyMin": "Visits Qty Min",
+      "visitsQtyMax": "Visits Qty Max",
+      "habPrim": "Hab Prim",
+      "habSec": "Hab Sec",
+      "legislationId": "Legislation Id",
+      "solicitadorId": "Solicitador Id",
+      "ambitoId": "Ambito Id",
+      "autoridadId": "Autoridad Id",
+      "frecuencyTypeId": "Frecuency Type Id",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "employee": "Employee",
+      "primIndustryTipe": "Prim Industry Tipe",
+      "secIndustryTipe": "Sec Industry Tipe"
+    }
+  }
+}

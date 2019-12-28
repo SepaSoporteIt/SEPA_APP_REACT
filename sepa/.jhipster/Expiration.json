@@ -1,0 +1,58 @@
+{
+    "name": "Expiration",
+    "fields": [
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "company",
+            "otherEntityRelationshipName": "expiration",
+            "relationshipName": "company",
+            "otherEntityField": "fantasyName",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "employee",
+            "otherEntityRelationshipName": "expiration",
+            "relationshipName": "employee",
+            "otherEntityField": "name",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "study",
+            "otherEntityRelationshipName": "expiration",
+            "relationshipName": "study",
+            "otherEntityField": "name",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191228155417",
+    "entityTableName": "expiration",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

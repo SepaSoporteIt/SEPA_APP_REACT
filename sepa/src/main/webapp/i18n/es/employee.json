@@ -1,0 +1,41 @@
+{
+  "sepaApp": {
+    "employee": {
+      "home": {
+        "title": "Employees",
+        "createLabel": "Crear nuevo Employee",
+        "createOrEditLabel": "Crear o editar Employee",
+        "search": "Buscar Employee",
+        "notFound": "Ningún Employees encontrado"
+      },
+      "created": "Un nuevo Employee ha sido creado con el identificador {{ param }}",
+      "updated": "Un Employee ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Employee ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Employee {{ id }}?"
+      },
+      "detail": {
+        "title": "Employee"
+      },
+      "name": "Name",
+      "surname": "Surname",
+      "email": "Email",
+      "tlf": "Tlf",
+      "tipo": "Tipo",
+      "matNumber": "Mat Number",
+      "cuit": "Cuit",
+      "addressDirection": "Address Direction",
+      "addressNumber": "Address Number",
+      "floor": "Floor",
+      "departament": "Departament",
+      "degree": "Degree",
+      "localidad": "Localidad",
+      "partido": "Partido",
+      "especializacion": "Especializacion",
+      "celular": "Celular",
+      "comentario": "Comentario",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
+    }
+  }
+}
