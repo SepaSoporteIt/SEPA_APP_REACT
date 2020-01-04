@@ -1,6 +1,7 @@
 package com.mycompany.myapp.web.rest;
 
 import com.mycompany.myapp.domain.Expiration;
+import com.mycompany.myapp.domain.enumeration.Status;
 import com.mycompany.myapp.repository.ExpirationRepository;
 import com.mycompany.myapp.repository.search.ExpirationSearchRepository;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
@@ -17,12 +18,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -41,6 +42,8 @@ public class ExpirationResource {
     private final Logger log = LoggerFactory.getLogger(ExpirationResource.class);
 
     private static final String ENTITY_NAME = "expiration";
+
+    private List<Expiration> expirationList;
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
@@ -153,5 +156,29 @@ public class ExpirationResource {
         Page<Expiration> page = expirationSearchRepository.search(queryStringQuery(query), pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * Change the state of all expirations based on the actual date and the due date.
+     * 
+     */
+    public void CheckDatesLogic()
+    {
+        expirationList = expirationRepository.findAll();
+
+        for (Expiration expiration : expirationList) {
+
+            LocalDate actualEndDate = expiration.getEndDate();
+            LocalDate actualWarningDate = actualEndDate.minusDays(30);
+
+            if (actualEndDate.isBefore(LocalDate.now()))
+            {
+                expiration.setStatus(Status.VENCIDO);
+            }
+            else if (actualWarningDate.isBefore(LocalDate.now()))
+            {
+                expiration.setStatus(Status.A_VENCER);
+            }
+        }
     }
 }
