@@ -72,6 +72,7 @@ public class ExpirationResource {
         }
         Expiration result = expirationRepository.save(expiration);
         expirationSearchRepository.save(result);
+        CheckDatesLogic();
         return ResponseEntity.created(new URI("/api/expirations/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -89,6 +90,7 @@ public class ExpirationResource {
     @PutMapping("/expirations")
     public ResponseEntity<Expiration> updateExpiration(@RequestBody Expiration expiration) throws URISyntaxException {
         log.debug("REST request to update Expiration : {}", expiration);
+        CheckDatesLogic();
         if (expiration.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
@@ -110,6 +112,7 @@ public class ExpirationResource {
     @GetMapping("/expirations")
     public ResponseEntity<List<Expiration>> getAllExpirations(Pageable pageable) {
         log.debug("REST request to get a page of Expirations");
+        CheckDatesLogic();
         Page<Expiration> page = expirationRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
@@ -124,6 +127,7 @@ public class ExpirationResource {
     @GetMapping("/expirations/{id}")
     public ResponseEntity<Expiration> getExpiration(@PathVariable Long id) {
         log.debug("REST request to get Expiration : {}", id);
+        CheckDatesLogic();
         Optional<Expiration> expiration = expirationRepository.findById(id);
         return ResponseUtil.wrapOrNotFound(expiration);
     }
@@ -139,6 +143,7 @@ public class ExpirationResource {
         log.debug("REST request to delete Expiration : {}", id);
         expirationRepository.deleteById(id);
         expirationSearchRepository.deleteById(id);
+        CheckDatesLogic();
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
@@ -153,6 +158,7 @@ public class ExpirationResource {
     @GetMapping("/_search/expirations")
     public ResponseEntity<List<Expiration>> searchExpirations(@RequestParam String query, Pageable pageable) {
         log.debug("REST request to search for a page of Expirations for query {}", query);
+        CheckDatesLogic();
         Page<Expiration> page = expirationSearchRepository.search(queryStringQuery(query), pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
@@ -160,7 +166,6 @@ public class ExpirationResource {
 
     /**
      * Change the state of all expirations based on the actual date and the due date.
-     * 
      */
     public void CheckDatesLogic()
     {
