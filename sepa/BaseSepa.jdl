@@ -66,7 +66,7 @@ entity Employee {
 entity Expiration {
     startDate LocalDate
     endDate LocalDate
-    status String
+    status Status
     comments TextBlob  
 }
 
@@ -74,6 +74,10 @@ entity Study {
 	name String required
     resolution String required
     legislation String required
+}
+
+enum Status {
+    VENCIDO, A_VENCER, PENDIENTE, VIGENTE, ANTIGUO, SIN_FECHA
 }
 
 relationship OneToOne {

@@ -24,7 +24,7 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "tipo",
+            "fieldName": "isInternal",
             "fieldType": "Boolean"
         },
         {

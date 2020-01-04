@@ -39,8 +39,8 @@ public class Employee implements Serializable {
     @Column(name = "tlf")
     private String tlf;
 
-    @Column(name = "tipo")
-    private Boolean tipo;
+    @Column(name = "is_internal")
+    private Boolean isInternal;
 
     @NotNull
     @Column(name = "mat_number", nullable = false)
@@ -147,17 +147,17 @@ public class Employee implements Serializable {
         this.tlf = tlf;
     }
 
-    public Boolean isTipo() {
-        return tipo;
+    public Boolean isIsInternal() {
+        return isInternal;
     }
 
-    public Employee tipo(Boolean tipo) {
-        this.tipo = tipo;
+    public Employee isInternal(Boolean isInternal) {
+        this.isInternal = isInternal;
         return this;
     }
 
-    public void setTipo(Boolean tipo) {
-        this.tipo = tipo;
+    public void setIsInternal(Boolean isInternal) {
+        this.isInternal = isInternal;
     }
 
     public String getMatNumber() {
@@ -367,7 +367,7 @@ public class Employee implements Serializable {
             ", surname='" + getSurname() + "'" +
             ", email='" + getEmail() + "'" +
             ", tlf='" + getTlf() + "'" +
-            ", tipo='" + isTipo() + "'" +
+            ", isInternal='" + isIsInternal() + "'" +
             ", matNumber='" + getMatNumber() + "'" +
             ", cuit='" + getCuit() + "'" +
             ", addressDirection='" + getAddressDirection() + "'" +

@@ -53,8 +53,8 @@ public class EmployeeResourceIT {
     private static final String DEFAULT_TLF = "AAAAAAAAAA";
     private static final String UPDATED_TLF = "BBBBBBBBBB";
 
-    private static final Boolean DEFAULT_TIPO = false;
-    private static final Boolean UPDATED_TIPO = true;
+    private static final Boolean DEFAULT_IS_INTERNAL = false;
+    private static final Boolean UPDATED_IS_INTERNAL = true;
 
     private static final String DEFAULT_MAT_NUMBER = "AAAAAAAAAA";
     private static final String UPDATED_MAT_NUMBER = "BBBBBBBBBB";
@@ -152,7 +152,7 @@ public class EmployeeResourceIT {
             .surname(DEFAULT_SURNAME)
             .email(DEFAULT_EMAIL)
             .tlf(DEFAULT_TLF)
-            .tipo(DEFAULT_TIPO)
+            .isInternal(DEFAULT_IS_INTERNAL)
             .matNumber(DEFAULT_MAT_NUMBER)
             .cuit(DEFAULT_CUIT)
             .addressDirection(DEFAULT_ADDRESS_DIRECTION)
@@ -181,7 +181,7 @@ public class EmployeeResourceIT {
             .surname(UPDATED_SURNAME)
             .email(UPDATED_EMAIL)
             .tlf(UPDATED_TLF)
-            .tipo(UPDATED_TIPO)
+            .isInternal(UPDATED_IS_INTERNAL)
             .matNumber(UPDATED_MAT_NUMBER)
             .cuit(UPDATED_CUIT)
             .addressDirection(UPDATED_ADDRESS_DIRECTION)
@@ -223,7 +223,7 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getSurname()).isEqualTo(DEFAULT_SURNAME);
         assertThat(testEmployee.getEmail()).isEqualTo(DEFAULT_EMAIL);
         assertThat(testEmployee.getTlf()).isEqualTo(DEFAULT_TLF);
-        assertThat(testEmployee.isTipo()).isEqualTo(DEFAULT_TIPO);
+        assertThat(testEmployee.isIsInternal()).isEqualTo(DEFAULT_IS_INTERNAL);
         assertThat(testEmployee.getMatNumber()).isEqualTo(DEFAULT_MAT_NUMBER);
         assertThat(testEmployee.getCuit()).isEqualTo(DEFAULT_CUIT);
         assertThat(testEmployee.getAddressDirection()).isEqualTo(DEFAULT_ADDRESS_DIRECTION);
@@ -353,7 +353,7 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].surname").value(hasItem(DEFAULT_SURNAME)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].tlf").value(hasItem(DEFAULT_TLF)))
-            .andExpect(jsonPath("$.[*].tipo").value(hasItem(DEFAULT_TIPO.booleanValue())))
+            .andExpect(jsonPath("$.[*].isInternal").value(hasItem(DEFAULT_IS_INTERNAL.booleanValue())))
             .andExpect(jsonPath("$.[*].matNumber").value(hasItem(DEFAULT_MAT_NUMBER)))
             .andExpect(jsonPath("$.[*].cuit").value(hasItem(DEFAULT_CUIT)))
             .andExpect(jsonPath("$.[*].addressDirection").value(hasItem(DEFAULT_ADDRESS_DIRECTION)))
@@ -385,7 +385,7 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.surname").value(DEFAULT_SURNAME))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
             .andExpect(jsonPath("$.tlf").value(DEFAULT_TLF))
-            .andExpect(jsonPath("$.tipo").value(DEFAULT_TIPO.booleanValue()))
+            .andExpect(jsonPath("$.isInternal").value(DEFAULT_IS_INTERNAL.booleanValue()))
             .andExpect(jsonPath("$.matNumber").value(DEFAULT_MAT_NUMBER))
             .andExpect(jsonPath("$.cuit").value(DEFAULT_CUIT))
             .andExpect(jsonPath("$.addressDirection").value(DEFAULT_ADDRESS_DIRECTION))
@@ -427,7 +427,7 @@ public class EmployeeResourceIT {
             .surname(UPDATED_SURNAME)
             .email(UPDATED_EMAIL)
             .tlf(UPDATED_TLF)
-            .tipo(UPDATED_TIPO)
+            .isInternal(UPDATED_IS_INTERNAL)
             .matNumber(UPDATED_MAT_NUMBER)
             .cuit(UPDATED_CUIT)
             .addressDirection(UPDATED_ADDRESS_DIRECTION)
@@ -456,7 +456,7 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getSurname()).isEqualTo(UPDATED_SURNAME);
         assertThat(testEmployee.getEmail()).isEqualTo(UPDATED_EMAIL);
         assertThat(testEmployee.getTlf()).isEqualTo(UPDATED_TLF);
-        assertThat(testEmployee.isTipo()).isEqualTo(UPDATED_TIPO);
+        assertThat(testEmployee.isIsInternal()).isEqualTo(UPDATED_IS_INTERNAL);
         assertThat(testEmployee.getMatNumber()).isEqualTo(UPDATED_MAT_NUMBER);
         assertThat(testEmployee.getCuit()).isEqualTo(UPDATED_CUIT);
         assertThat(testEmployee.getAddressDirection()).isEqualTo(UPDATED_ADDRESS_DIRECTION);
@@ -534,7 +534,7 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].surname").value(hasItem(DEFAULT_SURNAME)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].tlf").value(hasItem(DEFAULT_TLF)))
-            .andExpect(jsonPath("$.[*].tipo").value(hasItem(DEFAULT_TIPO.booleanValue())))
+            .andExpect(jsonPath("$.[*].isInternal").value(hasItem(DEFAULT_IS_INTERNAL.booleanValue())))
             .andExpect(jsonPath("$.[*].matNumber").value(hasItem(DEFAULT_MAT_NUMBER)))
             .andExpect(jsonPath("$.[*].cuit").value(hasItem(DEFAULT_CUIT)))
             .andExpect(jsonPath("$.[*].addressDirection").value(hasItem(DEFAULT_ADDRESS_DIRECTION)))

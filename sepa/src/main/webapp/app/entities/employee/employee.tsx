@@ -151,8 +151,8 @@ export class Employee extends React.Component<IEmployeeProps, IEmployeeState> {
                     <th className="hand" onClick={this.sort('tlf')}>
                       <Translate contentKey="sepaApp.employee.tlf">Tlf</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
-                    <th className="hand" onClick={this.sort('tipo')}>
-                      <Translate contentKey="sepaApp.employee.tipo">Tipo</Translate> <FontAwesomeIcon icon="sort" />
+                    <th className="hand" onClick={this.sort('isInternal')}>
+                      <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('matNumber')}>
                       <Translate contentKey="sepaApp.employee.matNumber">Mat Number</Translate> <FontAwesomeIcon icon="sort" />
@@ -212,7 +212,7 @@ export class Employee extends React.Component<IEmployeeProps, IEmployeeState> {
                       <td>{employee.surname}</td>
                       <td>{employee.email}</td>
                       <td>{employee.tlf}</td>
-                      <td>{employee.tipo ? 'true' : 'false'}</td>
+                      <td>{employee.isInternal ? 'true' : 'false'}</td>
                       <td>{employee.matNumber}</td>
                       <td>{employee.cuit}</td>
                       <td>{employee.addressDirection}</td>

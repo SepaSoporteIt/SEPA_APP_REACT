@@ -12,7 +12,6 @@ export interface ICompany {
   departament?: string;
   cuit?: string;
   isSubscripted?: boolean;
-  comment?: any;
   fantasyName?: string;
   postalCode?: string;
   tlf?: string;
@@ -23,6 +22,7 @@ export interface ICompany {
   visitsQtyMax?: number;
   habPrim?: string;
   habSec?: string;
+  comment?: any;
   legislationId?: number;
   solicitadorId?: number;
   ambitoId?: number;
