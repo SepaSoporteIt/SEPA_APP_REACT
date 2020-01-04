@@ -17,12 +17,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -46,6 +46,8 @@ public class ExpirationResource {
     private String applicationName;
 
     private final ExpirationRepository expirationRepository;
+
+    private List <Expiration> expirationList;
 
     private final ExpirationSearchRepository expirationSearchRepository;
 
@@ -153,5 +155,29 @@ public class ExpirationResource {
         Page<Expiration> page = expirationSearchRepository.search(queryStringQuery(query), pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * Change the state of all expirations based on the actual date and the due date.
+     * 
+     */
+    public void CheckDatesLogic()
+    {
+        expirationList = expirationRepository.findAll();
+
+        for (Expiration expiration : expirationList) {
+
+            LocalDate actualEndDate = expiration.getEndDate();
+            LocalDate actualWarningDate = actualEndDate.minusDays(30);
+
+            if (actualEndDate.isBefore(LocalDate.now()))
+            {
+                expiration.setStatus("Vencido");
+            }
+            else if (actualWarningDate.isBefore(LocalDate.now()))
+            {
+                expiration.setStatus("A Vencer");
+            }
+        }
     }
 }
