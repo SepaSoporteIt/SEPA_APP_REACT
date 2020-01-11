@@ -2,50 +2,50 @@
   "sepaApp": {
     "company": {
       "home": {
-        "title": "Companies",
-        "createLabel": "Crear nuevo Company",
-        "createOrEditLabel": "Crear o editar Company",
-        "search": "Buscar Company",
-        "notFound": "Ningún Companies encontrado"
+        "title": "Cliente",
+        "createLabel": "Crear nuevo Cliente",
+        "createOrEditLabel": "Crear o editar Cliente",
+        "search": "Buscar Cliente",
+        "notFound": "Ningún Cliente encontrado"
       },
-      "created": "Un nuevo Company ha sido creado con el identificador {{ param }}",
-      "updated": "Un Company ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Company ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Cliente ha sido creado con el identificador {{ param }}",
+      "updated": "Un Cliente ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Cliente ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Company {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Cliente {{ id }}?"
       },
       "detail": {
-        "title": "Company"
+        "title": "Cliente"
       },
-      "name": "Name",
+      "name": "Nombre",
       "email": "Email",
-      "addressDirection": "Address Direction",
-      "addressNumber": "Address Number",
-      "floor": "Floor",
-      "departament": "Departament",
+      "addressDirection": "Direccion Calle",
+      "addressNumber": "Direccion Numero",
+      "floor": "Piso",
+      "departament": "Departamento",
       "cuit": "Cuit",
       "isSubscripted": "Is Subscripted",
-      "fantasyName": "Fantasy Name",
-      "postalCode": "Postal Code",
+      "comment": "Comentario",
+      "fantasyName": "Nombre de Fantasia",
+      "postalCode": "Codigo postal",
       "tlf": "Tlf",
       "internalTlf": "Internal Tlf",
-      "contact": "Contact",
-      "cellphone": "Cellphone",
-      "visitsQtyMin": "Visits Qty Min",
-      "visitsQtyMax": "Visits Qty Max",
-      "habPrim": "Hab Prim",
-      "habSec": "Hab Sec",
-      "comment": "Comment",
+      "contact": "Contacto",
+      "cellphone": "Celular",
+      "visitsQtyMin": "Cantidad mínima de visitas",
+      "visitsQtyMax": "Cantidad máxima de visitas",
+      "habPrim": "Hab Primaria",
+      "habSec": "Hab Secundaria",
       "legislationId": "Legislation Id",
       "solicitadorId": "Solicitador Id",
       "ambitoId": "Ambito Id",
       "autoridadId": "Autoridad Id",
       "frecuencyTypeId": "Frecuency Type Id",
-      "createdAt": "Created At",
-      "updatedAt": "Updated At",
-      "employee": "Employee",
-      "primIndustryTipe": "Prim Industry Tipe",
-      "secIndustryTipe": "Sec Industry Tipe"
+      "createdAt": "Creado el",
+      "updatedAt": "Modificado el",
+      "employee": "Profesional",
+      "primIndustryTipe": "1° CIIU",
+      "secIndustryTipe": "2° CIIU"
     }
   }
 }
