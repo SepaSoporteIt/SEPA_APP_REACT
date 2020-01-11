@@ -1,26 +1,26 @@
 {
   "sepaApp": {
-    "Vencimientos": {
+    "expiration": {
       "home": {
         "title": "Vencimientos",
-        "createLabel": "Crear nuevo Vencimientos",
-        "createOrEditLabel": "Crear o editar Vencimientos",
-        "search": "Buscar Vencimientos",
-        "notFound": "Ningún Vencimientos encontrado"
+        "createLabel": "Crear nuevo Vencimiento",
+        "createOrEditLabel": "Crear o modificar Vencimiento",
+        "search": "Buscar Vencimiento",
+        "notFound": "Ningún Vencimiento encontrado"
       },
       "created": "Un nuevo Vencimiento ha sido creado con el identificador {{ param }}",
       "updated": "Un Vencimiento ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un Vencimiento ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Vencimiento {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Vencimiento {{ id }}?"
       },
       "detail": {
         "title": "Vencimiento"
       },
       "startDate": "Fecha de inicio",
-      "endDate": "Fecha de finalizacion",
+      "endDate": "Fecha de finalización",
       "status": "Estado",
-      "comments": "Comentarios",
+      "comments": "Comentario",
       "company": "Cliente",
       "employee": "Profesional",
       "study": "Estudio"

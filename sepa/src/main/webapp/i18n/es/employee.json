@@ -1,6 +1,6 @@
 {
   "sepaApp": {
-    "Profesional": {
+    "employee": {
       "home": {
         "title": "Profesional",
         "createLabel": "Crear nuevo Profesional",
@@ -12,7 +12,7 @@
       "updated": "Un Profesional ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un Profesional ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Profesional {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Profesional {{ id }}?"
       },
       "detail": {
         "title": "Profesional"
@@ -20,18 +20,18 @@
       "name": "Nombre",
       "surname": "Apellido",
       "email": "Email",
-      "tlf": "Tlf",
-      "isInternal": "Tipo",
-      "matNumber": "Matricula",
-      "cuit": "Cuit/Cuil",
-      "addressDirection": "Direccion",
-      "addressNumber": "Numero",
+      "tlf": "Telefono",
+      "isInternal": "Es Interno?",
+      "matNumber": "Número de Matricula",
+      "cuit": "Cuit",
+      "addressDirection": "Calle",
+      "addressNumber": "Número",
       "floor": "Piso",
       "departament": "Departamento",
-      "degree": "Titulo",
+      "degree": "Título",
       "localidad": "Localidad",
       "partido": "Partido",
-      "especializacion": "Especializacion",
+      "especializacion": "Especialización",
       "celular": "Celular",
       "comentario": "Comentario",
       "createdAt": "Creado el",
