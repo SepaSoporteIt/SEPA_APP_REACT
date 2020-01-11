@@ -12,24 +12,24 @@
       "updated": "Un Cliente ha sido actualizado con el identificador {{ param }}",
       "deleted": "Un Cliente ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Cliente {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Cliente {{ id }}?"
       },
       "detail": {
         "title": "Cliente"
       },
       "name": "Nombre",
       "email": "Email",
-      "addressDirection": "Direccion Calle",
-      "addressNumber": "Direccion Numero",
+      "addressDirection": "Calle",
+      "addressNumber": "Numero",
       "floor": "Piso",
       "departament": "Departamento",
       "cuit": "Cuit",
-      "isSubscripted": "Is Subscripted",
+      "isSubscripted": "Servicio HyS?",
       "comment": "Comentario",
       "fantasyName": "Nombre de Fantasia",
       "postalCode": "Codigo postal",
-      "tlf": "Tlf",
-      "internalTlf": "Internal Tlf",
+      "tlf": "Telefono",
+      "internalTlf": "Interno del telefono",
       "contact": "Contacto",
       "cellphone": "Celular",
       "visitsQtyMin": "Cantidad mínima de visitas",

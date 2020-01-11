@@ -2,12 +2,12 @@
   "sepaApp": {
     "Status": {
       "null": "",
-      "VENCIDO": "VENCIDO",
-      "A_VENCER": "A_VENCER",
-      "PENDIENTE": "PENDIENTE",
-      "VIGENTE": "VIGENTE",
-      "ANTIGUO": "ANTIGUO",
-      "SIN_FECHA": "SIN_FECHA"
+      "VENCIDO": "Expirated",
+      "A_VENCER": "To Expirate",
+      "PENDIENTE": "Pending",
+      "VIGENTE": "Current",
+      "ANTIGUO": "Old",
+      "SIN_FECHA": "Without Date"
     }
   }
 }
