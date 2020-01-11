@@ -53,10 +53,6 @@ public class Company implements Serializable {
     @Column(name = "is_subscripted")
     private Boolean isSubscripted;
 
-    @Lob
-    @Column(name = "comment")
-    private String comment;
-
     @Column(name = "fantasy_name")
     private String fantasyName;
 
@@ -86,6 +82,10 @@ public class Company implements Serializable {
 
     @Column(name = "hab_sec")
     private String habSec;
+
+    @Lob
+    @Column(name = "comment")
+    private String comment;
 
     @Column(name = "legislation_id")
     private Integer legislationId;
@@ -233,19 +233,6 @@ public class Company implements Serializable {
         this.isSubscripted = isSubscripted;
     }
 
-    public String getComment() {
-        return comment;
-    }
-
-    public Company comment(String comment) {
-        this.comment = comment;
-        return this;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
     public String getFantasyName() {
         return fantasyName;
     }
@@ -374,6 +361,19 @@ public class Company implements Serializable {
 
     public void setHabSec(String habSec) {
         this.habSec = habSec;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public Company comment(String comment) {
+        this.comment = comment;
+        return this;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
     }
 
     public Integer getLegislationId() {
@@ -535,7 +535,6 @@ public class Company implements Serializable {
             ", departament='" + getDepartament() + "'" +
             ", cuit='" + getCuit() + "'" +
             ", isSubscripted='" + isIsSubscripted() + "'" +
-            ", comment='" + getComment() + "'" +
             ", fantasyName='" + getFantasyName() + "'" +
             ", postalCode='" + getPostalCode() + "'" +
             ", tlf='" + getTlf() + "'" +
@@ -546,6 +545,7 @@ public class Company implements Serializable {
             ", visitsQtyMax=" + getVisitsQtyMax() +
             ", habPrim='" + getHabPrim() + "'" +
             ", habSec='" + getHabSec() + "'" +
+            ", comment='" + getComment() + "'" +
             ", legislationId=" + getLegislationId() +
             ", solicitadorId=" + getSolicitadorId() +
             ", ambitoId=" + getAmbitoId() +

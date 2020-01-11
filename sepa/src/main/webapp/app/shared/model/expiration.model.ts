@@ -2,12 +2,13 @@ import { Moment } from 'moment';
 import { ICompany } from 'app/shared/model/company.model';
 import { IEmployee } from 'app/shared/model/employee.model';
 import { IStudy } from 'app/shared/model/study.model';
+import { Status } from 'app/shared/model/enumerations/status.model';
 
 export interface IExpiration {
   id?: number;
   startDate?: Moment;
   endDate?: Moment;
-  status?: string;
+  status?: Status;
   comments?: any;
   company?: ICompany;
   employee?: IEmployee;

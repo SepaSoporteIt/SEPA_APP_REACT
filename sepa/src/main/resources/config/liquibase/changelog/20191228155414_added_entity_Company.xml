@@ -40,9 +40,6 @@
             <column name="is_subscripted" type="boolean">
                 <constraints nullable="true" />
             </column>
-            <column name="comment" type="${clobType}">
-                <constraints nullable="true" />
-            </column>
             <column name="fantasy_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -71,6 +68,9 @@
                 <constraints nullable="true" />
             </column>
             <column name="hab_sec" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="comment" type="${clobType}">
                 <constraints nullable="true" />
             </column>
             <column name="legislation_id" type="integer">
@@ -136,7 +136,6 @@
             <column name="departament" type="string"/>
             <column name="cuit" type="string"/>
             <column name="is_subscripted" type="boolean"/>
-            <column name="comment" type="clob"/>
             <column name="fantasy_name" type="string"/>
             <column name="postal_code" type="string"/>
             <column name="tlf" type="string"/>
@@ -147,6 +146,7 @@
             <column name="visits_qty_max" type="numeric"/>
             <column name="hab_prim" type="string"/>
             <column name="hab_sec" type="string"/>
+            <column name="comment" type="clob"/>
             <column name="legislation_id" type="numeric"/>
             <column name="solicitador_id" type="numeric"/>
             <column name="ambito_id" type="numeric"/>

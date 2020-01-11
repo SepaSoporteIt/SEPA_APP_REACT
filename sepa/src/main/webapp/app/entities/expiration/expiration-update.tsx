@@ -127,7 +127,20 @@ export class ExpirationUpdate extends React.Component<IExpirationUpdateProps, IE
                   <Label id="statusLabel" for="expiration-status">
                     <Translate contentKey="sepaApp.expiration.status">Status</Translate>
                   </Label>
-                  <AvField id="expiration-status" type="text" name="status" />
+                  <AvInput
+                    id="expiration-status"
+                    type="select"
+                    className="form-control"
+                    name="status"
+                    value={(!isNew && expirationEntity.status) || 'VENCIDO'}
+                  >
+                    <option value="VENCIDO">{translate('sepaApp.Status.VENCIDO')}</option>
+                    <option value="A_VENCER">{translate('sepaApp.Status.A_VENCER')}</option>
+                    <option value="PENDIENTE">{translate('sepaApp.Status.PENDIENTE')}</option>
+                    <option value="VIGENTE">{translate('sepaApp.Status.VIGENTE')}</option>
+                    <option value="ANTIGUO">{translate('sepaApp.Status.ANTIGUO')}</option>
+                    <option value="SIN_FECHA">{translate('sepaApp.Status.SIN_FECHA')}</option>
+                  </AvInput>
                 </AvGroup>
                 <AvGroup>
                   <Label id="commentsLabel" for="expiration-comments">

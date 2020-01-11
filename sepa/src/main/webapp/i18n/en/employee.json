@@ -21,7 +21,7 @@
       "surname": "Surname",
       "email": "Email",
       "tlf": "Tlf",
-      "tipo": "Tipo",
+      "isInternal": "Is Internal",
       "matNumber": "Mat Number",
       "cuit": "Cuit",
       "addressDirection": "Address Direction",

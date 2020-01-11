@@ -66,9 +66,6 @@ public class CompanyResourceIT {
     private static final Boolean DEFAULT_IS_SUBSCRIPTED = false;
     private static final Boolean UPDATED_IS_SUBSCRIPTED = true;
 
-    private static final String DEFAULT_COMMENT = "AAAAAAAAAA";
-    private static final String UPDATED_COMMENT = "BBBBBBBBBB";
-
     private static final String DEFAULT_FANTASY_NAME = "AAAAAAAAAA";
     private static final String UPDATED_FANTASY_NAME = "BBBBBBBBBB";
 
@@ -98,6 +95,9 @@ public class CompanyResourceIT {
 
     private static final String DEFAULT_HAB_SEC = "AAAAAAAAAA";
     private static final String UPDATED_HAB_SEC = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COMMENT = "AAAAAAAAAA";
+    private static final String UPDATED_COMMENT = "BBBBBBBBBB";
 
     private static final Integer DEFAULT_LEGISLATION_ID = 1;
     private static final Integer UPDATED_LEGISLATION_ID = 2;
@@ -178,7 +178,6 @@ public class CompanyResourceIT {
             .departament(DEFAULT_DEPARTAMENT)
             .cuit(DEFAULT_CUIT)
             .isSubscripted(DEFAULT_IS_SUBSCRIPTED)
-            .comment(DEFAULT_COMMENT)
             .fantasyName(DEFAULT_FANTASY_NAME)
             .postalCode(DEFAULT_POSTAL_CODE)
             .tlf(DEFAULT_TLF)
@@ -189,6 +188,7 @@ public class CompanyResourceIT {
             .visitsQtyMax(DEFAULT_VISITS_QTY_MAX)
             .habPrim(DEFAULT_HAB_PRIM)
             .habSec(DEFAULT_HAB_SEC)
+            .comment(DEFAULT_COMMENT)
             .legislationId(DEFAULT_LEGISLATION_ID)
             .solicitadorId(DEFAULT_SOLICITADOR_ID)
             .ambitoId(DEFAULT_AMBITO_ID)
@@ -214,7 +214,6 @@ public class CompanyResourceIT {
             .departament(UPDATED_DEPARTAMENT)
             .cuit(UPDATED_CUIT)
             .isSubscripted(UPDATED_IS_SUBSCRIPTED)
-            .comment(UPDATED_COMMENT)
             .fantasyName(UPDATED_FANTASY_NAME)
             .postalCode(UPDATED_POSTAL_CODE)
             .tlf(UPDATED_TLF)
@@ -225,6 +224,7 @@ public class CompanyResourceIT {
             .visitsQtyMax(UPDATED_VISITS_QTY_MAX)
             .habPrim(UPDATED_HAB_PRIM)
             .habSec(UPDATED_HAB_SEC)
+            .comment(UPDATED_COMMENT)
             .legislationId(UPDATED_LEGISLATION_ID)
             .solicitadorId(UPDATED_SOLICITADOR_ID)
             .ambitoId(UPDATED_AMBITO_ID)
@@ -263,7 +263,6 @@ public class CompanyResourceIT {
         assertThat(testCompany.getDepartament()).isEqualTo(DEFAULT_DEPARTAMENT);
         assertThat(testCompany.getCuit()).isEqualTo(DEFAULT_CUIT);
         assertThat(testCompany.isIsSubscripted()).isEqualTo(DEFAULT_IS_SUBSCRIPTED);
-        assertThat(testCompany.getComment()).isEqualTo(DEFAULT_COMMENT);
         assertThat(testCompany.getFantasyName()).isEqualTo(DEFAULT_FANTASY_NAME);
         assertThat(testCompany.getPostalCode()).isEqualTo(DEFAULT_POSTAL_CODE);
         assertThat(testCompany.getTlf()).isEqualTo(DEFAULT_TLF);
@@ -274,6 +273,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getVisitsQtyMax()).isEqualTo(DEFAULT_VISITS_QTY_MAX);
         assertThat(testCompany.getHabPrim()).isEqualTo(DEFAULT_HAB_PRIM);
         assertThat(testCompany.getHabSec()).isEqualTo(DEFAULT_HAB_SEC);
+        assertThat(testCompany.getComment()).isEqualTo(DEFAULT_COMMENT);
         assertThat(testCompany.getLegislationId()).isEqualTo(DEFAULT_LEGISLATION_ID);
         assertThat(testCompany.getSolicitadorId()).isEqualTo(DEFAULT_SOLICITADOR_ID);
         assertThat(testCompany.getAmbitoId()).isEqualTo(DEFAULT_AMBITO_ID);
@@ -400,7 +400,6 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].departament").value(hasItem(DEFAULT_DEPARTAMENT)))
             .andExpect(jsonPath("$.[*].cuit").value(hasItem(DEFAULT_CUIT)))
             .andExpect(jsonPath("$.[*].isSubscripted").value(hasItem(DEFAULT_IS_SUBSCRIPTED.booleanValue())))
-            .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].fantasyName").value(hasItem(DEFAULT_FANTASY_NAME)))
             .andExpect(jsonPath("$.[*].postalCode").value(hasItem(DEFAULT_POSTAL_CODE)))
             .andExpect(jsonPath("$.[*].tlf").value(hasItem(DEFAULT_TLF)))
@@ -411,6 +410,7 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].visitsQtyMax").value(hasItem(DEFAULT_VISITS_QTY_MAX)))
             .andExpect(jsonPath("$.[*].habPrim").value(hasItem(DEFAULT_HAB_PRIM)))
             .andExpect(jsonPath("$.[*].habSec").value(hasItem(DEFAULT_HAB_SEC)))
+            .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].legislationId").value(hasItem(DEFAULT_LEGISLATION_ID)))
             .andExpect(jsonPath("$.[*].solicitadorId").value(hasItem(DEFAULT_SOLICITADOR_ID)))
             .andExpect(jsonPath("$.[*].ambitoId").value(hasItem(DEFAULT_AMBITO_ID)))
@@ -439,7 +439,6 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.departament").value(DEFAULT_DEPARTAMENT))
             .andExpect(jsonPath("$.cuit").value(DEFAULT_CUIT))
             .andExpect(jsonPath("$.isSubscripted").value(DEFAULT_IS_SUBSCRIPTED.booleanValue()))
-            .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT.toString()))
             .andExpect(jsonPath("$.fantasyName").value(DEFAULT_FANTASY_NAME))
             .andExpect(jsonPath("$.postalCode").value(DEFAULT_POSTAL_CODE))
             .andExpect(jsonPath("$.tlf").value(DEFAULT_TLF))
@@ -450,6 +449,7 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.visitsQtyMax").value(DEFAULT_VISITS_QTY_MAX))
             .andExpect(jsonPath("$.habPrim").value(DEFAULT_HAB_PRIM))
             .andExpect(jsonPath("$.habSec").value(DEFAULT_HAB_SEC))
+            .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT.toString()))
             .andExpect(jsonPath("$.legislationId").value(DEFAULT_LEGISLATION_ID))
             .andExpect(jsonPath("$.solicitadorId").value(DEFAULT_SOLICITADOR_ID))
             .andExpect(jsonPath("$.ambitoId").value(DEFAULT_AMBITO_ID))
@@ -488,7 +488,6 @@ public class CompanyResourceIT {
             .departament(UPDATED_DEPARTAMENT)
             .cuit(UPDATED_CUIT)
             .isSubscripted(UPDATED_IS_SUBSCRIPTED)
-            .comment(UPDATED_COMMENT)
             .fantasyName(UPDATED_FANTASY_NAME)
             .postalCode(UPDATED_POSTAL_CODE)
             .tlf(UPDATED_TLF)
@@ -499,6 +498,7 @@ public class CompanyResourceIT {
             .visitsQtyMax(UPDATED_VISITS_QTY_MAX)
             .habPrim(UPDATED_HAB_PRIM)
             .habSec(UPDATED_HAB_SEC)
+            .comment(UPDATED_COMMENT)
             .legislationId(UPDATED_LEGISLATION_ID)
             .solicitadorId(UPDATED_SOLICITADOR_ID)
             .ambitoId(UPDATED_AMBITO_ID)
@@ -524,7 +524,6 @@ public class CompanyResourceIT {
         assertThat(testCompany.getDepartament()).isEqualTo(UPDATED_DEPARTAMENT);
         assertThat(testCompany.getCuit()).isEqualTo(UPDATED_CUIT);
         assertThat(testCompany.isIsSubscripted()).isEqualTo(UPDATED_IS_SUBSCRIPTED);
-        assertThat(testCompany.getComment()).isEqualTo(UPDATED_COMMENT);
         assertThat(testCompany.getFantasyName()).isEqualTo(UPDATED_FANTASY_NAME);
         assertThat(testCompany.getPostalCode()).isEqualTo(UPDATED_POSTAL_CODE);
         assertThat(testCompany.getTlf()).isEqualTo(UPDATED_TLF);
@@ -535,6 +534,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getVisitsQtyMax()).isEqualTo(UPDATED_VISITS_QTY_MAX);
         assertThat(testCompany.getHabPrim()).isEqualTo(UPDATED_HAB_PRIM);
         assertThat(testCompany.getHabSec()).isEqualTo(UPDATED_HAB_SEC);
+        assertThat(testCompany.getComment()).isEqualTo(UPDATED_COMMENT);
         assertThat(testCompany.getLegislationId()).isEqualTo(UPDATED_LEGISLATION_ID);
         assertThat(testCompany.getSolicitadorId()).isEqualTo(UPDATED_SOLICITADOR_ID);
         assertThat(testCompany.getAmbitoId()).isEqualTo(UPDATED_AMBITO_ID);
@@ -609,7 +609,6 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].departament").value(hasItem(DEFAULT_DEPARTAMENT)))
             .andExpect(jsonPath("$.[*].cuit").value(hasItem(DEFAULT_CUIT)))
             .andExpect(jsonPath("$.[*].isSubscripted").value(hasItem(DEFAULT_IS_SUBSCRIPTED.booleanValue())))
-            .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].fantasyName").value(hasItem(DEFAULT_FANTASY_NAME)))
             .andExpect(jsonPath("$.[*].postalCode").value(hasItem(DEFAULT_POSTAL_CODE)))
             .andExpect(jsonPath("$.[*].tlf").value(hasItem(DEFAULT_TLF)))
@@ -620,6 +619,7 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].visitsQtyMax").value(hasItem(DEFAULT_VISITS_QTY_MAX)))
             .andExpect(jsonPath("$.[*].habPrim").value(hasItem(DEFAULT_HAB_PRIM)))
             .andExpect(jsonPath("$.[*].habSec").value(hasItem(DEFAULT_HAB_SEC)))
+            .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].legislationId").value(hasItem(DEFAULT_LEGISLATION_ID)))
             .andExpect(jsonPath("$.[*].solicitadorId").value(hasItem(DEFAULT_SOLICITADOR_ID)))
             .andExpect(jsonPath("$.[*].ambitoId").value(hasItem(DEFAULT_AMBITO_ID)))

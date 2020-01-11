@@ -186,7 +186,9 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                       <td>
                         <TextFormat type="date" value={expiration.endDate} format={APP_LOCAL_DATE_FORMAT} />
                       </td>
-                      <td>{expiration.status}</td>
+                      <td>
+                        <Translate contentKey={`sepaApp.Status.${expiration.status}`} />
+                      </td>
                       <td>{expiration.comments}</td>
                       <td>
                         {expiration.company ? <Link to={`company/${expiration.company.id}`}>{expiration.company.fantasyName}</Link> : ''}

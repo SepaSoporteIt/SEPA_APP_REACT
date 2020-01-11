@@ -188,12 +188,6 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                   </Label>
                 </AvGroup>
                 <AvGroup>
-                  <Label id="commentLabel" for="company-comment">
-                    <Translate contentKey="sepaApp.company.comment">Comment</Translate>
-                  </Label>
-                  <AvInput id="company-comment" type="textarea" name="comment" />
-                </AvGroup>
-                <AvGroup>
                   <Label id="fantasyNameLabel" for="company-fantasyName">
                     <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
                   </Label>
@@ -252,6 +246,12 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                     <Translate contentKey="sepaApp.company.habSec">Hab Sec</Translate>
                   </Label>
                   <AvField id="company-habSec" type="text" name="habSec" />
+                </AvGroup>
+                <AvGroup>
+                  <Label id="commentLabel" for="company-comment">
+                    <Translate contentKey="sepaApp.company.comment">Comment</Translate>
+                  </Label>
+                  <AvInput id="company-comment" type="textarea" name="comment" />
                 </AvGroup>
                 <AvGroup>
                   <Label id="legislationIdLabel" for="company-legislationId">

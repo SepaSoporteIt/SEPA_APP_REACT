@@ -28,7 +28,7 @@
             <column name="tlf" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="tipo" type="boolean">
+            <column name="is_internal" type="boolean">
                 <constraints nullable="true" />
             </column>
             <column name="mat_number" type="varchar(255)">
@@ -102,7 +102,7 @@
             <column name="surname" type="string"/>
             <column name="email" type="string"/>
             <column name="tlf" type="string"/>
-            <column name="tipo" type="boolean"/>
+            <column name="is_internal" type="boolean"/>
             <column name="mat_number" type="string"/>
             <column name="cuit" type="string"/>
             <column name="address_direction" type="string"/>

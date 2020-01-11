@@ -11,7 +11,8 @@
         },
         {
             "fieldName": "status",
-            "fieldType": "String"
+            "fieldType": "Status",
+            "fieldValues": "VENCIDO,A_VENCER,PENDIENTE,VIGENTE,ANTIGUO,SIN_FECHA"
         },
         {
             "fieldName": "comments",

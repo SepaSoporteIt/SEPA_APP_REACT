@@ -8,6 +8,8 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import com.mycompany.myapp.domain.enumeration.Status;
+
 /**
  * A Expiration.
  */
@@ -30,8 +32,9 @@ public class Expiration implements Serializable {
     @Column(name = "end_date")
     private LocalDate endDate;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private String status;
+    private Status status;
 
     @Lob
     @Column(name = "comments")
@@ -84,16 +87,16 @@ public class Expiration implements Serializable {
         this.endDate = endDate;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public Expiration status(String status) {
+    public Expiration status(Status status) {
         this.status = status;
         return this;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 

@@ -75,12 +75,6 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
             </dt>
             <dd>{companyEntity.isSubscripted ? 'true' : 'false'}</dd>
             <dt>
-              <span id="comment">
-                <Translate contentKey="sepaApp.company.comment">Comment</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.comment}</dd>
-            <dt>
               <span id="fantasyName">
                 <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
               </span>
@@ -140,6 +134,12 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
               </span>
             </dt>
             <dd>{companyEntity.habSec}</dd>
+            <dt>
+              <span id="comment">
+                <Translate contentKey="sepaApp.company.comment">Comment</Translate>
+              </span>
+            </dt>
+            <dd>{companyEntity.comment}</dd>
             <dt>
               <span id="legislationId">
                 <Translate contentKey="sepaApp.company.legislationId">Legislation Id</Translate>

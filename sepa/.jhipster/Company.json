@@ -46,11 +46,6 @@
             "fieldType": "Boolean"
         },
         {
-            "fieldName": "comment",
-            "fieldType": "byte[]",
-            "fieldTypeBlobContent": "text"
-        },
-        {
             "fieldName": "fantasyName",
             "fieldType": "String"
         },
@@ -89,6 +84,11 @@
         {
             "fieldName": "habSec",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
         },
         {
             "fieldName": "legislationId",

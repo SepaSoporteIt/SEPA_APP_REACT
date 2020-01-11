@@ -1,11 +1,11 @@
 id;start_date;end_date;status;comments
-1;2019-12-28;2019-12-28;reintermediate Buckinghamshire;../fake-data/blob/hipster.txt
-2;2019-12-27;2019-12-28;Games;../fake-data/blob/hipster.txt
-3;2019-12-28;2019-12-28;system-worthy pixel Phased;../fake-data/blob/hipster.txt
-4;2019-12-28;2019-12-27;Towels Internal;../fake-data/blob/hipster.txt
-5;2019-12-28;2019-12-28;generate paradigms;../fake-data/blob/hipster.txt
-6;2019-12-28;2019-12-28;microchip Ergonomic Auto Loan Account;../fake-data/blob/hipster.txt
-7;2019-12-28;2019-12-28;compressing action-items;../fake-data/blob/hipster.txt
-8;2019-12-27;2019-12-27;methodology West Virginia Keys;../fake-data/blob/hipster.txt
-9;2019-12-27;2019-12-27;Soft Bedfordshire 4th generation;../fake-data/blob/hipster.txt
-10;2019-12-28;2019-12-28;Auto Loan Account;../fake-data/blob/hipster.txt
+1;2020-01-03;2020-01-04;VIGENTE;../fake-data/blob/hipster.txt
+2;2020-01-04;2020-01-04;SIN_FECHA;../fake-data/blob/hipster.txt
+3;2020-01-04;2020-01-04;A_VENCER;../fake-data/blob/hipster.txt
+4;2020-01-04;2020-01-04;VIGENTE;../fake-data/blob/hipster.txt
+5;2020-01-04;2020-01-04;ANTIGUO;../fake-data/blob/hipster.txt
+6;2020-01-04;2020-01-03;SIN_FECHA;../fake-data/blob/hipster.txt
+7;2020-01-04;2020-01-04;A_VENCER;../fake-data/blob/hipster.txt
+8;2020-01-04;2020-01-04;ANTIGUO;../fake-data/blob/hipster.txt
+9;2020-01-04;2020-01-04;SIN_FECHA;../fake-data/blob/hipster.txt
+10;2020-01-04;2020-01-04;VIGENTE;../fake-data/blob/hipster.txt

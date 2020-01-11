@@ -127,9 +127,9 @@ export class EmployeeUpdate extends React.Component<IEmployeeUpdateProps, IEmplo
                   <AvField id="employee-tlf" type="text" name="tlf" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="tipoLabel" check>
-                    <AvInput id="employee-tipo" type="checkbox" className="form-control" name="tipo" />
-                    <Translate contentKey="sepaApp.employee.tipo">Tipo</Translate>
+                  <Label id="isInternalLabel" check>
+                    <AvInput id="employee-isInternal" type="checkbox" className="form-control" name="isInternal" />
+                    <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate>
                   </Label>
                 </AvGroup>
                 <AvGroup>

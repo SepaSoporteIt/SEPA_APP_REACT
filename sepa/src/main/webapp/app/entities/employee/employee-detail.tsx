@@ -51,11 +51,11 @@ export class EmployeeDetail extends React.Component<IEmployeeDetailProps> {
             </dt>
             <dd>{employeeEntity.tlf}</dd>
             <dt>
-              <span id="tipo">
-                <Translate contentKey="sepaApp.employee.tipo">Tipo</Translate>
+              <span id="isInternal">
+                <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate>
               </span>
             </dt>
-            <dd>{employeeEntity.tipo ? 'true' : 'false'}</dd>
+            <dd>{employeeEntity.isInternal ? 'true' : 'false'}</dd>
             <dt>
               <span id="matNumber">
                 <Translate contentKey="sepaApp.employee.matNumber">Mat Number</Translate>

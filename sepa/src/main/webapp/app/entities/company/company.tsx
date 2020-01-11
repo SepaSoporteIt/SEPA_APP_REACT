@@ -172,9 +172,6 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                     <th className="hand" onClick={this.sort('isSubscripted')}>
                       <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
-                    <th className="hand" onClick={this.sort('comment')}>
-                      <Translate contentKey="sepaApp.company.comment">Comment</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
                     <th className="hand" onClick={this.sort('fantasyName')}>
                       <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
@@ -204,6 +201,9 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                     </th>
                     <th className="hand" onClick={this.sort('habSec')}>
                       <Translate contentKey="sepaApp.company.habSec">Hab Sec</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
+                    <th className="hand" onClick={this.sort('comment')}>
+                      <Translate contentKey="sepaApp.company.comment">Comment</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('legislationId')}>
                       <Translate contentKey="sepaApp.company.legislationId">Legislation Id</Translate> <FontAwesomeIcon icon="sort" />
@@ -255,7 +255,6 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                       <td>{company.departament}</td>
                       <td>{company.cuit}</td>
                       <td>{company.isSubscripted ? 'true' : 'false'}</td>
-                      <td>{company.comment}</td>
                       <td>{company.fantasyName}</td>
                       <td>{company.postalCode}</td>
                       <td>{company.tlf}</td>
@@ -266,6 +265,7 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                       <td>{company.visitsQtyMax}</td>
                       <td>{company.habPrim}</td>
                       <td>{company.habSec}</td>
+                      <td>{company.comment}</td>
                       <td>{company.legislationId}</td>
                       <td>{company.solicitadorId}</td>
                       <td>{company.ambitoId}</td>

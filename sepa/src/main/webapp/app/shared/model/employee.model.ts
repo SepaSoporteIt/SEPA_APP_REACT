@@ -6,7 +6,7 @@ export interface IEmployee {
   surname?: string;
   email?: string;
   tlf?: string;
-  tipo?: boolean;
+  isInternal?: boolean;
   matNumber?: string;
   cuit?: string;
   addressDirection?: string;
@@ -24,5 +24,5 @@ export interface IEmployee {
 }
 
 export const defaultValue: Readonly<IEmployee> = {
-  tipo: false
+  isInternal: false
 };
