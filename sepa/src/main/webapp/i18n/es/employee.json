@@ -1,41 +1,41 @@
 {
   "sepaApp": {
-    "employee": {
+    "Profesional": {
       "home": {
-        "title": "Employees",
-        "createLabel": "Crear nuevo Employee",
-        "createOrEditLabel": "Crear o editar Employee",
-        "search": "Buscar Employee",
-        "notFound": "Ningún Employees encontrado"
+        "title": "Profesional",
+        "createLabel": "Crear nuevo Profesional",
+        "createOrEditLabel": "Crear o editar Profesional",
+        "search": "Buscar Profesional",
+        "notFound": "Ningún Profesional encontrado"
       },
-      "created": "Un nuevo Employee ha sido creado con el identificador {{ param }}",
-      "updated": "Un Employee ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Employee ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Profesional ha sido creado con el identificador {{ param }}",
+      "updated": "Un Profesional ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Profesional ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Employee {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Profesional {{ id }}?"
       },
       "detail": {
-        "title": "Employee"
+        "title": "Profesional"
       },
-      "name": "Name",
-      "surname": "Surname",
+      "name": "Nombre",
+      "surname": "Apellido",
       "email": "Email",
       "tlf": "Tlf",
       "tipo": "Tipo",
-      "matNumber": "Mat Number",
-      "cuit": "Cuit",
-      "addressDirection": "Address Direction",
-      "addressNumber": "Address Number",
-      "floor": "Floor",
-      "departament": "Departament",
-      "degree": "Degree",
+      "matNumber": "Matricula",
+      "cuit": "Cuit/Cuil",
+      "addressDirection": "Direccion",
+      "addressNumber": "Numero",
+      "floor": "Piso",
+      "departament": "Departamento",
+      "degree": "Titulo",
       "localidad": "Localidad",
       "partido": "Partido",
       "especializacion": "Especializacion",
       "celular": "Celular",
       "comentario": "Comentario",
-      "createdAt": "Created At",
-      "updatedAt": "Updated At"
+      "createdAt": "Creado el",
+      "updatedAt": "Modificado el"
     }
   }
 }
