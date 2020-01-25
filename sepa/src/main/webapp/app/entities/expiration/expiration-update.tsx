@@ -149,6 +149,18 @@ export class ExpirationUpdate extends React.Component<IExpirationUpdateProps, IE
                   <AvInput id="expiration-comments" type="textarea" name="comments" />
                 </AvGroup>
                 <AvGroup>
+                  <Label id="uniqueCodeLabel" for="expiration-uniqueCode">
+                    <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate>
+                  </Label>
+                  <AvField id="expiration-uniqueCode" type="text" name="uniqueCode" />
+                </AvGroup>
+                <AvGroup>
+                  <Label id="responsibleLabel" for="expiration-responsible">
+                    <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate>
+                  </Label>
+                  <AvField id="expiration-responsible" type="text" name="responsible" />
+                </AvGroup>
+                <AvGroup>
                   <Label for="expiration-company">
                     <Translate contentKey="sepaApp.expiration.company">Company</Translate>
                   </Label>

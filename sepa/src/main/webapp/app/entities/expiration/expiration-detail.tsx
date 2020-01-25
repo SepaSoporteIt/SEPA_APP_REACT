@@ -55,6 +55,18 @@ export class ExpirationDetail extends React.Component<IExpirationDetailProps> {
             </dt>
             <dd>{expirationEntity.comments}</dd>
             <dt>
+              <span id="uniqueCode">
+                <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate>
+              </span>
+            </dt>
+            <dd>{expirationEntity.uniqueCode}</dd>
+            <dt>
+              <span id="responsible">
+                <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate>
+              </span>
+            </dt>
+            <dd>{expirationEntity.responsible}</dd>
+            <dt>
               <Translate contentKey="sepaApp.expiration.company">Company</Translate>
             </dt>
             <dd>{expirationEntity.company ? expirationEntity.company.fantasyName : ''}</dd>

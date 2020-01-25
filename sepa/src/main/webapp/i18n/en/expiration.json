@@ -21,6 +21,8 @@
       "endDate": "End Date",
       "status": "Status",
       "comments": "Comments",
+      "uniqueCode": "Unique Code",
+      "responsible": "Responsible",
       "company": "Company",
       "employee": "Employee",
       "study": "Study"

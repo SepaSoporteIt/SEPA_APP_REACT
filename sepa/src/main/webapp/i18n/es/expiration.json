@@ -2,28 +2,30 @@
   "sepaApp": {
     "expiration": {
       "home": {
-        "title": "Vencimientos",
-        "createLabel": "Crear nuevo Vencimiento",
-        "createOrEditLabel": "Crear o modificar Vencimiento",
-        "search": "Buscar Vencimiento",
-        "notFound": "Ningún Vencimiento encontrado"
+        "title": "Expirations",
+        "createLabel": "Crear nuevo Expiration",
+        "createOrEditLabel": "Crear o editar Expiration",
+        "search": "Buscar Expiration",
+        "notFound": "Ningún Expirations encontrado"
       },
-      "created": "Un nuevo Vencimiento ha sido creado con el identificador {{ param }}",
-      "updated": "Un Vencimiento ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Vencimiento ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Expiration ha sido creado con el identificador {{ param }}",
+      "updated": "Un Expiration ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Expiration ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar el Vencimiento {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Expiration {{ id }}?"
       },
       "detail": {
-        "title": "Vencimiento"
+        "title": "Expiration"
       },
-      "startDate": "Fecha de inicio",
-      "endDate": "Fecha de finalización",
-      "status": "Estado",
-      "comments": "Comentario",
-      "company": "Cliente",
-      "employee": "Profesional",
-      "study": "Estudio"
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "status": "Status",
+      "comments": "Comments",
+      "uniqueCode": "Unique Code",
+      "responsible": "Responsible",
+      "company": "Company",
+      "employee": "Employee",
+      "study": "Study"
     }
   }
 }

@@ -40,6 +40,12 @@ public class Expiration implements Serializable {
     @Column(name = "comments")
     private String comments;
 
+    @Column(name = "unique_code")
+    private String uniqueCode;
+
+    @Column(name = "responsible")
+    private String responsible;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Company company;
@@ -113,6 +119,32 @@ public class Expiration implements Serializable {
         this.comments = comments;
     }
 
+    public String getUniqueCode() {
+        return uniqueCode;
+    }
+
+    public Expiration uniqueCode(String uniqueCode) {
+        this.uniqueCode = uniqueCode;
+        return this;
+    }
+
+    public void setUniqueCode(String uniqueCode) {
+        this.uniqueCode = uniqueCode;
+    }
+
+    public String getResponsible() {
+        return responsible;
+    }
+
+    public Expiration responsible(String responsible) {
+        this.responsible = responsible;
+        return this;
+    }
+
+    public void setResponsible(String responsible) {
+        this.responsible = responsible;
+    }
+
     public Company getCompany() {
         return company;
     }
@@ -177,6 +209,8 @@ public class Expiration implements Serializable {
             ", endDate='" + getEndDate() + "'" +
             ", status='" + getStatus() + "'" +
             ", comments='" + getComments() + "'" +
+            ", uniqueCode='" + getUniqueCode() + "'" +
+            ", responsible='" + getResponsible() + "'" +
             "}";
     }
 }
