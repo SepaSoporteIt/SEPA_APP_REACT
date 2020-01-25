@@ -254,36 +254,6 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                   <AvInput id="company-comment" type="textarea" name="comment" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="legislationIdLabel" for="company-legislationId">
-                    <Translate contentKey="sepaApp.company.legislationId">Legislation Id</Translate>
-                  </Label>
-                  <AvField id="company-legislationId" type="string" className="form-control" name="legislationId" />
-                </AvGroup>
-                <AvGroup>
-                  <Label id="solicitadorIdLabel" for="company-solicitadorId">
-                    <Translate contentKey="sepaApp.company.solicitadorId">Solicitador Id</Translate>
-                  </Label>
-                  <AvField id="company-solicitadorId" type="string" className="form-control" name="solicitadorId" />
-                </AvGroup>
-                <AvGroup>
-                  <Label id="ambitoIdLabel" for="company-ambitoId">
-                    <Translate contentKey="sepaApp.company.ambitoId">Ambito Id</Translate>
-                  </Label>
-                  <AvField id="company-ambitoId" type="string" className="form-control" name="ambitoId" />
-                </AvGroup>
-                <AvGroup>
-                  <Label id="autoridadIdLabel" for="company-autoridadId">
-                    <Translate contentKey="sepaApp.company.autoridadId">Autoridad Id</Translate>
-                  </Label>
-                  <AvField id="company-autoridadId" type="string" className="form-control" name="autoridadId" />
-                </AvGroup>
-                <AvGroup>
-                  <Label id="frecuencyTypeIdLabel" for="company-frecuencyTypeId">
-                    <Translate contentKey="sepaApp.company.frecuencyTypeId">Frecuency Type Id</Translate>
-                  </Label>
-                  <AvField id="company-frecuencyTypeId" type="string" className="form-control" name="frecuencyTypeId" />
-                </AvGroup>
-                <AvGroup>
                   <Label id="createdAtLabel" for="company-createdAt">
                     <Translate contentKey="sepaApp.company.createdAt">Created At</Translate>
                   </Label>

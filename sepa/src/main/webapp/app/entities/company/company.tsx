@@ -205,21 +205,6 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                     <th className="hand" onClick={this.sort('comment')}>
                       <Translate contentKey="sepaApp.company.comment">Comment</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
-                    <th className="hand" onClick={this.sort('legislationId')}>
-                      <Translate contentKey="sepaApp.company.legislationId">Legislation Id</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('solicitadorId')}>
-                      <Translate contentKey="sepaApp.company.solicitadorId">Solicitador Id</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('ambitoId')}>
-                      <Translate contentKey="sepaApp.company.ambitoId">Ambito Id</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('autoridadId')}>
-                      <Translate contentKey="sepaApp.company.autoridadId">Autoridad Id</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('frecuencyTypeId')}>
-                      <Translate contentKey="sepaApp.company.frecuencyTypeId">Frecuency Type Id</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
                     <th className="hand" onClick={this.sort('createdAt')}>
                       <Translate contentKey="sepaApp.company.createdAt">Created At</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
@@ -266,11 +251,6 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                       <td>{company.habPrim}</td>
                       <td>{company.habSec}</td>
                       <td>{company.comment}</td>
-                      <td>{company.legislationId}</td>
-                      <td>{company.solicitadorId}</td>
-                      <td>{company.ambitoId}</td>
-                      <td>{company.autoridadId}</td>
-                      <td>{company.frecuencyTypeId}</td>
                       <td>
                         <TextFormat type="date" value={company.createdAt} format={APP_DATE_FORMAT} />
                       </td>

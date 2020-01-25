@@ -87,21 +87,6 @@ public class Company implements Serializable {
     @Column(name = "comment")
     private String comment;
 
-    @Column(name = "legislation_id")
-    private Integer legislationId;
-
-    @Column(name = "solicitador_id")
-    private Integer solicitadorId;
-
-    @Column(name = "ambito_id")
-    private Integer ambitoId;
-
-    @Column(name = "autoridad_id")
-    private Integer autoridadId;
-
-    @Column(name = "frecuency_type_id")
-    private Integer frecuencyTypeId;
-
     @Column(name = "created_at")
     private Instant createdAt;
 
@@ -376,71 +361,6 @@ public class Company implements Serializable {
         this.comment = comment;
     }
 
-    public Integer getLegislationId() {
-        return legislationId;
-    }
-
-    public Company legislationId(Integer legislationId) {
-        this.legislationId = legislationId;
-        return this;
-    }
-
-    public void setLegislationId(Integer legislationId) {
-        this.legislationId = legislationId;
-    }
-
-    public Integer getSolicitadorId() {
-        return solicitadorId;
-    }
-
-    public Company solicitadorId(Integer solicitadorId) {
-        this.solicitadorId = solicitadorId;
-        return this;
-    }
-
-    public void setSolicitadorId(Integer solicitadorId) {
-        this.solicitadorId = solicitadorId;
-    }
-
-    public Integer getAmbitoId() {
-        return ambitoId;
-    }
-
-    public Company ambitoId(Integer ambitoId) {
-        this.ambitoId = ambitoId;
-        return this;
-    }
-
-    public void setAmbitoId(Integer ambitoId) {
-        this.ambitoId = ambitoId;
-    }
-
-    public Integer getAutoridadId() {
-        return autoridadId;
-    }
-
-    public Company autoridadId(Integer autoridadId) {
-        this.autoridadId = autoridadId;
-        return this;
-    }
-
-    public void setAutoridadId(Integer autoridadId) {
-        this.autoridadId = autoridadId;
-    }
-
-    public Integer getFrecuencyTypeId() {
-        return frecuencyTypeId;
-    }
-
-    public Company frecuencyTypeId(Integer frecuencyTypeId) {
-        this.frecuencyTypeId = frecuencyTypeId;
-        return this;
-    }
-
-    public void setFrecuencyTypeId(Integer frecuencyTypeId) {
-        this.frecuencyTypeId = frecuencyTypeId;
-    }
-
     public Instant getCreatedAt() {
         return createdAt;
     }
@@ -546,11 +466,6 @@ public class Company implements Serializable {
             ", habPrim='" + getHabPrim() + "'" +
             ", habSec='" + getHabSec() + "'" +
             ", comment='" + getComment() + "'" +
-            ", legislationId=" + getLegislationId() +
-            ", solicitadorId=" + getSolicitadorId() +
-            ", ambitoId=" + getAmbitoId() +
-            ", autoridadId=" + getAutoridadId() +
-            ", frecuencyTypeId=" + getFrecuencyTypeId() +
             ", createdAt='" + getCreatedAt() + "'" +
             ", updatedAt='" + getUpdatedAt() + "'" +
             "}";
