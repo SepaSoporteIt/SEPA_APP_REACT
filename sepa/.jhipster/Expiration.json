@@ -18,6 +18,14 @@
             "fieldName": "comments",
             "fieldType": "byte[]",
             "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "uniqueCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "responsible",
+            "fieldType": "String"
         }
     ],
     "relationships": [
@@ -55,5 +63,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": "*",
+    "searchEngine": "elasticsearch",
+    "databaseType": "sql"
 }

@@ -21,6 +21,8 @@
       "endDate": "Fecha de finalización",
       "status": "Estado",
       "comments": "Comentario",
+      "uniqueCode": "Codigo Único",
+      "responsible": "Responsable",
       "company": "Cliente",
       "employee": "Profesional",
       "study": "Estudio"

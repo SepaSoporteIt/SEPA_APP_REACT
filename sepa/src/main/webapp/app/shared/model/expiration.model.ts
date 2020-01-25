@@ -10,6 +10,8 @@ export interface IExpiration {
   endDate?: Moment;
   status?: Status;
   comments?: any;
+  uniqueCode?: string;
+  responsible?: string;
   company?: ICompany;
   employee?: IEmployee;
   study?: IStudy;

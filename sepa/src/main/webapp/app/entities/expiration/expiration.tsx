@@ -160,6 +160,12 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                     <th className="hand" onClick={this.sort('comments')}>
                       <Translate contentKey="sepaApp.expiration.comments">Comments</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
+                    <th className="hand" onClick={this.sort('uniqueCode')}>
+                      <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
+                    <th className="hand" onClick={this.sort('responsible')}>
+                      <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
                     <th>
                       <Translate contentKey="sepaApp.expiration.company">Company</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
@@ -190,6 +196,8 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                         <Translate contentKey={`sepaApp.Status.${expiration.status}`} />
                       </td>
                       <td>{expiration.comments}</td>
+                      <td>{expiration.uniqueCode}</td>
+                      <td>{expiration.responsible}</td>
                       <td>
                         {expiration.company ? <Link to={`company/${expiration.company.id}`}>{expiration.company.fantasyName}</Link> : ''}
                       </td>
