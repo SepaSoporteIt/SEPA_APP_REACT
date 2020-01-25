@@ -73,21 +73,6 @@
             <column name="comment" type="${clobType}">
                 <constraints nullable="true" />
             </column>
-            <column name="legislation_id" type="integer">
-                <constraints nullable="true" />
-            </column>
-            <column name="solicitador_id" type="integer">
-                <constraints nullable="true" />
-            </column>
-            <column name="ambito_id" type="integer">
-                <constraints nullable="true" />
-            </column>
-            <column name="autoridad_id" type="integer">
-                <constraints nullable="true" />
-            </column>
-            <column name="frecuency_type_id" type="integer">
-                <constraints nullable="true" />
-            </column>
             <column name="created_at" type="datetime">
                 <constraints nullable="true" />
             </column>
@@ -147,11 +132,6 @@
             <column name="hab_prim" type="string"/>
             <column name="hab_sec" type="string"/>
             <column name="comment" type="clob"/>
-            <column name="legislation_id" type="numeric"/>
-            <column name="solicitador_id" type="numeric"/>
-            <column name="ambito_id" type="numeric"/>
-            <column name="autoridad_id" type="numeric"/>
-            <column name="frecuency_type_id" type="numeric"/>
             <column name="created_at" type="datetime"/>
             <column name="updated_at" type="datetime"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->

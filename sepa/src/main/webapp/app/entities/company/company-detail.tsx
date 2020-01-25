@@ -141,36 +141,6 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
             </dt>
             <dd>{companyEntity.comment}</dd>
             <dt>
-              <span id="legislationId">
-                <Translate contentKey="sepaApp.company.legislationId">Legislation Id</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.legislationId}</dd>
-            <dt>
-              <span id="solicitadorId">
-                <Translate contentKey="sepaApp.company.solicitadorId">Solicitador Id</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.solicitadorId}</dd>
-            <dt>
-              <span id="ambitoId">
-                <Translate contentKey="sepaApp.company.ambitoId">Ambito Id</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.ambitoId}</dd>
-            <dt>
-              <span id="autoridadId">
-                <Translate contentKey="sepaApp.company.autoridadId">Autoridad Id</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.autoridadId}</dd>
-            <dt>
-              <span id="frecuencyTypeId">
-                <Translate contentKey="sepaApp.company.frecuencyTypeId">Frecuency Type Id</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.frecuencyTypeId}</dd>
-            <dt>
               <span id="createdAt">
                 <Translate contentKey="sepaApp.company.createdAt">Created At</Translate>
               </span>

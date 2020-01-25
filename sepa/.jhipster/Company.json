@@ -91,26 +91,6 @@
             "fieldTypeBlobContent": "text"
         },
         {
-            "fieldName": "legislationId",
-            "fieldType": "Integer"
-        },
-        {
-            "fieldName": "solicitadorId",
-            "fieldType": "Integer"
-        },
-        {
-            "fieldName": "ambitoId",
-            "fieldType": "Integer"
-        },
-        {
-            "fieldName": "autoridadId",
-            "fieldType": "Integer"
-        },
-        {
-            "fieldName": "frecuencyTypeId",
-            "fieldType": "Integer"
-        },
-        {
             "fieldName": "createdAt",
             "fieldType": "Instant"
         },
@@ -154,5 +134,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": "*",
+    "searchEngine": "elasticsearch",
+    "databaseType": "sql"
 }

@@ -99,21 +99,6 @@ public class CompanyResourceIT {
     private static final String DEFAULT_COMMENT = "AAAAAAAAAA";
     private static final String UPDATED_COMMENT = "BBBBBBBBBB";
 
-    private static final Integer DEFAULT_LEGISLATION_ID = 1;
-    private static final Integer UPDATED_LEGISLATION_ID = 2;
-
-    private static final Integer DEFAULT_SOLICITADOR_ID = 1;
-    private static final Integer UPDATED_SOLICITADOR_ID = 2;
-
-    private static final Integer DEFAULT_AMBITO_ID = 1;
-    private static final Integer UPDATED_AMBITO_ID = 2;
-
-    private static final Integer DEFAULT_AUTORIDAD_ID = 1;
-    private static final Integer UPDATED_AUTORIDAD_ID = 2;
-
-    private static final Integer DEFAULT_FRECUENCY_TYPE_ID = 1;
-    private static final Integer UPDATED_FRECUENCY_TYPE_ID = 2;
-
     private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
@@ -189,11 +174,6 @@ public class CompanyResourceIT {
             .habPrim(DEFAULT_HAB_PRIM)
             .habSec(DEFAULT_HAB_SEC)
             .comment(DEFAULT_COMMENT)
-            .legislationId(DEFAULT_LEGISLATION_ID)
-            .solicitadorId(DEFAULT_SOLICITADOR_ID)
-            .ambitoId(DEFAULT_AMBITO_ID)
-            .autoridadId(DEFAULT_AUTORIDAD_ID)
-            .frecuencyTypeId(DEFAULT_FRECUENCY_TYPE_ID)
             .createdAt(DEFAULT_CREATED_AT)
             .updatedAt(DEFAULT_UPDATED_AT);
         return company;
@@ -225,11 +205,6 @@ public class CompanyResourceIT {
             .habPrim(UPDATED_HAB_PRIM)
             .habSec(UPDATED_HAB_SEC)
             .comment(UPDATED_COMMENT)
-            .legislationId(UPDATED_LEGISLATION_ID)
-            .solicitadorId(UPDATED_SOLICITADOR_ID)
-            .ambitoId(UPDATED_AMBITO_ID)
-            .autoridadId(UPDATED_AUTORIDAD_ID)
-            .frecuencyTypeId(UPDATED_FRECUENCY_TYPE_ID)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
         return company;
@@ -274,11 +249,6 @@ public class CompanyResourceIT {
         assertThat(testCompany.getHabPrim()).isEqualTo(DEFAULT_HAB_PRIM);
         assertThat(testCompany.getHabSec()).isEqualTo(DEFAULT_HAB_SEC);
         assertThat(testCompany.getComment()).isEqualTo(DEFAULT_COMMENT);
-        assertThat(testCompany.getLegislationId()).isEqualTo(DEFAULT_LEGISLATION_ID);
-        assertThat(testCompany.getSolicitadorId()).isEqualTo(DEFAULT_SOLICITADOR_ID);
-        assertThat(testCompany.getAmbitoId()).isEqualTo(DEFAULT_AMBITO_ID);
-        assertThat(testCompany.getAutoridadId()).isEqualTo(DEFAULT_AUTORIDAD_ID);
-        assertThat(testCompany.getFrecuencyTypeId()).isEqualTo(DEFAULT_FRECUENCY_TYPE_ID);
         assertThat(testCompany.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
         assertThat(testCompany.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
 
@@ -411,11 +381,6 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].habPrim").value(hasItem(DEFAULT_HAB_PRIM)))
             .andExpect(jsonPath("$.[*].habSec").value(hasItem(DEFAULT_HAB_SEC)))
             .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
-            .andExpect(jsonPath("$.[*].legislationId").value(hasItem(DEFAULT_LEGISLATION_ID)))
-            .andExpect(jsonPath("$.[*].solicitadorId").value(hasItem(DEFAULT_SOLICITADOR_ID)))
-            .andExpect(jsonPath("$.[*].ambitoId").value(hasItem(DEFAULT_AMBITO_ID)))
-            .andExpect(jsonPath("$.[*].autoridadId").value(hasItem(DEFAULT_AUTORIDAD_ID)))
-            .andExpect(jsonPath("$.[*].frecuencyTypeId").value(hasItem(DEFAULT_FRECUENCY_TYPE_ID)))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
     }
@@ -450,11 +415,6 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.habPrim").value(DEFAULT_HAB_PRIM))
             .andExpect(jsonPath("$.habSec").value(DEFAULT_HAB_SEC))
             .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT.toString()))
-            .andExpect(jsonPath("$.legislationId").value(DEFAULT_LEGISLATION_ID))
-            .andExpect(jsonPath("$.solicitadorId").value(DEFAULT_SOLICITADOR_ID))
-            .andExpect(jsonPath("$.ambitoId").value(DEFAULT_AMBITO_ID))
-            .andExpect(jsonPath("$.autoridadId").value(DEFAULT_AUTORIDAD_ID))
-            .andExpect(jsonPath("$.frecuencyTypeId").value(DEFAULT_FRECUENCY_TYPE_ID))
             .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
             .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
     }
@@ -499,11 +459,6 @@ public class CompanyResourceIT {
             .habPrim(UPDATED_HAB_PRIM)
             .habSec(UPDATED_HAB_SEC)
             .comment(UPDATED_COMMENT)
-            .legislationId(UPDATED_LEGISLATION_ID)
-            .solicitadorId(UPDATED_SOLICITADOR_ID)
-            .ambitoId(UPDATED_AMBITO_ID)
-            .autoridadId(UPDATED_AUTORIDAD_ID)
-            .frecuencyTypeId(UPDATED_FRECUENCY_TYPE_ID)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT);
 
@@ -535,11 +490,6 @@ public class CompanyResourceIT {
         assertThat(testCompany.getHabPrim()).isEqualTo(UPDATED_HAB_PRIM);
         assertThat(testCompany.getHabSec()).isEqualTo(UPDATED_HAB_SEC);
         assertThat(testCompany.getComment()).isEqualTo(UPDATED_COMMENT);
-        assertThat(testCompany.getLegislationId()).isEqualTo(UPDATED_LEGISLATION_ID);
-        assertThat(testCompany.getSolicitadorId()).isEqualTo(UPDATED_SOLICITADOR_ID);
-        assertThat(testCompany.getAmbitoId()).isEqualTo(UPDATED_AMBITO_ID);
-        assertThat(testCompany.getAutoridadId()).isEqualTo(UPDATED_AUTORIDAD_ID);
-        assertThat(testCompany.getFrecuencyTypeId()).isEqualTo(UPDATED_FRECUENCY_TYPE_ID);
         assertThat(testCompany.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
         assertThat(testCompany.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
 
@@ -620,11 +570,6 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].habPrim").value(hasItem(DEFAULT_HAB_PRIM)))
             .andExpect(jsonPath("$.[*].habSec").value(hasItem(DEFAULT_HAB_SEC)))
             .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
-            .andExpect(jsonPath("$.[*].legislationId").value(hasItem(DEFAULT_LEGISLATION_ID)))
-            .andExpect(jsonPath("$.[*].solicitadorId").value(hasItem(DEFAULT_SOLICITADOR_ID)))
-            .andExpect(jsonPath("$.[*].ambitoId").value(hasItem(DEFAULT_AMBITO_ID)))
-            .andExpect(jsonPath("$.[*].autoridadId").value(hasItem(DEFAULT_AUTORIDAD_ID)))
-            .andExpect(jsonPath("$.[*].frecuencyTypeId").value(hasItem(DEFAULT_FRECUENCY_TYPE_ID)))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
     }

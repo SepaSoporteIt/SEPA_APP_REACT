@@ -23,11 +23,6 @@ export interface ICompany {
   habPrim?: string;
   habSec?: string;
   comment?: any;
-  legislationId?: number;
-  solicitadorId?: number;
-  ambitoId?: number;
-  autoridadId?: number;
-  frecuencyTypeId?: number;
   createdAt?: Moment;
   updatedAt?: Moment;
   employee?: IEmployee;
