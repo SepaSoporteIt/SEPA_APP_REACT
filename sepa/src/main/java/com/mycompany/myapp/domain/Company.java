@@ -1,4 +1,5 @@
 package com.mycompany.myapp.domain;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -22,7 +23,6 @@ public class Company implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
     private Long id;
 
     @NotNull
@@ -92,6 +92,9 @@ public class Company implements Serializable {
 
     @Column(name = "updated_at")
     private Instant updatedAt;
+
+    @Column(name = "between_streets")
+    private String betweenStreets;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -387,6 +390,19 @@ public class Company implements Serializable {
         this.updatedAt = updatedAt;
     }
 
+    public String getBetweenStreets() {
+        return betweenStreets;
+    }
+
+    public Company betweenStreets(String betweenStreets) {
+        this.betweenStreets = betweenStreets;
+        return this;
+    }
+
+    public void setBetweenStreets(String betweenStreets) {
+        this.betweenStreets = betweenStreets;
+    }
+
     public Employee getEmployee() {
         return employee;
     }
@@ -468,6 +484,7 @@ public class Company implements Serializable {
             ", comment='" + getComment() + "'" +
             ", createdAt='" + getCreatedAt() + "'" +
             ", updatedAt='" + getUpdatedAt() + "'" +
+            ", betweenStreets='" + getBetweenStreets() + "'" +
             "}";
     }
 }

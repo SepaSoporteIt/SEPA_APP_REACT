@@ -79,6 +79,9 @@
             <column name="updated_at" type="datetime">
                 <constraints nullable="true" />
             </column>
+            <column name="between_streets" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="employee_id" type="bigint">
                 <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_employee_id" />
             </column>
@@ -134,6 +137,7 @@
             <column name="comment" type="clob"/>
             <column name="created_at" type="datetime"/>
             <column name="updated_at" type="datetime"/>
+            <column name="between_streets" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

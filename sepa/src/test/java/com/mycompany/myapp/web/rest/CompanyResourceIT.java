@@ -105,6 +105,9 @@ public class CompanyResourceIT {
     private static final Instant DEFAULT_UPDATED_AT = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_UPDATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
+    private static final String DEFAULT_BETWEEN_STREETS = "AAAAAAAAAA";
+    private static final String UPDATED_BETWEEN_STREETS = "BBBBBBBBBB";
+
     @Autowired
     private CompanyRepository companyRepository;
 
@@ -175,7 +178,8 @@ public class CompanyResourceIT {
             .habSec(DEFAULT_HAB_SEC)
             .comment(DEFAULT_COMMENT)
             .createdAt(DEFAULT_CREATED_AT)
-            .updatedAt(DEFAULT_UPDATED_AT);
+            .updatedAt(DEFAULT_UPDATED_AT)
+            .betweenStreets(DEFAULT_BETWEEN_STREETS);
         return company;
     }
     /**
@@ -206,7 +210,8 @@ public class CompanyResourceIT {
             .habSec(UPDATED_HAB_SEC)
             .comment(UPDATED_COMMENT)
             .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .updatedAt(UPDATED_UPDATED_AT)
+            .betweenStreets(UPDATED_BETWEEN_STREETS);
         return company;
     }
 
@@ -222,7 +227,7 @@ public class CompanyResourceIT {
 
         // Create the Company
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isCreated());
 
@@ -251,6 +256,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getComment()).isEqualTo(DEFAULT_COMMENT);
         assertThat(testCompany.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
         assertThat(testCompany.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
+        assertThat(testCompany.getBetweenStreets()).isEqualTo(DEFAULT_BETWEEN_STREETS);
 
         // Validate the Company in Elasticsearch
         verify(mockCompanySearchRepository, times(1)).save(testCompany);
@@ -266,7 +272,7 @@ public class CompanyResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -289,7 +295,7 @@ public class CompanyResourceIT {
         // Create the Company, which fails.
 
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -307,7 +313,7 @@ public class CompanyResourceIT {
         // Create the Company, which fails.
 
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -325,7 +331,7 @@ public class CompanyResourceIT {
         // Create the Company, which fails.
 
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -343,7 +349,7 @@ public class CompanyResourceIT {
         // Create the Company, which fails.
 
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -360,7 +366,7 @@ public class CompanyResourceIT {
         // Get all the companyList
         restCompanyMockMvc.perform(get("/api/companies?sort=id,desc"))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(company.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
@@ -382,7 +388,8 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].habSec").value(hasItem(DEFAULT_HAB_SEC)))
             .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
+            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())))
+            .andExpect(jsonPath("$.[*].betweenStreets").value(hasItem(DEFAULT_BETWEEN_STREETS)));
     }
     
     @Test
@@ -394,7 +401,7 @@ public class CompanyResourceIT {
         // Get the company
         restCompanyMockMvc.perform(get("/api/companies/{id}", company.getId()))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(company.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
@@ -416,7 +423,8 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.habSec").value(DEFAULT_HAB_SEC))
             .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT.toString()))
             .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
-            .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
+            .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()))
+            .andExpect(jsonPath("$.betweenStreets").value(DEFAULT_BETWEEN_STREETS));
     }
 
     @Test
@@ -460,10 +468,11 @@ public class CompanyResourceIT {
             .habSec(UPDATED_HAB_SEC)
             .comment(UPDATED_COMMENT)
             .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .updatedAt(UPDATED_UPDATED_AT)
+            .betweenStreets(UPDATED_BETWEEN_STREETS);
 
         restCompanyMockMvc.perform(put("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(updatedCompany)))
             .andExpect(status().isOk());
 
@@ -492,6 +501,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getComment()).isEqualTo(UPDATED_COMMENT);
         assertThat(testCompany.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
         assertThat(testCompany.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
+        assertThat(testCompany.getBetweenStreets()).isEqualTo(UPDATED_BETWEEN_STREETS);
 
         // Validate the Company in Elasticsearch
         verify(mockCompanySearchRepository, times(1)).save(testCompany);
@@ -506,7 +516,7 @@ public class CompanyResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restCompanyMockMvc.perform(put("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -528,7 +538,7 @@ public class CompanyResourceIT {
 
         // Delete the company
         restCompanyMockMvc.perform(delete("/api/companies/{id}", company.getId())
-            .accept(TestUtil.APPLICATION_JSON_UTF8))
+            .accept(TestUtil.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item
@@ -549,7 +559,7 @@ public class CompanyResourceIT {
         // Search the company
         restCompanyMockMvc.perform(get("/api/_search/companies?query=id:" + company.getId()))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(company.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
@@ -571,6 +581,7 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].habSec").value(hasItem(DEFAULT_HAB_SEC)))
             .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
+            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())))
+            .andExpect(jsonPath("$.[*].betweenStreets").value(hasItem(DEFAULT_BETWEEN_STREETS)));
     }
 }

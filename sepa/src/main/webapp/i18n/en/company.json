@@ -15,7 +15,13 @@
         "question": "Are you sure you want to delete Company {{ id }}?"
       },
       "detail": {
-        "title": "Company"
+        "title": "Company",
+        "basicData": "Basic Data",
+        "clientAddress": "Stablishment Address",
+        "contactData": "Contact Data",
+        "afipActivity": "Activity defined by the AFIP",
+        "serviceData": "Service Data",
+        "others": "Others"
       },
       "name": "Name",
       "email": "Email",
@@ -38,6 +44,7 @@
       "comment": "Comment",
       "createdAt": "Created At",
       "updatedAt": "Updated At",
+      "betweenStreets": "Between Streets",
       "employee": "Employee",
       "primIndustryTipe": "Prim Industry Tipe",
       "secIndustryTipe": "Sec Industry Tipe"

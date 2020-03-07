@@ -97,6 +97,10 @@
         {
             "fieldName": "updatedAt",
             "fieldType": "Instant"
+        },
+        {
+            "fieldName": "betweenStreets",
+            "fieldType": "String"
         }
     ],
     "relationships": [

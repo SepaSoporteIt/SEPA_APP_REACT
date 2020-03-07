@@ -25,6 +25,7 @@ export interface ICompany {
   comment?: any;
   createdAt?: Moment;
   updatedAt?: Moment;
+  betweenStreets?: string;
   employee?: IEmployee;
   primIndustryTipe?: IIndustryType;
   secIndustryTipe?: IIndustryType;
