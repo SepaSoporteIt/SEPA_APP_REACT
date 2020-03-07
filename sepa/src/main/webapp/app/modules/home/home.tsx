@@ -33,18 +33,6 @@ export const Home = (props: IHomeProp) => {
         ) : (
           <div>
             <Alert color="warning">
-              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
-              <Link to="/login" className="alert-link">
-                <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
-              </Link>
-              <Translate contentKey="global.messages.info.authenticated.suffix">
-                , you can try the default accounts:
-                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-              </Translate>
-            </Alert>
-
-            <Alert color="warning">
               <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
               <Link to="/account/register" className="alert-link">
                 <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
@@ -53,44 +41,51 @@ export const Home = (props: IHomeProp) => {
           </div>
         )}
         <p>
-          <Translate contentKey="home.question">If you have any question on JHipster:</Translate>
+          <Translate contentKey="home.follow">Follow us!:</Translate>
         </p>
 
         <ul>
           <li>
-            <a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.homepage">JHipster homepage</Translate>
+            <a href="http://www.gruposepa.com.ar/" target="_blank" rel="noopener noreferrer">
+              <Translate contentKey="home.link.homepage">SEPA homepage</Translate>
             </a>
           </li>
           <li>
-            <a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.stackoverflow">JHipster on Stack Overflow</Translate>
+            <a href="https://www.facebook.com/gruposepaarg/" target="_blank" rel="noopener noreferrer">
+              <Translate contentKey="home.link.facebook">SEPA on Facebook</Translate>
             </a>
           </li>
           <li>
-            <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.bugtracker">JHipster bug tracker</Translate>
+            <a href="https://twitter.com/Gruposepa" target="_blank" rel="noopener noreferrer">
+              <Translate contentKey="home.link.twitter">SEPA on Twitter</Translate>
             </a>
           </li>
           <li>
-            <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.chat">JHipster public chat room</Translate>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">
-              <Translate contentKey="home.link.follow">follow @jhipster on Twitter</Translate>
+            <a href="https://www.linkedin.com/company/s-e-p-a-y-asociados-s-r-l-" target="_blank" rel="noopener noreferrer">
+              <Translate contentKey="home.link.linkedin">SEPA on LinkedIn</Translate>
             </a>
           </li>
         </ul>
 
-        <p>
-          <Translate contentKey="home.like">If you like JHipster, do not forget to give us a star on</Translate>{' '}
-          <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
-            Github
-          </a>
-          !
-        </p>
+        {account && account.login ? (
+          <ul>
+            <li>
+              <a href="https://server:8080/mantisbt" target="_blank" rel="noopener noreferrer">
+                <Translate contentKey="home.link.mantis">If you have a problem with the app, let us know</Translate>
+              </a>
+            </li>
+            <li>
+              <a href="https://server:8080/sepawiki" target="_blank" rel="noopener noreferrer">
+                <Translate contentKey="home.link.sepawiki">Information about the multiples applications used on SEPA</Translate>
+              </a>
+            </li>
+          </ul>
+        ): (
+          <ul>
+
+          </ul>
+        )}
+
       </Col>
       <Col md="3" className="pad">
         <span className="hipster rounded" />

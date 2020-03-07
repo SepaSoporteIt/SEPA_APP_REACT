@@ -1,19 +1,19 @@
 {
   "home": {
-    "title": "Welcome, Java Hipster!",
+    "title": "Welcome to the SEPA App!",
     "subtitle": "This is your homepage",
     "logged": {
       "message": "You are logged in as user \"{{username}}\"."
     },
-    "question": "If you have any question on JHipster:",
+    "follow": "Follow us!:",
     "link": {
-      "homepage": "JHipster homepage",
-      "stackoverflow": "JHipster on Stack Overflow",
-      "bugtracker": "JHipster bug tracker",
-      "chat": "JHipster public chat room",
-      "follow": "follow @jhipster on Twitter"
-    },
-    "like": "If you like JHipster, don't forget to give us a star on",
-    "github": "GitHub"
+      "facebook": "SEPA on Facebook",
+      "twitter": "SEPA on Twitter",
+      "homepage": "SEPA homepage",
+      "linkedin": "SEPA on LinkedIn",
+      "googlebusiness": "SEPA on Google Business",
+      "mantis": "If you have a problem with the app, let us know",
+      "sepawiki": "Information about the multiples applications used on SEPA"
+    }
   }
 }
