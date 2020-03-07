@@ -112,6 +112,10 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                   </AvGroup>
                 ) : null}
                 <AvGroup>
+                <h3>
+                <Translate contentKey="sepaApp.company.detail.basicData">Basic Data</Translate>
+                </h3>
+                <AvGroup>
                   <Label id="nameLabel" for="company-name">
                     <Translate contentKey="sepaApp.company.name">Name</Translate>
                   </Label>
@@ -125,11 +129,45 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                   />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="emailLabel" for="company-email">
-                    <Translate contentKey="sepaApp.company.email">Email</Translate>
+                  <Label id="fantasyNameLabel" for="company-fantasyName">
+                    <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
                   </Label>
-                  <AvField id="company-email" type="text" name="email" />
+                  <AvField id="company-fantasyName" type="text" name="fantasyName" />
                 </AvGroup>
+                <AvGroup>
+                  <Label id="cuitLabel" for="company-cuit">
+                    <Translate contentKey="sepaApp.company.cuit">Cuit</Translate>
+                  </Label>
+                  <AvField
+                    id="company-cuit"
+                    type="text"
+                    name="cuit"
+                    validate={{
+                      required: { value: true, errorMessage: translate('entity.validation.required') }
+                    }}
+                  />
+                </AvGroup>
+                <AvGroup>
+                  <Label for="company-employee">
+                    <Translate contentKey="sepaApp.company.employee">Employee</Translate>
+                  </Label>
+                  <AvInput id="company-employee" type="select" className="form-control" name="employee.id">
+                    <option value="" key="0" />
+                    {employees
+                      ? employees.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.name}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
+                </AvGroup>
+
+                <AvGroup>
+                <h3>
+                <Translate contentKey="sepaApp.company.detail.clientAddress">Stablishment Address</Translate>
+                </h3>
                 <AvGroup>
                   <Label id="addressDirectionLabel" for="company-addressDirection">
                     <Translate contentKey="sepaApp.company.addressDirection">Address Direction</Translate>
@@ -156,6 +194,12 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                     }}
                   />
                 </AvGroup>
+              <AvGroup>
+                <Label id="betweenStreetsLabel" for="company-betweenStreets">
+                  <Translate contentKey="sepaApp.company.betweenStreets">Between Streets</Translate>
+                </Label>
+                <AvField id="company-betweenStreets" type="text" name="betweenStreets" />
+              </AvGroup>
                 <AvGroup>
                   <Label id="floorLabel" for="company-floor">
                     <Translate contentKey="sepaApp.company.floor">Floor</Translate>
@@ -169,37 +213,24 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                   <AvField id="company-departament" type="text" name="departament" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="cuitLabel" for="company-cuit">
-                    <Translate contentKey="sepaApp.company.cuit">Cuit</Translate>
-                  </Label>
-                  <AvField
-                    id="company-cuit"
-                    type="text"
-                    name="cuit"
-                    validate={{
-                      required: { value: true, errorMessage: translate('entity.validation.required') }
-                    }}
-                  />
-                </AvGroup>
-                <AvGroup>
-                  <Label id="isSubscriptedLabel" check>
-                    <AvInput id="company-isSubscripted" type="checkbox" className="form-control" name="isSubscripted" />
-                    <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate>
-                  </Label>
-                </AvGroup>
-                <AvGroup>
-                  <Label id="fantasyNameLabel" for="company-fantasyName">
-                    <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
-                  </Label>
-                  <AvField id="company-fantasyName" type="text" name="fantasyName" />
-                </AvGroup>
-                <AvGroup>
                   <Label id="postalCodeLabel" for="company-postalCode">
                     <Translate contentKey="sepaApp.company.postalCode">Postal Code</Translate>
                   </Label>
                   <AvField id="company-postalCode" type="text" name="postalCode" />
                 </AvGroup>
+                </AvGroup>
+
                 <AvGroup>
+                <h3>
+                <Translate contentKey="sepaApp.company.detail.contactData">Contact Data</Translate>
+                </h3>
+                <AvGroup>
+                <AvGroup>
+                  <Label id="contactLabel" for="company-contact">
+                    <Translate contentKey="sepaApp.company.contact">Contact</Translate>
+                  </Label>
+                  <AvField id="company-contact" type="text" name="contact" />
+                </AvGroup>
                   <Label id="tlfLabel" for="company-tlf">
                     <Translate contentKey="sepaApp.company.tlf">Tlf</Translate>
                   </Label>
@@ -212,17 +243,59 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                   <AvField id="company-internalTlf" type="text" name="internalTlf" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="contactLabel" for="company-contact">
-                    <Translate contentKey="sepaApp.company.contact">Contact</Translate>
-                  </Label>
-                  <AvField id="company-contact" type="text" name="contact" />
-                </AvGroup>
-                <AvGroup>
                   <Label id="cellphoneLabel" for="company-cellphone">
                     <Translate contentKey="sepaApp.company.cellphone">Cellphone</Translate>
                   </Label>
                   <AvField id="company-cellphone" type="text" name="cellphone" />
                 </AvGroup>
+                <AvGroup>
+                  <Label id="emailLabel" for="company-email">
+                    <Translate contentKey="sepaApp.company.email">Email</Translate>
+                  </Label>
+                  <AvField id="company-email" type="text" name="email" />
+                </AvGroup>
+                </AvGroup>
+
+                <AvGroup>
+                <h3>
+                <Translate contentKey="sepaApp.company.detail.afipActivity">Activity stablished by AFIP</Translate>
+                </h3>
+                <AvGroup>
+                  <Label for="company-primIndustryTipe">
+                    <Translate contentKey="sepaApp.company.primIndustryTipe">Prim Industry Tipe</Translate>
+                  </Label>
+                  <AvInput id="company-primIndustryTipe" type="select" className="form-control" name="primIndustryTipe.id">
+                    <option value="" key="0" />
+                    {industryTypes
+                      ? industryTypes.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.ciiu}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
+                <AvGroup>
+                  <Label for="company-secIndustryTipe">
+                    <Translate contentKey="sepaApp.company.secIndustryTipe">Sec Industry Tipe</Translate>
+                  </Label>
+                  <AvInput id="company-secIndustryTipe" type="select" className="form-control" name="secIndustryTipe.id">
+                    <option value="" key="0" />
+                    {industryTypes
+                      ? industryTypes.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.ciiu}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
+                </AvGroup>
+
+                <AvGroup>
+                <h3>
+                <Translate contentKey="sepaApp.company.detail.serviceData">Service Data</Translate>
+                </h3>
                 <AvGroup>
                   <Label id="visitsQtyMinLabel" for="company-visitsQtyMin">
                     <Translate contentKey="sepaApp.company.visitsQtyMin">Visits Qty Min</Translate>
@@ -235,6 +308,18 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                   </Label>
                   <AvField id="company-visitsQtyMax" type="string" className="form-control" name="visitsQtyMax" />
                 </AvGroup>
+                <AvGroup>
+                  <Label id="isSubscriptedLabel" check>
+                    <AvInput id="company-isSubscripted" type="checkbox" className="form-control" name="isSubscripted" />
+                    <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate>
+                  </Label>
+                </AvGroup>
+                </AvGroup>
+
+                <AvGroup>
+                <h3>
+                <Translate contentKey="sepaApp.company.detail.serviceData">Service Data</Translate>
+                </h3>
                 <AvGroup>
                   <Label id="habPrimLabel" for="company-habPrim">
                     <Translate contentKey="sepaApp.company.habPrim">Hab Prim</Translate>
@@ -279,51 +364,9 @@ export class CompanyUpdate extends React.Component<ICompanyUpdateProps, ICompany
                     value={isNew ? null : convertDateTimeFromServer(this.props.companyEntity.updatedAt)}
                   />
                 </AvGroup>
-                <AvGroup>
-                  <Label for="company-employee">
-                    <Translate contentKey="sepaApp.company.employee">Employee</Translate>
-                  </Label>
-                  <AvInput id="company-employee" type="select" className="form-control" name="employee.id">
-                    <option value="" key="0" />
-                    {employees
-                      ? employees.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.name}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
                 </AvGroup>
-                <AvGroup>
-                  <Label for="company-primIndustryTipe">
-                    <Translate contentKey="sepaApp.company.primIndustryTipe">Prim Industry Tipe</Translate>
-                  </Label>
-                  <AvInput id="company-primIndustryTipe" type="select" className="form-control" name="primIndustryTipe.id">
-                    <option value="" key="0" />
-                    {industryTypes
-                      ? industryTypes.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.ciiu}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
-                </AvGroup>
-                <AvGroup>
-                  <Label for="company-secIndustryTipe">
-                    <Translate contentKey="sepaApp.company.secIndustryTipe">Sec Industry Tipe</Translate>
-                  </Label>
-                  <AvInput id="company-secIndustryTipe" type="select" className="form-control" name="secIndustryTipe.id">
-                    <option value="" key="0" />
-                    {industryTypes
-                      ? industryTypes.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.ciiu}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
-                </AvGroup>
+
+
                 <Button tag={Link} id="cancel-save" to="/company" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />
                   &nbsp;

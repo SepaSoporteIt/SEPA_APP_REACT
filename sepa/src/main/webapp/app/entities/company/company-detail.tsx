@@ -23,9 +23,12 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sepaApp.company.detail.title">Company</Translate> [<b>{companyEntity.id}</b>]
+            <Translate contentKey="sepaApp.company.detail.title">Company</Translate> [<b>{companyEntity.name}</b>]
           </h2>
           <dl className="jh-entity-details">
+            <h3>
+              <Translate contentKey="sepaApp.company.detail.basicData">Basic Data</Translate>
+            </h3>
             <dt>
               <span id="name">
                 <Translate contentKey="sepaApp.company.name">Name</Translate>
@@ -33,11 +36,27 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
             </dt>
             <dd>{companyEntity.name}</dd>
             <dt>
-              <span id="email">
-                <Translate contentKey="sepaApp.company.email">Email</Translate>
+              <span id="fantasyName">
+                <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
               </span>
             </dt>
-            <dd>{companyEntity.email}</dd>
+            <dd>{companyEntity.fantasyName}</dd>
+            <dt>
+              <span id="cuit">
+                <Translate contentKey="sepaApp.company.cuit">Cuit</Translate>
+              </span>
+            </dt>
+            <dd>{companyEntity.cuit}</dd>
+            <dt>
+              <Translate contentKey="sepaApp.company.employee">Employee</Translate>
+            </dt>
+            <dd>{companyEntity.employee ? companyEntity.employee.name : ''}</dd>
+            </dl>
+
+            <dl className="jh-entity-details">
+            <h3>
+              <Translate contentKey="sepaApp.company.detail.clientAddress">Stablishment Address</Translate>
+            </h3>
             <dt>
               <span id="addressDirection">
                 <Translate contentKey="sepaApp.company.addressDirection">Address Direction</Translate>
@@ -50,6 +69,12 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
               </span>
             </dt>
             <dd>{companyEntity.addressNumber}</dd>
+			<dt>
+            <span id="betweenStreets">
+              <Translate contentKey="sepaApp.company.betweenStreets">Between Streets</Translate>
+            </span>
+			</dt>
+			<dd>{companyEntity.betweenStreets}</dd>
             <dt>
               <span id="floor">
                 <Translate contentKey="sepaApp.company.floor">Floor</Translate>
@@ -63,29 +88,23 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
             </dt>
             <dd>{companyEntity.departament}</dd>
             <dt>
-              <span id="cuit">
-                <Translate contentKey="sepaApp.company.cuit">Cuit</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.cuit}</dd>
-            <dt>
-              <span id="isSubscripted">
-                <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.isSubscripted ? 'true' : 'false'}</dd>
-            <dt>
-              <span id="fantasyName">
-                <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.fantasyName}</dd>
-            <dt>
               <span id="postalCode">
                 <Translate contentKey="sepaApp.company.postalCode">Postal Code</Translate>
               </span>
             </dt>
             <dd>{companyEntity.postalCode}</dd>
+            </dl>
+
+            <dl className="jh-entity-details">
+            <h3>
+            <Translate contentKey="sepaApp.company.detail.contactData">Contact Data</Translate>
+            </h3>
+            <dt>
+              <span id="contact">
+                <Translate contentKey="sepaApp.company.contact">Contact</Translate>
+              </span>
+            </dt>
+            <dd>{companyEntity.contact}</dd>
             <dt>
               <span id="tlf">
                 <Translate contentKey="sepaApp.company.tlf">Tlf</Translate>
@@ -99,17 +118,37 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
             </dt>
             <dd>{companyEntity.internalTlf}</dd>
             <dt>
-              <span id="contact">
-                <Translate contentKey="sepaApp.company.contact">Contact</Translate>
-              </span>
-            </dt>
-            <dd>{companyEntity.contact}</dd>
-            <dt>
               <span id="cellphone">
                 <Translate contentKey="sepaApp.company.cellphone">Cellphone</Translate>
               </span>
             </dt>
             <dd>{companyEntity.cellphone}</dd>
+            <dt>
+              <span id="email">
+                <Translate contentKey="sepaApp.company.email">Email</Translate>
+              </span>
+            </dt>
+            <dd>{companyEntity.email}</dd>
+            </dl>
+
+            <dl className="jh-entity-details">
+            <h3>
+              <Translate contentKey="sepaApp.company.detail.afipActivity">Activity stablished by AFIP</Translate>
+            </h3>
+            <dt>
+              <Translate contentKey="sepaApp.company.primIndustryTipe">Prim Industry Tipe</Translate>
+            </dt>
+            <dd>{companyEntity.primIndustryTipe ? companyEntity.primIndustryTipe.ciiu : ''}</dd>
+            <dt>
+              <Translate contentKey="sepaApp.company.secIndustryTipe">Sec Industry Tipe</Translate>
+            </dt>
+            <dd>{companyEntity.secIndustryTipe ? companyEntity.secIndustryTipe.ciiu : ''}</dd>
+            </dl>
+
+            <dl className="jh-entity-details">
+            <h3>
+              <Translate contentKey="sepaApp.company.detail.serviceData">Service Data</Translate>
+            </h3>
             <dt>
               <span id="visitsQtyMin">
                 <Translate contentKey="sepaApp.company.visitsQtyMin">Visits Qty Min</Translate>
@@ -121,7 +160,19 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
                 <Translate contentKey="sepaApp.company.visitsQtyMax">Visits Qty Max</Translate>
               </span>
             </dt>
-            <dd>{companyEntity.visitsQtyMax}</dd>
+            <dd>{companyEntity.visitsQtyMax}</dd>           
+            <dt>
+              <span id="isSubscripted">
+                <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate>
+              </span>
+            </dt>
+            <dd>{companyEntity.isSubscripted ? 'si' : 'no'}</dd>
+            </dl>
+
+            <dl className="jh-entity-details">
+            <h3>
+              <Translate contentKey="sepaApp.company.detail.others">Others</Translate>
+            </h3>  
             <dt>
               <span id="habPrim">
                 <Translate contentKey="sepaApp.company.habPrim">Hab Prim</Translate>
@@ -156,19 +207,8 @@ export class CompanyDetail extends React.Component<ICompanyDetailProps> {
             <dd>
               <TextFormat value={companyEntity.updatedAt} type="date" format={APP_DATE_FORMAT} />
             </dd>
-            <dt>
-              <Translate contentKey="sepaApp.company.employee">Employee</Translate>
-            </dt>
-            <dd>{companyEntity.employee ? companyEntity.employee.name : ''}</dd>
-            <dt>
-              <Translate contentKey="sepaApp.company.primIndustryTipe">Prim Industry Tipe</Translate>
-            </dt>
-            <dd>{companyEntity.primIndustryTipe ? companyEntity.primIndustryTipe.ciiu : ''}</dd>
-            <dt>
-              <Translate contentKey="sepaApp.company.secIndustryTipe">Sec Industry Tipe</Translate>
-            </dt>
-            <dd>{companyEntity.secIndustryTipe ? companyEntity.secIndustryTipe.ciiu : ''}</dd>
           </dl>
+
           <Button tag={Link} to="/company" replace color="info">
             <FontAwesomeIcon icon="arrow-left" />{' '}
             <span className="d-none d-md-inline">

@@ -145,14 +145,11 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
               <Table responsive aria-describedby="company-heading">
                 <thead>
                   <tr>
-                    <th className="hand" onClick={this.sort('id')}>
-                      <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
                     <th className="hand" onClick={this.sort('name')}>
                       <Translate contentKey="sepaApp.company.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
-                    <th className="hand" onClick={this.sort('email')}>
-                      <Translate contentKey="sepaApp.company.email">Email</Translate> <FontAwesomeIcon icon="sort" />
+                    <th className="hand" onClick={this.sort('fantasyName')}>
+                      <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('addressDirection')}>
                       <Translate contentKey="sepaApp.company.addressDirection">Address Direction</Translate> <FontAwesomeIcon icon="sort" />
@@ -160,66 +157,14 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                     <th className="hand" onClick={this.sort('addressNumber')}>
                       <Translate contentKey="sepaApp.company.addressNumber">Address Number</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
-                    <th className="hand" onClick={this.sort('floor')}>
-                      <Translate contentKey="sepaApp.company.floor">Floor</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('departament')}>
-                      <Translate contentKey="sepaApp.company.departament">Departament</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('cuit')}>
-                      <Translate contentKey="sepaApp.company.cuit">Cuit</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
                     <th className="hand" onClick={this.sort('isSubscripted')}>
                       <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('fantasyName')}>
-                      <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('postalCode')}>
-                      <Translate contentKey="sepaApp.company.postalCode">Postal Code</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('tlf')}>
                       <Translate contentKey="sepaApp.company.tlf">Tlf</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
-                    <th className="hand" onClick={this.sort('internalTlf')}>
-                      <Translate contentKey="sepaApp.company.internalTlf">Internal Tlf</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
                     <th className="hand" onClick={this.sort('contact')}>
                       <Translate contentKey="sepaApp.company.contact">Contact</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('cellphone')}>
-                      <Translate contentKey="sepaApp.company.cellphone">Cellphone</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('visitsQtyMin')}>
-                      <Translate contentKey="sepaApp.company.visitsQtyMin">Visits Qty Min</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('visitsQtyMax')}>
-                      <Translate contentKey="sepaApp.company.visitsQtyMax">Visits Qty Max</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('habPrim')}>
-                      <Translate contentKey="sepaApp.company.habPrim">Hab Prim</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('habSec')}>
-                      <Translate contentKey="sepaApp.company.habSec">Hab Sec</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('comment')}>
-                      <Translate contentKey="sepaApp.company.comment">Comment</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('createdAt')}>
-                      <Translate contentKey="sepaApp.company.createdAt">Created At</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('updatedAt')}>
-                      <Translate contentKey="sepaApp.company.updatedAt">Updated At</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th>
-                      <Translate contentKey="sepaApp.company.employee">Employee</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th>
-                      <Translate contentKey="sepaApp.company.primIndustryTipe">Prim Industry Tipe</Translate>{' '}
-                      <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th>
-                      <Translate contentKey="sepaApp.company.secIndustryTipe">Sec Industry Tipe</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -229,49 +174,15 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                     <tr key={`entity-${i}`}>
                       <td>
                         <Button tag={Link} to={`${match.url}/${company.id}`} color="link" size="sm">
-                          {company.id}
+                          {company.name}
                         </Button>
                       </td>
-                      <td>{company.name}</td>
-                      <td>{company.email}</td>
+                      <td>{company.fantasyName}</td>
                       <td>{company.addressDirection}</td>
                       <td>{company.addressNumber}</td>
-                      <td>{company.floor}</td>
-                      <td>{company.departament}</td>
-                      <td>{company.cuit}</td>
                       <td>{company.isSubscripted ? 'true' : 'false'}</td>
-                      <td>{company.fantasyName}</td>
-                      <td>{company.postalCode}</td>
                       <td>{company.tlf}</td>
-                      <td>{company.internalTlf}</td>
                       <td>{company.contact}</td>
-                      <td>{company.cellphone}</td>
-                      <td>{company.visitsQtyMin}</td>
-                      <td>{company.visitsQtyMax}</td>
-                      <td>{company.habPrim}</td>
-                      <td>{company.habSec}</td>
-                      <td>{company.comment}</td>
-                      <td>
-                        <TextFormat type="date" value={company.createdAt} format={APP_DATE_FORMAT} />
-                      </td>
-                      <td>
-                        <TextFormat type="date" value={company.updatedAt} format={APP_DATE_FORMAT} />
-                      </td>
-                      <td>{company.employee ? <Link to={`employee/${company.employee.id}`}>{company.employee.name}</Link> : ''}</td>
-                      <td>
-                        {company.primIndustryTipe ? (
-                          <Link to={`industry-type/${company.primIndustryTipe.id}`}>{company.primIndustryTipe.ciiu}</Link>
-                        ) : (
-                          ''
-                        )}
-                      </td>
-                      <td>
-                        {company.secIndustryTipe ? (
-                          <Link to={`industry-type/${company.secIndustryTipe.id}`}>{company.secIndustryTipe.ciiu}</Link>
-                        ) : (
-                          ''
-                        )}
-                      </td>
                       <td className="text-right">
                         <div className="btn-group flex-btn-group-container">
                           <Button tag={Link} to={`${match.url}/${company.id}`} color="info" size="sm">
