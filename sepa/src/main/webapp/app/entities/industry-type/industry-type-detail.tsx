@@ -23,7 +23,7 @@ export class IndustryTypeDetail extends React.Component<IIndustryTypeDetailProps
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sepaApp.industryType.detail.title">IndustryType</Translate> [<b>{industryTypeEntity.id}</b>]
+            <Translate contentKey="sepaApp.industryType.detail.title">IndustryType</Translate> [<b>{industryTypeEntity.name}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>

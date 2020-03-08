@@ -2,20 +2,20 @@
   "sepaApp": {
     "industryType": {
       "home": {
-        "title": "Tipo de Industria",
-        "createLabel": "Crear nuevo Tipo de Industria",
-        "createOrEditLabel": "Crear o editar Tipo de Industria",
-        "search": "Buscar Tipo de Industria",
-        "notFound": "Ningún Tipo de Industria encontrado"
+        "title": "Rubro/Actividad",
+        "createLabel": "Crear nuevo Rubro/Actividad",
+        "createOrEditLabel": "Crear o editar Rubro/Actividad",
+        "search": "Buscar Rubro/Actividad",
+        "notFound": "Ningún Rubro/Actividad encontrado"
       },
-      "created": "Un nuevo Tipo de Industria ha sido creado con el identificador {{ param }}",
-      "updated": "Un Tipo de Industria ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Tipo de Industria ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Rubro/Actividad ha sido creado con el identificador {{ param }}",
+      "updated": "Un Rubro/Actividad ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Rubro/Actividad ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar el Tipo de Industria {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Rubro/Actividad {{ id }}?"
       },
       "detail": {
-        "title": "Tipo de Industria"
+        "title": "Rubro/Actividad"
       },
       "name": "Nombre",
       "ciiu": "CIIU",

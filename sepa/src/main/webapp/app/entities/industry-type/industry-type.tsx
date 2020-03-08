@@ -121,20 +121,11 @@ export class IndustryType extends React.Component<IIndustryTypeProps, IIndustryT
             <Table responsive aria-describedby="industry-type-heading">
               <thead>
                 <tr>
-                  <th className="hand" onClick={this.sort('id')}>
-                    <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
-                  </th>
                   <th className="hand" onClick={this.sort('name')}>
                     <Translate contentKey="sepaApp.industryType.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={this.sort('ciiu')}>
                     <Translate contentKey="sepaApp.industryType.ciiu">Ciiu</Translate> <FontAwesomeIcon icon="sort" />
-                  </th>
-                  <th className="hand" onClick={this.sort('createdAt')}>
-                    <Translate contentKey="sepaApp.industryType.createdAt">Created At</Translate> <FontAwesomeIcon icon="sort" />
-                  </th>
-                  <th className="hand" onClick={this.sort('updatedAt')}>
-                    <Translate contentKey="sepaApp.industryType.updatedAt">Updated At</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th />
                 </tr>
@@ -144,17 +135,10 @@ export class IndustryType extends React.Component<IIndustryTypeProps, IIndustryT
                   <tr key={`entity-${i}`}>
                     <td>
                       <Button tag={Link} to={`${match.url}/${industryType.id}`} color="link" size="sm">
-                        {industryType.id}
+                        {industryType.name}
                       </Button>
                     </td>
-                    <td>{industryType.name}</td>
                     <td>{industryType.ciiu}</td>
-                    <td>
-                      <TextFormat type="date" value={industryType.createdAt} format={APP_DATE_FORMAT} />
-                    </td>
-                    <td>
-                      <TextFormat type="date" value={industryType.updatedAt} format={APP_DATE_FORMAT} />
-                    </td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${industryType.id}`} color="info" size="sm">
