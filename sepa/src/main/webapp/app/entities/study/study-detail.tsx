@@ -23,7 +23,7 @@ export class StudyDetail extends React.Component<IStudyDetailProps> {
       <Row>
         <Col md="8">
           <h2>
-            <Translate contentKey="sepaApp.study.detail.title">Study</Translate> [<b>{studyEntity.id}</b>]
+            <Translate contentKey="sepaApp.study.detail.title">Study</Translate> [<b>{studyEntity.name}</b>]
           </h2>
           <dl className="jh-entity-details">
             <dt>

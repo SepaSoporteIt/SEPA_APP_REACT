@@ -120,9 +120,6 @@ export class Study extends React.Component<IStudyProps, IStudyState> {
             <Table responsive aria-describedby="study-heading">
               <thead>
                 <tr>
-                  <th className="hand" onClick={this.sort('id')}>
-                    <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
-                  </th>
                   <th className="hand" onClick={this.sort('name')}>
                     <Translate contentKey="sepaApp.study.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
@@ -140,10 +137,9 @@ export class Study extends React.Component<IStudyProps, IStudyState> {
                   <tr key={`entity-${i}`}>
                     <td>
                       <Button tag={Link} to={`${match.url}/${study.id}`} color="link" size="sm">
-                        {study.id}
+                        {study.name}
                       </Button>
                     </td>
-                    <td>{study.name}</td>
                     <td>{study.resolution}</td>
                     <td>{study.legislation}</td>
                     <td className="text-right">
