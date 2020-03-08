@@ -15,27 +15,32 @@
         "question": "Are you sure you want to delete Employee {{ id }}?"
       },
       "detail": {
-        "title": "Employee"
+        "title": "Employee",
+        "personalData": "Personal Data",
+        "matData": "Tuition Data",
+        "addressData": "Address Data",
+        "others": "Others"
       },
       "name": "Name",
       "surname": "Surname",
+      "fullName": "Full Name",
       "email": "Email",
-      "tlf": "Tlf",
+      "tlf": "Telephone Number",
       "isInternal": "Is Internal",
-      "matNumber": "Mat Number",
+      "matNumber": "Tuition Number",
       "cuit": "Cuit",
       "addressDirection": "Address Direction",
       "addressNumber": "Address Number",
       "floor": "Floor",
       "departament": "Departament",
       "degree": "Degree",
-      "especializacion": "Especializacion",
-      "celular": "Celular",
-      "comentario": "Comentario",
+      "especializacion": "Specialization",
+      "celular": "Cellphone",
+      "comentario": "Comments",
       "createdAt": "Created At",
       "updatedAt": "Updated At",
-      "localidadId": "Localidad Id",
-      "partidoId": "Partido Id"
+      "localidadId": "Localidad",
+      "partidoId": "Partido"
     }
   }
 }
