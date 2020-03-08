@@ -47,7 +47,9 @@
       "betweenStreets": "Entre Calles",
       "employee": "Profesional",
       "primIndustryTipe": "1º CIIU",
-      "secIndustryTipe": "2º CIIU"
+      "secIndustryTipe": "2º CIIU",
+      "localidadId": "Localidad",
+      "partidoId": "Partido"
     }
   }
 }

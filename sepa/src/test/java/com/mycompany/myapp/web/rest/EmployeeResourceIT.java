@@ -77,12 +77,6 @@ public class EmployeeResourceIT {
     private static final String DEFAULT_DEGREE = "AAAAAAAAAA";
     private static final String UPDATED_DEGREE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_LOCALIDAD = "AAAAAAAAAA";
-    private static final String UPDATED_LOCALIDAD = "BBBBBBBBBB";
-
-    private static final String DEFAULT_PARTIDO = "AAAAAAAAAA";
-    private static final String UPDATED_PARTIDO = "BBBBBBBBBB";
-
     private static final String DEFAULT_ESPECIALIZACION = "AAAAAAAAAA";
     private static final String UPDATED_ESPECIALIZACION = "BBBBBBBBBB";
 
@@ -160,8 +154,6 @@ public class EmployeeResourceIT {
             .floor(DEFAULT_FLOOR)
             .departament(DEFAULT_DEPARTAMENT)
             .degree(DEFAULT_DEGREE)
-            .localidad(DEFAULT_LOCALIDAD)
-            .partido(DEFAULT_PARTIDO)
             .especializacion(DEFAULT_ESPECIALIZACION)
             .celular(DEFAULT_CELULAR)
             .comentario(DEFAULT_COMENTARIO)
@@ -189,8 +181,6 @@ public class EmployeeResourceIT {
             .floor(UPDATED_FLOOR)
             .departament(UPDATED_DEPARTAMENT)
             .degree(UPDATED_DEGREE)
-            .localidad(UPDATED_LOCALIDAD)
-            .partido(UPDATED_PARTIDO)
             .especializacion(UPDATED_ESPECIALIZACION)
             .celular(UPDATED_CELULAR)
             .comentario(UPDATED_COMENTARIO)
@@ -231,8 +221,6 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getFloor()).isEqualTo(DEFAULT_FLOOR);
         assertThat(testEmployee.getDepartament()).isEqualTo(DEFAULT_DEPARTAMENT);
         assertThat(testEmployee.getDegree()).isEqualTo(DEFAULT_DEGREE);
-        assertThat(testEmployee.getLocalidad()).isEqualTo(DEFAULT_LOCALIDAD);
-        assertThat(testEmployee.getPartido()).isEqualTo(DEFAULT_PARTIDO);
         assertThat(testEmployee.getEspecializacion()).isEqualTo(DEFAULT_ESPECIALIZACION);
         assertThat(testEmployee.getCelular()).isEqualTo(DEFAULT_CELULAR);
         assertThat(testEmployee.getComentario()).isEqualTo(DEFAULT_COMENTARIO);
@@ -347,7 +335,7 @@ public class EmployeeResourceIT {
         // Get all the employeeList
         restEmployeeMockMvc.perform(get("/api/employees?sort=id,desc"))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(employee.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].surname").value(hasItem(DEFAULT_SURNAME)))
@@ -361,8 +349,6 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].floor").value(hasItem(DEFAULT_FLOOR)))
             .andExpect(jsonPath("$.[*].departament").value(hasItem(DEFAULT_DEPARTAMENT)))
             .andExpect(jsonPath("$.[*].degree").value(hasItem(DEFAULT_DEGREE)))
-            .andExpect(jsonPath("$.[*].localidad").value(hasItem(DEFAULT_LOCALIDAD)))
-            .andExpect(jsonPath("$.[*].partido").value(hasItem(DEFAULT_PARTIDO)))
             .andExpect(jsonPath("$.[*].especializacion").value(hasItem(DEFAULT_ESPECIALIZACION)))
             .andExpect(jsonPath("$.[*].celular").value(hasItem(DEFAULT_CELULAR)))
             .andExpect(jsonPath("$.[*].comentario").value(hasItem(DEFAULT_COMENTARIO)))
@@ -379,7 +365,7 @@ public class EmployeeResourceIT {
         // Get the employee
         restEmployeeMockMvc.perform(get("/api/employees/{id}", employee.getId()))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(employee.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.surname").value(DEFAULT_SURNAME))
@@ -393,8 +379,6 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.floor").value(DEFAULT_FLOOR))
             .andExpect(jsonPath("$.departament").value(DEFAULT_DEPARTAMENT))
             .andExpect(jsonPath("$.degree").value(DEFAULT_DEGREE))
-            .andExpect(jsonPath("$.localidad").value(DEFAULT_LOCALIDAD))
-            .andExpect(jsonPath("$.partido").value(DEFAULT_PARTIDO))
             .andExpect(jsonPath("$.especializacion").value(DEFAULT_ESPECIALIZACION))
             .andExpect(jsonPath("$.celular").value(DEFAULT_CELULAR))
             .andExpect(jsonPath("$.comentario").value(DEFAULT_COMENTARIO))
@@ -435,8 +419,6 @@ public class EmployeeResourceIT {
             .floor(UPDATED_FLOOR)
             .departament(UPDATED_DEPARTAMENT)
             .degree(UPDATED_DEGREE)
-            .localidad(UPDATED_LOCALIDAD)
-            .partido(UPDATED_PARTIDO)
             .especializacion(UPDATED_ESPECIALIZACION)
             .celular(UPDATED_CELULAR)
             .comentario(UPDATED_COMENTARIO)
@@ -464,8 +446,6 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getFloor()).isEqualTo(UPDATED_FLOOR);
         assertThat(testEmployee.getDepartament()).isEqualTo(UPDATED_DEPARTAMENT);
         assertThat(testEmployee.getDegree()).isEqualTo(UPDATED_DEGREE);
-        assertThat(testEmployee.getLocalidad()).isEqualTo(UPDATED_LOCALIDAD);
-        assertThat(testEmployee.getPartido()).isEqualTo(UPDATED_PARTIDO);
         assertThat(testEmployee.getEspecializacion()).isEqualTo(UPDATED_ESPECIALIZACION);
         assertThat(testEmployee.getCelular()).isEqualTo(UPDATED_CELULAR);
         assertThat(testEmployee.getComentario()).isEqualTo(UPDATED_COMENTARIO);
@@ -528,7 +508,7 @@ public class EmployeeResourceIT {
         // Search the employee
         restEmployeeMockMvc.perform(get("/api/_search/employees?query=id:" + employee.getId()))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(employee.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].surname").value(hasItem(DEFAULT_SURNAME)))
@@ -542,8 +522,6 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].floor").value(hasItem(DEFAULT_FLOOR)))
             .andExpect(jsonPath("$.[*].departament").value(hasItem(DEFAULT_DEPARTAMENT)))
             .andExpect(jsonPath("$.[*].degree").value(hasItem(DEFAULT_DEGREE)))
-            .andExpect(jsonPath("$.[*].localidad").value(hasItem(DEFAULT_LOCALIDAD)))
-            .andExpect(jsonPath("$.[*].partido").value(hasItem(DEFAULT_PARTIDO)))
             .andExpect(jsonPath("$.[*].especializacion").value(hasItem(DEFAULT_ESPECIALIZACION)))
             .andExpect(jsonPath("$.[*].celular").value(hasItem(DEFAULT_CELULAR)))
             .andExpect(jsonPath("$.[*].comentario").value(hasItem(DEFAULT_COMENTARIO)))

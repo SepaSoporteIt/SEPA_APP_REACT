@@ -108,6 +108,14 @@ public class Company implements Serializable {
     @JoinColumn(unique = true)
     private IndustryType secIndustryTipe;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Localidadandpartido localidadId;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Localidadandpartido partidoId;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -440,6 +448,32 @@ public class Company implements Serializable {
 
     public void setSecIndustryTipe(IndustryType industryType) {
         this.secIndustryTipe = industryType;
+    }
+
+    public Localidadandpartido getLocalidadId() {
+        return localidadId;
+    }
+
+    public Company localidadId(Localidadandpartido localidadandpartido) {
+        this.localidadId = localidadandpartido;
+        return this;
+    }
+
+    public void setLocalidadId(Localidadandpartido localidadandpartido) {
+        this.localidadId = localidadandpartido;
+    }
+
+    public Localidadandpartido getPartidoId() {
+        return partidoId;
+    }
+
+    public Company partidoId(Localidadandpartido localidadandpartido) {
+        this.partidoId = localidadandpartido;
+        return this;
+    }
+
+    public void setPartidoId(Localidadandpartido localidadandpartido) {
+        this.partidoId = localidadandpartido;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

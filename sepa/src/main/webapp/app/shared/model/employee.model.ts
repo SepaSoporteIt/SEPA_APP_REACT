@@ -1,4 +1,5 @@
 import { Moment } from 'moment';
+import { ILocalidadandpartido } from 'app/shared/model/localidadandpartido.model';
 
 export interface IEmployee {
   id?: number;
@@ -14,13 +15,13 @@ export interface IEmployee {
   floor?: string;
   departament?: string;
   degree?: string;
-  localidad?: string;
-  partido?: string;
   especializacion?: string;
   celular?: string;
   comentario?: string;
   createdAt?: Moment;
   updatedAt?: Moment;
+  localidadId?: ILocalidadandpartido;
+  partidoId?: ILocalidadandpartido;
 }
 
 export const defaultValue: Readonly<IEmployee> = {

@@ -1,4 +1,5 @@
 package com.mycompany.myapp.domain;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -22,7 +23,6 @@ public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
     private Long id;
 
     @NotNull
@@ -65,12 +65,6 @@ public class Employee implements Serializable {
     @Column(name = "degree")
     private String degree;
 
-    @Column(name = "localidad")
-    private String localidad;
-
-    @Column(name = "partido")
-    private String partido;
-
     @Column(name = "especializacion")
     private String especializacion;
 
@@ -85,6 +79,14 @@ public class Employee implements Serializable {
 
     @Column(name = "updated_at")
     private Instant updatedAt;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Localidadandpartido localidadId;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Localidadandpartido partidoId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -251,32 +253,6 @@ public class Employee implements Serializable {
         this.degree = degree;
     }
 
-    public String getLocalidad() {
-        return localidad;
-    }
-
-    public Employee localidad(String localidad) {
-        this.localidad = localidad;
-        return this;
-    }
-
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
-    }
-
-    public String getPartido() {
-        return partido;
-    }
-
-    public Employee partido(String partido) {
-        this.partido = partido;
-        return this;
-    }
-
-    public void setPartido(String partido) {
-        this.partido = partido;
-    }
-
     public String getEspecializacion() {
         return especializacion;
     }
@@ -341,6 +317,32 @@ public class Employee implements Serializable {
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    public Localidadandpartido getLocalidadId() {
+        return localidadId;
+    }
+
+    public Employee localidadId(Localidadandpartido localidadandpartido) {
+        this.localidadId = localidadandpartido;
+        return this;
+    }
+
+    public void setLocalidadId(Localidadandpartido localidadandpartido) {
+        this.localidadId = localidadandpartido;
+    }
+
+    public Localidadandpartido getPartidoId() {
+        return partidoId;
+    }
+
+    public Employee partidoId(Localidadandpartido localidadandpartido) {
+        this.partidoId = localidadandpartido;
+        return this;
+    }
+
+    public void setPartidoId(Localidadandpartido localidadandpartido) {
+        this.partidoId = localidadandpartido;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -375,8 +377,6 @@ public class Employee implements Serializable {
             ", floor='" + getFloor() + "'" +
             ", departament='" + getDepartament() + "'" +
             ", degree='" + getDegree() + "'" +
-            ", localidad='" + getLocalidad() + "'" +
-            ", partido='" + getPartido() + "'" +
             ", especializacion='" + getEspecializacion() + "'" +
             ", celular='" + getCelular() + "'" +
             ", comentario='" + getComentario() + "'" +

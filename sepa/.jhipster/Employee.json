@@ -62,14 +62,6 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "localidad",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "partido",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "especializacion",
             "fieldType": "String"
         },
@@ -90,7 +82,26 @@
             "fieldType": "Instant"
         }
     ],
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "localidadId",
+            "otherEntityName": "localidadandpartido",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "localidad",
+            "ownerSide": true,
+            "useJPADerivedIdentifier": false,
+            "otherEntityRelationshipName": ""
+        },
+        {
+            "relationshipName": "partidoId",
+            "otherEntityName": "localidadandpartido",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "partido",
+            "ownerSide": true,
+            "useJPADerivedIdentifier": false,
+            "otherEntityRelationshipName": ""
+        }
+    ],
     "changelogDate": "20191228155416",
     "entityTableName": "employee",
     "dto": "no",
@@ -100,5 +111,7 @@
     "fluentMethods": true,
     "readOnly": false,
     "clientRootFolder": "",
-    "applications": "*"
+    "applications": "*",
+    "searchEngine": "elasticsearch",
+    "databaseType": "sql"
 }

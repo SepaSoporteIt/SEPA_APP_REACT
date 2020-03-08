@@ -52,12 +52,6 @@
             <column name="degree" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="localidad" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            <column name="partido" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
             <column name="especializacion" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
@@ -72,6 +66,12 @@
             </column>
             <column name="updated_at" type="datetime">
                 <constraints nullable="true" />
+            </column>
+            <column name="localidad_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_employee_localidad_id_id" />
+            </column>
+            <column name="partido_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_employee_partido_id_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
@@ -110,8 +110,6 @@
             <column name="floor" type="string"/>
             <column name="departament" type="string"/>
             <column name="degree" type="string"/>
-            <column name="localidad" type="string"/>
-            <column name="partido" type="string"/>
             <column name="especializacion" type="string"/>
             <column name="celular" type="string"/>
             <column name="comentario" type="string"/>

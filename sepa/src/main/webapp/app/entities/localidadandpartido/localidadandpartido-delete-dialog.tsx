@@ -5,19 +5,19 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Translate, ICrudGetAction, ICrudDeleteAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { IEmployee } from 'app/shared/model/employee.model';
+import { ILocalidadandpartido } from 'app/shared/model/localidadandpartido.model';
 import { IRootState } from 'app/shared/reducers';
-import { getEntity, deleteEntity } from './employee.reducer';
+import { getEntity, deleteEntity } from './localidadandpartido.reducer';
 
-export interface IEmployeeDeleteDialogProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
+export interface ILocalidadandpartidoDeleteDialogProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
-export const EmployeeDeleteDialog = (props: IEmployeeDeleteDialogProps) => {
+export const LocalidadandpartidoDeleteDialog = (props: ILocalidadandpartidoDeleteDialogProps) => {
   useEffect(() => {
     props.getEntity(props.match.params.id);
   }, []);
 
   const handleClose = () => {
-    props.history.push('/employee');
+    props.history.push('/localidadandpartido' + props.location.search);
   };
 
   useEffect(() => {
@@ -27,18 +27,18 @@ export const EmployeeDeleteDialog = (props: IEmployeeDeleteDialogProps) => {
   }, [props.updateSuccess]);
 
   const confirmDelete = () => {
-    props.deleteEntity(props.employeeEntity.id);
+    props.deleteEntity(props.localidadandpartidoEntity.id);
   };
 
-  const { employeeEntity } = props;
+  const { localidadandpartidoEntity } = props;
   return (
     <Modal isOpen toggle={handleClose}>
       <ModalHeader toggle={handleClose}>
         <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
       </ModalHeader>
-      <ModalBody id="sepaApp.employee.delete.question">
-        <Translate contentKey="sepaApp.employee.delete.question" interpolate={{ id: employeeEntity.id }}>
-          Are you sure you want to delete this Employee?
+      <ModalBody id="sepaApp.localidadandpartido.delete.question">
+        <Translate contentKey="sepaApp.localidadandpartido.delete.question" interpolate={{ id: localidadandpartidoEntity.id }}>
+          Are you sure you want to delete this Localidadandpartido?
         </Translate>
       </ModalBody>
       <ModalFooter>
@@ -47,7 +47,7 @@ export const EmployeeDeleteDialog = (props: IEmployeeDeleteDialogProps) => {
           &nbsp;
           <Translate contentKey="entity.action.cancel">Cancel</Translate>
         </Button>
-        <Button id="jhi-confirm-delete-employee" color="danger" onClick={confirmDelete}>
+        <Button id="jhi-confirm-delete-localidadandpartido" color="danger" onClick={confirmDelete}>
           <FontAwesomeIcon icon="trash" />
           &nbsp;
           <Translate contentKey="entity.action.delete">Delete</Translate>
@@ -57,9 +57,9 @@ export const EmployeeDeleteDialog = (props: IEmployeeDeleteDialogProps) => {
   );
 };
 
-const mapStateToProps = ({ employee }: IRootState) => ({
-  employeeEntity: employee.entity,
-  updateSuccess: employee.updateSuccess
+const mapStateToProps = ({ localidadandpartido }: IRootState) => ({
+  localidadandpartidoEntity: localidadandpartido.entity,
+  updateSuccess: localidadandpartido.updateSuccess
 });
 
 const mapDispatchToProps = { getEntity, deleteEntity };
@@ -67,4 +67,4 @@ const mapDispatchToProps = { getEntity, deleteEntity };
 type StateProps = ReturnType<typeof mapStateToProps>;
 type DispatchProps = typeof mapDispatchToProps;
 
-export default connect(mapStateToProps, mapDispatchToProps)(EmployeeDeleteDialog);
+export default connect(mapStateToProps, mapDispatchToProps)(LocalidadandpartidoDeleteDialog);

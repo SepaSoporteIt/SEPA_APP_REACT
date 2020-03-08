@@ -26,5 +26,17 @@
                                  referencedColumnNames="id"
                                  referencedTableName="industry_type"/>
 
+        <addForeignKeyConstraint baseColumnNames="localidad_id_id"
+                                 baseTableName="company"
+                                 constraintName="fk_company_localidad_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="localidadandpartido"/>
+
+        <addForeignKeyConstraint baseColumnNames="partido_id_id"
+                                 baseTableName="company"
+                                 constraintName="fk_company_partido_id_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="localidadandpartido"/>
+
     </changeSet>
 </databaseChangeLog>
