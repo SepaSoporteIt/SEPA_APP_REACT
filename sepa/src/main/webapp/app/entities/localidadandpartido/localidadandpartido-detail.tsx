@@ -23,7 +23,7 @@ export const LocalidadandpartidoDetail = (props: ILocalidadandpartidoDetailProps
       <Col md="8">
         <h2>
           <Translate contentKey="sepaApp.localidadandpartido.detail.title">Localidadandpartido</Translate> [
-          <b>{localidadandpartidoEntity.id}</b>]
+          <b>{localidadandpartidoEntity.localidad + " - " + localidadandpartidoEntity.partido}</b>]
         </h2>
         <dl className="jh-entity-details">
           <dt>
