@@ -1,0 +1,24 @@
+{
+  "sepaApp": {
+    "localidadandpartido": {
+      "home": {
+        "title": "Localidadandpartidos",
+        "createLabel": "Crear nuevo Localidadandpartido",
+        "createOrEditLabel": "Crear o editar Localidadandpartido",
+        "search": "Buscar Localidadandpartido",
+        "notFound": "Ningún Localidadandpartidos encontrado"
+      },
+      "created": "Un nuevo Localidadandpartido ha sido creado con el identificador {{ param }}",
+      "updated": "Un Localidadandpartido ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Localidadandpartido ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Localidadandpartido {{ id }}?"
+      },
+      "detail": {
+        "title": "Localidadandpartido"
+      },
+      "localidad": "Localidad",
+      "partido": "Partido"
+    }
+  }
+}

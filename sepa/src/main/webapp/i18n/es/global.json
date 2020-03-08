@@ -12,6 +12,7 @@
         "employee": "Profesionales",
         "expiration": "Vencimientos",
         "study": "Estudios",
+        "localidadandpartido": "Localidadandpartido",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

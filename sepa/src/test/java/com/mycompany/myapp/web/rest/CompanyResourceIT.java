@@ -227,7 +227,7 @@ public class CompanyResourceIT {
 
         // Create the Company
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isCreated());
 
@@ -272,7 +272,7 @@ public class CompanyResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -295,7 +295,7 @@ public class CompanyResourceIT {
         // Create the Company, which fails.
 
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -313,7 +313,7 @@ public class CompanyResourceIT {
         // Create the Company, which fails.
 
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -331,7 +331,7 @@ public class CompanyResourceIT {
         // Create the Company, which fails.
 
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -349,7 +349,7 @@ public class CompanyResourceIT {
         // Create the Company, which fails.
 
         restCompanyMockMvc.perform(post("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -472,7 +472,7 @@ public class CompanyResourceIT {
             .betweenStreets(UPDATED_BETWEEN_STREETS);
 
         restCompanyMockMvc.perform(put("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(updatedCompany)))
             .andExpect(status().isOk());
 
@@ -516,7 +516,7 @@ public class CompanyResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restCompanyMockMvc.perform(put("/api/companies")
-            .contentType(TestUtil.APPLICATION_JSON)
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(company)))
             .andExpect(status().isBadRequest());
 
@@ -538,7 +538,7 @@ public class CompanyResourceIT {
 
         // Delete the company
         restCompanyMockMvc.perform(delete("/api/companies/{id}", company.getId())
-            .accept(TestUtil.APPLICATION_JSON))
+            .accept(TestUtil.APPLICATION_JSON_UTF8))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item
