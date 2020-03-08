@@ -15,12 +15,17 @@
         "question": "¿Seguro que quiere eliminar el Profesional {{ id }}?"
       },
       "detail": {
-        "title": "Profesional"
+        "title": "Profesional",
+        "personalData": "Datos Personales",
+        "matData": "Datos de Matrícula",
+        "addressData": "Datos del Domicilio",
+        "others": "Otros"
       },
       "name": "Nombre",
       "surname": "Apellido",
+      "fullName": "Nombre Completo",
       "email": "Email",
-      "tlf": "Telefono",
+      "tlf": "Teléfono",
       "isInternal": "Es Interno?",
       "matNumber": "Número de Matricula",
       "cuit": "Cuit",
