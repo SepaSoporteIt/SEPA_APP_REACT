@@ -127,6 +127,24 @@
             "relationshipName": "secIndustryTipe",
             "otherEntityField": "ciiu",
             "ownerSide": true
+        },
+        {
+            "relationshipName": "localidadId",
+            "otherEntityName": "localidadandpartido",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "localidad",
+            "ownerSide": true,
+            "useJPADerivedIdentifier": false,
+            "otherEntityRelationshipName": ""
+        },
+        {
+            "relationshipName": "partidoId",
+            "otherEntityName": "localidadandpartido",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "partido",
+            "ownerSide": true,
+            "useJPADerivedIdentifier": false,
+            "otherEntityRelationshipName": ""
         }
     ],
     "changelogDate": "20191228155414",

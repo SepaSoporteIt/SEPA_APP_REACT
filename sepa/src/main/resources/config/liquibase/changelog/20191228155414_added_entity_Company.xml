@@ -91,6 +91,12 @@
             <column name="sec_industry_tipe_id" type="bigint">
                 <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_sec_industry_tipe_id" />
             </column>
+            <column name="localidad_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_localidad_id_id" />
+            </column>
+            <column name="partido_id_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_partido_id_id" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="company" columnName="created_at" columnDataType="datetime"/>

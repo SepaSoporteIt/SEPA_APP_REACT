@@ -19,7 +19,7 @@
         "basicData": "Basic Data",
         "clientAddress": "Stablishment Address",
         "contactData": "Contact Data",
-        "afipActivity": "Activity defined by the AFIP",
+        "afipActivity": "Activity designed by the AFIP",
         "serviceData": "Service Data",
         "others": "Others"
       },
@@ -47,7 +47,9 @@
       "betweenStreets": "Between Streets",
       "employee": "Employee",
       "primIndustryTipe": "Prim Industry Tipe",
-      "secIndustryTipe": "Sec Industry Tipe"
+      "secIndustryTipe": "Sec Industry Tipe",
+      "localidadId": "Localidad",
+      "partidoId": "Partido"
     }
   }
 }

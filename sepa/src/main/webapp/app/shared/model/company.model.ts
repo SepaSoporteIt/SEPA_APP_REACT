@@ -1,6 +1,7 @@
 import { Moment } from 'moment';
 import { IEmployee } from 'app/shared/model/employee.model';
 import { IIndustryType } from 'app/shared/model/industry-type.model';
+import { ILocalidadandpartido } from 'app/shared/model/localidadandpartido.model';
 
 export interface ICompany {
   id?: number;
@@ -29,6 +30,8 @@ export interface ICompany {
   employee?: IEmployee;
   primIndustryTipe?: IIndustryType;
   secIndustryTipe?: IIndustryType;
+  localidadId?: ILocalidadandpartido;
+  partidoId?: ILocalidadandpartido;
 }
 
 export const defaultValue: Readonly<ICompany> = {

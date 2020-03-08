@@ -29,13 +29,13 @@
       "floor": "Piso",
       "departament": "Departamento",
       "degree": "Título",
-      "localidad": "Localidad",
-      "partido": "Partido",
       "especializacion": "Especialización",
       "celular": "Celular",
       "comentario": "Comentario",
       "createdAt": "Creado el",
-      "updatedAt": "Modificado el"
+      "updatedAt": "Modificado el",
+      "localidadId": "Localidad",
+      "partidoId": "Partido"
     }
   }
 }

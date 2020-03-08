@@ -2,20 +2,20 @@
   "sepaApp": {
     "localidadandpartido": {
       "home": {
-        "title": "Localidadandpartidos",
-        "createLabel": "Create a new Localidadandpartido",
-        "createOrEditLabel": "Create or edit a Localidadandpartido",
-        "search": "Search for Localidadandpartido",
-        "notFound": "No Localidadandpartidos found"
+        "title": "Localidad/Partido",
+        "createLabel": "Create a new Localidad/Partido",
+        "createOrEditLabel": "Create or edit a Localidad/Partido",
+        "search": "Search for Localidad/Partido",
+        "notFound": "No Localidad/Partido found"
       },
-      "created": "A new Localidadandpartido is created with identifier {{ param }}",
-      "updated": "A Localidadandpartido is updated with identifier {{ param }}",
-      "deleted": "A Localidadandpartido is deleted with identifier {{ param }}",
+      "created": "A new Localidad/Partido is created with identifier {{ param }}",
+      "updated": "A Localidad/Partido is updated with identifier {{ param }}",
+      "deleted": "A Localidad/Partido is deleted with identifier {{ param }}",
       "delete": {
-        "question": "Are you sure you want to delete Localidadandpartido {{ id }}?"
+        "question": "Are you sure you want to delete Localidad/Partido {{ id }}?"
       },
       "detail": {
-        "title": "Localidadandpartido"
+        "title": "Localidad/Partido"
       },
       "localidad": "Localidad",
       "partido": "Partido"
