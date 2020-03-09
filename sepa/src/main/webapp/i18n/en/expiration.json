@@ -15,7 +15,8 @@
         "question": "Are you sure you want to delete Expiration {{ id }}?"
       },
       "detail": {
-        "title": "Expiration"
+        "title": "Expiration",
+        "automaticField": "This field will fill automatically"
       },
       "startDate": "Start Date",
       "endDate": "End Date",
@@ -24,7 +25,7 @@
       "uniqueCode": "Unique Code",
       "responsible": "Responsible",
       "company": "Company",
-      "employee": "Employee",
+      "employee": "Performer",
       "study": "Study"
     }
   }

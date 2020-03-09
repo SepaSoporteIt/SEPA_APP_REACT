@@ -112,16 +112,50 @@ export class ExpirationUpdate extends React.Component<IExpirationUpdateProps, IE
                   </AvGroup>
                 ) : null}
                 <AvGroup>
-                  <Label id="startDateLabel" for="expiration-startDate">
-                    <Translate contentKey="sepaApp.expiration.startDate">Start Date</Translate>
+                  <Label id="uniqueCodeLabel" for="expiration-uniqueCode">
+                    <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate>
+                  <br></br>
+                    <Translate contentKey="sepaApp.expiration.detail.automaticField">Automatic Field</Translate>
                   </Label>
-                  <AvField id="expiration-startDate" type="date" className="form-control" name="startDate" />
+                  <AvInput id="expiration-uniqueCode" type="text" name="uniqueCode" readOnly/>
                 </AvGroup>
                 <AvGroup>
-                  <Label id="endDateLabel" for="expiration-endDate">
-                    <Translate contentKey="sepaApp.expiration.endDate">End Date</Translate>
+                  <Label for="expiration-company">
+                    <Translate contentKey="sepaApp.expiration.company">Company</Translate>
                   </Label>
-                  <AvField id="expiration-endDate" type="date" className="form-control" name="endDate" />
+                  <AvInput id="expiration-company" type="select" className="form-control" name="company.id">
+                    <option value="" key="0" />
+                    {companies
+                      ? companies.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.name + " - " + otherEntity.addressDirection + " " + otherEntity.addressNumber}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
+                </AvGroup>
+                <AvGroup>
+                  <Label id="responsibleLabel" for="expiration-responsible">
+                    <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate>
+                    <br></br>
+                    <Translate contentKey="sepaApp.expiration.detail.automaticField">Automatic Field</Translate>
+                  </Label>
+                  <AvField id="expiration-responsible" type="text" name="responsible" readOnly/>
+                </AvGroup>
+                <AvGroup>
+                  <Label for="expiration-study">
+                    <Translate contentKey="sepaApp.expiration.study">Study</Translate>
+                  </Label>
+                  <AvInput id="expiration-study" type="select" className="form-control" name="study.id">
+                    <option value="" key="0" />
+                    {studies
+                      ? studies.map(otherEntity => (
+                          <option value={otherEntity.id} key={otherEntity.id}>
+                            {otherEntity.name}
+                          </option>
+                        ))
+                      : null}
+                  </AvInput>
                 </AvGroup>
                 <AvGroup>
                   <Label id="statusLabel" for="expiration-status">
@@ -143,37 +177,16 @@ export class ExpirationUpdate extends React.Component<IExpirationUpdateProps, IE
                   </AvInput>
                 </AvGroup>
                 <AvGroup>
-                  <Label id="commentsLabel" for="expiration-comments">
-                    <Translate contentKey="sepaApp.expiration.comments">Comments</Translate>
+                  <Label id="startDateLabel" for="expiration-startDate">
+                    <Translate contentKey="sepaApp.expiration.startDate">Start Date</Translate>
                   </Label>
-                  <AvInput id="expiration-comments" type="textarea" name="comments" />
+                  <AvField id="expiration-startDate" type="date" className="form-control" name="startDate" />
                 </AvGroup>
                 <AvGroup>
-                  <Label id="uniqueCodeLabel" for="expiration-uniqueCode">
-                    <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate>
+                  <Label id="endDateLabel" for="expiration-endDate">
+                    <Translate contentKey="sepaApp.expiration.endDate">End Date</Translate>
                   </Label>
-                  <AvField id="expiration-uniqueCode" type="text" name="uniqueCode" />
-                </AvGroup>
-                <AvGroup>
-                  <Label id="responsibleLabel" for="expiration-responsible">
-                    <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate>
-                  </Label>
-                  <AvField id="expiration-responsible" type="text" name="responsible" />
-                </AvGroup>
-                <AvGroup>
-                  <Label for="expiration-company">
-                    <Translate contentKey="sepaApp.expiration.company">Company</Translate>
-                  </Label>
-                  <AvInput id="expiration-company" type="select" className="form-control" name="company.id">
-                    <option value="" key="0" />
-                    {companies
-                      ? companies.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.fantasyName}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
+                  <AvField id="expiration-endDate" type="date" className="form-control" name="endDate" />
                 </AvGroup>
                 <AvGroup>
                   <Label for="expiration-employee">
@@ -184,26 +197,17 @@ export class ExpirationUpdate extends React.Component<IExpirationUpdateProps, IE
                     {employees
                       ? employees.map(otherEntity => (
                           <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.name}
+                            {otherEntity.name + " " + otherEntity.surname}
                           </option>
                         ))
                       : null}
                   </AvInput>
                 </AvGroup>
                 <AvGroup>
-                  <Label for="expiration-study">
-                    <Translate contentKey="sepaApp.expiration.study">Study</Translate>
+                  <Label id="commentsLabel" for="expiration-comments">
+                    <Translate contentKey="sepaApp.expiration.comments">Comments</Translate>
                   </Label>
-                  <AvInput id="expiration-study" type="select" className="form-control" name="study.id">
-                    <option value="" key="0" />
-                    {studies
-                      ? studies.map(otherEntity => (
-                          <option value={otherEntity.id} key={otherEntity.id}>
-                            {otherEntity.name}
-                          </option>
-                        ))
-                      : null}
-                  </AvInput>
+                  <AvInput id="expiration-comments" type="textarea" name="comments" />
                 </AvGroup>
                 <Button tag={Link} id="cancel-save" to="/expiration" replace color="info">
                   <FontAwesomeIcon icon="arrow-left" />

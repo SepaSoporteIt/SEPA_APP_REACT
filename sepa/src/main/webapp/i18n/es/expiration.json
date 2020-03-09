@@ -15,7 +15,8 @@
         "question": "¿Seguro que quiere eliminar el Vencimiento {{ id }}?"
       },
       "detail": {
-        "title": "Vencimiento"
+        "title": "Vencimiento",
+        "automaticField": "Este campo se completará automaticamente"
       },
       "startDate": "Fecha de inicio",
       "endDate": "Fecha de finalización",
@@ -24,7 +25,7 @@
       "uniqueCode": "Codigo Único",
       "responsible": "Responsable",
       "company": "Cliente",
-      "employee": "Profesional",
+      "employee": "Realizado Por",
       "study": "Estudio"
     }
   }
