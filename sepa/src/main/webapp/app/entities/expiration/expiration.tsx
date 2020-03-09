@@ -145,8 +145,20 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
               <Table responsive aria-describedby="expiration-heading">
                 <thead>
                   <tr>
-                    <th className="hand" onClick={this.sort('id')}>
-                      <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
+                    <th className="hand" onClick={this.sort('uniqueCode')}>
+                      <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
+                    <th>
+                      <Translate contentKey="sepaApp.expiration.company">Company</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
+                    <th className="hand" onClick={this.sort('responsible')}>
+                      <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
+                    <th>
+                      <Translate contentKey="sepaApp.expiration.study">Study</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
+                    <th className="hand" onClick={this.sort('status')}>
+                      <Translate contentKey="sepaApp.expiration.status">Status</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th className="hand" onClick={this.sort('startDate')}>
                       <Translate contentKey="sepaApp.expiration.startDate">Start Date</Translate> <FontAwesomeIcon icon="sort" />
@@ -154,26 +166,8 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                     <th className="hand" onClick={this.sort('endDate')}>
                       <Translate contentKey="sepaApp.expiration.endDate">End Date</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
-                    <th className="hand" onClick={this.sort('status')}>
-                      <Translate contentKey="sepaApp.expiration.status">Status</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('comments')}>
-                      <Translate contentKey="sepaApp.expiration.comments">Comments</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('uniqueCode')}>
-                      <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th className="hand" onClick={this.sort('responsible')}>
-                      <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th>
-                      <Translate contentKey="sepaApp.expiration.company">Company</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
                     <th>
                       <Translate contentKey="sepaApp.expiration.employee">Employee</Translate> <FontAwesomeIcon icon="sort" />
-                    </th>
-                    <th>
-                      <Translate contentKey="sepaApp.expiration.study">Study</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
                     <th />
                   </tr>
@@ -183,8 +177,16 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                     <tr key={`entity-${i}`}>
                       <td>
                         <Button tag={Link} to={`${match.url}/${expiration.id}`} color="link" size="sm">
-                          {expiration.id}
+                          {expiration.uniqueCode}
                         </Button>
+                      </td>
+                      <td>
+                        {expiration.company ? <Link to={`company/${expiration.company.id}`}>{expiration.company.name + " - " + expiration.company.addressDirection + " " + expiration.company.addressNumber}</Link> : ''}
+                      </td>
+                      <td>{expiration.responsible}</td>
+                      <td>{expiration.study ? <Link to={`study/${expiration.study.id}`}>{expiration.study.name}</Link> : ''}</td>
+                      <td>
+                        <Translate contentKey={`sepaApp.Status.${expiration.status}`} />
                       </td>
                       <td>
                         <TextFormat type="date" value={expiration.startDate} format={APP_LOCAL_DATE_FORMAT} />
@@ -193,18 +195,8 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                         <TextFormat type="date" value={expiration.endDate} format={APP_LOCAL_DATE_FORMAT} />
                       </td>
                       <td>
-                        <Translate contentKey={`sepaApp.Status.${expiration.status}`} />
+                        {expiration.employee ? <Link to={`employee/${expiration.employee.id}`}>{expiration.employee.name + " " + expiration.employee.surname}</Link> : ''}
                       </td>
-                      <td>{expiration.comments}</td>
-                      <td>{expiration.uniqueCode}</td>
-                      <td>{expiration.responsible}</td>
-                      <td>
-                        {expiration.company ? <Link to={`company/${expiration.company.id}`}>{expiration.company.fantasyName}</Link> : ''}
-                      </td>
-                      <td>
-                        {expiration.employee ? <Link to={`employee/${expiration.employee.id}`}>{expiration.employee.name}</Link> : ''}
-                      </td>
-                      <td>{expiration.study ? <Link to={`study/${expiration.study.id}`}>{expiration.study.name}</Link> : ''}</td>
                       <td className="text-right">
                         <div className="btn-group flex-btn-group-container">
                           <Button tag={Link} to={`${match.url}/${expiration.id}`} color="info" size="sm">
