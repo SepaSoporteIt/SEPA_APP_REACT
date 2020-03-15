@@ -72,6 +72,7 @@ public class ExpirationResource {
         }
         Expiration result = expirationRepository.save(expiration);
         expirationSearchRepository.save(result);
+        GenerateUniqueCode(result);
         CheckDatesLogic();
         return ResponseEntity.created(new URI("/api/expirations/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -96,6 +97,7 @@ public class ExpirationResource {
         }
         Expiration result = expirationRepository.save(expiration);
         expirationSearchRepository.save(result);
+        GenerateUniqueCode(result);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, expiration.getId().toString()))
             .body(result);
@@ -112,6 +114,11 @@ public class ExpirationResource {
     @GetMapping("/expirations")
     public ResponseEntity<List<Expiration>> getAllExpirations(Pageable pageable) {
         log.debug("REST request to get a page of Expirations");
+        expirationList = expirationRepository.findAll();
+        for (Expiration expiration : expirationList)
+        {
+            GenerateUniqueCode(expiration);
+        }
         CheckDatesLogic();
         Page<Expiration> page = expirationRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
@@ -185,5 +192,46 @@ public class ExpirationResource {
                 expiration.setStatus(Status.A_VENCER);
             }
         }
+    }
+
+    /**
+     * Generates the unique code using the company, employee, study and start date of the expiration
+     * @param actualExpiration The expiration to modify
+     */
+    public void GenerateUniqueCode(Expiration actualExpiration)
+    {
+        String companyId;
+        String employeeId;
+        String studyId;
+
+        if (actualExpiration.getCompany() == null)
+        {
+            companyId = "0";
+        }
+        else
+        {
+            companyId = actualExpiration.getCompany().getId().toString();
+        }
+
+        if (actualExpiration.getEmployee() == null)
+        {
+            employeeId = "0";
+        }
+        else
+        {
+            employeeId = actualExpiration.getEmployee().getId().toString();
+        }
+
+        if (actualExpiration.getStudy() == null)
+        {
+            studyId = "0";
+        }
+        else
+        {
+            studyId = actualExpiration.getStudy().getId().toString();
+        }
+        
+        String initialDate = actualExpiration.getStartDate().toString();
+        actualExpiration.setUniqueCode(companyId+"-"+employeeId+"-"+studyId+"-"+initialDate);
     }
 }
