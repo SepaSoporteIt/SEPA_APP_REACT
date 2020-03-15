@@ -17,6 +17,7 @@ import { getEntity, updateEntity, createEntity, setBlob, reset } from './expirat
 import { IExpiration } from 'app/shared/model/expiration.model';
 import { convertDateTimeFromServer, convertDateTimeToServer } from 'app/shared/util/date-utils';
 import { mapIdList } from 'app/shared/util/entity-utils';
+import { Expiration } from './expiration';
 
 export interface IExpirationUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
