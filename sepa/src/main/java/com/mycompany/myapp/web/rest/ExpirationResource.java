@@ -73,6 +73,7 @@ public class ExpirationResource {
         Expiration result = expirationRepository.save(expiration);
         expirationSearchRepository.save(result);
         GenerateUniqueCode(result);
+        GenerateResponsible(result);
         CheckDatesLogic();
         return ResponseEntity.created(new URI("/api/expirations/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -98,6 +99,7 @@ public class ExpirationResource {
         Expiration result = expirationRepository.save(expiration);
         expirationSearchRepository.save(result);
         GenerateUniqueCode(result);
+        GenerateResponsible(result);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, expiration.getId().toString()))
             .body(result);
@@ -118,6 +120,7 @@ public class ExpirationResource {
         for (Expiration expiration : expirationList)
         {
             GenerateUniqueCode(expiration);
+            GenerateResponsible(expiration);
         }
         CheckDatesLogic();
         Page<Expiration> page = expirationRepository.findAll(pageable);
@@ -233,5 +236,31 @@ public class ExpirationResource {
         
         String initialDate = actualExpiration.getStartDate().toString();
         actualExpiration.setUniqueCode(companyId+"-"+employeeId+"-"+studyId+"-"+initialDate);
+    }
+
+    /**
+     * Generates the expiration's responsible according to the company employee.
+     * @param actualExpiration the expiration to set the responsible.
+     */
+    public void GenerateResponsible(Expiration actualExpiration)
+    {
+        String responsible;
+
+        if (actualExpiration.getCompany() == null)
+        {
+            actualExpiration.setResponsible("No Company Detected");
+        }
+        else
+        {
+            if (actualExpiration.getCompany().getEmployee()==null)
+            {
+                actualExpiration.setResponsible("The Company doesn't have an Employee Assigned");
+            }
+            else
+            {
+                responsible = actualExpiration.getCompany().getEmployee().getName() + " " + actualExpiration.getCompany().getEmployee().getSurname();
+                actualExpiration.setResponsible(responsible);
+            }
+        }  
     }
 }
