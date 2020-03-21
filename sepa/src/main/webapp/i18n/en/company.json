@@ -23,6 +23,13 @@
         "serviceData": "Service Data",
         "others": "Others"
       },
+      "booleans": {
+        "true": "Yes",
+        "false": "No"
+      },
+      "errors": {
+        "noEmployee": "No Employee Assigned"
+      },
       "name": "Name",
       "email": "Email",
       "addressDirection": "Address Direction",
@@ -48,6 +55,7 @@
       "employee": "Employee",
       "primIndustryTipe": "Prim Industry Tipe",
       "secIndustryTipe": "Sec Industry Tipe",
+      "isDisabled": "Is Disabled?",
       "localidadId": "Localidad",
       "partidoId": "Partido"
     }

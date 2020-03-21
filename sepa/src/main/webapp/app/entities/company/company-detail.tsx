@@ -49,7 +49,7 @@ export const CompanyDetail = (props: ICompanyDetailProps) => {
           <dt>
             <Translate contentKey="sepaApp.company.employee">Employee</Translate>
           </dt>
-          <dd>{companyEntity.employee ? companyEntity.employee.name : ''}</dd>
+          <dd>{companyEntity.employee ? companyEntity.employee.name + " " + companyEntity.employee.surname : <Translate contentKey="sepaApp.company.errors.noEmployee">No Employee Assigned</Translate>}</dd>
           </dl>
 
           <dl className="jh-entity-details">
@@ -173,7 +173,7 @@ export const CompanyDetail = (props: ICompanyDetailProps) => {
               <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate>
             </span>
           </dt>
-          <dd>{companyEntity.isSubscripted ? 'si' : 'no'}</dd>
+          <dd>{companyEntity.isSubscripted ? <Translate contentKey="sepaApp.company.booleans.true">true</Translate> : <Translate contentKey="sepaApp.company.booleans.false">false</Translate>}</dd>
           </dl>
 
           <dl className="jh-entity-details">
@@ -192,6 +192,12 @@ export const CompanyDetail = (props: ICompanyDetailProps) => {
             </span>
           </dt>
           <dd>{companyEntity.habSec}</dd>
+          <dt>
+            <span id="isDisabled">
+              <Translate contentKey="sepaApp.company.isDisabled">Is Disabled</Translate>
+            </span>
+          </dt>
+          <dd>{companyEntity.isDisabled ? <Translate contentKey="sepaApp.company.booleans.true">true</Translate> : <Translate contentKey="sepaApp.company.booleans.false">false</Translate>}</dd>
           <dt>
             <span id="comment">
               <Translate contentKey="sepaApp.company.comment">Comment</Translate>

@@ -27,6 +27,7 @@ export interface ICompany {
   createdAt?: Moment;
   updatedAt?: Moment;
   betweenStreets?: string;
+  isDisabled?: boolean;
   employee?: IEmployee;
   primIndustryTipe?: IIndustryType;
   secIndustryTipe?: IIndustryType;
@@ -35,5 +36,6 @@ export interface ICompany {
 }
 
 export const defaultValue: Readonly<ICompany> = {
-  isSubscripted: false
+  isSubscripted: false,
+  isDisabled: false
 };
