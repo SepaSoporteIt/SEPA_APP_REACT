@@ -54,6 +54,12 @@ export class ExpirationDetail extends React.Component<IExpirationDetailProps> {
             </dt>
             <dd>{expirationEntity.status}</dd>
             <dt>
+              <span id="isCompleted">
+                <Translate contentKey="sepaApp.expiration.isCompleted">Is Completed</Translate>
+              </span>
+            </dt>
+            <dd>{expirationEntity.isCompleted ? <Translate contentKey="sepaApp.expiration.booleans.true">true</Translate> : <Translate contentKey="sepaApp.expiration.booleans.false">false</Translate>}</dd>
+            <dt>
               <span id="startDate">
                 <Translate contentKey="sepaApp.expiration.startDate">Start Date</Translate>
               </span>

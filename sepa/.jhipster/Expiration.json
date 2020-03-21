@@ -26,6 +26,10 @@
         {
             "fieldName": "responsible",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "isCompleted",
+            "fieldType": "Boolean"
         }
     ],
     "relationships": [

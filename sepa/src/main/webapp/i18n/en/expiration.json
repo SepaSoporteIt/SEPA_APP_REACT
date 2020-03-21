@@ -18,12 +18,17 @@
         "title": "Expiration",
         "automaticField": "This field will fill automatically"
       },
+      "booleans": {
+        "true": "Yes",
+        "false": "No"
+      },
       "startDate": "Start Date",
       "endDate": "End Date",
       "status": "Status",
       "comments": "Comments",
       "uniqueCode": "Unique Code",
       "responsible": "Responsible",
+      "isCompleted": "Is Completed?",
       "company": "Company",
       "employee": "Performer",
       "study": "Study"
