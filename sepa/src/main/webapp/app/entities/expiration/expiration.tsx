@@ -166,6 +166,9 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                     <th className="hand" onClick={this.sort('endDate')}>
                       <Translate contentKey="sepaApp.expiration.endDate">End Date</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
+                    <th className="hand" onClick={this.sort('isCompleted')}>
+                      <Translate contentKey="sepaApp.expiration.isCompleted">Is Completed</Translate> <FontAwesomeIcon icon="sort" />
+                    </th>
                     <th>
                       <Translate contentKey="sepaApp.expiration.employee">Employee</Translate> <FontAwesomeIcon icon="sort" />
                     </th>
@@ -194,6 +197,7 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                       <td>
                         <TextFormat type="date" value={expiration.endDate} format={APP_LOCAL_DATE_FORMAT} />
                       </td>
+                      <td>{expiration.isCompleted ? <Translate contentKey="sepaApp.expiration.booleans.true">true</Translate> : <Translate contentKey="sepaApp.expiration.booleans.false">false</Translate>}</td>
                       <td>
                         {expiration.employee ? <Link to={`employee/${expiration.employee.id}`}>{expiration.employee.name + " " + expiration.employee.surname}</Link> : ''}
                       </td>

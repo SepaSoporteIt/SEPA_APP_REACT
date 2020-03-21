@@ -189,6 +189,12 @@ export class ExpirationUpdate extends React.Component<IExpirationUpdateProps, IE
                   </Label>
                   <AvField id="expiration-endDate" type="date" className="form-control" name="endDate" />
                 </AvGroup>
+                <AvGroup check>
+                  <Label id="isCompletedLabel">
+                    <AvInput id="expiration-isCompleted" type="checkbox" className="form-check-input" name="isCompleted" />
+                    <Translate contentKey="sepaApp.expiration.isCompleted">Is Completed</Translate>
+                  </Label>
+                </AvGroup>
                 <AvGroup>
                   <Label for="expiration-employee">
                     <Translate contentKey="sepaApp.expiration.employee">Employee</Translate>

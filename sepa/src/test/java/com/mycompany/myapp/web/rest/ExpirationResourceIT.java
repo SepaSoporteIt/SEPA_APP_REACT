@@ -19,7 +19,6 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Base64Utils;
 import org.springframework.validation.Validator;
 
 import javax.persistence.EntityManager;
@@ -60,6 +59,9 @@ public class ExpirationResourceIT {
 
     private static final String DEFAULT_RESPONSIBLE = "AAAAAAAAAA";
     private static final String UPDATED_RESPONSIBLE = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_IS_COMPLETED = false;
+    private static final Boolean UPDATED_IS_COMPLETED = true;
 
     @Autowired
     private ExpirationRepository expirationRepository;
@@ -116,7 +118,8 @@ public class ExpirationResourceIT {
             .status(DEFAULT_STATUS)
             .comments(DEFAULT_COMMENTS)
             .uniqueCode(DEFAULT_UNIQUE_CODE)
-            .responsible(DEFAULT_RESPONSIBLE);
+            .responsible(DEFAULT_RESPONSIBLE)
+            .isCompleted(DEFAULT_IS_COMPLETED);
         return expiration;
     }
     /**
@@ -132,7 +135,8 @@ public class ExpirationResourceIT {
             .status(UPDATED_STATUS)
             .comments(UPDATED_COMMENTS)
             .uniqueCode(UPDATED_UNIQUE_CODE)
-            .responsible(UPDATED_RESPONSIBLE);
+            .responsible(UPDATED_RESPONSIBLE)
+            .isCompleted(UPDATED_IS_COMPLETED);
         return expiration;
     }
 
@@ -162,6 +166,7 @@ public class ExpirationResourceIT {
         assertThat(testExpiration.getComments()).isEqualTo(DEFAULT_COMMENTS);
         assertThat(testExpiration.getUniqueCode()).isEqualTo(DEFAULT_UNIQUE_CODE);
         assertThat(testExpiration.getResponsible()).isEqualTo(DEFAULT_RESPONSIBLE);
+        assertThat(testExpiration.isIsCompleted()).isEqualTo(DEFAULT_IS_COMPLETED);
 
         // Validate the Expiration in Elasticsearch
         verify(mockExpirationSearchRepository, times(1)).save(testExpiration);
@@ -199,14 +204,15 @@ public class ExpirationResourceIT {
         // Get all the expirationList
         restExpirationMockMvc.perform(get("/api/expirations?sort=id,desc"))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(expiration.getId().intValue())))
             .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
             .andExpect(jsonPath("$.[*].endDate").value(hasItem(DEFAULT_END_DATE.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].comments").value(hasItem(DEFAULT_COMMENTS.toString())))
             .andExpect(jsonPath("$.[*].uniqueCode").value(hasItem(DEFAULT_UNIQUE_CODE)))
-            .andExpect(jsonPath("$.[*].responsible").value(hasItem(DEFAULT_RESPONSIBLE)));
+            .andExpect(jsonPath("$.[*].responsible").value(hasItem(DEFAULT_RESPONSIBLE)))
+            .andExpect(jsonPath("$.[*].isCompleted").value(hasItem(DEFAULT_IS_COMPLETED.booleanValue())));
     }
     
     @Test
@@ -218,14 +224,15 @@ public class ExpirationResourceIT {
         // Get the expiration
         restExpirationMockMvc.perform(get("/api/expirations/{id}", expiration.getId()))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(expiration.getId().intValue()))
             .andExpect(jsonPath("$.startDate").value(DEFAULT_START_DATE.toString()))
             .andExpect(jsonPath("$.endDate").value(DEFAULT_END_DATE.toString()))
             .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()))
             .andExpect(jsonPath("$.comments").value(DEFAULT_COMMENTS.toString()))
             .andExpect(jsonPath("$.uniqueCode").value(DEFAULT_UNIQUE_CODE))
-            .andExpect(jsonPath("$.responsible").value(DEFAULT_RESPONSIBLE));
+            .andExpect(jsonPath("$.responsible").value(DEFAULT_RESPONSIBLE))
+            .andExpect(jsonPath("$.isCompleted").value(DEFAULT_IS_COMPLETED.booleanValue()));
     }
 
     @Test
@@ -254,7 +261,8 @@ public class ExpirationResourceIT {
             .status(UPDATED_STATUS)
             .comments(UPDATED_COMMENTS)
             .uniqueCode(UPDATED_UNIQUE_CODE)
-            .responsible(UPDATED_RESPONSIBLE);
+            .responsible(UPDATED_RESPONSIBLE)
+            .isCompleted(UPDATED_IS_COMPLETED);
 
         restExpirationMockMvc.perform(put("/api/expirations")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -271,6 +279,7 @@ public class ExpirationResourceIT {
         assertThat(testExpiration.getComments()).isEqualTo(UPDATED_COMMENTS);
         assertThat(testExpiration.getUniqueCode()).isEqualTo(UPDATED_UNIQUE_CODE);
         assertThat(testExpiration.getResponsible()).isEqualTo(UPDATED_RESPONSIBLE);
+        assertThat(testExpiration.isIsCompleted()).isEqualTo(UPDATED_IS_COMPLETED);
 
         // Validate the Expiration in Elasticsearch
         verify(mockExpirationSearchRepository, times(1)).save(testExpiration);
@@ -328,13 +337,14 @@ public class ExpirationResourceIT {
         // Search the expiration
         restExpirationMockMvc.perform(get("/api/_search/expirations?query=id:" + expiration.getId()))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(expiration.getId().intValue())))
             .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
             .andExpect(jsonPath("$.[*].endDate").value(hasItem(DEFAULT_END_DATE.toString())))
             .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())))
             .andExpect(jsonPath("$.[*].comments").value(hasItem(DEFAULT_COMMENTS.toString())))
             .andExpect(jsonPath("$.[*].uniqueCode").value(hasItem(DEFAULT_UNIQUE_CODE)))
-            .andExpect(jsonPath("$.[*].responsible").value(hasItem(DEFAULT_RESPONSIBLE)));
+            .andExpect(jsonPath("$.[*].responsible").value(hasItem(DEFAULT_RESPONSIBLE)))
+            .andExpect(jsonPath("$.[*].isCompleted").value(hasItem(DEFAULT_IS_COMPLETED.booleanValue())));
     }
 }

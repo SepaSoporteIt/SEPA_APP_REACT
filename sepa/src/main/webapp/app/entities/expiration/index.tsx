@@ -11,12 +11,12 @@ import ExpirationDeleteDialog from './expiration-delete-dialog';
 const Routes = ({ match }) => (
   <>
     <Switch>
+      <ErrorBoundaryRoute exact path={`${match.url}/:id/delete`} component={ExpirationDeleteDialog} />
       <ErrorBoundaryRoute exact path={`${match.url}/new`} component={ExpirationUpdate} />
       <ErrorBoundaryRoute exact path={`${match.url}/:id/edit`} component={ExpirationUpdate} />
       <ErrorBoundaryRoute exact path={`${match.url}/:id`} component={ExpirationDetail} />
       <ErrorBoundaryRoute path={match.url} component={Expiration} />
     </Switch>
-    <ErrorBoundaryRoute path={`${match.url}/:id/delete`} component={ExpirationDeleteDialog} />
   </>
 );
 

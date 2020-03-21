@@ -18,6 +18,10 @@
         "title": "Vencimiento",
         "automaticField": "Este campo se completará automaticamente"
       },
+      "booleans": {
+        "true": "Si",
+        "false": "No"
+      },
       "startDate": "Fecha de inicio",
       "endDate": "Fecha de finalización",
       "status": "Estado",
@@ -25,6 +29,7 @@
       "uniqueCode": "Codigo Único",
       "responsible": "Responsable",
       "company": "Cliente",
+      "isCompleted": "Está completo?",
       "employee": "Realizado Por",
       "study": "Estudio"
     }

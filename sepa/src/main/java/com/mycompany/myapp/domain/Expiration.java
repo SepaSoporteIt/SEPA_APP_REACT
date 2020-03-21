@@ -1,4 +1,5 @@
 package com.mycompany.myapp.domain;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -23,7 +24,6 @@ public class Expiration implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @org.springframework.data.elasticsearch.annotations.Field(type = FieldType.Keyword)
     private Long id;
 
     @Column(name = "start_date")
@@ -45,6 +45,9 @@ public class Expiration implements Serializable {
 
     @Column(name = "responsible")
     private String responsible;
+
+    @Column(name = "is_completed")
+    private Boolean isCompleted;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -145,6 +148,19 @@ public class Expiration implements Serializable {
         this.responsible = responsible;
     }
 
+    public Boolean isIsCompleted() {
+        return isCompleted;
+    }
+
+    public Expiration isCompleted(Boolean isCompleted) {
+        this.isCompleted = isCompleted;
+        return this;
+    }
+
+    public void setIsCompleted(Boolean isCompleted) {
+        this.isCompleted = isCompleted;
+    }
+
     public Company getCompany() {
         return company;
     }
@@ -211,6 +227,7 @@ public class Expiration implements Serializable {
             ", comments='" + getComments() + "'" +
             ", uniqueCode='" + getUniqueCode() + "'" +
             ", responsible='" + getResponsible() + "'" +
+            ", isCompleted='" + isIsCompleted() + "'" +
             "}";
     }
 }
