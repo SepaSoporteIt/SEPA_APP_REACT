@@ -20,10 +20,12 @@ export interface IEmployee {
   comentario?: string;
   createdAt?: Moment;
   updatedAt?: Moment;
+  isDisabled?: boolean;
   localidadId?: ILocalidadandpartido;
   partidoId?: ILocalidadandpartido;
 }
 
 export const defaultValue: Readonly<IEmployee> = {
-  isInternal: false
+  isInternal: false,
+  isDisabled: false
 };

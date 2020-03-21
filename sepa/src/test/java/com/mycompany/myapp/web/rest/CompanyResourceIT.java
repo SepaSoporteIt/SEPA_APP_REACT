@@ -108,6 +108,9 @@ public class CompanyResourceIT {
     private static final String DEFAULT_BETWEEN_STREETS = "AAAAAAAAAA";
     private static final String UPDATED_BETWEEN_STREETS = "BBBBBBBBBB";
 
+    private static final Boolean DEFAULT_IS_DISABLED = false;
+    private static final Boolean UPDATED_IS_DISABLED = true;
+
     @Autowired
     private CompanyRepository companyRepository;
 
@@ -179,7 +182,8 @@ public class CompanyResourceIT {
             .comment(DEFAULT_COMMENT)
             .createdAt(DEFAULT_CREATED_AT)
             .updatedAt(DEFAULT_UPDATED_AT)
-            .betweenStreets(DEFAULT_BETWEEN_STREETS);
+            .betweenStreets(DEFAULT_BETWEEN_STREETS)
+            .isDisabled(DEFAULT_IS_DISABLED);
         return company;
     }
     /**
@@ -211,7 +215,8 @@ public class CompanyResourceIT {
             .comment(UPDATED_COMMENT)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT)
-            .betweenStreets(UPDATED_BETWEEN_STREETS);
+            .betweenStreets(UPDATED_BETWEEN_STREETS)
+            .isDisabled(UPDATED_IS_DISABLED);
         return company;
     }
 
@@ -257,6 +262,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
         assertThat(testCompany.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
         assertThat(testCompany.getBetweenStreets()).isEqualTo(DEFAULT_BETWEEN_STREETS);
+        assertThat(testCompany.isIsDisabled()).isEqualTo(DEFAULT_IS_DISABLED);
 
         // Validate the Company in Elasticsearch
         verify(mockCompanySearchRepository, times(1)).save(testCompany);
@@ -389,7 +395,8 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].betweenStreets").value(hasItem(DEFAULT_BETWEEN_STREETS)));
+            .andExpect(jsonPath("$.[*].betweenStreets").value(hasItem(DEFAULT_BETWEEN_STREETS)))
+            .andExpect(jsonPath("$.[*].isDisabled").value(hasItem(DEFAULT_IS_DISABLED.booleanValue())));
     }
     
     @Test
@@ -424,7 +431,8 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT.toString()))
             .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
             .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()))
-            .andExpect(jsonPath("$.betweenStreets").value(DEFAULT_BETWEEN_STREETS));
+            .andExpect(jsonPath("$.betweenStreets").value(DEFAULT_BETWEEN_STREETS))
+            .andExpect(jsonPath("$.isDisabled").value(DEFAULT_IS_DISABLED.booleanValue()));
     }
 
     @Test
@@ -469,7 +477,8 @@ public class CompanyResourceIT {
             .comment(UPDATED_COMMENT)
             .createdAt(UPDATED_CREATED_AT)
             .updatedAt(UPDATED_UPDATED_AT)
-            .betweenStreets(UPDATED_BETWEEN_STREETS);
+            .betweenStreets(UPDATED_BETWEEN_STREETS)
+            .isDisabled(UPDATED_IS_DISABLED);
 
         restCompanyMockMvc.perform(put("/api/companies")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -502,6 +511,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
         assertThat(testCompany.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
         assertThat(testCompany.getBetweenStreets()).isEqualTo(UPDATED_BETWEEN_STREETS);
+        assertThat(testCompany.isIsDisabled()).isEqualTo(UPDATED_IS_DISABLED);
 
         // Validate the Company in Elasticsearch
         verify(mockCompanySearchRepository, times(1)).save(testCompany);
@@ -582,6 +592,7 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
             .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].betweenStreets").value(hasItem(DEFAULT_BETWEEN_STREETS)));
+            .andExpect(jsonPath("$.[*].betweenStreets").value(hasItem(DEFAULT_BETWEEN_STREETS)))
+            .andExpect(jsonPath("$.[*].isDisabled").value(hasItem(DEFAULT_IS_DISABLED.booleanValue())));
     }
 }

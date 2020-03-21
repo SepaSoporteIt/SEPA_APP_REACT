@@ -101,6 +101,10 @@
         {
             "fieldName": "betweenStreets",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "isDisabled",
+            "fieldType": "Boolean"
         }
     ],
     "relationships": [

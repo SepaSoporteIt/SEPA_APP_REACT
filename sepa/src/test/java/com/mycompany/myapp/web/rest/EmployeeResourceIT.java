@@ -92,6 +92,9 @@ public class EmployeeResourceIT {
     private static final Instant DEFAULT_UPDATED_AT = Instant.ofEpochMilli(0L);
     private static final Instant UPDATED_UPDATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
+    private static final Boolean DEFAULT_IS_DISABLED = false;
+    private static final Boolean UPDATED_IS_DISABLED = true;
+
     @Autowired
     private EmployeeRepository employeeRepository;
 
@@ -158,7 +161,8 @@ public class EmployeeResourceIT {
             .celular(DEFAULT_CELULAR)
             .comentario(DEFAULT_COMENTARIO)
             .createdAt(DEFAULT_CREATED_AT)
-            .updatedAt(DEFAULT_UPDATED_AT);
+            .updatedAt(DEFAULT_UPDATED_AT)
+            .isDisabled(DEFAULT_IS_DISABLED);
         return employee;
     }
     /**
@@ -185,7 +189,8 @@ public class EmployeeResourceIT {
             .celular(UPDATED_CELULAR)
             .comentario(UPDATED_COMENTARIO)
             .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .updatedAt(UPDATED_UPDATED_AT)
+            .isDisabled(UPDATED_IS_DISABLED);
         return employee;
     }
 
@@ -226,6 +231,7 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getComentario()).isEqualTo(DEFAULT_COMENTARIO);
         assertThat(testEmployee.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
         assertThat(testEmployee.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
+        assertThat(testEmployee.isIsDisabled()).isEqualTo(DEFAULT_IS_DISABLED);
 
         // Validate the Employee in Elasticsearch
         verify(mockEmployeeSearchRepository, times(1)).save(testEmployee);
@@ -353,7 +359,8 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].celular").value(hasItem(DEFAULT_CELULAR)))
             .andExpect(jsonPath("$.[*].comentario").value(hasItem(DEFAULT_COMENTARIO)))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
+            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())))
+            .andExpect(jsonPath("$.[*].isDisabled").value(hasItem(DEFAULT_IS_DISABLED.booleanValue())));
     }
     
     @Test
@@ -383,7 +390,8 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.celular").value(DEFAULT_CELULAR))
             .andExpect(jsonPath("$.comentario").value(DEFAULT_COMENTARIO))
             .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
-            .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
+            .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()))
+            .andExpect(jsonPath("$.isDisabled").value(DEFAULT_IS_DISABLED.booleanValue()));
     }
 
     @Test
@@ -423,7 +431,8 @@ public class EmployeeResourceIT {
             .celular(UPDATED_CELULAR)
             .comentario(UPDATED_COMENTARIO)
             .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .updatedAt(UPDATED_UPDATED_AT)
+            .isDisabled(UPDATED_IS_DISABLED);
 
         restEmployeeMockMvc.perform(put("/api/employees")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -451,6 +460,7 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getComentario()).isEqualTo(UPDATED_COMENTARIO);
         assertThat(testEmployee.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
         assertThat(testEmployee.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
+        assertThat(testEmployee.isIsDisabled()).isEqualTo(UPDATED_IS_DISABLED);
 
         // Validate the Employee in Elasticsearch
         verify(mockEmployeeSearchRepository, times(1)).save(testEmployee);
@@ -526,6 +536,7 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].celular").value(hasItem(DEFAULT_CELULAR)))
             .andExpect(jsonPath("$.[*].comentario").value(hasItem(DEFAULT_COMENTARIO)))
             .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
+            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())))
+            .andExpect(jsonPath("$.[*].isDisabled").value(hasItem(DEFAULT_IS_DISABLED.booleanValue())));
     }
 }

@@ -180,7 +180,7 @@ export class Company extends React.Component<ICompanyProps, ICompanyState> {
                       <td>{company.fantasyName}</td>
                       <td>{company.addressDirection}</td>
                       <td>{company.addressNumber}</td>
-                      <td>{company.isSubscripted ? 'true' : 'false'}</td>
+                      <td>{company.isSubscripted ? <Translate contentKey="sepaApp.company.booleans.true">true</Translate> : <Translate contentKey="sepaApp.company.booleans.false">false</Translate>}</td>
                       <td>{company.tlf}</td>
                       <td>{company.contact}</td>
                       <td className="text-right">

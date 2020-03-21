@@ -22,6 +22,11 @@
         "true": "Yes",
         "false": "No"
       },
+      "errors": {
+        "noCompany": "No Company Assigned",
+        "noResponsible": "No Employee Assigned in the selected Company",
+        "noEmployee": "No Employee Assigned"
+      },
       "startDate": "Start Date",
       "endDate": "End Date",
       "status": "Status",

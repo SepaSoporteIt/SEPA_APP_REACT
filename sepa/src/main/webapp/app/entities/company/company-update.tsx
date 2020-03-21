@@ -147,7 +147,7 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                   {employees
                     ? employees.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.name}
+                          {otherEntity.name + " " + otherEntity.surname}
                         </option>
                       ))
                     : null}

@@ -21,6 +21,10 @@
         "addressData": "Datos del Domicilio",
         "others": "Otros"
       },
+      "booleans": {
+        "true": "Si",
+        "false": "No"
+      },
       "name": "Nombre",
       "surname": "Apellido",
       "fullName": "Nombre Completo",
@@ -40,6 +44,7 @@
       "createdAt": "Creado el",
       "updatedAt": "Modificado el",
       "localidadId": "Localidad",
+      "isDisabled": "Dado de Baja?",
       "partidoId": "Partido"
     }
   }

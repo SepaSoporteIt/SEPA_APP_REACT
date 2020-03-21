@@ -96,6 +96,9 @@ public class Company implements Serializable {
     @Column(name = "between_streets")
     private String betweenStreets;
 
+    @Column(name = "is_disabled")
+    private Boolean isDisabled;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Employee employee;
@@ -411,6 +414,19 @@ public class Company implements Serializable {
         this.betweenStreets = betweenStreets;
     }
 
+    public Boolean isIsDisabled() {
+        return isDisabled;
+    }
+
+    public Company isDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
+        return this;
+    }
+
+    public void setIsDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
+    }
+
     public Employee getEmployee() {
         return employee;
     }
@@ -519,6 +535,7 @@ public class Company implements Serializable {
             ", createdAt='" + getCreatedAt() + "'" +
             ", updatedAt='" + getUpdatedAt() + "'" +
             ", betweenStreets='" + getBetweenStreets() + "'" +
+            ", isDisabled='" + isIsDisabled() + "'" +
             "}";
     }
 }
