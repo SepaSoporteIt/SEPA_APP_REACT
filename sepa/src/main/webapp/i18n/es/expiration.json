@@ -22,6 +22,11 @@
         "true": "Si",
         "false": "No"
       },
+      "errors": {
+        "noCompany": "Cliente no Asignado",
+        "noResponsible": "Profesional no Asignado en el Cliente Seleccionado",
+        "noEmployee": "Profesional no Asignado"
+      },
       "startDate": "Fecha de inicio",
       "endDate": "Fecha de finalización",
       "status": "Estado",

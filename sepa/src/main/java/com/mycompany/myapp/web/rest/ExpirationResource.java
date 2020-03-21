@@ -248,13 +248,13 @@ public class ExpirationResource {
 
         if (actualExpiration.getCompany() == null)
         {
-            actualExpiration.setResponsible("No Company Detected");
+            actualExpiration.setResponsible(null);
         }
         else
         {
             if (actualExpiration.getCompany().getEmployee()==null)
             {
-                actualExpiration.setResponsible("The Company doesn't have an Employee Assigned");
+                actualExpiration.setResponsible(null);
             }
             else
             {

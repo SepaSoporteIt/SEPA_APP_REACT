@@ -184,9 +184,12 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                         </Button>
                       </td>
                       <td>
-                        {expiration.company ? <Link to={`company/${expiration.company.id}`}>{expiration.company.name + " - " + expiration.company.addressDirection + " " + expiration.company.addressNumber}</Link> : ''}
+                        {expiration.company ? <Link to={`company/${expiration.company.id}`}>{expiration.company.name + " - " + expiration.company.addressDirection + " " + expiration.company.addressNumber}</Link> : <Translate contentKey="sepaApp.expiration.errors.noCompany">No Company Assigned</Translate>}
                       </td>
-                      <td>{expiration.responsible}</td>
+
+                      <td>
+                        {expiration.responsible ? expiration.responsible : expiration.company ? <Translate contentKey="sepaApp.expiration.errors.noResponsible">No Employee Assigned in the selected Company</Translate> : <Translate contentKey="sepaApp.expiration.errors.noCompany">No Company Assigned</Translate>}
+                      </td>
                       <td>{expiration.study ? <Link to={`study/${expiration.study.id}`}>{expiration.study.name}</Link> : ''}</td>
                       <td>
                         <Translate contentKey={`sepaApp.Status.${expiration.status}`} />
@@ -199,7 +202,7 @@ export class Expiration extends React.Component<IExpirationProps, IExpirationSta
                       </td>
                       <td>{expiration.isCompleted ? <Translate contentKey="sepaApp.expiration.booleans.true">true</Translate> : <Translate contentKey="sepaApp.expiration.booleans.false">false</Translate>}</td>
                       <td>
-                        {expiration.employee ? <Link to={`employee/${expiration.employee.id}`}>{expiration.employee.name + " " + expiration.employee.surname}</Link> : ''}
+                        {expiration.employee ? <Link to={`employee/${expiration.employee.id}`}>{expiration.employee.name + " " + expiration.employee.surname}</Link> : <Translate contentKey="sepaApp.expiration.errors.noEmployee">No Employee Assigned</Translate>}
                       </td>
                       <td className="text-right">
                         <div className="btn-group flex-btn-group-container">
