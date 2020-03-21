@@ -21,6 +21,10 @@
         "addressData": "Address Data",
         "others": "Others"
       },
+      "booleans": {
+        "true": "Yes",
+        "false": "No"
+      },
       "name": "Name",
       "surname": "Surname",
       "fullName": "Full Name",
@@ -40,6 +44,7 @@
       "createdAt": "Created At",
       "updatedAt": "Updated At",
       "localidadId": "Localidad",
+      "isDisabled": "Is Disabled?",
       "partidoId": "Partido"
     }
   }

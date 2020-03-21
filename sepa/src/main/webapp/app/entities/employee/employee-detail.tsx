@@ -131,7 +131,13 @@ export const EmployeeDetail = (props: IEmployeeDetailProps) => {
               <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate>
             </span>
           </dt>
-          <dd>{employeeEntity.isInternal ? 'Si' : 'No'}</dd>
+          <dd>{employeeEntity.isInternal ? <Translate contentKey="sepaApp.employee.booleans.true">true</Translate> : <Translate contentKey="sepaApp.employee.booleans.false">false</Translate>}</dd>
+          <dt>
+            <span id="isDisabled">
+              <Translate contentKey="sepaApp.employee.isDisabled">Is Disabled</Translate>
+            </span>
+          </dt>
+          <dd>{employeeEntity.isDisabled ? <Translate contentKey="sepaApp.employee.booleans.true">true</Translate> : <Translate contentKey="sepaApp.employee.booleans.false">false</Translate>}</dd>
           <dt>
             <span id="comentario">
               <Translate contentKey="sepaApp.employee.comentario">Comentario</Translate>

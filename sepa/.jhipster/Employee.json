@@ -80,6 +80,10 @@
         {
             "fieldName": "updatedAt",
             "fieldType": "Instant"
+        },
+        {
+            "fieldName": "isDisabled",
+            "fieldType": "Boolean"
         }
     ],
     "relationships": [

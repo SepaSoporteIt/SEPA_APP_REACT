@@ -80,6 +80,9 @@ public class Employee implements Serializable {
     @Column(name = "updated_at")
     private Instant updatedAt;
 
+    @Column(name = "is_disabled")
+    private Boolean isDisabled;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Localidadandpartido localidadId;
@@ -318,6 +321,19 @@ public class Employee implements Serializable {
         this.updatedAt = updatedAt;
     }
 
+    public Boolean isIsDisabled() {
+        return isDisabled;
+    }
+
+    public Employee isDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
+        return this;
+    }
+
+    public void setIsDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
+    }
+
     public Localidadandpartido getLocalidadId() {
         return localidadId;
     }
@@ -382,6 +398,7 @@ public class Employee implements Serializable {
             ", comentario='" + getComentario() + "'" +
             ", createdAt='" + getCreatedAt() + "'" +
             ", updatedAt='" + getUpdatedAt() + "'" +
+            ", isDisabled='" + isIsDisabled() + "'" +
             "}";
     }
 }

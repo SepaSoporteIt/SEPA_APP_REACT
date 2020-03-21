@@ -179,7 +179,7 @@ export const Employee = (props: IEmployeeProps) => {
                     <td>{employee.matNumber}</td>
                     <td>{employee.cuit}</td>
                     <td>{employee.tlf}</td>
-                    <td>{employee.isInternal ? 'Si' : 'No'}</td>
+                    <td>{employee.isInternal ? <Translate contentKey="sepaApp.employee.booleans.true">true</Translate> : <Translate contentKey="sepaApp.employee.booleans.false">false</Translate>}</td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${employee.id}`} color="info" size="sm">
