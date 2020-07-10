@@ -69,7 +69,7 @@ export const Home = (props: IHomeProp) => {
 
       </Col>
       <Col md="3">
-        <img src="content/images/Sepa_logo_400x400.png" />
+        <img src="content/images/Sepa_logo_400x400.png" className="img-fluid" alt="Responsive image" />
       </Col>
     </Row>
   );
