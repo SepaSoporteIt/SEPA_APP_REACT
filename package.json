@@ -122,6 +122,7 @@
     "lint:fix": "npm run lint -- --fix",
     "cleanup": "rimraf target/classes/static/",
     "start": "npm run webpack:dev",
+    "startApp": "mvn spring-boot:run",
     "start-tls": "npm run webpack:dev -- --env.tls",
     "jest": "jest --coverage --logHeapUsage --maxWorkers=2 --config src/test/javascript/jest.conf.js",
     "jest:update": "npm run jest -- --updateSnapshot",
