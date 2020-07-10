@@ -33,9 +33,9 @@ export const Home = (props: IHomeProp) => {
         ) : (
           <div>
             <Alert color="warning">
-              <Translate contentKey="global.messages.info.register.noaccount">You do not have an account yet?</Translate>&nbsp;
-              <Link to="/account/register" className="alert-link">
-                <Translate contentKey="global.messages.info.register.link">Register a new account</Translate>
+              <Translate contentKey="global.messages.info.authenticated.prefix">Login</Translate>&nbsp;
+              <Link to="/login" className="alert-link">
+                <Translate contentKey="global.messages.info.authenticated.link">Here</Translate>
               </Link>
             </Alert>
           </div>
@@ -67,28 +67,9 @@ export const Home = (props: IHomeProp) => {
           </li>
         </ul>
 
-        {account && account.login ? (
-          <ul>
-            <li>
-              <a href="https://server:8080/mantisbt" target="_blank" rel="noopener noreferrer">
-                <Translate contentKey="home.link.mantis">If you have a problem with the app, let us know</Translate>
-              </a>
-            </li>
-            <li>
-              <a href="https://server:8080/sepawiki" target="_blank" rel="noopener noreferrer">
-                <Translate contentKey="home.link.sepawiki">Information about the multiples applications used on SEPA</Translate>
-              </a>
-            </li>
-          </ul>
-        ): (
-          <ul>
-
-          </ul>
-        )}
-
       </Col>
-      <Col md="3" className="pad">
-        <span className="hipster rounded" />
+      <Col md="3">
+        <img src="content/images/Sepa_logo_400x400.png" />
       </Col>
     </Row>
   );
