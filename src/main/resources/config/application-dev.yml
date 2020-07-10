@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
-    com.mycompany.myapp: DEBUG
+    com.app.sepa: DEBUG
 
 spring:
   profiles:
@@ -50,12 +50,6 @@ spring:
         useServerPrepStmts: true
   jpa:
     show-sql: true
-    properties:
-      hibernate.id.new_generator_mappings: true
-      hibernate.connection.provider_disables_autocommit: true
-      hibernate.cache.use_second_level_cache: false
-      hibernate.cache.use_query_cache: false
-      hibernate.generate_statistics: false
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
@@ -88,13 +82,17 @@ jhipster:
     allowed-origins: '*'
     allowed-methods: '*'
     allowed-headers: '*'
-    exposed-headers: 'Link,X-Total-Count'
+    exposed-headers: 'Authorization,Link,X-Total-Count'
     allow-credentials: true
     max-age: 1800
   security:
-    remember-me:
-      # security key (this key should be unique for your application, and kept secret)
-      key: 483196714c07d6bfd975bac577cf4948c9586ffdef97d62064268461c1ce0978ed26309f3e628bb092b3a39f9671abf5e1d5
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+        base64-secret: ZjUxZGZkMTU2NjliNzIxMjQ5M2EzMzUxYjFlN2Q4MWY4MjQ3YzQ3ZGE4MDZhNmMyNDQ1ZjA3ZmQwNTBjYjQyMzY1ZTMxODc5NWE3NTNkOWNlNDdmODFjMTdkZDE5ZjI0YjEzZWRmMDZmMmYyYzZhMTM0NDFiYWNmMzg2MzRiMTY=
+        # Token is valid 24 hours
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
     base-url: http://127.0.0.1:8080
   metrics:

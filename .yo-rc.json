@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.app.sepa"
+    },
+    "jhipsterVersion": "6.10.0",
+    "applicationType": "monolith",
+    "baseName": "SEPA_APP_REACT",
+    "packageName": "com.app.sepa",
+    "packageFolder": "com/app/sepa",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZjUxZGZkMTU2NjliNzIxMjQ5M2EzMzUxYjFlN2Q4MWY4MjQ3YzQ3ZGE4MDZhNmMyNDQ1ZjA3ZmQwNTBjYjQyMzY1ZTMxODc5NWE3NTNkOWNlNDdmODFjMTdkZDE5ZjI0YjEzZWRmMDZmMmYyYzZhMTM0NDFiYWNmMzg2MzRiMTY=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "cerulean",
+    "clientThemeVariant": "light",
+    "creationTimestamp": 1594394906890,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}

@@ -1,0 +1,89 @@
+entity Company {
+	name String required
+  email String
+  addressDirection String required
+  addressNumber String required
+  floor String
+  departament String
+  cuit String required
+  isSubscripted Boolean
+  
+  fantasyName String
+  postalCode String
+  tlf String
+  internalTlf String
+  contact String
+  cellphone String
+  
+  visitsQtyMin Integer
+  visitsQtyMax Integer
+
+  habPrim String
+  habSec String
+
+  comment TextBlob
+
+  legislationId Integer
+  solicitadorId Integer
+  ambitoId Integer
+  autoridadId Integer
+  frecuencyTypeId Integer
+    
+  createdAt Instant
+  updatedAt Instant
+}
+entity IndustryType {
+	name String required
+    ciiu String required
+    createdAt Instant
+    updatedAt Instant
+}
+entity Employee {
+	name String required
+    surname String required
+    email String
+    tlf String
+    isInternal Boolean
+	matNumber String required
+    cuit String required
+	addressDirection String
+    addressNumber String
+	floor String
+	departament String
+    degree String
+    localidad String
+    partido String
+    especializacion String
+    celular String
+    comentario String
+    
+    createdAt Instant
+    updatedAt Instant
+}
+entity Expiration {
+	startDate LocalDate
+    endDate LocalDate
+    status Status
+    comments TextBlob
+}
+entity Study {
+	name String required
+    resolution String required
+    legislation String required
+}
+enum Status {
+	VENCIDO, A_VENCER, PENDIENTE, VIGENTE, ANTIGUO, SIN_FECHA
+}
+relationship OneToOne {
+	Company {employee (name)} to Employee
+Company {primIndustryTipe(ciiu)} to IndustryType
+Company {secIndustryTipe(ciiu)} to IndustryType
+
+Expiration {company (fantasyName)} to Company
+Expiration {employee (name)} to Employee
+Expiration {study (name)} to Study
+}
+// Set pagination options
+paginate Employee, Expiration with infinite-scroll
+paginate Company with infinite-scroll
+paginate Study, IndustryType with pagination

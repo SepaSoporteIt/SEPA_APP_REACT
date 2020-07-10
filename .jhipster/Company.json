@@ -1,0 +1,159 @@
+{
+  "name": "Company",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressDirection",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "addressNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "floor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "departament",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cuit",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "isSubscripted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "fantasyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postalCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tlf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "internalTlf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cellphone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "visitsQtyMin",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "visitsQtyMax",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "habPrim",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "habSec",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "legislationId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "solicitadorId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "ambitoId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "autoridadId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "frecuencyTypeId",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "employee",
+      "otherEntityField": "name",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "industryType",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "primIndustryTipe",
+      "otherEntityField": "ciiu",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "industryType",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "secIndustryTipe",
+      "otherEntityField": "ciiu",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20200710154001",
+  "entityTableName": "company",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

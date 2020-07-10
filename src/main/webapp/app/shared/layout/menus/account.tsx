@@ -14,9 +14,6 @@ const accountMenuItemsAuthenticated = (
     <MenuItem icon="lock" to="/account/password">
       Password
     </MenuItem>
-    <MenuItem icon="cloud" to="/account/sessions">
-      Sessions
-    </MenuItem>
     <MenuItem icon="sign-out-alt" to="/logout">
       Sign out
     </MenuItem>

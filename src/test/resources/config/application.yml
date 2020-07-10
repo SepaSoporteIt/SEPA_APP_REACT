@@ -14,11 +14,14 @@
 # ===================================================================
 
 spring:
+  profiles:
+  # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
+  #active: testcontainers
   application:
-    name: myJavaApp
+    name: SEPA_APP_REACT
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:myJavaApp;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:SEPA_APP_REACT;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -52,18 +55,15 @@ spring:
     allow-bean-definition-overriding: true
   messages:
     basename: i18n/messages
-  mvc:
-    favicon:
-      enabled: false
   task:
     execution:
-      thread-name-prefix: my-java-app-task-
+      thread-name-prefix: sepa-app-react-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: my-java-app-scheduling-
+      thread-name-prefix: sepa-app-react-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -81,10 +81,10 @@ server:
 
 jhipster:
   clientApp:
-    name: 'myJavaApp'
+    name: 'sepaAppReactApp'
   logging:
     # To test json console appender
-    use-json-format: true # By default, logs are in Json format
+    use-json-format: false
     logstash:
       enabled: false
       host: localhost
@@ -94,9 +94,12 @@ jhipster:
     from: test@localhost
     base-url: http://127.0.0.1:8080
   security:
-    remember-me:
-      # security key (this key should be unique for your application, and kept secret)
-      key: 483196714c07d6bfd975bac577cf4948c9586ffdef97d62064268461c1ce0978ed26309f3e628bb092b3a39f9671abf5e1d5
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
+        base64-secret: ZjUxZGZkMTU2NjliNzIxMjQ5M2EzMzUxYjFlN2Q4MWY4MjQ3YzQ3ZGE4MDZhNmMyNDQ1ZjA3ZmQwNTBjYjQyMzY1ZTMxODc5NWE3NTNkOWNlNDdmODFjMTdkZDE5ZjI0YjEzZWRmMDZmMmYyYzZhMTM0NDFiYWNmMzg2MzRiMTY=
+        # Token is valid 24 hours
+        token-validity-in-seconds: 86400
   metrics:
     logs: # Reports metrics in the logs
       enabled: true
