@@ -123,6 +123,8 @@
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "npm run lint -- --fix",
     "cleanup": "rimraf target/classes/static/",
+    "startApp:dev": "mvn spring-boot:run",
+    "startApp:prod": "mvn spring-boot:run -Pprod",
     "start": "npm run webpack:dev",
     "start-tls": "npm run webpack:dev -- --env.tls",
     "jest": "jest --coverage --logHeapUsage --maxWorkers=2 --config src/test/javascript/jest.conf.js",
