@@ -90,6 +90,11 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                   <AvInput id="company-id" type="text" className="form-control" name="id" required readOnly />
                 </AvGroup>
               ) : null}
+
+            <AvGroup>
+              <h3>
+                <Translate contentKey="sepaApp.company.detail.basicData">Basic Data</Translate>
+              </h3>
               <AvGroup>
                 <Label id="nameLabel" for="company-name">
                   <Translate contentKey="sepaApp.company.name">Name</Translate>
@@ -99,16 +104,50 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                   type="text"
                   name="name"
                   validate={{
-                    required: { value: true, errorMessage: translate('entity.validation.required') },
+                    required: { value: true, errorMessage: translate('entity.validation.required') }
                   }}
                 />
               </AvGroup>
               <AvGroup>
-                <Label id="emailLabel" for="company-email">
-                  <Translate contentKey="sepaApp.company.email">Email</Translate>
+                <Label id="fantasyNameLabel" for="company-fantasyName">
+                  <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
                 </Label>
-                <AvField id="company-email" type="text" name="email" />
+                <AvField id="company-fantasyName" type="text" name="fantasyName" />
               </AvGroup>
+              <AvGroup>
+                <Label id="cuitLabel" for="company-cuit">
+                  <Translate contentKey="sepaApp.company.cuit">Cuit</Translate>
+                </Label>
+                <AvField
+                  id="company-cuit"
+                  type="text"
+                  name="cuit"
+                  validate={{
+                    required: { value: true, errorMessage: translate('entity.validation.required') }
+                  }}
+                />
+              </AvGroup>
+              <AvGroup>
+                <Label for="company-employee">
+                  <Translate contentKey="sepaApp.company.employee">Employee</Translate>
+                </Label>
+                <AvInput id="company-employee" type="select" className="form-control" name="employee.id">
+                  <option value="" key="0" />
+                  {employees
+                    ? employees.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.name + " " + otherEntity.surname}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
+            </AvGroup>
+
+            <AvGroup>
+              <h3>
+                <Translate contentKey="sepaApp.company.detail.clientAddress">Stablishment Address</Translate>
+              </h3>
               <AvGroup>
                 <Label id="addressDirectionLabel" for="company-addressDirection">
                   <Translate contentKey="sepaApp.company.addressDirection">Address Direction</Translate>
@@ -118,7 +157,7 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                   type="text"
                   name="addressDirection"
                   validate={{
-                    required: { value: true, errorMessage: translate('entity.validation.required') },
+                    required: { value: true, errorMessage: translate('entity.validation.required') }
                   }}
                 />
               </AvGroup>
@@ -131,7 +170,7 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                   type="text"
                   name="addressNumber"
                   validate={{
-                    required: { value: true, errorMessage: translate('entity.validation.required') },
+                    required: { value: true, errorMessage: translate('entity.validation.required') }
                   }}
                 />
               </AvGroup>
@@ -154,35 +193,52 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                 <AvField id="company-departament" type="text" name="departament" />
               </AvGroup>
               <AvGroup>
-                <Label id="cuitLabel" for="company-cuit">
-                  <Translate contentKey="sepaApp.company.cuit">Cuit</Translate>
+                <Label for="company-localidadId">
+                  <Translate contentKey="sepaApp.company.localidadId">Localidad Id</Translate>
                 </Label>
-                <AvField
-                  id="company-cuit"
-                  type="text"
-                  name="cuit"
-                  validate={{
-                    required: { value: true, errorMessage: translate('entity.validation.required') },
-                  }}
-                />
-              </AvGroup>
-              <AvGroup check>
-                <Label id="isSubscriptedLabel">
-                  <AvInput id="company-isSubscripted" type="checkbox" className="form-check-input" name="isSubscripted" />
-                  <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate>
-                </Label>
+                <AvInput id="company-localidadId" type="select" className="form-control" name="localidadId.id">
+                  <option value="" key="0" />
+                  {localidadAndPartidos
+                    ? localidadAndPartidos.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.localidad}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
               </AvGroup>
               <AvGroup>
-                <Label id="fantasyNameLabel" for="company-fantasyName">
-                  <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
+                <Label for="company-partidoId">
+                  <Translate contentKey="sepaApp.company.partidoId">Partido Id</Translate>
                 </Label>
-                <AvField id="company-fantasyName" type="text" name="fantasyName" />
+                <AvInput id="company-partidoId" type="select" className="form-control" name="partidoId.id">
+                  <option value="" key="0" />
+                  {localidadAndPartidos
+                    ? localidadAndPartidos.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.partido}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
               </AvGroup>
               <AvGroup>
                 <Label id="postalCodeLabel" for="company-postalCode">
                   <Translate contentKey="sepaApp.company.postalCode">Postal Code</Translate>
                 </Label>
                 <AvField id="company-postalCode" type="text" name="postalCode" />
+              </AvGroup>
+            </AvGroup>
+
+            <AvGroup>
+              <h3>
+                <Translate contentKey="sepaApp.company.detail.contactData">Contact Data</Translate>
+              </h3>
+              <AvGroup>
+                <Label id="contactLabel" for="company-contact">
+                  <Translate contentKey="sepaApp.company.contact">Contact</Translate>
+                </Label>
+                <AvField id="company-contact" type="text" name="contact" />
               </AvGroup>
               <AvGroup>
                 <Label id="tlfLabel" for="company-tlf">
@@ -197,17 +253,59 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                 <AvField id="company-internalTlf" type="text" name="internalTlf" />
               </AvGroup>
               <AvGroup>
-                <Label id="contactLabel" for="company-contact">
-                  <Translate contentKey="sepaApp.company.contact">Contact</Translate>
-                </Label>
-                <AvField id="company-contact" type="text" name="contact" />
-              </AvGroup>
-              <AvGroup>
                 <Label id="cellphoneLabel" for="company-cellphone">
                   <Translate contentKey="sepaApp.company.cellphone">Cellphone</Translate>
                 </Label>
                 <AvField id="company-cellphone" type="text" name="cellphone" />
               </AvGroup>
+              <AvGroup>
+                <Label id="emailLabel" for="company-email">
+                  <Translate contentKey="sepaApp.company.email">Email</Translate>
+                </Label>
+                <AvField id="company-email" type="text" name="email" />
+              </AvGroup>
+            </AvGroup>
+
+            <AvGroup>
+              <h3>
+                <Translate contentKey="sepaApp.company.detail.afipActivity">Activity stablished by AFIP</Translate>
+              </h3>
+              <AvGroup>
+                <Label for="company-industryType">
+                  <Translate contentKey="sepaApp.company.industryType">1º CIIU</Translate>
+                </Label>
+                <AvInput id="company-industryType" type="select" className="form-control" name="industryType.id">
+                  <option value="" key="0" />
+                  {industryTypes
+                    ? industryTypes.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.ciiu}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
+              <AvGroup>
+                <Label for="company-secIndustryType">
+                  <Translate contentKey="sepaApp.company.secIndustryType">2º CIIU</Translate>
+                </Label>
+                <AvInput id="company-secIndustryType" type="select" className="form-control" name="secIndustryType.id">
+                  <option value="" key="0" />
+                  {industryTypes
+                    ? industryTypes.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.ciiu}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
+            </AvGroup>
+
+            <AvGroup>
+              <h3>
+                <Translate contentKey="sepaApp.company.detail.serviceData">Service Data</Translate>
+              </h3>
               <AvGroup>
                 <Label id="visitsQtyMinLabel" for="company-visitsQtyMin">
                   <Translate contentKey="sepaApp.company.visitsQtyMin">Visits Qty Min</Translate>
@@ -220,6 +318,18 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                 </Label>
                 <AvField id="company-visitsQtyMax" type="string" className="form-control" name="visitsQtyMax" />
               </AvGroup>
+              <AvGroup check>
+                <Label id="isSubscriptedLabel">
+                  <AvInput id="company-isSubscripted" type="checkbox" className="form-check-input" name="isSubscripted" />
+                  <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate>
+                </Label>
+              </AvGroup>
+            </AvGroup>
+
+            <AvGroup>
+              <h3>
+                <Translate contentKey="sepaApp.company.detail.others">Others</Translate>
+              </h3>
               <AvGroup>
                 <Label id="habPrimLabel" for="company-habPrim">
                   <Translate contentKey="sepaApp.company.habPrim">Hab Prim</Translate>
@@ -236,89 +346,10 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                 <Label id="commentLabel" for="company-comment">
                   <Translate contentKey="sepaApp.company.comment">Comment</Translate>
                 </Label>
-                <AvField id="company-comment" type="text" name="comment" />
+              <AvInput id="company-comment" type="textarea" name="comment" />
               </AvGroup>
-              <AvGroup check>
-                <Label id="isDisabledLabel">
-                  <AvInput id="company-isDisabled" type="checkbox" className="form-check-input" name="isDisabled" />
-                  <Translate contentKey="sepaApp.company.isDisabled">Is Disabled</Translate>
-                </Label>
-              </AvGroup>
-              <AvGroup>
-                <Label for="company-employee">
-                  <Translate contentKey="sepaApp.company.employee">Employee</Translate>
-                </Label>
-                <AvInput id="company-employee" type="select" className="form-control" name="employee.id">
-                  <option value="" key="0" />
-                  {employees
-                    ? employees.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="company-industryType">
-                  <Translate contentKey="sepaApp.company.industryType">Industry Type</Translate>
-                </Label>
-                <AvInput id="company-industryType" type="select" className="form-control" name="industryType.id">
-                  <option value="" key="0" />
-                  {industryTypes
-                    ? industryTypes.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="company-secIndustryType">
-                  <Translate contentKey="sepaApp.company.secIndustryType">Sec Industry Type</Translate>
-                </Label>
-                <AvInput id="company-secIndustryType" type="select" className="form-control" name="secIndustryType.id">
-                  <option value="" key="0" />
-                  {industryTypes
-                    ? industryTypes.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="company-localidadId">
-                  <Translate contentKey="sepaApp.company.localidadId">Localidad Id</Translate>
-                </Label>
-                <AvInput id="company-localidadId" type="select" className="form-control" name="localidadId.id">
-                  <option value="" key="0" />
-                  {localidadAndPartidos
-                    ? localidadAndPartidos.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
-                <Label for="company-partidoId">
-                  <Translate contentKey="sepaApp.company.partidoId">Partido Id</Translate>
-                </Label>
-                <AvInput id="company-partidoId" type="select" className="form-control" name="partidoId.id">
-                  <option value="" key="0" />
-                  {localidadAndPartidos
-                    ? localidadAndPartidos.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
+            </AvGroup>
+
               <Button tag={Link} id="cancel-save" to="/company" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
