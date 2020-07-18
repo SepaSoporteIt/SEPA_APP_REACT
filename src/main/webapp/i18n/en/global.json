@@ -12,7 +12,7 @@
         "employee": "Employee",
         "expiration": "Expiration",
         "study": "Study",
-        "localidadAndPartido": "Localidad And Partido",
+        "localidadandpartido": "Localidad/Partido",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -136,11 +136,7 @@
     "userexists": "Login name already used!",
     "emailexists": "Email is already in use!",
     "idexists": "A new {{ entityName }} cannot already have an ID",
-    "idnull": "Invalid ID",
-    "file": {
-      "could.not.extract": "Could not extract file",
-      "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
-    }
+    "idnull": "Invalid ID"
   },
   "footer": "This is your footer"
 }

@@ -1,20 +1,21 @@
 {
   "sepaApp": {
-    "localidadAndPartido": {
+    "localidadandpartido": {
       "home": {
-        "title": "Localidad And Partidos",
-        "createLabel": "Crear nuevo Localidad And Partido",
-        "createOrEditLabel": "Crear o editar Localidad And Partido",
-        "notFound": "Ningún Localidad And Partidos encontrado"
+        "title": "Localidad/Partido",
+        "createLabel": "Crear nueva Localidad/Partido",
+        "createOrEditLabel": "Crear o editar Localidad/Partido",
+        "search": "Buscar Localidad/Partido",
+        "notFound": "Ninguna Localidad o Partido encontrado"
       },
-      "created": "Un nuevo Localidad And Partido ha sido creado con el identificador {{ param }}",
-      "updated": "Un Localidad And Partido ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Localidad And Partido ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nuevo Localidad/Partido ha sido creado con el identificador {{ param }}",
+      "updated": "Una Localidad/Partido ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Una Localidad/Partido ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Localidad And Partido {{ id }}?"
+        "question": "¿Seguro que quiere eliminar Localidad/Partido {{ id }}?"
       },
       "detail": {
-        "title": "Localidad And Partido"
+        "title": "Localidad/Partido"
       },
       "localidad": "Localidad",
       "partido": "Partido"

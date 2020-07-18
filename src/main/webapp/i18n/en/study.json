@@ -5,6 +5,7 @@
         "title": "Studies",
         "createLabel": "Create a new Study",
         "createOrEditLabel": "Create or edit a Study",
+        "search": "Search for Study",
         "notFound": "No Studies found"
       },
       "created": "A new Study is created with identifier {{ param }}",

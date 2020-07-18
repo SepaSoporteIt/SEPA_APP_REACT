@@ -5,6 +5,7 @@
         "title": "Expirations",
         "createLabel": "Create a new Expiration",
         "createOrEditLabel": "Create or edit a Expiration",
+        "search": "Search for Expiration",
         "notFound": "No Expirations found"
       },
       "created": "A new Expiration is created with identifier {{ param }}",
@@ -14,7 +15,17 @@
         "question": "Are you sure you want to delete Expiration {{ id }}?"
       },
       "detail": {
-        "title": "Expiration"
+        "title": "Expiration",
+        "automaticField": "This field will fill automatically"
+      },
+      "booleans": {
+        "true": "Yes",
+        "false": "No"
+      },
+      "errors": {
+        "noCompany": "No Company Assigned",
+        "noResponsible": "No Employee Assigned in the selected Company",
+        "noEmployee": "No Employee Assigned"
       },
       "startDate": "Start Date",
       "endDate": "End Date",
@@ -22,9 +33,9 @@
       "comments": "Comments",
       "uniqueCode": "Unique Code",
       "responsible": "Responsible",
-      "isCompleted": "Is Completed",
+      "isCompleted": "Is Completed?",
       "company": "Company",
-      "employee": "Employee",
+      "employee": "Performer",
       "study": "Study"
     }
   }

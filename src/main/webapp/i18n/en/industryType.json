@@ -5,6 +5,7 @@
         "title": "Industry Types",
         "createLabel": "Create a new Industry Type",
         "createOrEditLabel": "Create or edit a Industry Type",
+        "search": "Search for Industry Type",
         "notFound": "No Industry Types found"
       },
       "created": "A new Industry Type is created with identifier {{ param }}",
@@ -17,7 +18,9 @@
         "title": "Industry Type"
       },
       "name": "Name",
-      "ciiu": "Ciiu"
+      "ciiu": "Ciiu",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
     }
   }
 }
