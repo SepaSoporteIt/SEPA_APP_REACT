@@ -76,10 +76,6 @@ public class Employee implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private Company company;
-
-    @OneToOne
-    @JoinColumn(unique = true)
     private LocalidadAndPartido localidadId;
 
     @OneToOne
@@ -301,19 +297,6 @@ public class Employee implements Serializable {
 
     public void setIsDisabled(Boolean isDisabled) {
         this.isDisabled = isDisabled;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public Employee company(Company company) {
-        this.company = company;
-        return this;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
     }
 
     public LocalidadAndPartido getLocalidadId() {

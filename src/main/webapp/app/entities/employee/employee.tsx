@@ -151,9 +151,6 @@ export const Employee = (props: IEmployeeProps) => {
                     <Translate contentKey="sepaApp.employee.isDisabled">Is Disabled</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
-                    <Translate contentKey="sepaApp.employee.company">Company</Translate> <FontAwesomeIcon icon="sort" />
-                  </th>
-                  <th>
                     <Translate contentKey="sepaApp.employee.localidadId">Localidad Id</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th>
@@ -186,7 +183,6 @@ export const Employee = (props: IEmployeeProps) => {
                     <td>{employee.celular}</td>
                     <td>{employee.comentario}</td>
                     <td>{employee.isDisabled ? 'true' : 'false'}</td>
-                    <td>{employee.company ? <Link to={`company/${employee.company.id}`}>{employee.company.id}</Link> : ''}</td>
                     <td>
                       {employee.localidadId ? (
                         <Link to={`localidad-and-partido/${employee.localidadId.id}`}>{employee.localidadId.id}</Link>

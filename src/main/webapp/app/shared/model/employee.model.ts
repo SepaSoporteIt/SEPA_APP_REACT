@@ -1,4 +1,3 @@
-import { ICompany } from 'app/shared/model/company.model';
 import { ILocalidadAndPartido } from 'app/shared/model/localidad-and-partido.model';
 
 export interface IEmployee {
@@ -19,7 +18,6 @@ export interface IEmployee {
   celular?: string;
   comentario?: string;
   isDisabled?: boolean;
-  company?: ICompany;
   localidadId?: ILocalidadAndPartido;
   partidoId?: ILocalidadAndPartido;
 }

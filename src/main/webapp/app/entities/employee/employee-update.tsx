@@ -7,8 +7,6 @@ import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
-import { ICompany } from 'app/shared/model/company.model';
-import { getEntities as getCompanies } from 'app/entities/company/company.reducer';
 import { ILocalidadAndPartido } from 'app/shared/model/localidad-and-partido.model';
 import { getEntities as getLocalidadAndPartidos } from 'app/entities/localidad-and-partido/localidad-and-partido.reducer';
 import { getEntity, updateEntity, createEntity, reset } from './employee.reducer';
@@ -19,12 +17,11 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface IEmployeeUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
-  const [companyId, setCompanyId] = useState('0');
   const [localidadIdId, setLocalidadIdId] = useState('0');
   const [partidoIdId, setPartidoIdId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
-  const { employeeEntity, companies, localidadAndPartidos, loading, updating } = props;
+  const { employeeEntity, localidadAndPartidos, loading, updating } = props;
 
   const handleClose = () => {
     props.history.push('/employee');
@@ -35,7 +32,6 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
       props.getEntity(props.match.params.id);
     }
 
-    props.getCompanies();
     props.getLocalidadAndPartidos();
   }, []);
 
@@ -208,21 +204,6 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                 </Label>
               </AvGroup>
               <AvGroup>
-                <Label for="employee-company">
-                  <Translate contentKey="sepaApp.employee.company">Company</Translate>
-                </Label>
-                <AvInput id="employee-company" type="select" className="form-control" name="company.id">
-                  <option value="" key="0" />
-                  {companies
-                    ? companies.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
-              </AvGroup>
-              <AvGroup>
                 <Label for="employee-localidadId">
                   <Translate contentKey="sepaApp.employee.localidadId">Localidad Id</Translate>
                 </Label>
@@ -274,7 +255,6 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
 };
 
 const mapStateToProps = (storeState: IRootState) => ({
-  companies: storeState.company.entities,
   localidadAndPartidos: storeState.localidadAndPartido.entities,
   employeeEntity: storeState.employee.entity,
   loading: storeState.employee.loading,
@@ -283,7 +263,6 @@ const mapStateToProps = (storeState: IRootState) => ({
 });
 
 const mapDispatchToProps = {
-  getCompanies,
   getLocalidadAndPartidos,
   getEntity,
   updateEntity,

@@ -122,10 +122,6 @@ export const EmployeeDetail = (props: IEmployeeDetailProps) => {
           </dt>
           <dd>{employeeEntity.isDisabled ? 'true' : 'false'}</dd>
           <dt>
-            <Translate contentKey="sepaApp.employee.company">Company</Translate>
-          </dt>
-          <dd>{employeeEntity.company ? employeeEntity.company.id : ''}</dd>
-          <dt>
             <Translate contentKey="sepaApp.employee.localidadId">Localidad Id</Translate>
           </dt>
           <dd>{employeeEntity.localidadId ? employeeEntity.localidadId.id : ''}</dd>

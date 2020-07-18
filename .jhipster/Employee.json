@@ -4,16 +4,12 @@
     {
       "fieldName": "name",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "surname",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "email",
@@ -30,16 +26,12 @@
     {
       "fieldName": "matNumber",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "cuit",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "addressDirection",
@@ -81,14 +73,6 @@
   "relationships": [
     {
       "relationshipType": "one-to-one",
-      "otherEntityName": "company",
-      "otherEntityRelationshipName": "employee",
-      "relationshipName": "company",
-      "otherEntityField": "id",
-      "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
       "otherEntityName": "localidadAndPartido",
       "otherEntityRelationshipName": "employee",
       "relationshipName": "localidadId",
@@ -114,5 +98,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }
