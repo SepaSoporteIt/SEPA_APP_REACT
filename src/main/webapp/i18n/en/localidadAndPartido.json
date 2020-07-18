@@ -1,6 +1,6 @@
 {
   "sepaApp": {
-    "localidadandpartido": {
+    "localidadAndPartido": {
       "home": {
         "title": "Localidad/Partido",
         "createLabel": "Create a new Localidad/Partido",

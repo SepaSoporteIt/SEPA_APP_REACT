@@ -53,8 +53,8 @@
       "updatedAt": "Actualizado el",
       "betweenStreets": "Entre Calles",
       "employee": "Profesional",
-      "primIndustryTipe": "1º CIIU",
-      "secIndustryTipe": "2º CIIU",
+      "industryType": "1º CIIU",
+      "secIndustryType": "2º CIIU",
       "isDisabled": "Dado de baja?",
       "localidadId": "Localidad",
       "partidoId": "Partido"

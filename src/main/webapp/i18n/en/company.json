@@ -53,8 +53,8 @@
       "updatedAt": "Updated At",
       "betweenStreets": "Between Streets",
       "employee": "Employee",
-      "primIndustryTipe": "Prim Industry Tipe",
-      "secIndustryTipe": "Sec Industry Tipe",
+      "industryType": "Prim Industry Tipe",
+      "secIndustryType": "Sec Industry Tipe",
       "isDisabled": "Is Disabled?",
       "localidadId": "Localidad",
       "partidoId": "Partido"

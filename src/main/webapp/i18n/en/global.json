@@ -12,7 +12,7 @@
         "employee": "Employee",
         "expiration": "Expiration",
         "study": "Study",
-        "localidadandpartido": "Localidad/Partido",
+        "localidad-and-partido": "Localidad/Partido",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
