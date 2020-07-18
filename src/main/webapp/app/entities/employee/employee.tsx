@@ -3,7 +3,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Col, Row, Table } from 'reactstrap';
-import { ICrudGetAllAction, TextFormat, getSortState, IPaginationBaseState } from 'react-jhipster';
+import { Translate, ICrudGetAllAction, getSortState, IPaginationBaseState } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -79,10 +79,11 @@ export const Employee = (props: IEmployeeProps) => {
   return (
     <div>
       <h2 id="employee-heading">
-        Employees
+        <Translate contentKey="sepaApp.employee.home.title">Employees</Translate>
         <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
           <FontAwesomeIcon icon="plus" />
-          &nbsp; Create new Employee
+          &nbsp;
+          <Translate contentKey="sepaApp.employee.home.createLabel">Create new Employee</Translate>
         </Link>
       </h2>
       <div className="table-responsive">
@@ -99,64 +100,64 @@ export const Employee = (props: IEmployeeProps) => {
               <thead>
                 <tr>
                   <th className="hand" onClick={sort('id')}>
-                    ID <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('name')}>
-                    Name <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('surname')}>
-                    Surname <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.surname">Surname</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('email')}>
-                    Email <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.email">Email</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('tlf')}>
-                    Tlf <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.tlf">Tlf</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('isInternal')}>
-                    Is Internal <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('matNumber')}>
-                    Mat Number <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.matNumber">Mat Number</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('cuit')}>
-                    Cuit <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.cuit">Cuit</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('addressDirection')}>
-                    Address Direction <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.addressDirection">Address Direction</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('addressNumber')}>
-                    Address Number <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.addressNumber">Address Number</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('floor')}>
-                    Floor <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.floor">Floor</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('departament')}>
-                    Departament <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.departament">Departament</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('degree')}>
-                    Degree <FontAwesomeIcon icon="sort" />
-                  </th>
-                  <th className="hand" onClick={sort('localidad')}>
-                    Localidad <FontAwesomeIcon icon="sort" />
-                  </th>
-                  <th className="hand" onClick={sort('partido')}>
-                    Partido <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.degree">Degree</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('especializacion')}>
-                    Especializacion <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.especializacion">Especializacion</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('celular')}>
-                    Celular <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.celular">Celular</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('comentario')}>
-                    Comentario <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.comentario">Comentario</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
-                  <th className="hand" onClick={sort('createdAt')}>
-                    Created At <FontAwesomeIcon icon="sort" />
+                  <th className="hand" onClick={sort('isDisabled')}>
+                    <Translate contentKey="sepaApp.employee.isDisabled">Is Disabled</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
-                  <th className="hand" onClick={sort('updatedAt')}>
-                    Updated At <FontAwesomeIcon icon="sort" />
+                  <th>
+                    <Translate contentKey="sepaApp.employee.company">Company</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
+                    <Translate contentKey="sepaApp.employee.localidadId">Localidad Id</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
+                    <Translate contentKey="sepaApp.employee.partidoId">Partido Id</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th />
                 </tr>
@@ -181,23 +182,40 @@ export const Employee = (props: IEmployeeProps) => {
                     <td>{employee.floor}</td>
                     <td>{employee.departament}</td>
                     <td>{employee.degree}</td>
-                    <td>{employee.localidad}</td>
-                    <td>{employee.partido}</td>
                     <td>{employee.especializacion}</td>
                     <td>{employee.celular}</td>
                     <td>{employee.comentario}</td>
-                    <td>{employee.createdAt ? <TextFormat type="date" value={employee.createdAt} format={APP_DATE_FORMAT} /> : null}</td>
-                    <td>{employee.updatedAt ? <TextFormat type="date" value={employee.updatedAt} format={APP_DATE_FORMAT} /> : null}</td>
+                    <td>{employee.isDisabled ? 'true' : 'false'}</td>
+                    <td>{employee.company ? <Link to={`company/${employee.company.id}`}>{employee.company.id}</Link> : ''}</td>
+                    <td>
+                      {employee.localidadId ? (
+                        <Link to={`localidad-and-partido/${employee.localidadId.id}`}>{employee.localidadId.id}</Link>
+                      ) : (
+                        ''
+                      )}
+                    </td>
+                    <td>
+                      {employee.partidoId ? <Link to={`localidad-and-partido/${employee.partidoId.id}`}>{employee.partidoId.id}</Link> : ''}
+                    </td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${employee.id}`} color="info" size="sm">
-                          <FontAwesomeIcon icon="eye" /> <span className="d-none d-md-inline">View</span>
+                          <FontAwesomeIcon icon="eye" />{' '}
+                          <span className="d-none d-md-inline">
+                            <Translate contentKey="entity.action.view">View</Translate>
+                          </span>
                         </Button>
                         <Button tag={Link} to={`${match.url}/${employee.id}/edit`} color="primary" size="sm">
-                          <FontAwesomeIcon icon="pencil-alt" /> <span className="d-none d-md-inline">Edit</span>
+                          <FontAwesomeIcon icon="pencil-alt" />{' '}
+                          <span className="d-none d-md-inline">
+                            <Translate contentKey="entity.action.edit">Edit</Translate>
+                          </span>
                         </Button>
                         <Button tag={Link} to={`${match.url}/${employee.id}/delete`} color="danger" size="sm">
-                          <FontAwesomeIcon icon="trash" /> <span className="d-none d-md-inline">Delete</span>
+                          <FontAwesomeIcon icon="trash" />{' '}
+                          <span className="d-none d-md-inline">
+                            <Translate contentKey="entity.action.delete">Delete</Translate>
+                          </span>
                         </Button>
                       </div>
                     </td>
@@ -206,7 +224,11 @@ export const Employee = (props: IEmployeeProps) => {
               </tbody>
             </Table>
           ) : (
-            !loading && <div className="alert alert-warning">No Employees found</div>
+            !loading && (
+              <div className="alert alert-warning">
+                <Translate contentKey="sepaApp.employee.home.notFound">No Employees found</Translate>
+              </div>
+            )
           )}
         </InfiniteScroll>
       </div>

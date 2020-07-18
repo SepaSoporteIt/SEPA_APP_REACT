@@ -62,14 +62,6 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "localidad",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "partido",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "especializacion",
       "fieldType": "String"
     },
@@ -82,16 +74,37 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "createdAt",
-      "fieldType": "Instant"
-    },
-    {
-      "fieldName": "updatedAt",
-      "fieldType": "Instant"
+      "fieldName": "isDisabled",
+      "fieldType": "Boolean"
     }
   ],
-  "relationships": [],
-  "changelogDate": "20200710154201",
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "company",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "company",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "localidadAndPartido",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "localidadId",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "localidadAndPartido",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "partidoId",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20200718143854",
   "entityTableName": "employee",
   "dto": "no",
   "pagination": "infinite-scroll",

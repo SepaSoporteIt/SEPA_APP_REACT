@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Col } from 'reactstrap';
-import { ICrudGetAction, TextFormat } from 'react-jhipster';
+import { Translate, ICrudGetAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -22,36 +22,34 @@ export const IndustryTypeDetail = (props: IIndustryTypeDetailProps) => {
     <Row>
       <Col md="8">
         <h2>
-          IndustryType [<b>{industryTypeEntity.id}</b>]
+          <Translate contentKey="sepaApp.industryType.detail.title">IndustryType</Translate> [<b>{industryTypeEntity.id}</b>]
         </h2>
         <dl className="jh-entity-details">
           <dt>
-            <span id="name">Name</span>
+            <span id="name">
+              <Translate contentKey="sepaApp.industryType.name">Name</Translate>
+            </span>
           </dt>
           <dd>{industryTypeEntity.name}</dd>
           <dt>
-            <span id="ciiu">Ciiu</span>
+            <span id="ciiu">
+              <Translate contentKey="sepaApp.industryType.ciiu">Ciiu</Translate>
+            </span>
           </dt>
           <dd>{industryTypeEntity.ciiu}</dd>
-          <dt>
-            <span id="createdAt">Created At</span>
-          </dt>
-          <dd>
-            {industryTypeEntity.createdAt ? <TextFormat value={industryTypeEntity.createdAt} type="date" format={APP_DATE_FORMAT} /> : null}
-          </dd>
-          <dt>
-            <span id="updatedAt">Updated At</span>
-          </dt>
-          <dd>
-            {industryTypeEntity.updatedAt ? <TextFormat value={industryTypeEntity.updatedAt} type="date" format={APP_DATE_FORMAT} /> : null}
-          </dd>
         </dl>
         <Button tag={Link} to="/industry-type" replace color="info">
-          <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>
+          <FontAwesomeIcon icon="arrow-left" />{' '}
+          <span className="d-none d-md-inline">
+            <Translate contentKey="entity.action.back">Back</Translate>
+          </span>
         </Button>
         &nbsp;
         <Button tag={Link} to={`/industry-type/${industryTypeEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" /> <span className="d-none d-md-inline">Edit</span>
+          <FontAwesomeIcon icon="pencil-alt" />{' '}
+          <span className="d-none d-md-inline">
+            <Translate contentKey="entity.action.edit">Edit</Translate>
+          </span>
         </Button>
       </Col>
     </Row>

@@ -1,6 +1,6 @@
 package com.app.sepa.web.rest;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import com.app.sepa.domain.Study;
 import com.app.sepa.repository.StudyRepository;
 
@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link StudyResource} REST controller.
  */
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 @AutoConfigureMockMvc
 @WithMockUser
 public class StudyResourceIT {

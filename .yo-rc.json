@@ -1,11 +1,12 @@
 {
   "generator-jhipster": {
     "promptValues": {
-      "packageName": "com.app.sepa"
+      "packageName": "com.app.sepa",
+      "nativeLanguage": "es"
     },
     "jhipsterVersion": "6.10.0",
     "applicationType": "monolith",
-    "baseName": "SEPA_APP_REACT",
+    "baseName": "sepa",
     "packageName": "com.app.sepa",
     "packageFolder": "com/app/sepa",
     "serverPort": "8080",
@@ -21,20 +22,22 @@
     "serviceDiscoveryType": false,
     "buildTool": "maven",
     "enableSwaggerCodegen": false,
-    "jwtSecretKey": "ZjUxZGZkMTU2NjliNzIxMjQ5M2EzMzUxYjFlN2Q4MWY4MjQ3YzQ3ZGE4MDZhNmMyNDQ1ZjA3ZmQwNTBjYjQyMzY1ZTMxODc5NWE3NTNkOWNlNDdmODFjMTdkZDE5ZjI0YjEzZWRmMDZmMmYyYzZhMTM0NDFiYWNmMzg2MzRiMTY=",
+    "jwtSecretKey": "ZGM3ZGIzOTllYjI1NjQ5ZjY2Nzg0YzNmZGVlNzc4NmNiZTU5NGQ2YzA0YmM3YmI2Y2E3N2Q1ZjllMzZjZGQ4MmI1MDEwZmZjZmI1ZjlmOThiYmJhNGVjM2FlYWM1OGJjMzdjMmZiOGJkNjJkMDA2M2VhNzIxOTMzYzM4ODhhMTQ=",
     "embeddableLaunchScript": false,
     "useSass": true,
     "clientPackageManager": "npm",
     "clientFramework": "react",
     "clientTheme": "cerulean",
     "clientThemeVariant": "light",
-    "creationTimestamp": 1594394906890,
+    "creationTimestamp": 1595082489794,
     "testFrameworks": [],
     "jhiPrefix": "jhi",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "enableTranslation": false,
+    "enableTranslation": true,
+    "nativeLanguage": "es",
+    "languages": ["es", "en"],
     "blueprints": []
   }
 }

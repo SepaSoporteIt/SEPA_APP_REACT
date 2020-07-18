@@ -12,12 +12,23 @@
     {
       "fieldName": "status",
       "fieldType": "Status",
-      "fieldValues": "VENCIDO,A_VENCER,PENDIENTE,VIGENTE,ANTIGUO,SIN_FECHA"
+      "fieldValues": "VENCIDO,A_VENCER,VIGENTE,PENDIENTE,ANTIGUO,SIN_FECHA"
     },
     {
       "fieldName": "comments",
-      "fieldType": "byte[]",
-      "fieldTypeBlobContent": "text"
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "uniqueCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "responsible",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isCompleted",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [
@@ -26,7 +37,7 @@
       "otherEntityName": "company",
       "otherEntityRelationshipName": "expiration",
       "relationshipName": "company",
-      "otherEntityField": "fantasyName",
+      "otherEntityField": "id",
       "ownerSide": true
     },
     {
@@ -34,7 +45,7 @@
       "otherEntityName": "employee",
       "otherEntityRelationshipName": "expiration",
       "relationshipName": "employee",
-      "otherEntityField": "name",
+      "otherEntityField": "id",
       "ownerSide": true
     },
     {
@@ -42,14 +53,14 @@
       "otherEntityName": "study",
       "otherEntityRelationshipName": "expiration",
       "relationshipName": "study",
-      "otherEntityField": "name",
+      "otherEntityField": "id",
       "ownerSide": true
     }
   ],
-  "changelogDate": "20200710154301",
+  "changelogDate": "20200718143954",
   "entityTableName": "expiration",
   "dto": "no",
-  "pagination": "infinite-scroll",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

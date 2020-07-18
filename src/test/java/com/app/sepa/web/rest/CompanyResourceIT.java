@@ -1,6 +1,6 @@
 package com.app.sepa.web.rest;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import com.app.sepa.domain.Company;
 import com.app.sepa.repository.CompanyRepository;
 
@@ -13,10 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Base64Utils;
 import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -27,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link CompanyResource} REST controller.
  */
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 @AutoConfigureMockMvc
 @WithMockUser
 public class CompanyResourceIT {
@@ -43,6 +40,9 @@ public class CompanyResourceIT {
 
     private static final String DEFAULT_ADDRESS_NUMBER = "AAAAAAAAAA";
     private static final String UPDATED_ADDRESS_NUMBER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_BETWEEN_STREETS = "AAAAAAAAAA";
+    private static final String UPDATED_BETWEEN_STREETS = "BBBBBBBBBB";
 
     private static final String DEFAULT_FLOOR = "AAAAAAAAAA";
     private static final String UPDATED_FLOOR = "BBBBBBBBBB";
@@ -89,26 +89,8 @@ public class CompanyResourceIT {
     private static final String DEFAULT_COMMENT = "AAAAAAAAAA";
     private static final String UPDATED_COMMENT = "BBBBBBBBBB";
 
-    private static final Integer DEFAULT_LEGISLATION_ID = 1;
-    private static final Integer UPDATED_LEGISLATION_ID = 2;
-
-    private static final Integer DEFAULT_SOLICITADOR_ID = 1;
-    private static final Integer UPDATED_SOLICITADOR_ID = 2;
-
-    private static final Integer DEFAULT_AMBITO_ID = 1;
-    private static final Integer UPDATED_AMBITO_ID = 2;
-
-    private static final Integer DEFAULT_AUTORIDAD_ID = 1;
-    private static final Integer UPDATED_AUTORIDAD_ID = 2;
-
-    private static final Integer DEFAULT_FRECUENCY_TYPE_ID = 1;
-    private static final Integer UPDATED_FRECUENCY_TYPE_ID = 2;
-
-    private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
-
-    private static final Instant DEFAULT_UPDATED_AT = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_UPDATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final Boolean DEFAULT_IS_DISABLED = false;
+    private static final Boolean UPDATED_IS_DISABLED = true;
 
     @Autowired
     private CompanyRepository companyRepository;
@@ -133,6 +115,7 @@ public class CompanyResourceIT {
             .email(DEFAULT_EMAIL)
             .addressDirection(DEFAULT_ADDRESS_DIRECTION)
             .addressNumber(DEFAULT_ADDRESS_NUMBER)
+            .betweenStreets(DEFAULT_BETWEEN_STREETS)
             .floor(DEFAULT_FLOOR)
             .departament(DEFAULT_DEPARTAMENT)
             .cuit(DEFAULT_CUIT)
@@ -148,13 +131,7 @@ public class CompanyResourceIT {
             .habPrim(DEFAULT_HAB_PRIM)
             .habSec(DEFAULT_HAB_SEC)
             .comment(DEFAULT_COMMENT)
-            .legislationId(DEFAULT_LEGISLATION_ID)
-            .solicitadorId(DEFAULT_SOLICITADOR_ID)
-            .ambitoId(DEFAULT_AMBITO_ID)
-            .autoridadId(DEFAULT_AUTORIDAD_ID)
-            .frecuencyTypeId(DEFAULT_FRECUENCY_TYPE_ID)
-            .createdAt(DEFAULT_CREATED_AT)
-            .updatedAt(DEFAULT_UPDATED_AT);
+            .isDisabled(DEFAULT_IS_DISABLED);
         return company;
     }
     /**
@@ -169,6 +146,7 @@ public class CompanyResourceIT {
             .email(UPDATED_EMAIL)
             .addressDirection(UPDATED_ADDRESS_DIRECTION)
             .addressNumber(UPDATED_ADDRESS_NUMBER)
+            .betweenStreets(UPDATED_BETWEEN_STREETS)
             .floor(UPDATED_FLOOR)
             .departament(UPDATED_DEPARTAMENT)
             .cuit(UPDATED_CUIT)
@@ -184,13 +162,7 @@ public class CompanyResourceIT {
             .habPrim(UPDATED_HAB_PRIM)
             .habSec(UPDATED_HAB_SEC)
             .comment(UPDATED_COMMENT)
-            .legislationId(UPDATED_LEGISLATION_ID)
-            .solicitadorId(UPDATED_SOLICITADOR_ID)
-            .ambitoId(UPDATED_AMBITO_ID)
-            .autoridadId(UPDATED_AUTORIDAD_ID)
-            .frecuencyTypeId(UPDATED_FRECUENCY_TYPE_ID)
-            .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .isDisabled(UPDATED_IS_DISABLED);
         return company;
     }
 
@@ -217,6 +189,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getEmail()).isEqualTo(DEFAULT_EMAIL);
         assertThat(testCompany.getAddressDirection()).isEqualTo(DEFAULT_ADDRESS_DIRECTION);
         assertThat(testCompany.getAddressNumber()).isEqualTo(DEFAULT_ADDRESS_NUMBER);
+        assertThat(testCompany.getBetweenStreets()).isEqualTo(DEFAULT_BETWEEN_STREETS);
         assertThat(testCompany.getFloor()).isEqualTo(DEFAULT_FLOOR);
         assertThat(testCompany.getDepartament()).isEqualTo(DEFAULT_DEPARTAMENT);
         assertThat(testCompany.getCuit()).isEqualTo(DEFAULT_CUIT);
@@ -232,13 +205,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getHabPrim()).isEqualTo(DEFAULT_HAB_PRIM);
         assertThat(testCompany.getHabSec()).isEqualTo(DEFAULT_HAB_SEC);
         assertThat(testCompany.getComment()).isEqualTo(DEFAULT_COMMENT);
-        assertThat(testCompany.getLegislationId()).isEqualTo(DEFAULT_LEGISLATION_ID);
-        assertThat(testCompany.getSolicitadorId()).isEqualTo(DEFAULT_SOLICITADOR_ID);
-        assertThat(testCompany.getAmbitoId()).isEqualTo(DEFAULT_AMBITO_ID);
-        assertThat(testCompany.getAutoridadId()).isEqualTo(DEFAULT_AUTORIDAD_ID);
-        assertThat(testCompany.getFrecuencyTypeId()).isEqualTo(DEFAULT_FRECUENCY_TYPE_ID);
-        assertThat(testCompany.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
-        assertThat(testCompany.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
+        assertThat(testCompany.isIsDisabled()).isEqualTo(DEFAULT_IS_DISABLED);
     }
 
     @Test
@@ -352,6 +319,7 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
             .andExpect(jsonPath("$.[*].addressDirection").value(hasItem(DEFAULT_ADDRESS_DIRECTION)))
             .andExpect(jsonPath("$.[*].addressNumber").value(hasItem(DEFAULT_ADDRESS_NUMBER)))
+            .andExpect(jsonPath("$.[*].betweenStreets").value(hasItem(DEFAULT_BETWEEN_STREETS)))
             .andExpect(jsonPath("$.[*].floor").value(hasItem(DEFAULT_FLOOR)))
             .andExpect(jsonPath("$.[*].departament").value(hasItem(DEFAULT_DEPARTAMENT)))
             .andExpect(jsonPath("$.[*].cuit").value(hasItem(DEFAULT_CUIT)))
@@ -366,14 +334,8 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.[*].visitsQtyMax").value(hasItem(DEFAULT_VISITS_QTY_MAX)))
             .andExpect(jsonPath("$.[*].habPrim").value(hasItem(DEFAULT_HAB_PRIM)))
             .andExpect(jsonPath("$.[*].habSec").value(hasItem(DEFAULT_HAB_SEC)))
-            .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT.toString())))
-            .andExpect(jsonPath("$.[*].legislationId").value(hasItem(DEFAULT_LEGISLATION_ID)))
-            .andExpect(jsonPath("$.[*].solicitadorId").value(hasItem(DEFAULT_SOLICITADOR_ID)))
-            .andExpect(jsonPath("$.[*].ambitoId").value(hasItem(DEFAULT_AMBITO_ID)))
-            .andExpect(jsonPath("$.[*].autoridadId").value(hasItem(DEFAULT_AUTORIDAD_ID)))
-            .andExpect(jsonPath("$.[*].frecuencyTypeId").value(hasItem(DEFAULT_FRECUENCY_TYPE_ID)))
-            .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
+            .andExpect(jsonPath("$.[*].comment").value(hasItem(DEFAULT_COMMENT)))
+            .andExpect(jsonPath("$.[*].isDisabled").value(hasItem(DEFAULT_IS_DISABLED.booleanValue())));
     }
     
     @Test
@@ -391,6 +353,7 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
             .andExpect(jsonPath("$.addressDirection").value(DEFAULT_ADDRESS_DIRECTION))
             .andExpect(jsonPath("$.addressNumber").value(DEFAULT_ADDRESS_NUMBER))
+            .andExpect(jsonPath("$.betweenStreets").value(DEFAULT_BETWEEN_STREETS))
             .andExpect(jsonPath("$.floor").value(DEFAULT_FLOOR))
             .andExpect(jsonPath("$.departament").value(DEFAULT_DEPARTAMENT))
             .andExpect(jsonPath("$.cuit").value(DEFAULT_CUIT))
@@ -405,14 +368,8 @@ public class CompanyResourceIT {
             .andExpect(jsonPath("$.visitsQtyMax").value(DEFAULT_VISITS_QTY_MAX))
             .andExpect(jsonPath("$.habPrim").value(DEFAULT_HAB_PRIM))
             .andExpect(jsonPath("$.habSec").value(DEFAULT_HAB_SEC))
-            .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT.toString()))
-            .andExpect(jsonPath("$.legislationId").value(DEFAULT_LEGISLATION_ID))
-            .andExpect(jsonPath("$.solicitadorId").value(DEFAULT_SOLICITADOR_ID))
-            .andExpect(jsonPath("$.ambitoId").value(DEFAULT_AMBITO_ID))
-            .andExpect(jsonPath("$.autoridadId").value(DEFAULT_AUTORIDAD_ID))
-            .andExpect(jsonPath("$.frecuencyTypeId").value(DEFAULT_FRECUENCY_TYPE_ID))
-            .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
-            .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
+            .andExpect(jsonPath("$.comment").value(DEFAULT_COMMENT))
+            .andExpect(jsonPath("$.isDisabled").value(DEFAULT_IS_DISABLED.booleanValue()));
     }
     @Test
     @Transactional
@@ -439,6 +396,7 @@ public class CompanyResourceIT {
             .email(UPDATED_EMAIL)
             .addressDirection(UPDATED_ADDRESS_DIRECTION)
             .addressNumber(UPDATED_ADDRESS_NUMBER)
+            .betweenStreets(UPDATED_BETWEEN_STREETS)
             .floor(UPDATED_FLOOR)
             .departament(UPDATED_DEPARTAMENT)
             .cuit(UPDATED_CUIT)
@@ -454,13 +412,7 @@ public class CompanyResourceIT {
             .habPrim(UPDATED_HAB_PRIM)
             .habSec(UPDATED_HAB_SEC)
             .comment(UPDATED_COMMENT)
-            .legislationId(UPDATED_LEGISLATION_ID)
-            .solicitadorId(UPDATED_SOLICITADOR_ID)
-            .ambitoId(UPDATED_AMBITO_ID)
-            .autoridadId(UPDATED_AUTORIDAD_ID)
-            .frecuencyTypeId(UPDATED_FRECUENCY_TYPE_ID)
-            .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .isDisabled(UPDATED_IS_DISABLED);
 
         restCompanyMockMvc.perform(put("/api/companies")
             .contentType(MediaType.APPLICATION_JSON)
@@ -475,6 +427,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getEmail()).isEqualTo(UPDATED_EMAIL);
         assertThat(testCompany.getAddressDirection()).isEqualTo(UPDATED_ADDRESS_DIRECTION);
         assertThat(testCompany.getAddressNumber()).isEqualTo(UPDATED_ADDRESS_NUMBER);
+        assertThat(testCompany.getBetweenStreets()).isEqualTo(UPDATED_BETWEEN_STREETS);
         assertThat(testCompany.getFloor()).isEqualTo(UPDATED_FLOOR);
         assertThat(testCompany.getDepartament()).isEqualTo(UPDATED_DEPARTAMENT);
         assertThat(testCompany.getCuit()).isEqualTo(UPDATED_CUIT);
@@ -490,13 +443,7 @@ public class CompanyResourceIT {
         assertThat(testCompany.getHabPrim()).isEqualTo(UPDATED_HAB_PRIM);
         assertThat(testCompany.getHabSec()).isEqualTo(UPDATED_HAB_SEC);
         assertThat(testCompany.getComment()).isEqualTo(UPDATED_COMMENT);
-        assertThat(testCompany.getLegislationId()).isEqualTo(UPDATED_LEGISLATION_ID);
-        assertThat(testCompany.getSolicitadorId()).isEqualTo(UPDATED_SOLICITADOR_ID);
-        assertThat(testCompany.getAmbitoId()).isEqualTo(UPDATED_AMBITO_ID);
-        assertThat(testCompany.getAutoridadId()).isEqualTo(UPDATED_AUTORIDAD_ID);
-        assertThat(testCompany.getFrecuencyTypeId()).isEqualTo(UPDATED_FRECUENCY_TYPE_ID);
-        assertThat(testCompany.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
-        assertThat(testCompany.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
+        assertThat(testCompany.isIsDisabled()).isEqualTo(UPDATED_IS_DISABLED);
     }
 
     @Test

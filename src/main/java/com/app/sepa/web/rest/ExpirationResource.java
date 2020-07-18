@@ -60,7 +60,7 @@ public class ExpirationResource {
         }
         Expiration result = expirationRepository.save(expiration);
         return ResponseEntity.created(new URI("/api/expirations/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -81,7 +81,7 @@ public class ExpirationResource {
         }
         Expiration result = expirationRepository.save(expiration);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, expiration.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, expiration.getId().toString()))
             .body(result);
     }
 
@@ -122,6 +122,6 @@ public class ExpirationResource {
     public ResponseEntity<Void> deleteExpiration(@PathVariable Long id) {
         log.debug("REST request to delete Expiration : {}", id);
         expirationRepository.deleteById(id);
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 }

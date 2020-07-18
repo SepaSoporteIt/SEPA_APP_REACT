@@ -1,6 +1,6 @@
 package com.app.sepa.web.rest;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import com.app.sepa.domain.Authority;
 import com.app.sepa.domain.User;
 import com.app.sepa.repository.UserRepository;
@@ -36,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 public class UserResourceIT {
 
     private static final String DEFAULT_LOGIN = "johndoe";

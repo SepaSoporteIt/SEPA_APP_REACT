@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Col, Label } from 'reactstrap';
 import { AvFeedback, AvForm, AvGroup, AvInput, AvField } from 'availity-reactstrap-validation';
-import { ICrudGetAction, ICrudGetAllAction, ICrudPutAction } from 'react-jhipster';
+import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
@@ -38,9 +38,6 @@ export const IndustryTypeUpdate = (props: IIndustryTypeUpdateProps) => {
   }, [props.updateSuccess]);
 
   const saveEntity = (event, errors, values) => {
-    values.createdAt = convertDateTimeToServer(values.createdAt);
-    values.updatedAt = convertDateTimeToServer(values.updatedAt);
-
     if (errors.length === 0) {
       const entity = {
         ...industryTypeEntity,
@@ -59,7 +56,9 @@ export const IndustryTypeUpdate = (props: IIndustryTypeUpdateProps) => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="sepaAppReactApp.industryType.home.createOrEditLabel">Create or edit a IndustryType</h2>
+          <h2 id="sepaApp.industryType.home.createOrEditLabel">
+            <Translate contentKey="sepaApp.industryType.home.createOrEditLabel">Create or edit a IndustryType</Translate>
+          </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
@@ -70,71 +69,50 @@ export const IndustryTypeUpdate = (props: IIndustryTypeUpdateProps) => {
             <AvForm model={isNew ? {} : industryTypeEntity} onSubmit={saveEntity}>
               {!isNew ? (
                 <AvGroup>
-                  <Label for="industry-type-id">ID</Label>
+                  <Label for="industry-type-id">
+                    <Translate contentKey="global.field.id">ID</Translate>
+                  </Label>
                   <AvInput id="industry-type-id" type="text" className="form-control" name="id" required readOnly />
                 </AvGroup>
               ) : null}
               <AvGroup>
                 <Label id="nameLabel" for="industry-type-name">
-                  Name
+                  <Translate contentKey="sepaApp.industryType.name">Name</Translate>
                 </Label>
                 <AvField
                   id="industry-type-name"
                   type="text"
                   name="name"
                   validate={{
-                    required: { value: true, errorMessage: 'This field is required.' },
+                    required: { value: true, errorMessage: translate('entity.validation.required') },
                   }}
                 />
               </AvGroup>
               <AvGroup>
                 <Label id="ciiuLabel" for="industry-type-ciiu">
-                  Ciiu
+                  <Translate contentKey="sepaApp.industryType.ciiu">Ciiu</Translate>
                 </Label>
                 <AvField
                   id="industry-type-ciiu"
                   type="text"
                   name="ciiu"
                   validate={{
-                    required: { value: true, errorMessage: 'This field is required.' },
+                    required: { value: true, errorMessage: translate('entity.validation.required') },
                   }}
-                />
-              </AvGroup>
-              <AvGroup>
-                <Label id="createdAtLabel" for="industry-type-createdAt">
-                  Created At
-                </Label>
-                <AvInput
-                  id="industry-type-createdAt"
-                  type="datetime-local"
-                  className="form-control"
-                  name="createdAt"
-                  placeholder={'YYYY-MM-DD HH:mm'}
-                  value={isNew ? displayDefaultDateTime() : convertDateTimeFromServer(props.industryTypeEntity.createdAt)}
-                />
-              </AvGroup>
-              <AvGroup>
-                <Label id="updatedAtLabel" for="industry-type-updatedAt">
-                  Updated At
-                </Label>
-                <AvInput
-                  id="industry-type-updatedAt"
-                  type="datetime-local"
-                  className="form-control"
-                  name="updatedAt"
-                  placeholder={'YYYY-MM-DD HH:mm'}
-                  value={isNew ? displayDefaultDateTime() : convertDateTimeFromServer(props.industryTypeEntity.updatedAt)}
                 />
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/industry-type" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
-                <span className="d-none d-md-inline">Back</span>
+                <span className="d-none d-md-inline">
+                  <Translate contentKey="entity.action.back">Back</Translate>
+                </span>
               </Button>
               &nbsp;
               <Button color="primary" id="save-entity" type="submit" disabled={updating}>
                 <FontAwesomeIcon icon="save" />
-                &nbsp; Save
+                &nbsp;
+                <Translate contentKey="entity.action.save">Save</Translate>
               </Button>
             </AvForm>
           )}

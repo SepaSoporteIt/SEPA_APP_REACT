@@ -61,7 +61,7 @@ public class StudyResource {
         }
         Study result = studyRepository.save(study);
         return ResponseEntity.created(new URI("/api/studies/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -82,7 +82,7 @@ public class StudyResource {
         }
         Study result = studyRepository.save(study);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, study.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, study.getId().toString()))
             .body(result);
     }
 
@@ -123,6 +123,6 @@ public class StudyResource {
     public ResponseEntity<Void> deleteStudy(@PathVariable Long id) {
         log.debug("REST request to delete Study : {}", id);
         studyRepository.deleteById(id);
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 }

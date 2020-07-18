@@ -3,9 +3,9 @@ export const enum Status {
 
   A_VENCER = 'A_VENCER',
 
-  PENDIENTE = 'PENDIENTE',
-
   VIGENTE = 'VIGENTE',
+
+  PENDIENTE = 'PENDIENTE',
 
   ANTIGUO = 'ANTIGUO',
 

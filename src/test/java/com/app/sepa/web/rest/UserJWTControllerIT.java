@@ -1,6 +1,6 @@
 package com.app.sepa.web.rest;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import com.app.sepa.domain.User;
 import com.app.sepa.repository.UserRepository;
 import com.app.sepa.web.rest.vm.LoginVM;
@@ -27,7 +27,7 @@ import static org.hamcrest.Matchers.not;
  * Integration tests for the {@link UserJWTController} REST controller.
  */
 @AutoConfigureMockMvc
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 public class UserJWTControllerIT {
 
     @Autowired

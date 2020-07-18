@@ -1,6 +1,6 @@
 package com.app.sepa.web.rest;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import com.app.sepa.domain.Employee;
 import com.app.sepa.repository.EmployeeRepository;
 
@@ -14,8 +14,6 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link EmployeeResource} REST controller.
  */
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 @AutoConfigureMockMvc
 @WithMockUser
 public class EmployeeResourceIT {
@@ -67,12 +65,6 @@ public class EmployeeResourceIT {
     private static final String DEFAULT_DEGREE = "AAAAAAAAAA";
     private static final String UPDATED_DEGREE = "BBBBBBBBBB";
 
-    private static final String DEFAULT_LOCALIDAD = "AAAAAAAAAA";
-    private static final String UPDATED_LOCALIDAD = "BBBBBBBBBB";
-
-    private static final String DEFAULT_PARTIDO = "AAAAAAAAAA";
-    private static final String UPDATED_PARTIDO = "BBBBBBBBBB";
-
     private static final String DEFAULT_ESPECIALIZACION = "AAAAAAAAAA";
     private static final String UPDATED_ESPECIALIZACION = "BBBBBBBBBB";
 
@@ -82,11 +74,8 @@ public class EmployeeResourceIT {
     private static final String DEFAULT_COMENTARIO = "AAAAAAAAAA";
     private static final String UPDATED_COMENTARIO = "BBBBBBBBBB";
 
-    private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
-
-    private static final Instant DEFAULT_UPDATED_AT = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_UPDATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
+    private static final Boolean DEFAULT_IS_DISABLED = false;
+    private static final Boolean UPDATED_IS_DISABLED = true;
 
     @Autowired
     private EmployeeRepository employeeRepository;
@@ -119,13 +108,10 @@ public class EmployeeResourceIT {
             .floor(DEFAULT_FLOOR)
             .departament(DEFAULT_DEPARTAMENT)
             .degree(DEFAULT_DEGREE)
-            .localidad(DEFAULT_LOCALIDAD)
-            .partido(DEFAULT_PARTIDO)
             .especializacion(DEFAULT_ESPECIALIZACION)
             .celular(DEFAULT_CELULAR)
             .comentario(DEFAULT_COMENTARIO)
-            .createdAt(DEFAULT_CREATED_AT)
-            .updatedAt(DEFAULT_UPDATED_AT);
+            .isDisabled(DEFAULT_IS_DISABLED);
         return employee;
     }
     /**
@@ -148,13 +134,10 @@ public class EmployeeResourceIT {
             .floor(UPDATED_FLOOR)
             .departament(UPDATED_DEPARTAMENT)
             .degree(UPDATED_DEGREE)
-            .localidad(UPDATED_LOCALIDAD)
-            .partido(UPDATED_PARTIDO)
             .especializacion(UPDATED_ESPECIALIZACION)
             .celular(UPDATED_CELULAR)
             .comentario(UPDATED_COMENTARIO)
-            .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .isDisabled(UPDATED_IS_DISABLED);
         return employee;
     }
 
@@ -189,13 +172,10 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getFloor()).isEqualTo(DEFAULT_FLOOR);
         assertThat(testEmployee.getDepartament()).isEqualTo(DEFAULT_DEPARTAMENT);
         assertThat(testEmployee.getDegree()).isEqualTo(DEFAULT_DEGREE);
-        assertThat(testEmployee.getLocalidad()).isEqualTo(DEFAULT_LOCALIDAD);
-        assertThat(testEmployee.getPartido()).isEqualTo(DEFAULT_PARTIDO);
         assertThat(testEmployee.getEspecializacion()).isEqualTo(DEFAULT_ESPECIALIZACION);
         assertThat(testEmployee.getCelular()).isEqualTo(DEFAULT_CELULAR);
         assertThat(testEmployee.getComentario()).isEqualTo(DEFAULT_COMENTARIO);
-        assertThat(testEmployee.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
-        assertThat(testEmployee.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
+        assertThat(testEmployee.isIsDisabled()).isEqualTo(DEFAULT_IS_DISABLED);
     }
 
     @Test
@@ -317,13 +297,10 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.[*].floor").value(hasItem(DEFAULT_FLOOR)))
             .andExpect(jsonPath("$.[*].departament").value(hasItem(DEFAULT_DEPARTAMENT)))
             .andExpect(jsonPath("$.[*].degree").value(hasItem(DEFAULT_DEGREE)))
-            .andExpect(jsonPath("$.[*].localidad").value(hasItem(DEFAULT_LOCALIDAD)))
-            .andExpect(jsonPath("$.[*].partido").value(hasItem(DEFAULT_PARTIDO)))
             .andExpect(jsonPath("$.[*].especializacion").value(hasItem(DEFAULT_ESPECIALIZACION)))
             .andExpect(jsonPath("$.[*].celular").value(hasItem(DEFAULT_CELULAR)))
             .andExpect(jsonPath("$.[*].comentario").value(hasItem(DEFAULT_COMENTARIO)))
-            .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
+            .andExpect(jsonPath("$.[*].isDisabled").value(hasItem(DEFAULT_IS_DISABLED.booleanValue())));
     }
     
     @Test
@@ -349,13 +326,10 @@ public class EmployeeResourceIT {
             .andExpect(jsonPath("$.floor").value(DEFAULT_FLOOR))
             .andExpect(jsonPath("$.departament").value(DEFAULT_DEPARTAMENT))
             .andExpect(jsonPath("$.degree").value(DEFAULT_DEGREE))
-            .andExpect(jsonPath("$.localidad").value(DEFAULT_LOCALIDAD))
-            .andExpect(jsonPath("$.partido").value(DEFAULT_PARTIDO))
             .andExpect(jsonPath("$.especializacion").value(DEFAULT_ESPECIALIZACION))
             .andExpect(jsonPath("$.celular").value(DEFAULT_CELULAR))
             .andExpect(jsonPath("$.comentario").value(DEFAULT_COMENTARIO))
-            .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
-            .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
+            .andExpect(jsonPath("$.isDisabled").value(DEFAULT_IS_DISABLED.booleanValue()));
     }
     @Test
     @Transactional
@@ -390,13 +364,10 @@ public class EmployeeResourceIT {
             .floor(UPDATED_FLOOR)
             .departament(UPDATED_DEPARTAMENT)
             .degree(UPDATED_DEGREE)
-            .localidad(UPDATED_LOCALIDAD)
-            .partido(UPDATED_PARTIDO)
             .especializacion(UPDATED_ESPECIALIZACION)
             .celular(UPDATED_CELULAR)
             .comentario(UPDATED_COMENTARIO)
-            .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .isDisabled(UPDATED_IS_DISABLED);
 
         restEmployeeMockMvc.perform(put("/api/employees")
             .contentType(MediaType.APPLICATION_JSON)
@@ -419,13 +390,10 @@ public class EmployeeResourceIT {
         assertThat(testEmployee.getFloor()).isEqualTo(UPDATED_FLOOR);
         assertThat(testEmployee.getDepartament()).isEqualTo(UPDATED_DEPARTAMENT);
         assertThat(testEmployee.getDegree()).isEqualTo(UPDATED_DEGREE);
-        assertThat(testEmployee.getLocalidad()).isEqualTo(UPDATED_LOCALIDAD);
-        assertThat(testEmployee.getPartido()).isEqualTo(UPDATED_PARTIDO);
         assertThat(testEmployee.getEspecializacion()).isEqualTo(UPDATED_ESPECIALIZACION);
         assertThat(testEmployee.getCelular()).isEqualTo(UPDATED_CELULAR);
         assertThat(testEmployee.getComentario()).isEqualTo(UPDATED_COMENTARIO);
-        assertThat(testEmployee.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
-        assertThat(testEmployee.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
+        assertThat(testEmployee.isIsDisabled()).isEqualTo(UPDATED_IS_DISABLED);
     }
 
     @Test

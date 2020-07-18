@@ -1,0 +1,94 @@
+entity Company {
+	name String required,
+    email String,
+    addressDirection String required,
+    addressNumber String required,
+    betweenStreets String,
+    floor String,
+    departament String,
+    cuit String required,
+    isSubscripted Boolean,
+    fantasyName String,
+    postalCode String,
+    tlf String,
+    internalTlf String,
+    contact String,
+    cellphone String,
+    visitsQtyMin Integer,
+    visitsQtyMax Integer,
+    habPrim String,
+    habSec String,
+    comment String,
+    isDisabled Boolean   
+}
+
+entity IndustryType {
+	name String required,
+    ciiu String required
+}
+
+entity Employee {
+	name String required,
+    surname String required,
+    email String,
+    tlf String,
+    isInternal Boolean,
+	matNumber String required,
+    cuit String required,
+	addressDirection String,
+    addressNumber String,
+	floor String,
+	departament String,
+    degree String,
+    especializacion String,
+    celular String,
+    comentario String,
+	isDisabled Boolean
+}
+
+entity Expiration {
+    startDate LocalDate,
+    endDate LocalDate,
+    status Status,
+    comments String,
+    uniqueCode String,
+    responsible String,
+    isCompleted Boolean
+}
+
+entity Study {
+	name String required,
+    resolution String required,
+    legislation String required
+}
+
+entity LocalidadAndPartido{
+	localidad String,
+    partido String
+}
+
+enum Language {
+    ENGLISH, SPANISH
+}
+
+enum Status {
+	VENCIDO, A_VENCER, VIGENTE, PENDIENTE, ANTIGUO, SIN_FECHA
+}
+
+relationship OneToOne {
+Company {employee} to Employee
+Company {industryType} to IndustryType
+Company {secIndustryType} to IndustryType
+Company {localidadId} to LocalidadAndPartido
+Company {partidoId} to LocalidadAndPartido
+Employee {company} to Company
+Employee {localidadId} to LocalidadAndPartido
+Employee {partidoId} to LocalidadAndPartido
+Expiration {company} to Company
+Expiration {employee} to Employee
+Expiration {study} to Study
+}
+
+// Set pagination options
+paginate Company, IndustryType, Expiration, LocalidadAndPartido with pagination
+paginate Study, Employee with infinite-scroll

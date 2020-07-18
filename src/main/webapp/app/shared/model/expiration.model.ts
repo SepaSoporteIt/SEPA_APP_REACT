@@ -9,10 +9,15 @@ export interface IExpiration {
   startDate?: string;
   endDate?: string;
   status?: Status;
-  comments?: any;
+  comments?: string;
+  uniqueCode?: string;
+  responsible?: string;
+  isCompleted?: boolean;
   company?: ICompany;
   employee?: IEmployee;
   study?: IStudy;
 }
 
-export const defaultValue: Readonly<IExpiration> = {};
+export const defaultValue: Readonly<IExpiration> = {
+  isCompleted: false,
+};

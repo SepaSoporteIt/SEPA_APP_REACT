@@ -7,7 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 /**
  * A Employee.
@@ -63,12 +62,6 @@ public class Employee implements Serializable {
     @Column(name = "degree")
     private String degree;
 
-    @Column(name = "localidad")
-    private String localidad;
-
-    @Column(name = "partido")
-    private String partido;
-
     @Column(name = "especializacion")
     private String especializacion;
 
@@ -78,11 +71,20 @@ public class Employee implements Serializable {
     @Column(name = "comentario")
     private String comentario;
 
-    @Column(name = "created_at")
-    private Instant createdAt;
+    @Column(name = "is_disabled")
+    private Boolean isDisabled;
 
-    @Column(name = "updated_at")
-    private Instant updatedAt;
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Company company;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private LocalidadAndPartido localidadId;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private LocalidadAndPartido partidoId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -249,32 +251,6 @@ public class Employee implements Serializable {
         this.degree = degree;
     }
 
-    public String getLocalidad() {
-        return localidad;
-    }
-
-    public Employee localidad(String localidad) {
-        this.localidad = localidad;
-        return this;
-    }
-
-    public void setLocalidad(String localidad) {
-        this.localidad = localidad;
-    }
-
-    public String getPartido() {
-        return partido;
-    }
-
-    public Employee partido(String partido) {
-        this.partido = partido;
-        return this;
-    }
-
-    public void setPartido(String partido) {
-        this.partido = partido;
-    }
-
     public String getEspecializacion() {
         return especializacion;
     }
@@ -314,30 +290,56 @@ public class Employee implements Serializable {
         this.comentario = comentario;
     }
 
-    public Instant getCreatedAt() {
-        return createdAt;
+    public Boolean isIsDisabled() {
+        return isDisabled;
     }
 
-    public Employee createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
+    public Employee isDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
         return this;
     }
 
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
+    public void setIsDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
     }
 
-    public Instant getUpdatedAt() {
-        return updatedAt;
+    public Company getCompany() {
+        return company;
     }
 
-    public Employee updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
+    public Employee company(Company company) {
+        this.company = company;
         return this;
     }
 
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public LocalidadAndPartido getLocalidadId() {
+        return localidadId;
+    }
+
+    public Employee localidadId(LocalidadAndPartido localidadAndPartido) {
+        this.localidadId = localidadAndPartido;
+        return this;
+    }
+
+    public void setLocalidadId(LocalidadAndPartido localidadAndPartido) {
+        this.localidadId = localidadAndPartido;
+    }
+
+    public LocalidadAndPartido getPartidoId() {
+        return partidoId;
+    }
+
+    public Employee partidoId(LocalidadAndPartido localidadAndPartido) {
+        this.partidoId = localidadAndPartido;
+        return this;
+    }
+
+    public void setPartidoId(LocalidadAndPartido localidadAndPartido) {
+        this.partidoId = localidadAndPartido;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -374,13 +376,10 @@ public class Employee implements Serializable {
             ", floor='" + getFloor() + "'" +
             ", departament='" + getDepartament() + "'" +
             ", degree='" + getDegree() + "'" +
-            ", localidad='" + getLocalidad() + "'" +
-            ", partido='" + getPartido() + "'" +
             ", especializacion='" + getEspecializacion() + "'" +
             ", celular='" + getCelular() + "'" +
             ", comentario='" + getComentario() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
+            ", isDisabled='" + isIsDisabled() + "'" +
             "}";
     }
 }

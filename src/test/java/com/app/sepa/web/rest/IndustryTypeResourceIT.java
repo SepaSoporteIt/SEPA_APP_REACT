@@ -1,6 +1,6 @@
 package com.app.sepa.web.rest;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import com.app.sepa.domain.IndustryType;
 import com.app.sepa.repository.IndustryTypeRepository;
 
@@ -14,8 +14,6 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link IndustryTypeResource} REST controller.
  */
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 @AutoConfigureMockMvc
 @WithMockUser
 public class IndustryTypeResourceIT {
@@ -36,12 +34,6 @@ public class IndustryTypeResourceIT {
 
     private static final String DEFAULT_CIIU = "AAAAAAAAAA";
     private static final String UPDATED_CIIU = "BBBBBBBBBB";
-
-    private static final Instant DEFAULT_CREATED_AT = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_CREATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
-
-    private static final Instant DEFAULT_UPDATED_AT = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_UPDATED_AT = Instant.now().truncatedTo(ChronoUnit.MILLIS);
 
     @Autowired
     private IndustryTypeRepository industryTypeRepository;
@@ -63,9 +55,7 @@ public class IndustryTypeResourceIT {
     public static IndustryType createEntity(EntityManager em) {
         IndustryType industryType = new IndustryType()
             .name(DEFAULT_NAME)
-            .ciiu(DEFAULT_CIIU)
-            .createdAt(DEFAULT_CREATED_AT)
-            .updatedAt(DEFAULT_UPDATED_AT);
+            .ciiu(DEFAULT_CIIU);
         return industryType;
     }
     /**
@@ -77,9 +67,7 @@ public class IndustryTypeResourceIT {
     public static IndustryType createUpdatedEntity(EntityManager em) {
         IndustryType industryType = new IndustryType()
             .name(UPDATED_NAME)
-            .ciiu(UPDATED_CIIU)
-            .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .ciiu(UPDATED_CIIU);
         return industryType;
     }
 
@@ -104,8 +92,6 @@ public class IndustryTypeResourceIT {
         IndustryType testIndustryType = industryTypeList.get(industryTypeList.size() - 1);
         assertThat(testIndustryType.getName()).isEqualTo(DEFAULT_NAME);
         assertThat(testIndustryType.getCiiu()).isEqualTo(DEFAULT_CIIU);
-        assertThat(testIndustryType.getCreatedAt()).isEqualTo(DEFAULT_CREATED_AT);
-        assertThat(testIndustryType.getUpdatedAt()).isEqualTo(DEFAULT_UPDATED_AT);
     }
 
     @Test
@@ -178,9 +164,7 @@ public class IndustryTypeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(industryType.getId().intValue())))
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
-            .andExpect(jsonPath("$.[*].ciiu").value(hasItem(DEFAULT_CIIU)))
-            .andExpect(jsonPath("$.[*].createdAt").value(hasItem(DEFAULT_CREATED_AT.toString())))
-            .andExpect(jsonPath("$.[*].updatedAt").value(hasItem(DEFAULT_UPDATED_AT.toString())));
+            .andExpect(jsonPath("$.[*].ciiu").value(hasItem(DEFAULT_CIIU)));
     }
     
     @Test
@@ -195,9 +179,7 @@ public class IndustryTypeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(industryType.getId().intValue()))
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
-            .andExpect(jsonPath("$.ciiu").value(DEFAULT_CIIU))
-            .andExpect(jsonPath("$.createdAt").value(DEFAULT_CREATED_AT.toString()))
-            .andExpect(jsonPath("$.updatedAt").value(DEFAULT_UPDATED_AT.toString()));
+            .andExpect(jsonPath("$.ciiu").value(DEFAULT_CIIU));
     }
     @Test
     @Transactional
@@ -221,9 +203,7 @@ public class IndustryTypeResourceIT {
         em.detach(updatedIndustryType);
         updatedIndustryType
             .name(UPDATED_NAME)
-            .ciiu(UPDATED_CIIU)
-            .createdAt(UPDATED_CREATED_AT)
-            .updatedAt(UPDATED_UPDATED_AT);
+            .ciiu(UPDATED_CIIU);
 
         restIndustryTypeMockMvc.perform(put("/api/industry-types")
             .contentType(MediaType.APPLICATION_JSON)
@@ -236,8 +216,6 @@ public class IndustryTypeResourceIT {
         IndustryType testIndustryType = industryTypeList.get(industryTypeList.size() - 1);
         assertThat(testIndustryType.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testIndustryType.getCiiu()).isEqualTo(UPDATED_CIIU);
-        assertThat(testIndustryType.getCreatedAt()).isEqualTo(UPDATED_CREATED_AT);
-        assertThat(testIndustryType.getUpdatedAt()).isEqualTo(UPDATED_UPDATED_AT);
     }
 
     @Test

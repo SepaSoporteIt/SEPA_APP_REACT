@@ -1,6 +1,6 @@
 package com.app.sepa.web.rest.errors;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @WithMockUser
 @AutoConfigureMockMvc
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 public class ExceptionTranslatorIT {
 
     @Autowired

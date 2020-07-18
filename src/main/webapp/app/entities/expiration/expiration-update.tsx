@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Col, Label } from 'reactstrap';
 import { AvFeedback, AvForm, AvGroup, AvInput, AvField } from 'availity-reactstrap-validation';
-import { ICrudGetAction, ICrudGetAllAction, setFileData, byteSize, ICrudPutAction } from 'react-jhipster';
+import { Translate, translate, ICrudGetAction, ICrudGetAllAction, ICrudPutAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IRootState } from 'app/shared/reducers';
 
@@ -13,7 +13,7 @@ import { IEmployee } from 'app/shared/model/employee.model';
 import { getEntities as getEmployees } from 'app/entities/employee/employee.reducer';
 import { IStudy } from 'app/shared/model/study.model';
 import { getEntities as getStudies } from 'app/entities/study/study.reducer';
-import { getEntity, updateEntity, createEntity, setBlob, reset } from './expiration.reducer';
+import { getEntity, updateEntity, createEntity, reset } from './expiration.reducer';
 import { IExpiration } from 'app/shared/model/expiration.model';
 import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateTime } from 'app/shared/util/date-utils';
 import { mapIdList } from 'app/shared/util/entity-utils';
@@ -28,14 +28,14 @@ export const ExpirationUpdate = (props: IExpirationUpdateProps) => {
 
   const { expirationEntity, companies, employees, studies, loading, updating } = props;
 
-  const { comments } = expirationEntity;
-
   const handleClose = () => {
-    props.history.push('/expiration');
+    props.history.push('/expiration' + props.location.search);
   };
 
   useEffect(() => {
-    if (!isNew) {
+    if (isNew) {
+      props.reset();
+    } else {
       props.getEntity(props.match.params.id);
     }
 
@@ -43,14 +43,6 @@ export const ExpirationUpdate = (props: IExpirationUpdateProps) => {
     props.getEmployees();
     props.getStudies();
   }, []);
-
-  const onBlobChange = (isAnImage, name) => event => {
-    setFileData(event, (contentType, data) => props.setBlob(name, data, contentType), isAnImage);
-  };
-
-  const clearBlob = name => () => {
-    props.setBlob(name, undefined, undefined);
-  };
 
   useEffect(() => {
     if (props.updateSuccess) {
@@ -77,7 +69,9 @@ export const ExpirationUpdate = (props: IExpirationUpdateProps) => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="sepaAppReactApp.expiration.home.createOrEditLabel">Create or edit a Expiration</h2>
+          <h2 id="sepaApp.expiration.home.createOrEditLabel">
+            <Translate contentKey="sepaApp.expiration.home.createOrEditLabel">Create or edit a Expiration</Translate>
+          </h2>
         </Col>
       </Row>
       <Row className="justify-content-center">
@@ -88,25 +82,27 @@ export const ExpirationUpdate = (props: IExpirationUpdateProps) => {
             <AvForm model={isNew ? {} : expirationEntity} onSubmit={saveEntity}>
               {!isNew ? (
                 <AvGroup>
-                  <Label for="expiration-id">ID</Label>
+                  <Label for="expiration-id">
+                    <Translate contentKey="global.field.id">ID</Translate>
+                  </Label>
                   <AvInput id="expiration-id" type="text" className="form-control" name="id" required readOnly />
                 </AvGroup>
               ) : null}
               <AvGroup>
                 <Label id="startDateLabel" for="expiration-startDate">
-                  Start Date
+                  <Translate contentKey="sepaApp.expiration.startDate">Start Date</Translate>
                 </Label>
                 <AvField id="expiration-startDate" type="date" className="form-control" name="startDate" />
               </AvGroup>
               <AvGroup>
                 <Label id="endDateLabel" for="expiration-endDate">
-                  End Date
+                  <Translate contentKey="sepaApp.expiration.endDate">End Date</Translate>
                 </Label>
                 <AvField id="expiration-endDate" type="date" className="form-control" name="endDate" />
               </AvGroup>
               <AvGroup>
                 <Label id="statusLabel" for="expiration-status">
-                  Status
+                  <Translate contentKey="sepaApp.expiration.status">Status</Translate>
                 </Label>
                 <AvInput
                   id="expiration-status"
@@ -115,54 +111,78 @@ export const ExpirationUpdate = (props: IExpirationUpdateProps) => {
                   name="status"
                   value={(!isNew && expirationEntity.status) || 'VENCIDO'}
                 >
-                  <option value="VENCIDO">VENCIDO</option>
-                  <option value="A_VENCER">A_VENCER</option>
-                  <option value="PENDIENTE">PENDIENTE</option>
-                  <option value="VIGENTE">VIGENTE</option>
-                  <option value="ANTIGUO">ANTIGUO</option>
-                  <option value="SIN_FECHA">SIN_FECHA</option>
+                  <option value="VENCIDO">{translate('sepaApp.Status.VENCIDO')}</option>
+                  <option value="A_VENCER">{translate('sepaApp.Status.A_VENCER')}</option>
+                  <option value="VIGENTE">{translate('sepaApp.Status.VIGENTE')}</option>
+                  <option value="PENDIENTE">{translate('sepaApp.Status.PENDIENTE')}</option>
+                  <option value="ANTIGUO">{translate('sepaApp.Status.ANTIGUO')}</option>
+                  <option value="SIN_FECHA">{translate('sepaApp.Status.SIN_FECHA')}</option>
                 </AvInput>
               </AvGroup>
               <AvGroup>
                 <Label id="commentsLabel" for="expiration-comments">
-                  Comments
+                  <Translate contentKey="sepaApp.expiration.comments">Comments</Translate>
                 </Label>
-                <AvInput id="expiration-comments" type="textarea" name="comments" />
+                <AvField id="expiration-comments" type="text" name="comments" />
               </AvGroup>
               <AvGroup>
-                <Label for="expiration-company">Company</Label>
+                <Label id="uniqueCodeLabel" for="expiration-uniqueCode">
+                  <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate>
+                </Label>
+                <AvField id="expiration-uniqueCode" type="text" name="uniqueCode" />
+              </AvGroup>
+              <AvGroup>
+                <Label id="responsibleLabel" for="expiration-responsible">
+                  <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate>
+                </Label>
+                <AvField id="expiration-responsible" type="text" name="responsible" />
+              </AvGroup>
+              <AvGroup check>
+                <Label id="isCompletedLabel">
+                  <AvInput id="expiration-isCompleted" type="checkbox" className="form-check-input" name="isCompleted" />
+                  <Translate contentKey="sepaApp.expiration.isCompleted">Is Completed</Translate>
+                </Label>
+              </AvGroup>
+              <AvGroup>
+                <Label for="expiration-company">
+                  <Translate contentKey="sepaApp.expiration.company">Company</Translate>
+                </Label>
                 <AvInput id="expiration-company" type="select" className="form-control" name="company.id">
                   <option value="" key="0" />
                   {companies
                     ? companies.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.fantasyName}
+                          {otherEntity.id}
                         </option>
                       ))
                     : null}
                 </AvInput>
               </AvGroup>
               <AvGroup>
-                <Label for="expiration-employee">Employee</Label>
+                <Label for="expiration-employee">
+                  <Translate contentKey="sepaApp.expiration.employee">Employee</Translate>
+                </Label>
                 <AvInput id="expiration-employee" type="select" className="form-control" name="employee.id">
                   <option value="" key="0" />
                   {employees
                     ? employees.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.name}
+                          {otherEntity.id}
                         </option>
                       ))
                     : null}
                 </AvInput>
               </AvGroup>
               <AvGroup>
-                <Label for="expiration-study">Study</Label>
+                <Label for="expiration-study">
+                  <Translate contentKey="sepaApp.expiration.study">Study</Translate>
+                </Label>
                 <AvInput id="expiration-study" type="select" className="form-control" name="study.id">
                   <option value="" key="0" />
                   {studies
                     ? studies.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.name}
+                          {otherEntity.id}
                         </option>
                       ))
                     : null}
@@ -171,12 +191,15 @@ export const ExpirationUpdate = (props: IExpirationUpdateProps) => {
               <Button tag={Link} id="cancel-save" to="/expiration" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;
-                <span className="d-none d-md-inline">Back</span>
+                <span className="d-none d-md-inline">
+                  <Translate contentKey="entity.action.back">Back</Translate>
+                </span>
               </Button>
               &nbsp;
               <Button color="primary" id="save-entity" type="submit" disabled={updating}>
                 <FontAwesomeIcon icon="save" />
-                &nbsp; Save
+                &nbsp;
+                <Translate contentKey="entity.action.save">Save</Translate>
               </Button>
             </AvForm>
           )}
@@ -202,7 +225,6 @@ const mapDispatchToProps = {
   getStudies,
   getEntity,
   updateEntity,
-  setBlob,
   createEntity,
   reset,
 };

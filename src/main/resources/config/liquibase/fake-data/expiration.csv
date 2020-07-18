@@ -1,11 +1,11 @@
-id;start_date;end_date;status;comments
-1;2020-07-10;2020-07-10;VIGENTE;../fake-data/blob/hipster.txt
-2;2020-07-10;2020-07-09;VIGENTE;../fake-data/blob/hipster.txt
-3;2020-07-10;2020-07-10;ANTIGUO;../fake-data/blob/hipster.txt
-4;2020-07-10;2020-07-10;VIGENTE;../fake-data/blob/hipster.txt
-5;2020-07-10;2020-07-09;VIGENTE;../fake-data/blob/hipster.txt
-6;2020-07-09;2020-07-10;VIGENTE;../fake-data/blob/hipster.txt
-7;2020-07-10;2020-07-10;PENDIENTE;../fake-data/blob/hipster.txt
-8;2020-07-10;2020-07-09;VENCIDO;../fake-data/blob/hipster.txt
-9;2020-07-10;2020-07-09;A_VENCER;../fake-data/blob/hipster.txt
-10;2020-07-10;2020-07-10;ANTIGUO;../fake-data/blob/hipster.txt
+id;start_date;end_date;status;comments;unique_code;responsible;is_completed
+1;2020-07-18;2020-07-18;PENDIENTE;synthesize Generic;payment Orchestrator flexibility;intermediate;true
+2;2020-07-18;2020-07-18;PENDIENTE;program integrated;indexing Tactics;Metal;false
+3;2020-07-17;2020-07-17;VIGENTE;sensor;AGP architecture neural-net;Corporate Handcrafted Haven;false
+4;2020-07-18;2020-07-18;ANTIGUO;Supervisor;maximize overriding;Hong Kong;true
+5;2020-07-17;2020-07-17;SIN_FECHA;Movies;transmit;Aruban Guilder Bolivar Fuerte Profound;true
+6;2020-07-18;2020-07-18;PENDIENTE;Research ivory Michigan;bottom-line Harbor;collaborative PCI;false
+7;2020-07-18;2020-07-17;PENDIENTE;program synthesize;green;Qatar Dale;true
+8;2020-07-17;2020-07-18;A_VENCER;channels Bahamas e-services;South Dakota streamline Kids;invoice Automotive parse;true
+9;2020-07-18;2020-07-18;ANTIGUO;haptic Grocery Tools;connect;leading edge Borders frictionless;false
+10;2020-07-18;2020-07-17;ANTIGUO;compress Rustic Wooden Computer real-time;override Ball;wireless SCSI morph;true

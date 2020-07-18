@@ -1,0 +1,47 @@
+{
+  "sepaApp": {
+    "company": {
+      "home": {
+        "title": "Companies",
+        "createLabel": "Create a new Company",
+        "createOrEditLabel": "Create or edit a Company",
+        "notFound": "No Companies found"
+      },
+      "created": "A new Company is created with identifier {{ param }}",
+      "updated": "A Company is updated with identifier {{ param }}",
+      "deleted": "A Company is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Company {{ id }}?"
+      },
+      "detail": {
+        "title": "Company"
+      },
+      "name": "Name",
+      "email": "Email",
+      "addressDirection": "Address Direction",
+      "addressNumber": "Address Number",
+      "betweenStreets": "Between Streets",
+      "floor": "Floor",
+      "departament": "Departament",
+      "cuit": "Cuit",
+      "isSubscripted": "Is Subscripted",
+      "fantasyName": "Fantasy Name",
+      "postalCode": "Postal Code",
+      "tlf": "Tlf",
+      "internalTlf": "Internal Tlf",
+      "contact": "Contact",
+      "cellphone": "Cellphone",
+      "visitsQtyMin": "Visits Qty Min",
+      "visitsQtyMax": "Visits Qty Max",
+      "habPrim": "Hab Prim",
+      "habSec": "Hab Sec",
+      "comment": "Comment",
+      "isDisabled": "Is Disabled",
+      "employee": "Employee",
+      "industryType": "Industry Type",
+      "secIndustryType": "Sec Industry Type",
+      "localidadId": "Localidad Id",
+      "partidoId": "Partido Id"
+    }
+  }
+}

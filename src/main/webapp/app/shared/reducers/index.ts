@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { loadingBarReducer as loadingBar } from 'react-redux-loading-bar';
 
+import locale, { LocaleState } from './locale';
 import authentication, { AuthenticationState } from './authentication';
 import applicationProfile, { ApplicationProfileState } from './application-profile';
 
@@ -31,10 +32,15 @@ import expiration, {
 import study, {
   StudyState
 } from 'app/entities/study/study.reducer';
+// prettier-ignore
+import localidadAndPartido, {
+  LocalidadAndPartidoState
+} from 'app/entities/localidad-and-partido/localidad-and-partido.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
   readonly authentication: AuthenticationState;
+  readonly locale: LocaleState;
   readonly applicationProfile: ApplicationProfileState;
   readonly administration: AdministrationState;
   readonly userManagement: UserManagementState;
@@ -48,12 +54,14 @@ export interface IRootState {
   readonly employee: EmployeeState;
   readonly expiration: ExpirationState;
   readonly study: StudyState;
+  readonly localidadAndPartido: LocalidadAndPartidoState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
 
 const rootReducer = combineReducers<IRootState>({
   authentication,
+  locale,
   applicationProfile,
   administration,
   userManagement,
@@ -67,6 +75,7 @@ const rootReducer = combineReducers<IRootState>({
   employee,
   expiration,
   study,
+  localidadAndPartido,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });

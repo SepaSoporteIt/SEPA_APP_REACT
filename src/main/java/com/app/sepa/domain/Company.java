@@ -7,7 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 /**
  * A Company.
@@ -37,6 +36,9 @@ public class Company implements Serializable {
     @NotNull
     @Column(name = "address_number", nullable = false)
     private String addressNumber;
+
+    @Column(name = "between_streets")
+    private String betweenStreets;
 
     @Column(name = "floor")
     private String floor;
@@ -81,30 +83,11 @@ public class Company implements Serializable {
     @Column(name = "hab_sec")
     private String habSec;
 
-    @Lob
     @Column(name = "comment")
     private String comment;
 
-    @Column(name = "legislation_id")
-    private Integer legislationId;
-
-    @Column(name = "solicitador_id")
-    private Integer solicitadorId;
-
-    @Column(name = "ambito_id")
-    private Integer ambitoId;
-
-    @Column(name = "autoridad_id")
-    private Integer autoridadId;
-
-    @Column(name = "frecuency_type_id")
-    private Integer frecuencyTypeId;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
+    @Column(name = "is_disabled")
+    private Boolean isDisabled;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -112,11 +95,19 @@ public class Company implements Serializable {
 
     @OneToOne
     @JoinColumn(unique = true)
-    private IndustryType primIndustryTipe;
+    private IndustryType industryType;
 
     @OneToOne
     @JoinColumn(unique = true)
-    private IndustryType secIndustryTipe;
+    private IndustryType secIndustryType;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private LocalidadAndPartido localidadId;
+
+    @OneToOne
+    @JoinColumn(unique = true)
+    private LocalidadAndPartido partidoId;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -177,6 +168,19 @@ public class Company implements Serializable {
 
     public void setAddressNumber(String addressNumber) {
         this.addressNumber = addressNumber;
+    }
+
+    public String getBetweenStreets() {
+        return betweenStreets;
+    }
+
+    public Company betweenStreets(String betweenStreets) {
+        this.betweenStreets = betweenStreets;
+        return this;
+    }
+
+    public void setBetweenStreets(String betweenStreets) {
+        this.betweenStreets = betweenStreets;
     }
 
     public String getFloor() {
@@ -374,95 +378,17 @@ public class Company implements Serializable {
         this.comment = comment;
     }
 
-    public Integer getLegislationId() {
-        return legislationId;
+    public Boolean isIsDisabled() {
+        return isDisabled;
     }
 
-    public Company legislationId(Integer legislationId) {
-        this.legislationId = legislationId;
+    public Company isDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
         return this;
     }
 
-    public void setLegislationId(Integer legislationId) {
-        this.legislationId = legislationId;
-    }
-
-    public Integer getSolicitadorId() {
-        return solicitadorId;
-    }
-
-    public Company solicitadorId(Integer solicitadorId) {
-        this.solicitadorId = solicitadorId;
-        return this;
-    }
-
-    public void setSolicitadorId(Integer solicitadorId) {
-        this.solicitadorId = solicitadorId;
-    }
-
-    public Integer getAmbitoId() {
-        return ambitoId;
-    }
-
-    public Company ambitoId(Integer ambitoId) {
-        this.ambitoId = ambitoId;
-        return this;
-    }
-
-    public void setAmbitoId(Integer ambitoId) {
-        this.ambitoId = ambitoId;
-    }
-
-    public Integer getAutoridadId() {
-        return autoridadId;
-    }
-
-    public Company autoridadId(Integer autoridadId) {
-        this.autoridadId = autoridadId;
-        return this;
-    }
-
-    public void setAutoridadId(Integer autoridadId) {
-        this.autoridadId = autoridadId;
-    }
-
-    public Integer getFrecuencyTypeId() {
-        return frecuencyTypeId;
-    }
-
-    public Company frecuencyTypeId(Integer frecuencyTypeId) {
-        this.frecuencyTypeId = frecuencyTypeId;
-        return this;
-    }
-
-    public void setFrecuencyTypeId(Integer frecuencyTypeId) {
-        this.frecuencyTypeId = frecuencyTypeId;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public Company createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public Company updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setIsDisabled(Boolean isDisabled) {
+        this.isDisabled = isDisabled;
     }
 
     public Employee getEmployee() {
@@ -478,30 +404,56 @@ public class Company implements Serializable {
         this.employee = employee;
     }
 
-    public IndustryType getPrimIndustryTipe() {
-        return primIndustryTipe;
+    public IndustryType getIndustryType() {
+        return industryType;
     }
 
-    public Company primIndustryTipe(IndustryType industryType) {
-        this.primIndustryTipe = industryType;
+    public Company industryType(IndustryType industryType) {
+        this.industryType = industryType;
         return this;
     }
 
-    public void setPrimIndustryTipe(IndustryType industryType) {
-        this.primIndustryTipe = industryType;
+    public void setIndustryType(IndustryType industryType) {
+        this.industryType = industryType;
     }
 
-    public IndustryType getSecIndustryTipe() {
-        return secIndustryTipe;
+    public IndustryType getSecIndustryType() {
+        return secIndustryType;
     }
 
-    public Company secIndustryTipe(IndustryType industryType) {
-        this.secIndustryTipe = industryType;
+    public Company secIndustryType(IndustryType industryType) {
+        this.secIndustryType = industryType;
         return this;
     }
 
-    public void setSecIndustryTipe(IndustryType industryType) {
-        this.secIndustryTipe = industryType;
+    public void setSecIndustryType(IndustryType industryType) {
+        this.secIndustryType = industryType;
+    }
+
+    public LocalidadAndPartido getLocalidadId() {
+        return localidadId;
+    }
+
+    public Company localidadId(LocalidadAndPartido localidadAndPartido) {
+        this.localidadId = localidadAndPartido;
+        return this;
+    }
+
+    public void setLocalidadId(LocalidadAndPartido localidadAndPartido) {
+        this.localidadId = localidadAndPartido;
+    }
+
+    public LocalidadAndPartido getPartidoId() {
+        return partidoId;
+    }
+
+    public Company partidoId(LocalidadAndPartido localidadAndPartido) {
+        this.partidoId = localidadAndPartido;
+        return this;
+    }
+
+    public void setPartidoId(LocalidadAndPartido localidadAndPartido) {
+        this.partidoId = localidadAndPartido;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
@@ -530,6 +482,7 @@ public class Company implements Serializable {
             ", email='" + getEmail() + "'" +
             ", addressDirection='" + getAddressDirection() + "'" +
             ", addressNumber='" + getAddressNumber() + "'" +
+            ", betweenStreets='" + getBetweenStreets() + "'" +
             ", floor='" + getFloor() + "'" +
             ", departament='" + getDepartament() + "'" +
             ", cuit='" + getCuit() + "'" +
@@ -545,13 +498,7 @@ public class Company implements Serializable {
             ", habPrim='" + getHabPrim() + "'" +
             ", habSec='" + getHabSec() + "'" +
             ", comment='" + getComment() + "'" +
-            ", legislationId=" + getLegislationId() +
-            ", solicitadorId=" + getSolicitadorId() +
-            ", ambitoId=" + getAmbitoId() +
-            ", autoridadId=" + getAutoridadId() +
-            ", frecuencyTypeId=" + getFrecuencyTypeId() +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
+            ", isDisabled='" + isIsDisabled() + "'" +
             "}";
     }
 }

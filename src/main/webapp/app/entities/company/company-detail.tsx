@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Col } from 'reactstrap';
-import { ICrudGetAction, byteSize, TextFormat } from 'react-jhipster';
+import { Translate, ICrudGetAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -22,126 +22,168 @@ export const CompanyDetail = (props: ICompanyDetailProps) => {
     <Row>
       <Col md="8">
         <h2>
-          Company [<b>{companyEntity.id}</b>]
+          <Translate contentKey="sepaApp.company.detail.title">Company</Translate> [<b>{companyEntity.id}</b>]
         </h2>
         <dl className="jh-entity-details">
           <dt>
-            <span id="name">Name</span>
+            <span id="name">
+              <Translate contentKey="sepaApp.company.name">Name</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.name}</dd>
           <dt>
-            <span id="email">Email</span>
+            <span id="email">
+              <Translate contentKey="sepaApp.company.email">Email</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.email}</dd>
           <dt>
-            <span id="addressDirection">Address Direction</span>
+            <span id="addressDirection">
+              <Translate contentKey="sepaApp.company.addressDirection">Address Direction</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.addressDirection}</dd>
           <dt>
-            <span id="addressNumber">Address Number</span>
+            <span id="addressNumber">
+              <Translate contentKey="sepaApp.company.addressNumber">Address Number</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.addressNumber}</dd>
           <dt>
-            <span id="floor">Floor</span>
+            <span id="betweenStreets">
+              <Translate contentKey="sepaApp.company.betweenStreets">Between Streets</Translate>
+            </span>
+          </dt>
+          <dd>{companyEntity.betweenStreets}</dd>
+          <dt>
+            <span id="floor">
+              <Translate contentKey="sepaApp.company.floor">Floor</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.floor}</dd>
           <dt>
-            <span id="departament">Departament</span>
+            <span id="departament">
+              <Translate contentKey="sepaApp.company.departament">Departament</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.departament}</dd>
           <dt>
-            <span id="cuit">Cuit</span>
+            <span id="cuit">
+              <Translate contentKey="sepaApp.company.cuit">Cuit</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.cuit}</dd>
           <dt>
-            <span id="isSubscripted">Is Subscripted</span>
+            <span id="isSubscripted">
+              <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.isSubscripted ? 'true' : 'false'}</dd>
           <dt>
-            <span id="fantasyName">Fantasy Name</span>
+            <span id="fantasyName">
+              <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.fantasyName}</dd>
           <dt>
-            <span id="postalCode">Postal Code</span>
+            <span id="postalCode">
+              <Translate contentKey="sepaApp.company.postalCode">Postal Code</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.postalCode}</dd>
           <dt>
-            <span id="tlf">Tlf</span>
+            <span id="tlf">
+              <Translate contentKey="sepaApp.company.tlf">Tlf</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.tlf}</dd>
           <dt>
-            <span id="internalTlf">Internal Tlf</span>
+            <span id="internalTlf">
+              <Translate contentKey="sepaApp.company.internalTlf">Internal Tlf</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.internalTlf}</dd>
           <dt>
-            <span id="contact">Contact</span>
+            <span id="contact">
+              <Translate contentKey="sepaApp.company.contact">Contact</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.contact}</dd>
           <dt>
-            <span id="cellphone">Cellphone</span>
+            <span id="cellphone">
+              <Translate contentKey="sepaApp.company.cellphone">Cellphone</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.cellphone}</dd>
           <dt>
-            <span id="visitsQtyMin">Visits Qty Min</span>
+            <span id="visitsQtyMin">
+              <Translate contentKey="sepaApp.company.visitsQtyMin">Visits Qty Min</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.visitsQtyMin}</dd>
           <dt>
-            <span id="visitsQtyMax">Visits Qty Max</span>
+            <span id="visitsQtyMax">
+              <Translate contentKey="sepaApp.company.visitsQtyMax">Visits Qty Max</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.visitsQtyMax}</dd>
           <dt>
-            <span id="habPrim">Hab Prim</span>
+            <span id="habPrim">
+              <Translate contentKey="sepaApp.company.habPrim">Hab Prim</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.habPrim}</dd>
           <dt>
-            <span id="habSec">Hab Sec</span>
+            <span id="habSec">
+              <Translate contentKey="sepaApp.company.habSec">Hab Sec</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.habSec}</dd>
           <dt>
-            <span id="comment">Comment</span>
+            <span id="comment">
+              <Translate contentKey="sepaApp.company.comment">Comment</Translate>
+            </span>
           </dt>
           <dd>{companyEntity.comment}</dd>
           <dt>
-            <span id="legislationId">Legislation Id</span>
+            <span id="isDisabled">
+              <Translate contentKey="sepaApp.company.isDisabled">Is Disabled</Translate>
+            </span>
           </dt>
-          <dd>{companyEntity.legislationId}</dd>
+          <dd>{companyEntity.isDisabled ? 'true' : 'false'}</dd>
           <dt>
-            <span id="solicitadorId">Solicitador Id</span>
+            <Translate contentKey="sepaApp.company.employee">Employee</Translate>
           </dt>
-          <dd>{companyEntity.solicitadorId}</dd>
+          <dd>{companyEntity.employee ? companyEntity.employee.id : ''}</dd>
           <dt>
-            <span id="ambitoId">Ambito Id</span>
+            <Translate contentKey="sepaApp.company.industryType">Industry Type</Translate>
           </dt>
-          <dd>{companyEntity.ambitoId}</dd>
+          <dd>{companyEntity.industryType ? companyEntity.industryType.id : ''}</dd>
           <dt>
-            <span id="autoridadId">Autoridad Id</span>
+            <Translate contentKey="sepaApp.company.secIndustryType">Sec Industry Type</Translate>
           </dt>
-          <dd>{companyEntity.autoridadId}</dd>
+          <dd>{companyEntity.secIndustryType ? companyEntity.secIndustryType.id : ''}</dd>
           <dt>
-            <span id="frecuencyTypeId">Frecuency Type Id</span>
+            <Translate contentKey="sepaApp.company.localidadId">Localidad Id</Translate>
           </dt>
-          <dd>{companyEntity.frecuencyTypeId}</dd>
+          <dd>{companyEntity.localidadId ? companyEntity.localidadId.id : ''}</dd>
           <dt>
-            <span id="createdAt">Created At</span>
+            <Translate contentKey="sepaApp.company.partidoId">Partido Id</Translate>
           </dt>
-          <dd>{companyEntity.createdAt ? <TextFormat value={companyEntity.createdAt} type="date" format={APP_DATE_FORMAT} /> : null}</dd>
-          <dt>
-            <span id="updatedAt">Updated At</span>
-          </dt>
-          <dd>{companyEntity.updatedAt ? <TextFormat value={companyEntity.updatedAt} type="date" format={APP_DATE_FORMAT} /> : null}</dd>
-          <dt>Employee</dt>
-          <dd>{companyEntity.employee ? companyEntity.employee.name : ''}</dd>
-          <dt>Prim Industry Tipe</dt>
-          <dd>{companyEntity.primIndustryTipe ? companyEntity.primIndustryTipe.ciiu : ''}</dd>
-          <dt>Sec Industry Tipe</dt>
-          <dd>{companyEntity.secIndustryTipe ? companyEntity.secIndustryTipe.ciiu : ''}</dd>
+          <dd>{companyEntity.partidoId ? companyEntity.partidoId.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/company" replace color="info">
-          <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>
+          <FontAwesomeIcon icon="arrow-left" />{' '}
+          <span className="d-none d-md-inline">
+            <Translate contentKey="entity.action.back">Back</Translate>
+          </span>
         </Button>
         &nbsp;
         <Button tag={Link} to={`/company/${companyEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" /> <span className="d-none d-md-inline">Edit</span>
+          <FontAwesomeIcon icon="pencil-alt" />{' '}
+          <span className="d-none d-md-inline">
+            <Translate contentKey="entity.action.edit">Edit</Translate>
+          </span>
         </Button>
       </Col>
     </Row>

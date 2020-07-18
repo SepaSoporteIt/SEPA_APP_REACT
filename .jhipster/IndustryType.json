@@ -14,18 +14,10 @@
       "fieldValidateRules": [
         "required"
       ]
-    },
-    {
-      "fieldName": "createdAt",
-      "fieldType": "Instant"
-    },
-    {
-      "fieldName": "updatedAt",
-      "fieldType": "Instant"
     }
   ],
   "relationships": [],
-  "changelogDate": "20200710154101",
+  "changelogDate": "20200718143754",
   "entityTableName": "industry_type",
   "dto": "no",
   "pagination": "pagination",

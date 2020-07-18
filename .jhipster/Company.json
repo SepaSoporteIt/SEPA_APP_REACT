@@ -27,6 +27,10 @@
       ]
     },
     {
+      "fieldName": "betweenStreets",
+      "fieldType": "String"
+    },
+    {
       "fieldName": "floor",
       "fieldType": "String"
     },
@@ -87,36 +91,11 @@
     },
     {
       "fieldName": "comment",
-      "fieldType": "byte[]",
-      "fieldTypeBlobContent": "text"
+      "fieldType": "String"
     },
     {
-      "fieldName": "legislationId",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "solicitadorId",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "ambitoId",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "autoridadId",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "frecuencyTypeId",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "createdAt",
-      "fieldType": "Instant"
-    },
-    {
-      "fieldName": "updatedAt",
-      "fieldType": "Instant"
+      "fieldName": "isDisabled",
+      "fieldType": "Boolean"
     }
   ],
   "relationships": [
@@ -125,30 +104,46 @@
       "otherEntityName": "employee",
       "otherEntityRelationshipName": "company",
       "relationshipName": "employee",
-      "otherEntityField": "name",
+      "otherEntityField": "id",
       "ownerSide": true
     },
     {
       "relationshipType": "one-to-one",
       "otherEntityName": "industryType",
       "otherEntityRelationshipName": "company",
-      "relationshipName": "primIndustryTipe",
-      "otherEntityField": "ciiu",
+      "relationshipName": "industryType",
+      "otherEntityField": "id",
       "ownerSide": true
     },
     {
       "relationshipType": "one-to-one",
       "otherEntityName": "industryType",
       "otherEntityRelationshipName": "company",
-      "relationshipName": "secIndustryTipe",
-      "otherEntityField": "ciiu",
+      "relationshipName": "secIndustryType",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "localidadAndPartido",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "localidadId",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "localidadAndPartido",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "partidoId",
+      "otherEntityField": "id",
       "ownerSide": true
     }
   ],
-  "changelogDate": "20200710154001",
+  "changelogDate": "20200718143654",
   "entityTableName": "company",
   "dto": "no",
-  "pagination": "infinite-scroll",
+  "pagination": "pagination",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

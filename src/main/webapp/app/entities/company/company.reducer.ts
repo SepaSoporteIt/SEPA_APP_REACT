@@ -1,12 +1,5 @@
 import axios from 'axios';
-import {
-  parseHeaderForLinks,
-  loadMoreDataWhenScrolled,
-  ICrudGetAction,
-  ICrudGetAllAction,
-  ICrudPutAction,
-  ICrudDeleteAction,
-} from 'react-jhipster';
+import { ICrudGetAction, ICrudGetAllAction, ICrudPutAction, ICrudDeleteAction } from 'react-jhipster';
 
 import { cleanEntity } from 'app/shared/util/entity-utils';
 import { REQUEST, SUCCESS, FAILURE } from 'app/shared/reducers/action-type.util';
@@ -19,7 +12,6 @@ export const ACTION_TYPES = {
   CREATE_COMPANY: 'company/CREATE_COMPANY',
   UPDATE_COMPANY: 'company/UPDATE_COMPANY',
   DELETE_COMPANY: 'company/DELETE_COMPANY',
-  SET_BLOB: 'company/SET_BLOB',
   RESET: 'company/RESET',
 };
 
@@ -28,7 +20,6 @@ const initialState = {
   errorMessage: null,
   entities: [] as ReadonlyArray<ICompany>,
   entity: defaultValue,
-  links: { next: 0 },
   updating: false,
   totalItems: 0,
   updateSuccess: false,
@@ -69,17 +60,13 @@ export default (state: CompanyState = initialState, action): CompanyState => {
         updateSuccess: false,
         errorMessage: action.payload,
       };
-    case SUCCESS(ACTION_TYPES.FETCH_COMPANY_LIST): {
-      const links = parseHeaderForLinks(action.payload.headers.link);
-
+    case SUCCESS(ACTION_TYPES.FETCH_COMPANY_LIST):
       return {
         ...state,
         loading: false,
-        links,
-        entities: loadMoreDataWhenScrolled(state.entities, action.payload.data, links),
+        entities: action.payload.data,
         totalItems: parseInt(action.payload.headers['x-total-count'], 10),
       };
-    }
     case SUCCESS(ACTION_TYPES.FETCH_COMPANY):
       return {
         ...state,
@@ -101,17 +88,6 @@ export default (state: CompanyState = initialState, action): CompanyState => {
         updateSuccess: true,
         entity: {},
       };
-    case ACTION_TYPES.SET_BLOB: {
-      const { name, data, contentType } = action.payload;
-      return {
-        ...state,
-        entity: {
-          ...state.entity,
-          [name]: data,
-          [name + 'ContentType']: contentType,
-        },
-      };
-    }
     case ACTION_TYPES.RESET:
       return {
         ...initialState,
@@ -146,6 +122,7 @@ export const createEntity: ICrudPutAction<ICompany> = entity => async dispatch =
     type: ACTION_TYPES.CREATE_COMPANY,
     payload: axios.post(apiUrl, cleanEntity(entity)),
   });
+  dispatch(getEntities());
   return result;
 };
 
@@ -163,17 +140,9 @@ export const deleteEntity: ICrudDeleteAction<ICompany> = id => async dispatch =>
     type: ACTION_TYPES.DELETE_COMPANY,
     payload: axios.delete(requestUrl),
   });
+  dispatch(getEntities());
   return result;
 };
-
-export const setBlob = (name, data, contentType?) => ({
-  type: ACTION_TYPES.SET_BLOB,
-  payload: {
-    name,
-    data,
-    contentType,
-  },
-});
 
 export const reset = () => ({
   type: ACTION_TYPES.RESET,

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Row, Col } from 'reactstrap';
-import { ICrudGetAction, byteSize, TextFormat } from 'react-jhipster';
+import { Translate, ICrudGetAction, TextFormat } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -22,11 +22,13 @@ export const ExpirationDetail = (props: IExpirationDetailProps) => {
     <Row>
       <Col md="8">
         <h2>
-          Expiration [<b>{expirationEntity.id}</b>]
+          <Translate contentKey="sepaApp.expiration.detail.title">Expiration</Translate> [<b>{expirationEntity.id}</b>]
         </h2>
         <dl className="jh-entity-details">
           <dt>
-            <span id="startDate">Start Date</span>
+            <span id="startDate">
+              <Translate contentKey="sepaApp.expiration.startDate">Start Date</Translate>
+            </span>
           </dt>
           <dd>
             {expirationEntity.startDate ? (
@@ -34,32 +36,68 @@ export const ExpirationDetail = (props: IExpirationDetailProps) => {
             ) : null}
           </dd>
           <dt>
-            <span id="endDate">End Date</span>
+            <span id="endDate">
+              <Translate contentKey="sepaApp.expiration.endDate">End Date</Translate>
+            </span>
           </dt>
           <dd>
             {expirationEntity.endDate ? <TextFormat value={expirationEntity.endDate} type="date" format={APP_LOCAL_DATE_FORMAT} /> : null}
           </dd>
           <dt>
-            <span id="status">Status</span>
+            <span id="status">
+              <Translate contentKey="sepaApp.expiration.status">Status</Translate>
+            </span>
           </dt>
           <dd>{expirationEntity.status}</dd>
           <dt>
-            <span id="comments">Comments</span>
+            <span id="comments">
+              <Translate contentKey="sepaApp.expiration.comments">Comments</Translate>
+            </span>
           </dt>
           <dd>{expirationEntity.comments}</dd>
-          <dt>Company</dt>
-          <dd>{expirationEntity.company ? expirationEntity.company.fantasyName : ''}</dd>
-          <dt>Employee</dt>
-          <dd>{expirationEntity.employee ? expirationEntity.employee.name : ''}</dd>
-          <dt>Study</dt>
-          <dd>{expirationEntity.study ? expirationEntity.study.name : ''}</dd>
+          <dt>
+            <span id="uniqueCode">
+              <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate>
+            </span>
+          </dt>
+          <dd>{expirationEntity.uniqueCode}</dd>
+          <dt>
+            <span id="responsible">
+              <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate>
+            </span>
+          </dt>
+          <dd>{expirationEntity.responsible}</dd>
+          <dt>
+            <span id="isCompleted">
+              <Translate contentKey="sepaApp.expiration.isCompleted">Is Completed</Translate>
+            </span>
+          </dt>
+          <dd>{expirationEntity.isCompleted ? 'true' : 'false'}</dd>
+          <dt>
+            <Translate contentKey="sepaApp.expiration.company">Company</Translate>
+          </dt>
+          <dd>{expirationEntity.company ? expirationEntity.company.id : ''}</dd>
+          <dt>
+            <Translate contentKey="sepaApp.expiration.employee">Employee</Translate>
+          </dt>
+          <dd>{expirationEntity.employee ? expirationEntity.employee.id : ''}</dd>
+          <dt>
+            <Translate contentKey="sepaApp.expiration.study">Study</Translate>
+          </dt>
+          <dd>{expirationEntity.study ? expirationEntity.study.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/expiration" replace color="info">
-          <FontAwesomeIcon icon="arrow-left" /> <span className="d-none d-md-inline">Back</span>
+          <FontAwesomeIcon icon="arrow-left" />{' '}
+          <span className="d-none d-md-inline">
+            <Translate contentKey="entity.action.back">Back</Translate>
+          </span>
         </Button>
         &nbsp;
         <Button tag={Link} to={`/expiration/${expirationEntity.id}/edit`} replace color="primary">
-          <FontAwesomeIcon icon="pencil-alt" /> <span className="d-none d-md-inline">Edit</span>
+          <FontAwesomeIcon icon="pencil-alt" />{' '}
+          <span className="d-none d-md-inline">
+            <Translate contentKey="entity.action.edit">Edit</Translate>
+          </span>
         </Button>
       </Col>
     </Row>

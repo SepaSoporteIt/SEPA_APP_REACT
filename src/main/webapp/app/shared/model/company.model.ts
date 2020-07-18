@@ -1,6 +1,6 @@
-import { Moment } from 'moment';
 import { IEmployee } from 'app/shared/model/employee.model';
 import { IIndustryType } from 'app/shared/model/industry-type.model';
+import { ILocalidadAndPartido } from 'app/shared/model/localidad-and-partido.model';
 
 export interface ICompany {
   id?: number;
@@ -8,6 +8,7 @@ export interface ICompany {
   email?: string;
   addressDirection?: string;
   addressNumber?: string;
+  betweenStreets?: string;
   floor?: string;
   departament?: string;
   cuit?: string;
@@ -22,19 +23,16 @@ export interface ICompany {
   visitsQtyMax?: number;
   habPrim?: string;
   habSec?: string;
-  comment?: any;
-  legislationId?: number;
-  solicitadorId?: number;
-  ambitoId?: number;
-  autoridadId?: number;
-  frecuencyTypeId?: number;
-  createdAt?: string;
-  updatedAt?: string;
+  comment?: string;
+  isDisabled?: boolean;
   employee?: IEmployee;
-  primIndustryTipe?: IIndustryType;
-  secIndustryTipe?: IIndustryType;
+  industryType?: IIndustryType;
+  secIndustryType?: IIndustryType;
+  localidadId?: ILocalidadAndPartido;
+  partidoId?: ILocalidadAndPartido;
 }
 
 export const defaultValue: Readonly<ICompany> = {
   isSubscripted: false,
+  isDisabled: false,
 };

@@ -1,6 +1,6 @@
 package com.app.sepa.repository;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 
 import com.app.sepa.config.Constants;
 import com.app.sepa.config.audit.AuditEventConverter;
@@ -28,7 +28,7 @@ import static com.app.sepa.repository.CustomAuditEventRepository.EVENT_DATA_COLU
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

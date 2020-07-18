@@ -2,7 +2,7 @@ package com.app.sepa.service;
 
 import com.app.sepa.domain.PersistentAuditEvent;
 import com.app.sepa.repository.PersistenceAuditEventRepository;
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 @Transactional
 public class AuditEventServiceIT {
     @Autowired

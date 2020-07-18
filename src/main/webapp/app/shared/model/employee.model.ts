@@ -1,4 +1,5 @@
-import { Moment } from 'moment';
+import { ICompany } from 'app/shared/model/company.model';
+import { ILocalidadAndPartido } from 'app/shared/model/localidad-and-partido.model';
 
 export interface IEmployee {
   id?: number;
@@ -14,15 +15,16 @@ export interface IEmployee {
   floor?: string;
   departament?: string;
   degree?: string;
-  localidad?: string;
-  partido?: string;
   especializacion?: string;
   celular?: string;
   comentario?: string;
-  createdAt?: string;
-  updatedAt?: string;
+  isDisabled?: boolean;
+  company?: ICompany;
+  localidadId?: ILocalidadAndPartido;
+  partidoId?: ILocalidadAndPartido;
 }
 
 export const defaultValue: Readonly<IEmployee> = {
   isInternal: false,
+  isDisabled: false,
 };

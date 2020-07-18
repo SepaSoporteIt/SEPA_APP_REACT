@@ -1,6 +1,6 @@
 package com.app.sepa.service;
 
-import com.app.sepa.SepaAppReactApp;
+import com.app.sepa.SepaApp;
 import com.app.sepa.config.Constants;
 import com.app.sepa.domain.User;
 import com.app.sepa.repository.UserRepository;
@@ -32,7 +32,7 @@ import static org.mockito.Mockito.when;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = SepaAppReactApp.class)
+@SpringBootTest(classes = SepaApp.class)
 @Transactional
 public class UserServiceIT {
 

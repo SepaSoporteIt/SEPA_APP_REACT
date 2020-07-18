@@ -3,7 +3,7 @@ package com.app.sepa.config;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * Properties specific to SEPA APP REACT.
+ * Properties specific to Sepa.
  * <p>
  * Properties are configured in the {@code application.yml} file.
  * See {@link io.github.jhipster.config.JHipsterProperties} for a good example.

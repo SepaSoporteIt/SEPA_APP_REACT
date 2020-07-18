@@ -24,10 +24,10 @@
     }
   ],
   "relationships": [],
-  "changelogDate": "20200710154401",
+  "changelogDate": "20200718144054",
   "entityTableName": "study",
   "dto": "no",
-  "pagination": "pagination",
+  "pagination": "infinite-scroll",
   "service": "no",
   "jpaMetamodelFiltering": false,
   "fluentMethods": true,

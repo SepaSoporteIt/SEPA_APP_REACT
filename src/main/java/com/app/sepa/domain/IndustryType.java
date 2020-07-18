@@ -7,7 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
-import java.time.Instant;
 
 /**
  * A IndustryType.
@@ -30,12 +29,6 @@ public class IndustryType implements Serializable {
     @NotNull
     @Column(name = "ciiu", nullable = false)
     private String ciiu;
-
-    @Column(name = "created_at")
-    private Instant createdAt;
-
-    @Column(name = "updated_at")
-    private Instant updatedAt;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -71,32 +64,6 @@ public class IndustryType implements Serializable {
     public void setCiiu(String ciiu) {
         this.ciiu = ciiu;
     }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public IndustryType createdAt(Instant createdAt) {
-        this.createdAt = createdAt;
-        return this;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public IndustryType updatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-        return this;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -122,8 +89,6 @@ public class IndustryType implements Serializable {
             "id=" + getId() +
             ", name='" + getName() + "'" +
             ", ciiu='" + getCiiu() + "'" +
-            ", createdAt='" + getCreatedAt() + "'" +
-            ", updatedAt='" + getUpdatedAt() + "'" +
             "}";
     }
 }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import { ICrudGetAction, ICrudDeleteAction } from 'react-jhipster';
+import { Translate, ICrudGetAction, ICrudDeleteAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { ICompany } from 'app/shared/model/company.model';
@@ -17,7 +17,7 @@ export const CompanyDeleteDialog = (props: ICompanyDeleteDialogProps) => {
   }, []);
 
   const handleClose = () => {
-    props.history.push('/company');
+    props.history.push('/company' + props.location.search);
   };
 
   useEffect(() => {
@@ -33,16 +33,24 @@ export const CompanyDeleteDialog = (props: ICompanyDeleteDialogProps) => {
   const { companyEntity } = props;
   return (
     <Modal isOpen toggle={handleClose}>
-      <ModalHeader toggle={handleClose}>Confirm delete operation</ModalHeader>
-      <ModalBody id="sepaAppReactApp.company.delete.question">Are you sure you want to delete this Company?</ModalBody>
+      <ModalHeader toggle={handleClose}>
+        <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
+      </ModalHeader>
+      <ModalBody id="sepaApp.company.delete.question">
+        <Translate contentKey="sepaApp.company.delete.question" interpolate={{ id: companyEntity.id }}>
+          Are you sure you want to delete this Company?
+        </Translate>
+      </ModalBody>
       <ModalFooter>
         <Button color="secondary" onClick={handleClose}>
           <FontAwesomeIcon icon="ban" />
-          &nbsp; Cancel
+          &nbsp;
+          <Translate contentKey="entity.action.cancel">Cancel</Translate>
         </Button>
         <Button id="jhi-confirm-delete-company" color="danger" onClick={confirmDelete}>
           <FontAwesomeIcon icon="trash" />
-          &nbsp; Delete
+          &nbsp;
+          <Translate contentKey="entity.action.delete">Delete</Translate>
         </Button>
       </ModalFooter>
     </Modal>

@@ -53,6 +53,7 @@ public class CacheConfiguration {
             createCache(cm, com.app.sepa.domain.Employee.class.getName());
             createCache(cm, com.app.sepa.domain.Expiration.class.getName());
             createCache(cm, com.app.sepa.domain.Study.class.getName());
+            createCache(cm, com.app.sepa.domain.LocalidadAndPartido.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

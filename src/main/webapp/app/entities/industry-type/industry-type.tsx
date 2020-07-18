@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { Button, Col, Row, Table } from 'reactstrap';
-import { ICrudGetAllAction, TextFormat, getSortState, IPaginationBaseState, JhiPagination, JhiItemCount } from 'react-jhipster';
+import { Translate, ICrudGetAllAction, getSortState, IPaginationBaseState, JhiPagination, JhiItemCount } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IRootState } from 'app/shared/reducers';
@@ -68,10 +68,11 @@ export const IndustryType = (props: IIndustryTypeProps) => {
   return (
     <div>
       <h2 id="industry-type-heading">
-        Industry Types
+        <Translate contentKey="sepaApp.industryType.home.title">Industry Types</Translate>
         <Link to={`${match.url}/new`} className="btn btn-primary float-right jh-create-entity" id="jh-create-entity">
           <FontAwesomeIcon icon="plus" />
-          &nbsp; Create new Industry Type
+          &nbsp;
+          <Translate contentKey="sepaApp.industryType.home.createLabel">Create new Industry Type</Translate>
         </Link>
       </h2>
       <div className="table-responsive">
@@ -80,19 +81,13 @@ export const IndustryType = (props: IIndustryTypeProps) => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  ID <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('name')}>
-                  Name <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="sepaApp.industryType.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('ciiu')}>
-                  Ciiu <FontAwesomeIcon icon="sort" />
-                </th>
-                <th className="hand" onClick={sort('createdAt')}>
-                  Created At <FontAwesomeIcon icon="sort" />
-                </th>
-                <th className="hand" onClick={sort('updatedAt')}>
-                  Updated At <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="sepaApp.industryType.ciiu">Ciiu</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -107,16 +102,13 @@ export const IndustryType = (props: IIndustryTypeProps) => {
                   </td>
                   <td>{industryType.name}</td>
                   <td>{industryType.ciiu}</td>
-                  <td>
-                    {industryType.createdAt ? <TextFormat type="date" value={industryType.createdAt} format={APP_DATE_FORMAT} /> : null}
-                  </td>
-                  <td>
-                    {industryType.updatedAt ? <TextFormat type="date" value={industryType.updatedAt} format={APP_DATE_FORMAT} /> : null}
-                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${industryType.id}`} color="info" size="sm">
-                        <FontAwesomeIcon icon="eye" /> <span className="d-none d-md-inline">View</span>
+                        <FontAwesomeIcon icon="eye" />{' '}
+                        <span className="d-none d-md-inline">
+                          <Translate contentKey="entity.action.view">View</Translate>
+                        </span>
                       </Button>
                       <Button
                         tag={Link}
@@ -124,7 +116,10 @@ export const IndustryType = (props: IIndustryTypeProps) => {
                         color="primary"
                         size="sm"
                       >
-                        <FontAwesomeIcon icon="pencil-alt" /> <span className="d-none d-md-inline">Edit</span>
+                        <FontAwesomeIcon icon="pencil-alt" />{' '}
+                        <span className="d-none d-md-inline">
+                          <Translate contentKey="entity.action.edit">Edit</Translate>
+                        </span>
                       </Button>
                       <Button
                         tag={Link}
@@ -132,7 +127,10 @@ export const IndustryType = (props: IIndustryTypeProps) => {
                         color="danger"
                         size="sm"
                       >
-                        <FontAwesomeIcon icon="trash" /> <span className="d-none d-md-inline">Delete</span>
+                        <FontAwesomeIcon icon="trash" />{' '}
+                        <span className="d-none d-md-inline">
+                          <Translate contentKey="entity.action.delete">Delete</Translate>
+                        </span>
                       </Button>
                     </div>
                   </td>
@@ -141,13 +139,17 @@ export const IndustryType = (props: IIndustryTypeProps) => {
             </tbody>
           </Table>
         ) : (
-          !loading && <div className="alert alert-warning">No Industry Types found</div>
+          !loading && (
+            <div className="alert alert-warning">
+              <Translate contentKey="sepaApp.industryType.home.notFound">No Industry Types found</Translate>
+            </div>
+          )
         )}
       </div>
       {props.totalItems ? (
         <div className={industryTypeList && industryTypeList.length > 0 ? '' : 'd-none'}>
           <Row className="justify-content-center">
-            <JhiItemCount page={paginationState.activePage} total={totalItems} itemsPerPage={paginationState.itemsPerPage} />
+            <JhiItemCount page={paginationState.activePage} total={totalItems} itemsPerPage={paginationState.itemsPerPage} i18nEnabled />
           </Row>
           <Row className="justify-content-center">
             <JhiPagination

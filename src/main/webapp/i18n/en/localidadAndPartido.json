@@ -1,0 +1,23 @@
+{
+  "sepaApp": {
+    "localidadAndPartido": {
+      "home": {
+        "title": "Localidad And Partidos",
+        "createLabel": "Create a new Localidad And Partido",
+        "createOrEditLabel": "Create or edit a Localidad And Partido",
+        "notFound": "No Localidad And Partidos found"
+      },
+      "created": "A new Localidad And Partido is created with identifier {{ param }}",
+      "updated": "A Localidad And Partido is updated with identifier {{ param }}",
+      "deleted": "A Localidad And Partido is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Localidad And Partido {{ id }}?"
+      },
+      "detail": {
+        "title": "Localidad And Partido"
+      },
+      "localidad": "Localidad",
+      "partido": "Partido"
+    }
+  }
+}

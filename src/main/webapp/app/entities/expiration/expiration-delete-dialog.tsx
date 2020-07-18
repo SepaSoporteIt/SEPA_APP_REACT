@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-import { ICrudGetAction, ICrudDeleteAction } from 'react-jhipster';
+import { Translate, ICrudGetAction, ICrudDeleteAction } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { IExpiration } from 'app/shared/model/expiration.model';
@@ -17,7 +17,7 @@ export const ExpirationDeleteDialog = (props: IExpirationDeleteDialogProps) => {
   }, []);
 
   const handleClose = () => {
-    props.history.push('/expiration');
+    props.history.push('/expiration' + props.location.search);
   };
 
   useEffect(() => {
@@ -33,16 +33,24 @@ export const ExpirationDeleteDialog = (props: IExpirationDeleteDialogProps) => {
   const { expirationEntity } = props;
   return (
     <Modal isOpen toggle={handleClose}>
-      <ModalHeader toggle={handleClose}>Confirm delete operation</ModalHeader>
-      <ModalBody id="sepaAppReactApp.expiration.delete.question">Are you sure you want to delete this Expiration?</ModalBody>
+      <ModalHeader toggle={handleClose}>
+        <Translate contentKey="entity.delete.title">Confirm delete operation</Translate>
+      </ModalHeader>
+      <ModalBody id="sepaApp.expiration.delete.question">
+        <Translate contentKey="sepaApp.expiration.delete.question" interpolate={{ id: expirationEntity.id }}>
+          Are you sure you want to delete this Expiration?
+        </Translate>
+      </ModalBody>
       <ModalFooter>
         <Button color="secondary" onClick={handleClose}>
           <FontAwesomeIcon icon="ban" />
-          &nbsp; Cancel
+          &nbsp;
+          <Translate contentKey="entity.action.cancel">Cancel</Translate>
         </Button>
         <Button id="jhi-confirm-delete-expiration" color="danger" onClick={confirmDelete}>
           <FontAwesomeIcon icon="trash" />
-          &nbsp; Delete
+          &nbsp;
+          <Translate contentKey="entity.action.delete">Delete</Translate>
         </Button>
       </ModalFooter>
     </Modal>

@@ -18,10 +18,10 @@ spring:
   # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
   #active: testcontainers
   application:
-    name: SEPA_APP_REACT
+    name: sepa
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:SEPA_APP_REACT;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:sepa;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:
@@ -57,13 +57,13 @@ spring:
     basename: i18n/messages
   task:
     execution:
-      thread-name-prefix: sepa-app-react-task-
+      thread-name-prefix: sepa-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: sepa-app-react-scheduling-
+      thread-name-prefix: sepa-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -81,7 +81,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'sepaAppReactApp'
+    name: 'sepaApp'
   logging:
     # To test json console appender
     use-json-format: false
@@ -97,7 +97,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: ZjUxZGZkMTU2NjliNzIxMjQ5M2EzMzUxYjFlN2Q4MWY4MjQ3YzQ3ZGE4MDZhNmMyNDQ1ZjA3ZmQwNTBjYjQyMzY1ZTMxODc5NWE3NTNkOWNlNDdmODFjMTdkZDE5ZjI0YjEzZWRmMDZmMmYyYzZhMTM0NDFiYWNmMzg2MzRiMTY=
+        base64-secret: ZGM3ZGIzOTllYjI1NjQ5ZjY2Nzg0YzNmZGVlNzc4NmNiZTU5NGQ2YzA0YmM3YmI2Y2E3N2Q1ZjllMzZjZGQ4MmI1MDEwZmZjZmI1ZjlmOThiYmJhNGVjM2FlYWM1OGJjMzdjMmZiOGJkNjJkMDA2M2VhNzIxOTMzYzM4ODhhMTQ=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
   metrics:
