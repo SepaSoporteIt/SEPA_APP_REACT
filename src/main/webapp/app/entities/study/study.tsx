@@ -99,9 +99,6 @@ export const Study = (props: IStudyProps) => {
             <Table responsive>
               <thead>
                 <tr>
-                  <th className="hand" onClick={sort('id')}>
-                    <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
-                  </th>
                   <th className="hand" onClick={sort('name')}>
                     <Translate contentKey="sepaApp.study.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
@@ -119,10 +116,9 @@ export const Study = (props: IStudyProps) => {
                   <tr key={`entity-${i}`}>
                     <td>
                       <Button tag={Link} to={`${match.url}/${study.id}`} color="link" size="sm">
-                        {study.id}
+                        {study.name}
                       </Button>
                     </td>
-                    <td>{study.name}</td>
                     <td>{study.resolution}</td>
                     <td>{study.legislation}</td>
                     <td className="text-right">

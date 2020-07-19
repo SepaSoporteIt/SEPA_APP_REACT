@@ -22,15 +22,9 @@ export const StudyDetail = (props: IStudyDetailProps) => {
     <Row>
       <Col md="8">
         <h2>
-          <Translate contentKey="sepaApp.study.detail.title">Study</Translate> [<b>{studyEntity.id}</b>]
+          <Translate contentKey="sepaApp.study.detail.title">Study</Translate> [<b>{studyEntity.name}</b>]
         </h2>
         <dl className="jh-entity-details">
-          <dt>
-            <span id="name">
-              <Translate contentKey="sepaApp.study.name">Name</Translate>
-            </span>
-          </dt>
-          <dd>{studyEntity.name}</dd>
           <dt>
             <span id="resolution">
               <Translate contentKey="sepaApp.study.resolution">Resolution</Translate>
