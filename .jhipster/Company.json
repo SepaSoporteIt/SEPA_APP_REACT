@@ -1,0 +1,154 @@
+{
+  "name": "Company",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressDirection",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "addressNumber",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "betweenStreets",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "floor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "departament",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cuit",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "isSubscripted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "fantasyName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postalCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tlf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "internalTlf",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cellphone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "visitsQtyMin",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "visitsQtyMax",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "habPrim",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "habSec",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isDisabled",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "employee",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "industryType",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "industryType",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "industryType",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "secIndustryType",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "localidadAndPartido",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "localidadId",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "localidadAndPartido",
+      "otherEntityRelationshipName": "company",
+      "relationshipName": "partidoId",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20200718143654",
+  "entityTableName": "company",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,63 @@
+{
+  "sepaApp": {
+    "company": {
+      "home": {
+        "title": "Cliente",
+        "createLabel": "Crear nuevo Cliente",
+        "createOrEditLabel": "Crear o editar Cliente",
+        "search": "Buscar Cliente",
+        "notFound": "Ningún Cliente encontrado"
+      },
+      "created": "Un nuevo Cliente ha sido creado con el identificador {{ param }}",
+      "updated": "Un Cliente ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Cliente ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar el Cliente {{ id }}?"
+      },
+      "detail": {
+        "title": "Cliente",
+        "basicData": "Datos Básicos",
+        "clientAddress": "Domicilio del Establecimiento",
+        "contactData": "Datos de Contacto",
+        "afipActivity": "Rubro/Actividad establecida por la AFIP",
+        "serviceData": "Datos del Servicio",
+        "others": "Otros"
+      },
+      "booleans": {
+        "true": "Si",
+        "false": "No"
+      },
+      "errors": {
+        "noEmployee": "Profesional no Asignado"
+      },
+      "name": "Razón social",
+      "email": "Email",
+      "addressDirection": "Calle",
+      "addressNumber": "Número",
+      "floor": "Piso",
+      "departament": "Departamento",
+      "cuit": "CUIT",
+      "isSubscripted": "Servicio de HyS?",
+      "fantasyName": "Nombre de Fantasía",
+      "postalCode": "Código Postal",
+      "tlf": "Teléfono Principal",
+      "internalTlf": "Interno del Teléfono",
+      "contact": "Contacto",
+      "cellphone": "Teléfono Secundario",
+      "visitsQtyMin": "Cantidad Mínima de Visitas",
+      "visitsQtyMax": "Cantidad Máxima de Visitas",
+      "habPrim": "Habilitación Primaria",
+      "habSec": "Habilitación Secundaria",
+      "comment": "Comentarios",
+      "createdAt": "Creado el",
+      "updatedAt": "Actualizado el",
+      "betweenStreets": "Entre Calles",
+      "employee": "Profesional",
+      "industryType": "1º CIIU",
+      "secIndustryType": "2º CIIU",
+      "isDisabled": "Dado de baja?",
+      "localidadId": "Localidad",
+      "partidoId": "Partido"
+    }
+  }
+}
