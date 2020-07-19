@@ -80,9 +80,6 @@ export const IndustryType = (props: IIndustryTypeProps) => {
           <Table responsive>
             <thead>
               <tr>
-                <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
                 <th className="hand" onClick={sort('name')}>
                   <Translate contentKey="sepaApp.industryType.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -97,10 +94,9 @@ export const IndustryType = (props: IIndustryTypeProps) => {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${industryType.id}`} color="link" size="sm">
-                      {industryType.id}
+                      {industryType.name}
                     </Button>
                   </td>
-                  <td>{industryType.name}</td>
                   <td>{industryType.ciiu}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
