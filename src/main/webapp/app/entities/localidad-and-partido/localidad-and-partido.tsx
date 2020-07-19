@@ -80,9 +80,6 @@ export const LocalidadAndPartido = (props: ILocalidadAndPartidoProps) => {
           <Table responsive>
             <thead>
               <tr>
-                <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
                 <th className="hand" onClick={sort('localidad')}>
                   <Translate contentKey="sepaApp.localidadAndPartido.localidad">Localidad</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
@@ -97,10 +94,9 @@ export const LocalidadAndPartido = (props: ILocalidadAndPartidoProps) => {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${localidadAndPartido.id}`} color="link" size="sm">
-                      {localidadAndPartido.id}
+                      {localidadAndPartido.localidad}
                     </Button>
                   </td>
-                  <td>{localidadAndPartido.localidad}</td>
                   <td>{localidadAndPartido.partido}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
