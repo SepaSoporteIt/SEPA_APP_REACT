@@ -36,6 +36,10 @@ import study, {
 import localidadAndPartido, {
   LocalidadAndPartidoState
 } from 'app/entities/localidad-and-partido/localidad-and-partido.reducer';
+// prettier-ignore
+import visits, {
+  VisitsState
+} from 'app/entities/visits/visits.reducer';
 /* jhipster-needle-add-reducer-import - JHipster will add reducer here */
 
 export interface IRootState {
@@ -55,6 +59,7 @@ export interface IRootState {
   readonly expiration: ExpirationState;
   readonly study: StudyState;
   readonly localidadAndPartido: LocalidadAndPartidoState;
+  readonly visits: VisitsState;
   /* jhipster-needle-add-reducer-type - JHipster will add reducer type here */
   readonly loadingBar: any;
 }
@@ -76,6 +81,7 @@ const rootReducer = combineReducers<IRootState>({
   expiration,
   study,
   localidadAndPartido,
+  visits,
   /* jhipster-needle-add-reducer-combine - JHipster will add reducer here */
   loadingBar,
 });
