@@ -75,29 +75,11 @@ export const VisitsUpdate = (props: IVisitsUpdateProps) => {
               {!isNew ? (
                 <AvGroup>
                   <Label for="visits-id">
-                    <Translate contentKey="global.field.id">ID</Translate>
+                    <Translate contentKey="sepaApp.visits.id">ID</Translate>
                   </Label>
                   <AvInput id="visits-id" type="text" className="form-control" name="id" required readOnly />
                 </AvGroup>
               ) : null}
-              <AvGroup>
-                <Label id="employeeLabel" for="visits-employee">
-                  <Translate contentKey="sepaApp.visits.employee">Employee</Translate>
-                </Label>
-                <AvField id="visits-employee" type="text" name="employee" />
-              </AvGroup>
-              <AvGroup>
-                <Label id="visit_dateLabel" for="visits-visit_date">
-                  <Translate contentKey="sepaApp.visits.visit_date">Visit Date</Translate>
-                </Label>
-                <AvField id="visits-visit_date" type="date" className="form-control" name="visit_date" />
-              </AvGroup>
-              <AvGroup>
-                <Label id="commentsLabel" for="visits-comments">
-                  <Translate contentKey="sepaApp.visits.comments">Comments</Translate>
-                </Label>
-                <AvField id="visits-comments" type="text" name="comments" />
-              </AvGroup>
               <AvGroup>
                 <Label for="visits-company">
                   <Translate contentKey="sepaApp.visits.company">Company</Translate>
@@ -107,11 +89,29 @@ export const VisitsUpdate = (props: IVisitsUpdateProps) => {
                   {companies
                     ? companies.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.name + " " + otherEntity.addressDirection + " " + otherEntity.addressNumber}
                         </option>
                       ))
                     : null}
                 </AvInput>
+              </AvGroup>
+              <AvGroup>
+                <Label id="visit_dateLabel" for="visits-visit_date">
+                  <Translate contentKey="sepaApp.visits.visit_date">Visit Date</Translate>
+                </Label>
+                <AvField id="visits-visit_date" type="date" className="form-control" name="visit_date" />
+              </AvGroup>
+              <AvGroup>
+                <Label id="employeeLabel" for="visits-employee">
+                  <Translate contentKey="sepaApp.visits.employee">Employee</Translate>
+                </Label>
+                <AvField id="visits-employee" type="text" name="employee" />
+              </AvGroup>
+              <AvGroup>
+                <Label id="commentsLabel" for="visits-comments">
+                  <Translate contentKey="sepaApp.visits.comments">Comments</Translate>
+                </Label>
+                <AvField id="visits-comments" type="text" name="comments" />
               </AvGroup>
               <Button tag={Link} id="cancel-save" to="/visits" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />

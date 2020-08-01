@@ -16,6 +16,7 @@
       "detail": {
         "title": "Visits"
       },
+      "id": "Identifier",
       "employee": "Employee",
       "visit_date": "Visit Date",
       "comments": "Comments",

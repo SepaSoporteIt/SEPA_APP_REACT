@@ -81,19 +81,16 @@ export const Visits = (props: IVisitsProps) => {
             <thead>
               <tr>
                 <th className="hand" onClick={sort('id')}>
-                  <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
+                  <Translate contentKey="sepaApp.visits.id">ID</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
-                <th className="hand" onClick={sort('employee')}>
-                  <Translate contentKey="sepaApp.visits.employee">Employee</Translate> <FontAwesomeIcon icon="sort" />
+                <th>
+                  <Translate contentKey="sepaApp.visits.company">Company</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('visit_date')}>
                   <Translate contentKey="sepaApp.visits.visit_date">Visit Date</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
-                <th className="hand" onClick={sort('comments')}>
-                  <Translate contentKey="sepaApp.visits.comments">Comments</Translate> <FontAwesomeIcon icon="sort" />
-                </th>
-                <th>
-                  <Translate contentKey="sepaApp.visits.company">Company</Translate> <FontAwesomeIcon icon="sort" />
+                <th className="hand" onClick={sort('employee')}>
+                  <Translate contentKey="sepaApp.visits.employee">Employee</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th />
               </tr>
@@ -106,10 +103,9 @@ export const Visits = (props: IVisitsProps) => {
                       {visits.id}
                     </Button>
                   </td>
-                  <td>{visits.employee}</td>
+                  <td>{visits.company ? <Link to={`company/${visits.company.id}`}>{visits.company.name + " " + visits.company.addressDirection + " " + visits.company.addressNumber}</Link> : ''}</td>
                   <td>{visits.visit_date ? <TextFormat type="date" value={visits.visit_date} format={APP_LOCAL_DATE_FORMAT} /> : null}</td>
-                  <td>{visits.comments}</td>
-                  <td>{visits.company ? <Link to={`company/${visits.company.id}`}>{visits.company.id}</Link> : ''}</td>
+                  <td>{visits.employee}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${visits.id}`} color="info" size="sm">

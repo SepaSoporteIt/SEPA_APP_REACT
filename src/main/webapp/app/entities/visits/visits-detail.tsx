@@ -26,11 +26,10 @@ export const VisitsDetail = (props: IVisitsDetailProps) => {
         </h2>
         <dl className="jh-entity-details">
           <dt>
-            <span id="employee">
-              <Translate contentKey="sepaApp.visits.employee">Employee</Translate>
-            </span>
+            <Translate contentKey="sepaApp.visits.company">Company</Translate>
           </dt>
-          <dd>{visitsEntity.employee}</dd>
+          <dd>{visitsEntity.company ? visitsEntity.company.name + " " + visitsEntity.company.addressDirection + " " + visitsEntity.company.addressNumber : ''}</dd>
+          <dt>
           <dt>
             <span id="visit_date">
               <Translate contentKey="sepaApp.visits.visit_date">Visit Date</Translate>
@@ -39,16 +38,18 @@ export const VisitsDetail = (props: IVisitsDetailProps) => {
           <dd>
             {visitsEntity.visit_date ? <TextFormat value={visitsEntity.visit_date} type="date" format={APP_LOCAL_DATE_FORMAT} /> : null}
           </dd>
+
+            <span id="employee">
+              <Translate contentKey="sepaApp.visits.employee">Employee</Translate>
+            </span>
+          </dt>
+          <dd>{visitsEntity.employee}</dd>
           <dt>
             <span id="comments">
               <Translate contentKey="sepaApp.visits.comments">Comments</Translate>
             </span>
           </dt>
           <dd>{visitsEntity.comments}</dd>
-          <dt>
-            <Translate contentKey="sepaApp.visits.company">Company</Translate>
-          </dt>
-          <dd>{visitsEntity.company ? visitsEntity.company.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/visits" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

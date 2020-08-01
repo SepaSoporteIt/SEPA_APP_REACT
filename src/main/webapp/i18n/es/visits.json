@@ -2,24 +2,25 @@
   "sepaApp": {
     "visits": {
       "home": {
-        "title": "Visits",
-        "createLabel": "Crear nuevo Visits",
-        "createOrEditLabel": "Crear o editar Visits",
-        "notFound": "Ningún Visits encontrado"
+        "title": "Visitas",
+        "createLabel": "Crear nueva visita",
+        "createOrEditLabel": "Crear o editar visita",
+        "notFound": "Ninguna visita encontrada"
       },
-      "created": "Un nuevo Visits ha sido creado con el identificador {{ param }}",
-      "updated": "Un Visits ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Visits ha sido eliminado con el identificador {{ param }}",
+      "created": "Una nueva visita ha sido creada con el identificador {{ param }}",
+      "updated": "Una visita ha sido actualizada con el identificador {{ param }}",
+      "deleted": "Una visita ha sido eliminada con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Visits {{ id }}?"
+        "question": "¿Seguro que quiere eliminar la visita {{ id }}?"
       },
       "detail": {
-        "title": "Visits"
+        "title": "Visitas"
       },
-      "employee": "Employee",
-      "visit_date": "Visit Date",
-      "comments": "Comments",
-      "company": "Company"
+      "id": "Identificador",
+      "employee": "Profesional",
+      "visit_date": "Fecha de la visita",
+      "comments": "Comentarios",
+      "company": "Cliente"
     }
   }
 }
