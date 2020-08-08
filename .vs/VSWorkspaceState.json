@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\main",
+    "\\src\\main\\java",
+    "\\src\\main\\java\\com",
+    "\\src\\main\\java\\com\\app",
+    "\\src\\main\\java\\com\\app\\sepa",
+    "\\src\\main\\java\\com\\app\\sepa\\domain",
+    "\\src\\main\\resources",
+    "\\src\\main\\resources\\config"
+  ],
+  "SelectedNode": "\\.env",
+  "PreviewInSolutionExplorer": false
+}
