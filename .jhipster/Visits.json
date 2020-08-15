@@ -5,12 +5,10 @@
     {
       "relationshipName": "company",
       "otherEntityName": "company",
-      "relationshipType": "one-to-one",
+      "relationshipType": "many-to-one",
       "relationshipValidateRules": ["required"],
       "otherEntityField": "id",
-      "ownerSide": true,
-      "useJPADerivedIdentifier": false,
-      "otherEntityRelationshipName": ""
+      "otherEntityRelationshipName": "visits"
     }
   ],
   "fields": [

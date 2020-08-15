@@ -4,9 +4,7 @@
     {
       "fieldName": "name",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "email",
@@ -15,16 +13,12 @@
     {
       "fieldName": "addressDirection",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "addressNumber",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "betweenStreets",
@@ -41,9 +35,7 @@
     {
       "fieldName": "cuit",
       "fieldType": "String",
-      "fieldValidateRules": [
-        "required"
-      ]
+      "fieldValidateRules": ["required"]
     },
     {
       "fieldName": "isSubscripted",
@@ -100,44 +92,32 @@
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "employee",
-      "otherEntityRelationshipName": "company",
       "relationshipName": "employee",
+      "otherEntityName": "employee",
+      "relationshipType": "many-to-one",
       "otherEntityField": "id",
-      "ownerSide": true
+      "otherEntityRelationshipName": "company"
     },
     {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "industryType",
-      "otherEntityRelationshipName": "company",
       "relationshipName": "industryType",
-      "otherEntityField": "id",
-      "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
       "otherEntityName": "industryType",
-      "otherEntityRelationshipName": "company",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "company"
+    },
+    {
       "relationshipName": "secIndustryType",
+      "otherEntityName": "industryType",
+      "relationshipType": "many-to-one",
       "otherEntityField": "id",
-      "ownerSide": true
+      "otherEntityRelationshipName": "company"
     },
     {
-      "relationshipType": "one-to-one",
+      "relationshipName": "localidadAndPartido",
       "otherEntityName": "localidadAndPartido",
-      "otherEntityRelationshipName": "company",
-      "relationshipName": "localidadId",
+      "relationshipType": "many-to-one",
       "otherEntityField": "id",
-      "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "localidadAndPartido",
-      "otherEntityRelationshipName": "company",
-      "relationshipName": "partidoId",
-      "otherEntityField": "id",
-      "ownerSide": true
+      "otherEntityRelationshipName": "company"
     }
   ],
   "changelogDate": "20200718143654",
@@ -150,5 +130,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }

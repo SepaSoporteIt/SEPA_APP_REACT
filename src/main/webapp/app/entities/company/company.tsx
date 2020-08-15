@@ -80,11 +80,14 @@ export const Company = (props: ICompanyProps) => {
           <Table responsive>
             <thead>
               <tr>
+                <th className="hand" onClick={sort('id')}>
+                  <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
                 <th className="hand" onClick={sort('name')}>
                   <Translate contentKey="sepaApp.company.name">Name</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
-                <th className="hand" onClick={sort('fantasyName')}>
-                  <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate> <FontAwesomeIcon icon="sort" />
+                <th className="hand" onClick={sort('email')}>
+                  <Translate contentKey="sepaApp.company.email">Email</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('addressDirection')}>
                   <Translate contentKey="sepaApp.company.addressDirection">Address Direction</Translate> <FontAwesomeIcon icon="sort" />
@@ -92,16 +95,71 @@ export const Company = (props: ICompanyProps) => {
                 <th className="hand" onClick={sort('addressNumber')}>
                   <Translate contentKey="sepaApp.company.addressNumber">Address Number</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
+                <th className="hand" onClick={sort('betweenStreets')}>
+                  <Translate contentKey="sepaApp.company.betweenStreets">Between Streets</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('floor')}>
+                  <Translate contentKey="sepaApp.company.floor">Floor</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('departament')}>
+                  <Translate contentKey="sepaApp.company.departament">Departament</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('cuit')}>
+                  <Translate contentKey="sepaApp.company.cuit">Cuit</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
                 <th className="hand" onClick={sort('isSubscripted')}>
                   <Translate contentKey="sepaApp.company.isSubscripted">Is Subscripted</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('fantasyName')}>
+                  <Translate contentKey="sepaApp.company.fantasyName">Fantasy Name</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('postalCode')}>
+                  <Translate contentKey="sepaApp.company.postalCode">Postal Code</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
                 <th className="hand" onClick={sort('tlf')}>
                   <Translate contentKey="sepaApp.company.tlf">Tlf</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
+                <th className="hand" onClick={sort('internalTlf')}>
+                  <Translate contentKey="sepaApp.company.internalTlf">Internal Tlf</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
                 <th className="hand" onClick={sort('contact')}>
                   <Translate contentKey="sepaApp.company.contact">Contact</Translate> <FontAwesomeIcon icon="sort" />
                 </th>
-                <th/>
+                <th className="hand" onClick={sort('cellphone')}>
+                  <Translate contentKey="sepaApp.company.cellphone">Cellphone</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('visitsQtyMin')}>
+                  <Translate contentKey="sepaApp.company.visitsQtyMin">Visits Qty Min</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('visitsQtyMax')}>
+                  <Translate contentKey="sepaApp.company.visitsQtyMax">Visits Qty Max</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('habPrim')}>
+                  <Translate contentKey="sepaApp.company.habPrim">Hab Prim</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('habSec')}>
+                  <Translate contentKey="sepaApp.company.habSec">Hab Sec</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('comment')}>
+                  <Translate contentKey="sepaApp.company.comment">Comment</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th className="hand" onClick={sort('isDisabled')}>
+                  <Translate contentKey="sepaApp.company.isDisabled">Is Disabled</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="sepaApp.company.employee">Employee</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="sepaApp.company.industryType">Industry Type</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="sepaApp.company.secIndustryType">Sec Industry Type</Translate> <FontAwesomeIcon icon="sort" />
+                </th>
+                <th>
+                  <Translate contentKey="sepaApp.company.localidadAndPartido">Localidad And Partido</Translate>{' '}
+                  <FontAwesomeIcon icon="sort" />
+                </th>
+                <th />
               </tr>
             </thead>
             <tbody>
@@ -109,15 +167,48 @@ export const Company = (props: ICompanyProps) => {
                 <tr key={`entity-${i}`}>
                   <td>
                     <Button tag={Link} to={`${match.url}/${company.id}`} color="link" size="sm">
-                      {company.name}
+                      {company.id}
                     </Button>
                   </td>
-                  <td>{company.fantasyName}</td>
+                  <td>{company.name}</td>
+                  <td>{company.email}</td>
                   <td>{company.addressDirection}</td>
                   <td>{company.addressNumber}</td>
-                  <td>{company.isSubscripted ? <Translate contentKey="sepaApp.company.booleans.true">true</Translate> : <Translate contentKey="sepaApp.company.booleans.false">false</Translate>}</td>
+                  <td>{company.betweenStreets}</td>
+                  <td>{company.floor}</td>
+                  <td>{company.departament}</td>
+                  <td>{company.cuit}</td>
+                  <td>{company.isSubscripted ? 'true' : 'false'}</td>
+                  <td>{company.fantasyName}</td>
+                  <td>{company.postalCode}</td>
                   <td>{company.tlf}</td>
+                  <td>{company.internalTlf}</td>
                   <td>{company.contact}</td>
+                  <td>{company.cellphone}</td>
+                  <td>{company.visitsQtyMin}</td>
+                  <td>{company.visitsQtyMax}</td>
+                  <td>{company.habPrim}</td>
+                  <td>{company.habSec}</td>
+                  <td>{company.comment}</td>
+                  <td>{company.isDisabled ? 'true' : 'false'}</td>
+                  <td>{company.employee ? <Link to={`employee/${company.employee.id}`}>{company.employee.id}</Link> : ''}</td>
+                  <td>
+                    {company.industryType ? <Link to={`industry-type/${company.industryType.id}`}>{company.industryType.id}</Link> : ''}
+                  </td>
+                  <td>
+                    {company.secIndustryType ? (
+                      <Link to={`industry-type/${company.secIndustryType.id}`}>{company.secIndustryType.id}</Link>
+                    ) : (
+                      ''
+                    )}
+                  </td>
+                  <td>
+                    {company.localidadAndPartido ? (
+                      <Link to={`localidad-and-partido/${company.localidadAndPartido.id}`}>{company.localidadAndPartido.id}</Link>
+                    ) : (
+                      ''
+                    )}
+                  </td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${company.id}`} color="info" size="sm">

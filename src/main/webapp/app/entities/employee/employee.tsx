@@ -99,8 +99,23 @@ export const Employee = (props: IEmployeeProps) => {
             <Table responsive>
               <thead>
                 <tr>
+                  <th className="hand" onClick={sort('id')}>
+                    <Translate contentKey="global.field.id">ID</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
                   <th className="hand" onClick={sort('name')}>
-                    <Translate contentKey="sepaApp.employee.fullName">Full Name</Translate> <FontAwesomeIcon icon="sort" />
+                    <Translate contentKey="sepaApp.employee.name">Name</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('surname')}>
+                    <Translate contentKey="sepaApp.employee.surname">Surname</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('email')}>
+                    <Translate contentKey="sepaApp.employee.email">Email</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('tlf')}>
+                    <Translate contentKey="sepaApp.employee.tlf">Tlf</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('isInternal')}>
+                    <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
                   <th className="hand" onClick={sort('matNumber')}>
                     <Translate contentKey="sepaApp.employee.matNumber">Mat Number</Translate> <FontAwesomeIcon icon="sort" />
@@ -108,11 +123,36 @@ export const Employee = (props: IEmployeeProps) => {
                   <th className="hand" onClick={sort('cuit')}>
                     <Translate contentKey="sepaApp.employee.cuit">Cuit</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
-                  <th className="hand" onClick={sort('tlf')}>
-                    <Translate contentKey="sepaApp.employee.tlf">Tlf</Translate> <FontAwesomeIcon icon="sort" />
+                  <th className="hand" onClick={sort('addressDirection')}>
+                    <Translate contentKey="sepaApp.employee.addressDirection">Address Direction</Translate> <FontAwesomeIcon icon="sort" />
                   </th>
-                  <th className="hand" onClick={sort('isInternal')}>
-                    <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate> <FontAwesomeIcon icon="sort" />
+                  <th className="hand" onClick={sort('addressNumber')}>
+                    <Translate contentKey="sepaApp.employee.addressNumber">Address Number</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('floor')}>
+                    <Translate contentKey="sepaApp.employee.floor">Floor</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('departament')}>
+                    <Translate contentKey="sepaApp.employee.departament">Departament</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('degree')}>
+                    <Translate contentKey="sepaApp.employee.degree">Degree</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('especializacion')}>
+                    <Translate contentKey="sepaApp.employee.especializacion">Especializacion</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('celular')}>
+                    <Translate contentKey="sepaApp.employee.celular">Celular</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('comentario')}>
+                    <Translate contentKey="sepaApp.employee.comentario">Comentario</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th className="hand" onClick={sort('isDisabled')}>
+                    <Translate contentKey="sepaApp.employee.isDisabled">Is Disabled</Translate> <FontAwesomeIcon icon="sort" />
+                  </th>
+                  <th>
+                    <Translate contentKey="sepaApp.employee.localidadAndPartido">Localidad And Partido</Translate>{' '}
+                    <FontAwesomeIcon icon="sort" />
                   </th>
                   <th />
                 </tr>
@@ -122,13 +162,32 @@ export const Employee = (props: IEmployeeProps) => {
                   <tr key={`entity-${i}`}>
                     <td>
                       <Button tag={Link} to={`${match.url}/${employee.id}`} color="link" size="sm">
-                        {employee.name + " " + employee.surname}
+                        {employee.id}
                       </Button>
                     </td>
+                    <td>{employee.name}</td>
+                    <td>{employee.surname}</td>
+                    <td>{employee.email}</td>
+                    <td>{employee.tlf}</td>
+                    <td>{employee.isInternal ? 'true' : 'false'}</td>
                     <td>{employee.matNumber}</td>
                     <td>{employee.cuit}</td>
-                    <td>{employee.tlf}</td>
-                    <td>{employee.isInternal ? <Translate contentKey="sepaApp.employee.booleans.true">true</Translate> : <Translate contentKey="sepaApp.employee.booleans.false">false</Translate>}</td>
+                    <td>{employee.addressDirection}</td>
+                    <td>{employee.addressNumber}</td>
+                    <td>{employee.floor}</td>
+                    <td>{employee.departament}</td>
+                    <td>{employee.degree}</td>
+                    <td>{employee.especializacion}</td>
+                    <td>{employee.celular}</td>
+                    <td>{employee.comentario}</td>
+                    <td>{employee.isDisabled ? 'true' : 'false'}</td>
+                    <td>
+                      {employee.localidadAndPartido ? (
+                        <Link to={`localidad-and-partido/${employee.localidadAndPartido.id}`}>{employee.localidadAndPartido.id}</Link>
+                      ) : (
+                        ''
+                      )}
+                    </td>
                     <td className="text-right">
                       <div className="btn-group flex-btn-group-container">
                         <Button tag={Link} to={`${match.url}/${employee.id}`} color="info" size="sm">

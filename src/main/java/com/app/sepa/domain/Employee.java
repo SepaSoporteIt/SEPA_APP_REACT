@@ -1,5 +1,6 @@
 package com.app.sepa.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -74,13 +75,9 @@ public class Employee implements Serializable {
     @Column(name = "is_disabled")
     private Boolean isDisabled;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private LocalidadAndPartido localidadId;
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private LocalidadAndPartido partidoId;
+    @ManyToOne
+    @JsonIgnoreProperties(value = "employees", allowSetters = true)
+    private LocalidadAndPartido localidadAndPartido;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -299,30 +296,17 @@ public class Employee implements Serializable {
         this.isDisabled = isDisabled;
     }
 
-    public LocalidadAndPartido getLocalidadId() {
-        return localidadId;
+    public LocalidadAndPartido getLocalidadAndPartido() {
+        return localidadAndPartido;
     }
 
-    public Employee localidadId(LocalidadAndPartido localidadAndPartido) {
-        this.localidadId = localidadAndPartido;
+    public Employee localidadAndPartido(LocalidadAndPartido localidadAndPartido) {
+        this.localidadAndPartido = localidadAndPartido;
         return this;
     }
 
-    public void setLocalidadId(LocalidadAndPartido localidadAndPartido) {
-        this.localidadId = localidadAndPartido;
-    }
-
-    public LocalidadAndPartido getPartidoId() {
-        return partidoId;
-    }
-
-    public Employee partidoId(LocalidadAndPartido localidadAndPartido) {
-        this.partidoId = localidadAndPartido;
-        return this;
-    }
-
-    public void setPartidoId(LocalidadAndPartido localidadAndPartido) {
-        this.partidoId = localidadAndPartido;
+    public void setLocalidadAndPartido(LocalidadAndPartido localidadAndPartido) {
+        this.localidadAndPartido = localidadAndPartido;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

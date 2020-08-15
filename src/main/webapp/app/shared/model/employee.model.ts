@@ -18,8 +18,7 @@ export interface IEmployee {
   celular?: string;
   comentario?: string;
   isDisabled?: boolean;
-  localidadId?: ILocalidadAndPartido;
-  partidoId?: ILocalidadAndPartido;
+  localidadAndPartido?: ILocalidadAndPartido;
 }
 
 export const defaultValue: Readonly<IEmployee> = {

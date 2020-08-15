@@ -38,13 +38,13 @@
                 <constraints nullable="true" />
             </column>
             <column name="company_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_expiration_company_id" />
+                <constraints nullable="false" />
             </column>
             <column name="employee_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_expiration_employee_id" />
+                <constraints nullable="false" />
             </column>
             <column name="study_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_expiration_study_id" />
+                <constraints nullable="false" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
@@ -76,6 +76,9 @@
             <column name="unique_code" type="string"/>
             <column name="responsible" type="string"/>
             <column name="is_completed" type="boolean"/>
+            <column name="company_id" type="numeric"/>
+            <column name="employee_id" type="numeric"/>
+            <column name="study_id" type="numeric"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

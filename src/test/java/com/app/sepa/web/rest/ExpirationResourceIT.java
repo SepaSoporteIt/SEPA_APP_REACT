@@ -2,6 +2,9 @@ package com.app.sepa.web.rest;
 
 import com.app.sepa.SepaApp;
 import com.app.sepa.domain.Expiration;
+import com.app.sepa.domain.Company;
+import com.app.sepa.domain.Employee;
+import com.app.sepa.domain.Study;
 import com.app.sepa.repository.ExpirationRepository;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -79,6 +82,36 @@ public class ExpirationResourceIT {
             .uniqueCode(DEFAULT_UNIQUE_CODE)
             .responsible(DEFAULT_RESPONSIBLE)
             .isCompleted(DEFAULT_IS_COMPLETED);
+        // Add required entity
+        Company company;
+        if (TestUtil.findAll(em, Company.class).isEmpty()) {
+            company = CompanyResourceIT.createEntity(em);
+            em.persist(company);
+            em.flush();
+        } else {
+            company = TestUtil.findAll(em, Company.class).get(0);
+        }
+        expiration.setCompany(company);
+        // Add required entity
+        Employee employee;
+        if (TestUtil.findAll(em, Employee.class).isEmpty()) {
+            employee = EmployeeResourceIT.createEntity(em);
+            em.persist(employee);
+            em.flush();
+        } else {
+            employee = TestUtil.findAll(em, Employee.class).get(0);
+        }
+        expiration.setEmployee(employee);
+        // Add required entity
+        Study study;
+        if (TestUtil.findAll(em, Study.class).isEmpty()) {
+            study = StudyResourceIT.createEntity(em);
+            em.persist(study);
+            em.flush();
+        } else {
+            study = TestUtil.findAll(em, Study.class).get(0);
+        }
+        expiration.setStudy(study);
         return expiration;
     }
     /**
@@ -96,6 +129,36 @@ public class ExpirationResourceIT {
             .uniqueCode(UPDATED_UNIQUE_CODE)
             .responsible(UPDATED_RESPONSIBLE)
             .isCompleted(UPDATED_IS_COMPLETED);
+        // Add required entity
+        Company company;
+        if (TestUtil.findAll(em, Company.class).isEmpty()) {
+            company = CompanyResourceIT.createUpdatedEntity(em);
+            em.persist(company);
+            em.flush();
+        } else {
+            company = TestUtil.findAll(em, Company.class).get(0);
+        }
+        expiration.setCompany(company);
+        // Add required entity
+        Employee employee;
+        if (TestUtil.findAll(em, Employee.class).isEmpty()) {
+            employee = EmployeeResourceIT.createUpdatedEntity(em);
+            em.persist(employee);
+            em.flush();
+        } else {
+            employee = TestUtil.findAll(em, Employee.class).get(0);
+        }
+        expiration.setEmployee(employee);
+        // Add required entity
+        Study study;
+        if (TestUtil.findAll(em, Study.class).isEmpty()) {
+            study = StudyResourceIT.createUpdatedEntity(em);
+            em.persist(study);
+            em.flush();
+        } else {
+            study = TestUtil.findAll(em, Study.class).get(0);
+        }
+        expiration.setStudy(study);
         return expiration;
     }
 

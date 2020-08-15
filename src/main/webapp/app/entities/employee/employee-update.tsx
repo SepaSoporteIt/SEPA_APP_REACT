@@ -17,8 +17,7 @@ import { mapIdList } from 'app/shared/util/entity-utils';
 export interface IEmployeeUpdateProps extends StateProps, DispatchProps, RouteComponentProps<{ id: string }> {}
 
 export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
-  const [localidadIdId, setLocalidadIdId] = useState('0');
-  const [partidoIdId, setPartidoIdId] = useState('0');
+  const [localidadAndPartidoId, setLocalidadAndPartidoId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
   const { employeeEntity, localidadAndPartidos, loading, updating } = props;
@@ -79,11 +78,6 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                   <AvInput id="employee-id" type="text" className="form-control" name="id" required readOnly />
                 </AvGroup>
               ) : null}
-
-<AvGroup>
-              <h3>
-                <Translate contentKey="sepaApp.employee.detail.personalData">Personal Data</Translate>
-              </h3>
               <AvGroup>
                 <Label id="nameLabel" for="employee-name">
                   <Translate contentKey="sepaApp.employee.name">Name</Translate>
@@ -93,7 +87,7 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                   type="text"
                   name="name"
                   validate={{
-                    required: { value: true, errorMessage: translate('entity.validation.required') }
+                    required: { value: true, errorMessage: translate('entity.validation.required') },
                   }}
                 />
               </AvGroup>
@@ -106,21 +100,9 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                   type="text"
                   name="surname"
                   validate={{
-                    required: { value: true, errorMessage: translate('entity.validation.required') }
+                    required: { value: true, errorMessage: translate('entity.validation.required') },
                   }}
                 />
-              </AvGroup>
-              <AvGroup>
-                <Label id="tlfLabel" for="employee-tlf">
-                  <Translate contentKey="sepaApp.employee.tlf">Tlf</Translate>
-                </Label>
-                <AvField id="employee-tlf" type="text" name="tlf" />
-              </AvGroup>
-              <AvGroup>
-                <Label id="celularLabel" for="employee-celular">
-                  <Translate contentKey="sepaApp.employee.celular">Celular</Translate>
-                </Label>
-                <AvField id="employee-celular" type="text" name="celular" />
               </AvGroup>
               <AvGroup>
                 <Label id="emailLabel" for="employee-email">
@@ -128,12 +110,18 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                 </Label>
                 <AvField id="employee-email" type="text" name="email" />
               </AvGroup>
-              </AvGroup>
-
               <AvGroup>
-              <h3>
-                <Translate contentKey="sepaApp.employee.detail.matData">Tuition Data</Translate>
-              </h3>
+                <Label id="tlfLabel" for="employee-tlf">
+                  <Translate contentKey="sepaApp.employee.tlf">Tlf</Translate>
+                </Label>
+                <AvField id="employee-tlf" type="text" name="tlf" />
+              </AvGroup>
+              <AvGroup check>
+                <Label id="isInternalLabel">
+                  <AvInput id="employee-isInternal" type="checkbox" className="form-check-input" name="isInternal" />
+                  <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate>
+                </Label>
+              </AvGroup>
               <AvGroup>
                 <Label id="matNumberLabel" for="employee-matNumber">
                   <Translate contentKey="sepaApp.employee.matNumber">Mat Number</Translate>
@@ -143,7 +131,7 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                   type="text"
                   name="matNumber"
                   validate={{
-                    required: { value: true, errorMessage: translate('entity.validation.required') }
+                    required: { value: true, errorMessage: translate('entity.validation.required') },
                   }}
                 />
               </AvGroup>
@@ -156,28 +144,10 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                   type="text"
                   name="cuit"
                   validate={{
-                    required: { value: true, errorMessage: translate('entity.validation.required') }
+                    required: { value: true, errorMessage: translate('entity.validation.required') },
                   }}
                 />
               </AvGroup>
-              <AvGroup>
-                <Label id="degreeLabel" for="employee-degree">
-                  <Translate contentKey="sepaApp.employee.degree">Degree</Translate>
-                </Label>
-                <AvField id="employee-degree" type="text" name="degree" />
-              </AvGroup>
-              <AvGroup>
-                <Label id="especializacionLabel" for="employee-especializacion">
-                  <Translate contentKey="sepaApp.employee.especializacion">Especializacion</Translate>
-                </Label>
-                <AvField id="employee-especializacion" type="text" name="especializacion" />
-              </AvGroup>
-              </AvGroup>
-
-              <AvGroup>
-              <h3>
-                <Translate contentKey="sepaApp.employee.detail.addressData">Address Data</Translate>
-              </h3>
               <AvGroup>
                 <Label id="addressDirectionLabel" for="employee-addressDirection">
                   <Translate contentKey="sepaApp.employee.addressDirection">Address Direction</Translate>
@@ -203,46 +173,22 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                 <AvField id="employee-departament" type="text" name="departament" />
               </AvGroup>
               <AvGroup>
-                <Label for="employee-localidadId">
-                  <Translate contentKey="sepaApp.employee.localidadId">Localidad Id</Translate>
+                <Label id="degreeLabel" for="employee-degree">
+                  <Translate contentKey="sepaApp.employee.degree">Degree</Translate>
                 </Label>
-                <AvInput id="employee-localidadId" type="select" className="form-control" name="localidadId.id">
-                  <option value="" key="0" />
-                  {localidadAndPartidos
-                    ? localidadAndPartidos.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.localidad}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
+                <AvField id="employee-degree" type="text" name="degree" />
               </AvGroup>
               <AvGroup>
-                <Label for="employee-partidoId">
-                  <Translate contentKey="sepaApp.employee.partidoId">Partido Id</Translate>
+                <Label id="especializacionLabel" for="employee-especializacion">
+                  <Translate contentKey="sepaApp.employee.especializacion">Especializacion</Translate>
                 </Label>
-                <AvInput id="employee-partidoId" type="select" className="form-control" name="partidoId.id">
-                  <option value="" key="0" />
-                  {localidadAndPartidos
-                    ? localidadAndPartidos.map(otherEntity => (
-                        <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.partido}
-                        </option>
-                      ))
-                    : null}
-                </AvInput>
+                <AvField id="employee-especializacion" type="text" name="especializacion" />
               </AvGroup>
-              </AvGroup>
-
               <AvGroup>
-              <h3>
-                <Translate contentKey="sepaApp.employee.detail.others">Others</Translate>
-              </h3>
-              <AvGroup check>
-                <Label id="isInternalLabel">
-                  <AvInput id="employee-isInternal" type="checkbox" className="form-check-input" name="isInternal" />
-                  <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate>
+                <Label id="celularLabel" for="employee-celular">
+                  <Translate contentKey="sepaApp.employee.celular">Celular</Translate>
                 </Label>
+                <AvField id="employee-celular" type="text" name="celular" />
               </AvGroup>
               <AvGroup>
                 <Label id="comentarioLabel" for="employee-comentario">
@@ -250,7 +196,27 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                 </Label>
                 <AvField id="employee-comentario" type="text" name="comentario" />
               </AvGroup>
-            </AvGroup>
+              <AvGroup check>
+                <Label id="isDisabledLabel">
+                  <AvInput id="employee-isDisabled" type="checkbox" className="form-check-input" name="isDisabled" />
+                  <Translate contentKey="sepaApp.employee.isDisabled">Is Disabled</Translate>
+                </Label>
+              </AvGroup>
+              <AvGroup>
+                <Label for="employee-localidadAndPartido">
+                  <Translate contentKey="sepaApp.employee.localidadAndPartido">Localidad And Partido</Translate>
+                </Label>
+                <AvInput id="employee-localidadAndPartido" type="select" className="form-control" name="localidadAndPartido.id">
+                  <option value="" key="0" />
+                  {localidadAndPartidos
+                    ? localidadAndPartidos.map(otherEntity => (
+                        <option value={otherEntity.id} key={otherEntity.id}>
+                          {otherEntity.id}
+                        </option>
+                      ))
+                    : null}
+                </AvInput>
+              </AvGroup>
               <Button tag={Link} id="cancel-save" to="/employee" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

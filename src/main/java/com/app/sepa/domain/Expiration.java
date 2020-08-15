@@ -1,9 +1,11 @@
 package com.app.sepa.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -46,16 +48,19 @@ public class Expiration implements Serializable {
     @Column(name = "is_completed")
     private Boolean isCompleted;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne(optional = false)
+    @NotNull
+    @JsonIgnoreProperties(value = "expirations", allowSetters = true)
     private Company company;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne(optional = false)
+    @NotNull
+    @JsonIgnoreProperties(value = "expirations", allowSetters = true)
     private Employee employee;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne(optional = false)
+    @NotNull
+    @JsonIgnoreProperties(value = "expirations", allowSetters = true)
     private Study study;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

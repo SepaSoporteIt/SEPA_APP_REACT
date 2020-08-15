@@ -1,5 +1,6 @@
 package com.app.sepa.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -89,25 +90,21 @@ public class Company implements Serializable {
     @Column(name = "is_disabled")
     private Boolean isDisabled;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JsonIgnoreProperties(value = "companies", allowSetters = true)
     private Employee employee;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JsonIgnoreProperties(value = "companies", allowSetters = true)
     private IndustryType industryType;
 
-    @OneToOne
-    @JoinColumn(unique = true)
+    @ManyToOne
+    @JsonIgnoreProperties(value = "companies", allowSetters = true)
     private IndustryType secIndustryType;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private LocalidadAndPartido localidadId;
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private LocalidadAndPartido partidoId;
+    @ManyToOne
+    @JsonIgnoreProperties(value = "companies", allowSetters = true)
+    private LocalidadAndPartido localidadAndPartido;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -430,30 +427,17 @@ public class Company implements Serializable {
         this.secIndustryType = industryType;
     }
 
-    public LocalidadAndPartido getLocalidadId() {
-        return localidadId;
+    public LocalidadAndPartido getLocalidadAndPartido() {
+        return localidadAndPartido;
     }
 
-    public Company localidadId(LocalidadAndPartido localidadAndPartido) {
-        this.localidadId = localidadAndPartido;
+    public Company localidadAndPartido(LocalidadAndPartido localidadAndPartido) {
+        this.localidadAndPartido = localidadAndPartido;
         return this;
     }
 
-    public void setLocalidadId(LocalidadAndPartido localidadAndPartido) {
-        this.localidadId = localidadAndPartido;
-    }
-
-    public LocalidadAndPartido getPartidoId() {
-        return partidoId;
-    }
-
-    public Company partidoId(LocalidadAndPartido localidadAndPartido) {
-        this.partidoId = localidadAndPartido;
-        return this;
-    }
-
-    public void setPartidoId(LocalidadAndPartido localidadAndPartido) {
-        this.partidoId = localidadAndPartido;
+    public void setLocalidadAndPartido(LocalidadAndPartido localidadAndPartido) {
+        this.localidadAndPartido = localidadAndPartido;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

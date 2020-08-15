@@ -28,8 +28,7 @@ export interface ICompany {
   employee?: IEmployee;
   industryType?: IIndustryType;
   secIndustryType?: IIndustryType;
-  localidadId?: ILocalidadAndPartido;
-  partidoId?: ILocalidadAndPartido;
+  localidadAndPartido?: ILocalidadAndPartido;
 }
 
 export const defaultValue: Readonly<ICompany> = {

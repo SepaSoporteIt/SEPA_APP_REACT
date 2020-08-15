@@ -1,5 +1,6 @@
 package com.app.sepa.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -32,9 +33,9 @@ public class Visits implements Serializable {
     @Column(name = "comments")
     private String comments;
 
-    @OneToOne(optional = false)
+    @ManyToOne(optional = false)
     @NotNull
-    @JoinColumn(unique = true)
+    @JsonIgnoreProperties(value = "visits", allowSetters = true)
     private Company company;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

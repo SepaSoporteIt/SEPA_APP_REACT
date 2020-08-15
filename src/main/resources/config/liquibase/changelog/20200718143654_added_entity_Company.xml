@@ -80,19 +80,16 @@
                 <constraints nullable="true" />
             </column>
             <column name="employee_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_employee_id" />
+                <constraints nullable="true" />
             </column>
             <column name="industry_type_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_industry_type_id" />
+                <constraints nullable="true" />
             </column>
             <column name="sec_industry_type_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_sec_industry_type_id" />
+                <constraints nullable="true" />
             </column>
-            <column name="localidad_id_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_localidad_id_id" />
-            </column>
-            <column name="partido_id_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_company_partido_id_id" />
+            <column name="localidad_and_partido_id" type="bigint">
+                <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

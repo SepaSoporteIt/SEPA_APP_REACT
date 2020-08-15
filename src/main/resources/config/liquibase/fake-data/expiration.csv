@@ -1,11 +1,11 @@
-id;start_date;end_date;status;comments;unique_code;responsible;is_completed
-1;2020-07-18;2020-07-18;PENDIENTE;synthesize Generic;payment Orchestrator flexibility;intermediate;true
-2;2020-07-18;2020-07-18;PENDIENTE;program integrated;indexing Tactics;Metal;false
-3;2020-07-17;2020-07-17;VIGENTE;sensor;AGP architecture neural-net;Corporate Handcrafted Haven;false
-4;2020-07-18;2020-07-18;ANTIGUO;Supervisor;maximize overriding;Hong Kong;true
-5;2020-07-17;2020-07-17;SIN_FECHA;Movies;transmit;Aruban Guilder Bolivar Fuerte Profound;true
-6;2020-07-18;2020-07-18;PENDIENTE;Research ivory Michigan;bottom-line Harbor;collaborative PCI;false
-7;2020-07-18;2020-07-17;PENDIENTE;program synthesize;green;Qatar Dale;true
-8;2020-07-17;2020-07-18;A_VENCER;channels Bahamas e-services;South Dakota streamline Kids;invoice Automotive parse;true
-9;2020-07-18;2020-07-18;ANTIGUO;haptic Grocery Tools;connect;leading edge Borders frictionless;false
-10;2020-07-18;2020-07-17;ANTIGUO;compress Rustic Wooden Computer real-time;override Ball;wireless SCSI morph;true
+id;start_date;end_date;status;comments;unique_code;responsible;is_completed;company_id;employee_id;study_id
+1;2020-07-18;2020-07-18;PENDIENTE;synthesize Generic;payment Orchestrator flexibility;intermediate;true;1;1;1
+2;2020-07-18;2020-07-18;PENDIENTE;program integrated;indexing Tactics;Metal;false;2;2;2
+3;2020-07-17;2020-07-17;VIGENTE;sensor;AGP architecture neural-net;Corporate Handcrafted Haven;false;3;3;3
+4;2020-07-18;2020-07-18;ANTIGUO;Supervisor;maximize overriding;Hong Kong;true;4;4;4
+5;2020-07-17;2020-07-17;SIN_FECHA;Movies;transmit;Aruban Guilder Bolivar Fuerte Profound;true;5;5;5
+6;2020-07-18;2020-07-18;PENDIENTE;Research ivory Michigan;bottom-line Harbor;collaborative PCI;false;6;6;6
+7;2020-07-18;2020-07-17;PENDIENTE;program synthesize;green;Qatar Dale;true;7;7;7
+8;2020-07-17;2020-07-18;A_VENCER;channels Bahamas e-services;South Dakota streamline Kids;invoice Automotive parse;true;8;8;8
+9;2020-07-18;2020-07-18;ANTIGUO;haptic Grocery Tools;connect;leading edge Borders frictionless;false;9;9;9
+10;2020-07-18;2020-07-17;ANTIGUO;compress Rustic Wooden Computer real-time;override Ball;wireless SCSI morph;true;10;10;10

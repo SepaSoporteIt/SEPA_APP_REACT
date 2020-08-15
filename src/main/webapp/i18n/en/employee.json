@@ -5,7 +5,6 @@
         "title": "Employees",
         "createLabel": "Create a new Employee",
         "createOrEditLabel": "Create or edit a Employee",
-        "search": "Search for Employee",
         "notFound": "No Employees found"
       },
       "created": "A new Employee is created with identifier {{ param }}",
@@ -15,37 +14,25 @@
         "question": "Are you sure you want to delete Employee {{ id }}?"
       },
       "detail": {
-        "title": "Employee",
-        "personalData": "Personal Data",
-        "matData": "Tuition Data",
-        "addressData": "Address Data",
-        "others": "Others"
-      },
-      "booleans": {
-        "true": "Yes",
-        "false": "No"
+        "title": "Employee"
       },
       "name": "Name",
       "surname": "Surname",
-      "fullName": "Full Name",
       "email": "Email",
-      "tlf": "Telephone Number",
+      "tlf": "Tlf",
       "isInternal": "Is Internal",
-      "matNumber": "Tuition Number",
+      "matNumber": "Mat Number",
       "cuit": "Cuit",
       "addressDirection": "Address Direction",
       "addressNumber": "Address Number",
       "floor": "Floor",
       "departament": "Departament",
       "degree": "Degree",
-      "especializacion": "Specialization",
-      "celular": "Cellphone",
-      "comentario": "Comments",
-      "createdAt": "Created At",
-      "updatedAt": "Updated At",
-      "localidadId": "Localidad",
-      "isDisabled": "Is Disabled?",
-      "partidoId": "Partido"
+      "especializacion": "Especializacion",
+      "celular": "Celular",
+      "comentario": "Comentario",
+      "isDisabled": "Is Disabled",
+      "localidadAndPartido": "Localidad And Partido"
     }
   }
 }

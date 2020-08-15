@@ -14,6 +14,9 @@
         "study": "Estudios",
         "localidad-and-partido": "Localidad/Partido",
         "visits": "Visitas",
+        "expiration": "Expiration",
+        "employee": "Employee",
+        "company": "Company",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

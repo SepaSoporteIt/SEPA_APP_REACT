@@ -59,7 +59,6 @@ public class VisitsResource {
         if (visits.getId() != null) {
             throw new BadRequestAlertException("A new visits cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        GenerateEmployee(visits);
         Visits result = visitsRepository.save(visits);
         return ResponseEntity.created(new URI("/api/visits/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -81,7 +80,6 @@ public class VisitsResource {
         if (visits.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        GenerateEmployee(visits);
         Visits result = visitsRepository.save(visits);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, visits.getId().toString()))
@@ -126,23 +124,5 @@ public class VisitsResource {
         log.debug("REST request to delete Visits : {}", id);
         visitsRepository.deleteById(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
-    }
-
-    /**
-     * This function sets the employee for the visit acording to the company selected.
-     * 
-     * @param actualVisit the visit we`re gonna modify.
-     */
-    public void GenerateEmployee(Visits actualVisit)
-    {
-        if (actualVisit.getCompany() == null)
-            actualVisit.setEmployee(null);
-        else
-        {
-            if (actualVisit.getCompany().getEmployee() == null)
-                actualVisit.setEmployee(null);
-            else
-                actualVisit.setEmployee(actualVisit.getCompany().getEmployee().getName() + " " + actualVisit.getCompany().getEmployee().getSurname());
-        }
     }
 }

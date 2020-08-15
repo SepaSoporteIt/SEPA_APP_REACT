@@ -33,28 +33,28 @@
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "company",
-      "otherEntityRelationshipName": "expiration",
       "relationshipName": "company",
+      "otherEntityName": "company",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"],
       "otherEntityField": "id",
-      "ownerSide": true
+      "otherEntityRelationshipName": "expiration"
     },
     {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "employee",
-      "otherEntityRelationshipName": "expiration",
       "relationshipName": "employee",
+      "otherEntityName": "employee",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"],
       "otherEntityField": "id",
-      "ownerSide": true
+      "otherEntityRelationshipName": "expiration"
     },
     {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "study",
-      "otherEntityRelationshipName": "expiration",
       "relationshipName": "study",
+      "otherEntityName": "study",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"],
       "otherEntityField": "id",
-      "ownerSide": true
+      "otherEntityRelationshipName": "expiration"
     }
   ],
   "changelogDate": "20200718143954",
@@ -67,5 +67,7 @@
   "readOnly": false,
   "embedded": false,
   "clientRootFolder": "",
-  "applications": "*"
+  "applications": "*",
+  "searchEngine": false,
+  "databaseType": "sql"
 }

@@ -72,20 +72,11 @@
   ],
   "relationships": [
     {
-      "relationshipType": "one-to-one",
+      "relationshipName": "localidadAndPartido",
       "otherEntityName": "localidadAndPartido",
-      "otherEntityRelationshipName": "employee",
-      "relationshipName": "localidadId",
+      "relationshipType": "many-to-one",
       "otherEntityField": "id",
-      "ownerSide": true
-    },
-    {
-      "relationshipType": "one-to-one",
-      "otherEntityName": "localidadAndPartido",
-      "otherEntityRelationshipName": "employee",
-      "relationshipName": "partidoId",
-      "otherEntityField": "id",
-      "ownerSide": true
+      "otherEntityRelationshipName": "employee"
     }
   ],
   "changelogDate": "20200718143854",
