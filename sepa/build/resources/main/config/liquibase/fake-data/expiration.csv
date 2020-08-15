@@ -1,0 +1,11 @@
+id;start_date;end_date;status;comments;unique_code;responsible;is_completed
+1;2019-12-28;2019-12-28;VIGENTE;../fake-data/blob/hipster.txt;synthesize Generic;payment Orchestrator flexibility;false
+2;2019-12-28;2019-12-28;A_VENCER;../fake-data/blob/hipster.txt;calculate indexing;scalable Metal applications;true
+3;2019-12-28;2019-12-28;PENDIENTE;../fake-data/blob/hipster.txt;sensor;AGP architecture neural-net;true
+4;2019-12-27;2019-12-28;A_VENCER;../fake-data/blob/hipster.txt;B2B;indigo Customer;true
+5;2019-12-28;2019-12-27;VIGENTE;../fake-data/blob/hipster.txt;orange Hong Kong Tennessee;Chips Personal Loan Account Small;false
+6;2019-12-28;2019-12-27;PENDIENTE;../fake-data/blob/hipster.txt;optical Small Steel Fish;Auto Loan Account Research;false
+7;2019-12-27;2019-12-28;A_VENCER;../fake-data/blob/hipster.txt;collaborative PCI;Stand-alone groupware;true
+8;2019-12-28;2019-12-28;PENDIENTE;../fake-data/blob/hipster.txt;system Tuna;compelling orchid Borders;true
+9;2019-12-28;2019-12-28;ANTIGUO;../fake-data/blob/hipster.txt;cross-platform Small Rubber Chicken;Lead Legacy;true
+10;2019-12-27;2019-12-28;PENDIENTE;../fake-data/blob/hipster.txt;Credit Card Account Forward Avon;Tools Soft;false

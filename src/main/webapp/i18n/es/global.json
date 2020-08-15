@@ -7,13 +7,20 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
-        "company": "Clientes",
         "industryType": "Tipos de Industria",
-        "employee": "Profesionales",
-        "expiration": "Vencimientos",
         "study": "Estudios",
         "localidad-and-partido": "Localidad/Partido",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+      },
+      "company": {
+        "main": "Clientes",
+        "company": "Clientes"
+      },
+      "employee": {
+        "main": "Profesionales"
+      },
+      "expiration": {
+        "main": "Vencimientos"
       },
       "account": {
         "main": "Cuenta",
@@ -54,7 +61,7 @@
     "messages": {
       "info": {
         "authenticated": {
-          "prefix": "Si desea ",
+          "prefix": "Si desea puede ",
           "link": "iniciar sesión",
           "suffix": ", puede intentar con las cuentas predeterminadas:<br/>- Administrador (usuario=\"admin\" y contraseña=\"admin\") <br/>- Usuario (usuario=\"user\" y contraseña=\"user\")."
         },
