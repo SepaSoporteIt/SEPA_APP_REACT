@@ -1,0 +1,277 @@
+id;name;email;address_direction;address_number;floor;departament;cuit;is_subscripted;fantasy_name;postal_code;tlf;internal_tlf;contact;cellphone;visits_qty_min;visits_qty_max;hab_prim;hab_sec;comment;created_at;updated_at;between_streets;employee_id;prim_industry_tipe_id;sec_industry_tipe_id;localidad_id_id;partido_id_id
+1;Abridores Lili S.R.L. ; info@aros-lili.com ; Pedro Lozano  ;5760;;;33-70805347-9;1;;; 4641-8467 ;  ; Guillermo Rubinetti  ; 15-5062-6066 ;6;8;;;NULL;12/04/19 12:35;05/11/19 17:50;;13;;;;3598
+2;Acevedo Daniel y Rafael Acevedo S.H. ; darc_cuir@speedy.com.ar ; GARIBALDI ;2574;;;33-69008416-9;1;;1686; 4665-2099 ;  ; Daniel - Rafael ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 17:57;;11;;;1520;1518
+3;Acrimol S.A ; p.mohorovich@yahoo.com.ar ; Maestra Rodriguez  ;2154;;;30-62639602-6;1;;1686; 4662-0339  ;  ; Pablo Mohorovich  ;1550231543;6;8;;;NULL;12/04/19 12:35;05/11/19 18:01;;11;;;1520;1518
+4;Agrigel S.A. ; trapanifabrica@gmail.com ; Avda Sarmiento  ;61;;;30-64180276-6;1;;; 02346-434880  ;  ; Esteban ;  ;4;4;;;NULL;12/04/19 12:35;20/11/19 16:22;;28;;;;680
+5;Agrigel S.A. ; trapanifabrica@gmail.com ; Avda Sarmiento  ;60;;;30-64180276-6;1;;;  ;  ;  ;  ;4;4;;;NULL;12/04/19 12:35;20/11/19 16:22;;28;;;;680
+6;Agrigel S.A. ; trapanifabrica@gmail.com ; 9 de Julio ;739;;;30-64180276-6;1;;; 02227-424234  ;  ; Marcelo ;  ;4;4;;;NULL;12/04/19 12:35;20/11/19 16:22;;28;;;;1943
+7;Agrigel S.A. ; trapanifabrica@gmail.com ; Av Marquez  Esq. Bs As ;2400;;;30-64180276-6;1;;; 4720-8808 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:46;;28;;;2302;3197
+8;Aguas NaturalesS.R.L ; fernando@water-line.com.ar ; Av. Camargo ;2171;;;30-70603576-8;1;;1686; 4662-6393 ;  ; Carmen Alfino ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:17;;11;;;1518;1518
+9;Aguilar Jorge Alberto                  ; aguilardimec@yahoo.com.ar ; Av. Julio A Roca  ;539;;;20-13022463-7;0;;; 4665-9493  ;  ; Jorge   Aguilar ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 16:42;;11;;;;1518
+10;Acrysol Pinturas S.R.L.; acrysolpinturas@hotmail.com ; Guardia Vieja  ;821;;;30-71027759-8;1;;;  ;  ;  Miguel Angel De Caro ; 15-49738229  ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:04;;11;;;1518;1518
+11;Alberdi 2299 S.R.L. ; shellalberdi@yahoo.com.ar ; Avda Juan B Alberdi  ;2299;;;33-70934480-9;1;;; 4613-1843 ;  ;  Marcela;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:20;;7;;;3598;3598
+12;Alpha Recubrimientos  para la Industria SRL  ; soporte@alpharecubrimientos.com.ar ; Mario Bravo    ;65;;;30-70932151-6;1;;1686; 4459-0686  ;  ; Sandra ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:23;;11;;;1518;1518
+13;AMJ S.A. ; ventaneumaticosamj@gmail.com ; W. Tata  ;5164;;;30-70737632-1;1;;1678; 4759-5476  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 16:23;;28;;;1152;3325
+14;Amoblamientos Campi SRL ; karina@amoblamientoscampi.com.ar ; Villaroel  ;227;;;30-69650686-4;1;;1686; 4459-1567 ;  ; Karina Da Silva ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:27;;11;;;1519;1518
+15;AOF SA ; rolando@odontoar.com.ar ; Independencia  ;1687;;;30-70940138-2;1;;;  ;  ; Rolando Draut ; 15-6741-4904  ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:31;;15;;;;3598
+16;Arias y Furman S.R.L. ; guallar@live.com.ar ; Atuel  ;176;;;30-71014497-0;1;;1686; 4662-7250 ;  ; Pablo Furman  ;1562386573;6;8;;;NULL;12/04/19 12:35;05/11/19 18:34;;11;;;1519;1518
+17;ARNUM-AS SA ; info@arnun.com.ar ; Sr. E Iberlucea  ;1141;;;30-62516185-8;1;;1706; 4659-4727 ;  ; Analia Reboiras ;  ;6;8;;;NULL;12/04/19 12:35;24/01/20 16:46;;7;;;;2253
+18;Aserradero Romano S.R.L. ; aserraderoromano@speedy.com.ar ; Av Vergara  ;3550;;;30-69638268-5;1;;; 4452-8470 ;  ; Fabio Romano ; 15-4030-6512  ;6;8;;;NULL;12/04/19 12:35;03/05/19 17:24;;11;;;NULL;1518
+19;Asociación Civil Facultades Loyola ; colegiomaximorrhh@gmail.com ; Av Ricardo Balbin  ;3226;;;30-53005014-5;1;;; 4455-7992  ;131;  Sr. Francisco  ; 15-5883-0061 ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:46;;11;;;;2985
+20;Asociación de Residentes de San Carlos Country ; gerencia@arscc.org.ar ; Vitale  ;700;;;30-60441614-7;1;;; 4463-0775  ;  ;  Gerente Marcelo E. Frare ; 15-4986-5048 ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:49;;13;;;;2119
+21;Australtech S.A.  ; info@australtech.com.ar ; Florida   ;682;;;30-66373894-8;1;;; 4759-7251 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 16:23;;28;;;;3331
+22;Avicola Capilla del Señor (Ex Maitino Claudio y Maitino Gabriel S.H. ; avicolasa@gmail.com.ar ; AV. ROSALES ;1952;;;30-71002568-8;1;;; 4659-1542 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:02;;12;;;;2253
+23;Avicola Capilla del Señor (Ex Maitino Claudio y Maitino Gabriel S.H. ; avicolasa@gmail.com.ar ; Camino A Cardales Km 1 Cuartel II S/Nº ;  ;;;30-71002568-8;1;;; 4659-1542 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:03;;12;;;;1122
+24;Babuin y Babuin S.A  ; alejandro@babuinybabuin.com / administracionbabuinybabuin,com,ar ; Arribeños  ;4400;;;30-68972914-9;1;;; 0237-4680546/50325140  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;03/05/19 17:25;;14;;;NULL;2259
+25;Barbon Y Barbon S.A. ; barbonybarbon@fibertel.com.ar/barbonybarbon@hotmail.com ; Almancio Alcorta   ; 1775/79 ;;;30-57727482-3;1;;; 4304-5521 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:29;;13;;;;3598
+26;Barbosa Luis Alberto ;  ; Berduc  ;2044;;;20-11566247-4;1;;;  ;  ; Luis Barbosa ; 15-5758-8865  ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:23;;11;;;;1518
+27;Barrio Septiembre S.A. ; emuller@barrioseptiembre.com.ar ; Ruta 9  ; Km 47,5 ;;;30-70048429-3;1;;; 0348-4517373 / 7474 ;  ;  Cdor Esteban Muller ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:15;;13;;;;1080
+28;Bello Guillermo ; federicarava@hotmail.com ; Lopardo  ;138;;;20-11517158-6;1;;; 4452-3988 ;  ; Guillermo Bello ; 15-6991-3625  ;6;8;;;NULL;12/04/19 12:35;03/05/19 17:28;;14;;;NULL;1518
+29;Berner SA ; administracion@berneronline.com.ar ; Ombú  ;445;;;30-70793421-9;1;;; 4443-6930 ;  ; At. Sra Gloria ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 18:51;;7;;;;1701
+30;Billordo  Susana Beatriz ;  ; Av del Libertador  ;1847;;;27-18192799-8;1;;;  ;  ;  Pablo ; 15-6985-9412 ;6;8;;;NULL;12/04/19 12:35;03/05/19 17:30;;14;;;NULL;2248
+31;Boca Raton ; gerenciageneralbrcl@gmail.com ;  ;  ;;; ;0;;; 0230-4457208 / 162 ;  ;  viviana Arauz Gerente Edgardo López ;  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:01;;1;;;NULL;1
+32;Bolonese Roberto ; robertobolonese@infovia.com.ar ; Sarmiento  ;93;;;23-12152119-9;1;;; 02346-423601 ;  ;  ;  ;4;4;;;NULL;12/04/19 12:35;20/11/19 16:24;;28;;;;680
+33;Brienza Daniel Antonio (supermercado) ;  ; Ricardo Balbin (ruta 200) E/Tagle y Varela ;  ;;;20-16315471-5;1;;; 0220-499-8244 ;  ; Daniel Brienza ; 15-4148-6487 ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:21;;12;;;;2182
+34;Bruno Carlos y Bruno Ariel S.H. ; arimar4@hotmail.com ; Aviador Subtte. A. Fernandez  ;1770;;;30-70848832-8;1;;; 4662-1560  ;  ; Carlos Bruno ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:33;;14;;;;1518
+35;ByV Instalaciones Industriales SA ; albertomatovillanueva@gmail.com ; Av 9 de Julio   ;4276;;;33-71516788-9;1;;; 4167-0523 ;  ;  Alberto Mato ; 15-6978-8121 ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:17;;13;;;;2957
+36;Calico  S.A. (Poeta Risso) ; jhabran@calico-sa.com.ar ; POETA RISSO  ;2745;;;33-59668367-9;1;;1686; 4452-5600 ; int. 110 ; Hugo Audicio  ; 11-3341-7291 ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:06;;9;;;1518;1518
+37;Calico Pilar (Jonshon) ; dbogao@calico-sa.com.ar ; Pque ind Pilar ;  ;;;33-59668367-9;1;;; 453-8412 ; int. 8412 ; Marcos Ampugnani  ; 11-5007-2070 ;12;12;;;NULL;12/04/19 12:35;20/11/19 16:24;;28;;;;2471
+38;Calico S.A.  (Pernod Ricard) ; mrodriguez@calico-sa.com.ar ; Jujuy  ;1197;;;33-59668367-9;1;;; 4668-3923 ; int. 102 ; Juan Carlos Finsterwald ; 11-6035-0799 ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:08;;15;;;;324
+39;Calico S.A. (Buen Ayre) ; arial@calico-sa.com.ar  ; Juana Manuela Gorriti  ;3811;;;33-59668367-9;1;;1686; 4662-4433   ; int. 192 ; Omar Blencio  ; 11-5022-7562 ;12;12;;;NULL;12/04/19 12:35;20/11/19 16:25;;28;;;1518;1518
+40;Calico S.A. (Colgate) ;  ; Trab puntual ;  ;;;33-59668367-9;0;;;  ;  ;  ;  ;1;3;;;NULL;12/04/19 12:35;05/11/19 19:16;;1;;;;1949
+41;Calico S.A. (Rosario) ;  ;  ;  ;;;33-59668367-9;0;;;  ;  ; Rubén Guerrero  ; 15-5008-703 ;1;3;;;NULL;12/04/19 12:35;05/11/19 19:17;;24;;;;3083
+42;Calico S.A. (Los Patos) ;  ; Los Patos  ;752;;;33-59668367-9;1;;1686; 4662-7415  ; int. 125 ; Ramon Valdez  ; 11-5408-3459 ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:15;;11;;;1520;1518
+43;Caracas Combustibles S.R.L. ; pabloavila.2372@yahoo.com.ar ; AV. GAONA  ;2886;;;30-71001101-6;1;;; 4581-3950 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:20;;7;;;3598;3598
+44;Carbe  Ingeniería SRL  ; carbe@oeste.com.ar ; Acceso Oeste  Nº 753 ;2842;;;30-61342633-3;1;;; 0237-4601700 ;  ;  ;  ;1;8;;;NULL;12/04/19 12:35;05/11/19 19:24;;14;;;;2248
+45;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar /mrekos@osle.com.ar; Rosario   ;4748;;;30-52162224-1;1;;; 47141-4780 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:26;;13;;;;2118
+46;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar ; juan F Segui  ;1543;;;30-52162224-1;1;;; 02320-480931 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:27;;13;;;;2117
+47;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar ; Luis Maria Drago  ;124;;;30-52162224-1;0;;; 02320-494899 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:28;;13;;;;2122
+48;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar /mrekos@osle.com.ar; Alem  ;1470;;;30-52162224-1;1;;; 4664-8822 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:29;;13;;;;2985
+49;Casa OSle S.A.C.I.F.I.Y.A. ;svidal@osle.com.ar /mrekos@osle.com.ar; Hipolito Irigoyen  ;2176;;;30-52162224-1;1;;; 02320-432008 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:29;;13;;;;1588
+50;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar /mrekos@osle.com.ar; 25 de Mayo  ;2765;;;30-52162224-1;1;;; 4663-3838 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:30;;13;;;;2120
+51;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar /mrekos@osle.com.ar; Tesoreria S/Nº ;  ;;;30-52162224-1;1;;;  ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:30;;13;;;;2120
+52;Casa OSle S.A.C.I.F.I.Y.A. ;svidal@osle.com.ar /mrekos@osle.com.ar; P la Grave esq. Belgrano S/Nº ;  ;;;30-52162224-1;1;;; 02322-422857 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:31;;13;;;;2471
+53;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar /mrekos@osle.com.ar; 25 de Mayo   ;841;;;30-52162224-1;1;;; 03488-428359 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:32;;13;;;;1080
+54;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar /mrekos@osle.com.ar; Riobamba  ;1531;;;30-52162224-1;1;;; 4748-2909 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:32;;13;;;;3249
+55;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar /mrekos@osle.com.ar; Avda. de Mayo   ;199;;;30-52162224-1;1;;;  ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:33;;13;;;;2474
+56;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar /mrekos@osle.com.ar; Av del Libertador  ;7577;;;30-52162224-1;1;;; 0237-4818722  ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:34;;13;;;;2248
+57;Casa OSle S.A.C.I.F.I.Y.A. ; svidal@osle.com.ar ; Jose Hernandez  ;966;;;30-52162224-1;1;;;  ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:35;;13;;;;1082
+58;Casa Osle S.A.C.I.F.I.Y.A. (Adm) ; svidal@osle.com.ar /mrekos@osle.com.ar; Av Lemos  ;1639;;;30-52162224-1;1;;; 4664-1200 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:36;;13;;;;2124
+59;Casa OSle S.A.C.I.F.I.Y.A. ; silviav@osle.com.ar /mrekos@osle.com.ar; Gaspar Campos  ;961;;;30-52162224-1;1;;;  ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:35;;13;;;;324
+60;Cascotera Matesanz Hnos SRL ;  ; Camargo  ;2232;;; 30-71061534-5;0;;; 4462-0224 ;  ; Nicolas  ; 15-4997-6707  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:03;;1;;;NULL;1518
+61;Cedini S.R.L. ; fabrica.roca@gmail.com ; Av. Julio A Roca  ;438;;;30-71088434-6;1;;1686;  ;  ; Jorge Cervera ; 15-5041-4931 ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:40;;11;;;1520;1518
+62;Cerbino Horacio H Sucesión  F Cerbinoy Sucesión Luis R Cerbino ; pabloavila.2372@yahoo.com.ar ; ESTEBAN MERLO  ;5146;;;30-51899914-8;1;;; 4750-1831  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 16:25;;28;;;;3325
+63;Chilabert 1990 S.R.L ; chilabert_1990@yahoo.com.ar ; Chilavert  ;1990;;;30-59476092-8;1;;; 4442-5532 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:45;;7;;;;1700
+64;Cirigliano Graciela Esmeralda - (Grafica Salinas) ; graficasalinas@gmail.com ; Marquez de Aviles  ;1455;;;27-06653168-1;1;;1686; 4662-0242  ;  ; Graciela / Gabriel ;  ;1;8;;;NULL;12/04/19 12:35;05/11/19 19:47;;14;;;1518;1518
+65;Clident SA ; rolando@odontoar.com.ar  ; Av Los Incas  ;4335;;;30-70948837-2;1;;;45212225;  ; Rolandoi Draut ; 15-6741-4904 ;6;8;;;NULL;12/04/19 12:35;27/11/19 12:58;;15;;;3598;3598
+66;Coldtruck ; transporteecheverria@yahoo.com.ar ; Amanda Allen  ;298;;;30-71177330-0;1;;; 141* 1748 / 4503-6650 ;  ; Marcelo ; 15-5713-0186 ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:51;;11;;;;1510
+67;Compañía Química Suttley Argentina S.R.L   ; alarocca@suttley.com.ar ; Av. Camargo  ;2090;;;30-64318697-3;1;;1686; 4662-9326 / 9330  ;  ; Marcelo ; 154939-4060  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:53;;11;;;1518;1518
+68;Componentes para Bicicletas SA ; geiere79@gmail.com ; Montes de Oca   ;6620;;;30-71016448-3;1;;;  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:54;;13;;;;3417
+69;Consmet S.A. ; administracion@stocklogistica.com ; Zarate  ;6154;;;30-69795750-9;1;;1650; 4722-0135/6 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:55;;13;;;;2957
+70;Constructora  Ferco S.A.  + obra ; administracion@constructoraferco.com.ar ; Av. Camargo  ;2002;;;30-58580246-4;1;;; 4665-7180  ;  ; Zulema ;  ;6;8;;;NULL;12/04/19 12:35;06/11/19 17:38;;11;;;;1518
+71;Cosmética Primont SRL ; ignaciotesei@cosmeticaprimont.com.ar ; Centenera  ;805;;;30-66115371-3;1;;; 4452-5555 / 4665-1716 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;12/11/19 13:50;;11;;;;1518
+72;CT Plast SRL ; info@ct-plast.com.ar ; O´Brien  ;530;;;30-70857130-6;1;;; 4452-2469/3438  ;  ; Griselda ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 16:26;;28;;;;1518
+73;Cuchillas  Industriales Ancar S.R.L ; borravivianan@ancarsrl.com.ar ; Centenera   ;792;;;30-70963250-3;1;;; 4452-0049 ;  ;  Carlos Gastaldo ; 15-5817-3069 ;6;8;;;NULL;12/04/19 12:35;03/05/19 17:47;;8;;;NULL;1518
+74;Cutzarida SRL ;  ; Bernardo de Irigoyen  ;1745;;;30-71055765-5;1;;;  ;  ;  ;  ;1;8;;;NULL;12/04/19 12:35;03/05/19 17:49;;13;;;NULL;2900
+75;Cuyano Seguridad SA ;  ; 25 de Mayo  ;2768;;;30-70907752-6;1;;; 4660-1468 ;  ;  Sr. Francisco Osle ;  ;6;8;;;NULL;12/04/19 12:35;03/05/19 17:50;;13;;;NULL;2120
+76;Dagward SA ;  ; Hipolito Irigoyen  ;3248;;;30-68010452-9;1;;;  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:38;;13;;;;1042
+77;Daniel Hugo Iele ; aerostarsrl@yahoo.com.ar ; Gral Alfredo Rodriguez  ;1362;;;20-08505006-1;1;;1686; 2094-1108 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:48;;11;;;1518;1518
+78;Deshynt  S.A.; mariana@desynth.com.ar ; Atuel  ;245;;;30-64050443-5;1;;; 4662-2685 ;  ; Mariana Ivancevich ; 15-5387-7619 ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:48;;11;;;1518;1518
+79;Di Maio Jose Alejandro ; textildimaio@hotmail.com ; Cristiania  ;1533;;;20-14125666-2;1;;; 6059-7601 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:40;;7;;;;1696
+80;Dimatico S.R.L. ; dimatico@speedy.com.ar ; Gluck  ; 2725/27 ;;;30-64669962-9;1;;; 4459-2270 ;  ;  David Dimarco ;  ;12;12;;;NULL;12/04/19 12:35;05/11/19 19:58;;11;;;;1518
+81;Distribuidora Carlitos ; contalvarado@hotmail.com ; Misiones  ;6466;;;30-70835169-1;1;;; 4751-6465 ;  ;  María Marta ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:46;;14;;;;2252
+82;Garaje Don Antonio SRL ; g.donantonio@yahoo.com.ar con copia a fernandosganga@donantonio.com.ar ; Yerbal  ;3105;;;30-69416747-7;1;;; 4241-0037  ;  ; Mary ; 15-4478-3532 ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:59;;28;;;286;1801
+83;Doná tu basura asociación civil  ; logistica.dtb@gmail.com  ; Fray Mamerto Esquiu -  ;  ;;;30-71449709-6;1;;; 4727-3597 ;  ; Ezequiel ;  15-3189-9250 ;6;8;;;NULL;12/04/19 12:35;05/11/19 19:39;;13;;;;3249
+84;Dulzuplast  S.A. ; mamaderasdulzura@gmail.com; Siria   ;104;;;33-71096319-9;1;;1686; 4450-2168 ;  ; Enrique Cortalezzi  ;  ;6;8;;;NULL;12/04/19 12:35;06/02/20 13:54;;11;;;1518;1518
+85;Ecoterra S.A ; ecoterra@ecoterrarecicla.com.ar ; Av. Julio A Roca  ;3034;;;30-69968750-9;1;;; 4665-1661 / 4665-6323 ;  ; Sebastian ;  ;6;8;;;NULL;12/04/19 12:35;03/05/19 17:53;;7;;;NULL;1518
+86;El Chillen ; gustavomarcos@elchillen.com.ar ; Juaretche  Esq Borges  ;1395;;;33-71586680-9;1;;; 02226-430281 ;  ; Gustavo Marcos ;  11-5136-7891 ;24;24;;;NULL;12/04/19 12:35;31/01/20 14:27;;7;;;;479
+87;El Hogar de los Abuelos S.A.  ; hogarleyendas@hotmail.com ; Juan Chassaing  ; 546/48 ;;;30-70872568-0;1;;; 4654-7165 ;  ;  Sra Cecilia ;  ;6;8;;;NULL;12/04/19 12:35;07/11/19 19:46;;7;;;;2253
+88;El Mueble S.R.L ; paula.adm@el-mueble.com.ar ; Corregidores  ;1041;;;30-70710518-2;1;;; 4483-3205 / 3207 ;  ;  Paula ;  ;12;12;;;NULL;12/04/19 12:35;03/05/19 17:54;;7;;;NULL;2253
+89;Embal Group S.A.  ;  ; Arturo Illia  ;371;;;30-71119233-2;1;;; 4116-8137 ;  ; RULLI ;  ;6;8;;;NULL;12/04/19 12:35;07/11/19 19:54;;11;;;;2985
+90;Establecimiento Grafico Franco ; rrhh@egfranco.com.ar ; Agustin Alvarez  ;2242;;;30-50038965-2;1;;; 4847-0168 ;  ; Lorena ;  ;12;12;;;NULL;12/04/19 12:35;03/05/19 18:05;;13;;;NULL;2957
+91;Establecimiento Grafico Franco ; rrhh@egfranco.com.ar ; Catamarca ;  ;;;30-50038965-2;1;;; 4847-0168  ;  ; Lorena ;  ;12;12;;;NULL;12/04/19 12:35;03/05/19 18:05;;13;;;NULL;2957
+92;Estanterias Rodel S.A. ; elsa@rodel.com.ar ;  Alvarez de Arenales  ;1045;;;30-71073911-7;1;;; 4696-9678 / 9592 ;  ;  Sra Elsa o Sr. Juan Jose ;  ;6;8;;;NULL;12/04/19 12:35;03/05/19 18:06;;7;;;NULL;2254
+93;Extinfuego ; extinfuego@arnet.com.ar ; Panamericana  ;824;;; 20-08257920-47;0;;; 4763-1301 ;  ;  ;  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:06;;1;;;NULL;2901
+94;Familia Cabot S.R.L. ; alejandra_cabot@yahoo.com.ar ; Chivilcoy  ;1431;;; 30-70786769-4;0;;; 4624-2806 ;  ; Patricia Cabot ; 15-5638-7472 ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:06;;1;;;NULL;565
+95;Familia Cabot S.R.L. ; alejandra_cabot@yahoo.com.ar ; Dean Funes  ;380;;; 30-70786769-4;0;;; 4624-2806 ;  ; Patricia Cabot ;  15-5638-7472  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:07;;1;;;NULL;565
+96;Faravelli SA ; info@faravelli.com.ar ; Dr. Rodolfo  Monte (Ex Alvarado)  ;1350;;;30-50999054-1;1;;; 4696-3593 / 9017 ;  ;  Sr. Jorge Faravelli ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:49;;28;;;2252;2254
+97;Fedimax (EX G.N.C Del Bosque S.A. (San Martin) ; fedimaxsrl33@gmail.com ; San Martin  ; 417/420 ;;;30-71435011-7;1;;; 4752-6557 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:51;;28;;;2957;493
+98;Fideicomiso Golcalves Mó ;  ; Perito Moreno  - Pque Ind Ezeiza ;845;;;30-71253713-9;1;;;  ;  ; Gustavo Goncalves ; 11-6974-5203  ;6;8;;;NULL;12/04/19 12:35;20/11/19 16:35;;28;;;;1
+99;Fletes S.A ; GCAVALLI@OSLE.COM.AR ; Av Lemos   ;1639;;;30-70849908-7;1;;; 4667-6526 ;  ;  ;  15-4998-7230 ;12;12;;;NULL;12/04/19 12:35;20/11/19 17:54;;13;;;3456;2124
+100;Frabar ; trejojaime28@hotmail.com ; Av. Hipolito Yrigoyen  ;3573;;;30-59491440-2;1;;; 4451-1065 ;  ;  Jaime ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:55;;13;;;271;1588
+101;Francisco Y Domingo Rao S.R.L. ; raosrl@rcc.com.ar; Ptero Carballo  ;4948;;;30-52317778-4;1;;1653; 4767-7188 ;  ;  Patricia;  ;12;12;;;NULL;12/04/19 12:35;20/11/19 17:57;;13;;;;2974
+102;Francisco Y Domingo Rao S.R.L. ; raosrl@rcc.com.ar ; Ptero Carballo  ;4953;;;30-52317778-4;1;;; 4767-7188 ;  ;  ;  ;12;12;;;NULL;12/04/19 12:35;20/11/19 17:57;;13;;;;493
+103;G.N.C Del Bosque S.A. (12 de Octubre y Mosconi) ; bocazaboliviana@hotmail.com , gncdelbosquesa@yahoo.com.ar ; Av. 12 de Octubre  Esq. Mosconi ;3401;;;30-70737935-5;1;;; 4200-7893  ;  ; Sr. Luis Camacho  ; 59-17149-4526 ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:58;;28;;;;2606
+104;Gamyt S.R.L. ;  ; Los Patos   ;2022;;;30-70940286-9;1;;; 4665-4343 ;  ; Patricia ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:58;;11;;;;1518
+105;Garbossa Hnos S.A.I.C y F; info@garbossa.com ; Pje Amsterdan   ;3764;;;30-50226443-1;1;;; 4567-9589 ;  ;  Marcelo;  ;6;8;;;NULL;12/04/19 12:35;29/10/19 18:23;;13;;;;3598
+106;Gentile Montajes S.R.L. ; lauram@gentilesrl.com.ar /  ; Diego Rosales  ;640;;;30-70958577-7;1;;1686; 4662-7222  ;  ; José Gentile ; 15-5577-9984 ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:00;;11;;;1520;1518
+107;GNC El Talar S.A. ; gnceltalar@arnet.com.ar ; HIPOLITO YRIGOYEN  ;1631;;;30-70947478-9;1;;;  ;  ;  ; 15-5567-7852 ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:00;;12;;;;1042
+108;Goimco SA ;  ; Av Gral Lemos  ;1639;;;30-70848531-0;1;;;  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:01;;13;;;;2124
+109;Gomcom S.A. ; gomcom@ciudad.com.ar ; Fernandez de la Cruz  ;3205;;;33-70817210-9;1;;; 4918-4893 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;12/12/19 14:16;;7;;;;3598
+110;Griferia BL ; griferiabl@gmail.com ; Maestra Rodriguez   ;2185;;;30-71202016-0;1;;1686; 4662-9646  ;  ; De María Nora Mabel ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:01;;11;;;269;1518
+111;Grudi SRL ; gerencia@thol.com.ar ; Jufre  ; 1082/82 ;;;30-71343300-0;1;;; 4627-1480   ;  ; Alejandra ; 15-5403-0757  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:02;;14;;;;1518
+112;Grupo Coes S.A. (Pampa) ;  ; Pampa  ;1076;;;30-71543775-5;1;;;  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:03;;13;;;;3256
+113;Grupo Coes S.A. (Chubut) ;  ; Chubut ;  ;;; 30-71543775-5;0;;;  ;  ;  ;  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:08;;1;;;NULL;3256
+114;Grupo Inar SRL ; leonardoboido@hotmail.com  ; Fray Mocho  ;1939;;;30-71112247-4;1;;;  ;  ;  Leonardo ; 15-6361-5931 ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:03;;14;;;;2247
+115;Guarderia Tigre ;  ; Ecuador  ;1407;;; 30-71254610-3;0;;;  ;  ;  ;  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:08;;1;;;NULL;3256
+116;Horba ; alejandro@babuinybabuin.com.ar ; Arribeños  ;4400;;;30-68972914-9;1;;; 4459-4263 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:04;;14;;;;2249
+117;Hurli Trans S.A. ; transportehurlitrans@yahoo.com.ar ; Pedro de Mendoza  ;582;;;30-63769779-6;0;;; 4665-2677 ;  ;Gonzalo;  ;6;8;;;NULL;12/04/19 12:35;03/02/20 18:46;;11;;;;1518
+118;Hurlin Met SRL  ;  ; Tambo Nuevo  ; 1721  ;;;30-65086061-2;1;;; 4662-0833  ;  ; Julia Gentile ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:05;;11;;;;1518
+119;Hurlingham  Motors S.A ; hurlighamotors@speedy.com.ar ; Av Vergara  ;1901;;;33-60913865-9;1;;; 4450-5536 / 8869 ;  ;  Sr. Eduardo ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:06;;11;;;;1518
+120;Iacopi Guillermo Alberto  ; info@prokimek.com.ar ; Atuel   ;254;;;20-08104981-6;1;;; 4452-5085 ;  ; Guillermo Iacopi ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:06;;11;;;;1518
+121;Indepol Argentina S.A.( ExDeandreis Guillermo Juan S.H. ) ; indepolargentina@gmail.com ; Sta Isabel  ;4664;;;30-71428387-8;1;;; 4450-6870 / 6680  ;  ; Deandreis Guillermo ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:07;;14;;;;1518
+122;Roncaroli Julio E. y Maria C Farinati; induslabsh@aol.com ; Pastre ;  ;;;30-59326199-5;1;Induslab;; 4662-3644 ;  ;  Dr. Roncaroli ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 13:26;;11;;;269;269
+123;Irigoyen Gerardo Adrián ;  ; Calle 28   ;4848;;;30-71428387-0;0;;; 0221-4711280 ;  ;  ;  ;1;3;;;NULL;12/04/19 12:35;24/08/19 13:59;;7;;;NULL;1740
+124;Instal Shop SRL ; info@instalshop.com ; Conscripto Bernardi  ;757;;;30-70825163-8;1;;; 4452-9400 ;  ;  Daniel Iribarren ;  15-6400-3602 ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:07;;14;;;;1518
+125;Instituto Bioquimico Hurlingham S.R.L.; ibhlab@gmail.com ; Génova  esq. Vergara ;1937;;;30-71157991-1;1;;; 4662-5683 ;  ; Dr. Daniel Petrovski ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:07;;11;;;;1518
+126;Jewel Pinturas S.R.L.; fmcjewel@yahoo.com.ar ; Diego Rosales  ;631;;;30-70876437-6;1;;; 4137-6058 / 6065  ;  ;  Fernando Caviglia  ;  15-5715-0269 ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:08;;11;;;;1518
+127;Jigena Rafael Esteban ; gestiones.rafaelademar@gmail.com ; G. de Hetch  ;1150;;;20-13780845-6;0;;; 4459-3866 ;  ;  Jigena Rafael ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 16:45;;13;;;;1
+128;Centro Re-Crear SAS; jontemonica@gmail.com /  ; Entre Rios  ;  ;;;27-11111384-5;1;;; 4629-5450 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;03/02/20 19:28;;7;;;;2254
+129;Juncarmet de Lateana C Juan y Lateana Giovanni ; juncarmet@juncarpack.com.ar ; Aviador Subtte. A. Fernandez  ;2167;;;30-67889859-3;1;;1686; 4662-0029  ;  ; Carla/ Lateana Juan ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:08;;14;;;269;1518
+130;La atomica de Méndez Hnos SRL  ; laatomica2000@yahoo.com.ar ; Pasteur  ;3631;;;30-51633879-9;1;;1754; 4658-4745  ;  ; Aldo ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:10;;7;;;285;1698
+131;Laboratorio CKC Argentina S.A. - Depósito ; administracion@ckc.com.ar ;Montesquiu ;520;;;30-70814556-0;1;;; 4941-5777  ;  ; Cdor Carlos Selan ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:11;;7;;;592;3598
+132;Laboratorio CKC Argentina S.A. - Fabrica ; administracion@ckc.com.ar ; Inta ;  ;;;30-70814556-0;1;;; 4941-5777  ;  ; Cdor Carlos Selan ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:12;;7;;;;1518
+133;Laboratorio de Estética Francesa ; silviaishikawa@yahoo.com.ar / administracion@esteticafrancesa.com.ar / roxanacoronel@esteticafrancesa.com.ar; Avalos  ;180;;;30-68177128-6;1;;; 4552-5747 / 45544174 / 45550387;  ;  Sr. Fernandez Rafael / Roxana / Monica;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:12;;13;;;;3598
+134;Laboratorio Delente S.R.L. ; laboratoriosdelente@infovia.com.ar ; MORENO  ; 5157-9 ;;;30-57252355-8;1;;; 4750-4678 ;  ;  Cristina ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:13;;7;;;;3325
+135;Laboratorio Warmic S.A.I.Y.C ; contaduria@warmic.com.ar ; Mariano Escalada  ;1177;;;30-50438024-2;1;;1684; 4751-1972 ;  ;  Graciela ;  ;12;12;;;NULL;12/04/19 12:35;20/11/19 18:14;;13;;;;2253
+136;La Estrella Norte (Frabar) ;  ; Av Hipolito Yrigoyen  ;4391;;;30-71578631-8;1;;;  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:10;;13;;;;1588
+137;Lanieri Juan Carlos ; fusionjuan@hotmail.com ; Pastre  ;1639;;;20-11034266-8;1;;1686; 4665-6077  ;  ; Verónica ; 15-6381-5714  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:16;;11;;;269;1518
+138;Lecitec SRL ; info@lecitec.com.ar  (consulta en general) ; Juan de Garay  ;5137;;;33-71125253-9;1;;1678; 4750-3525 ;  ; Sra. Alicia/Belen/ Natalia ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:21;;14;;;563;3325
+139;Le Meridien  S.A. ; tallercaballito@lemeridien.com.ar ; AV. RIVADAVIA  ;6158;;;30-69649910-8;1;;; 4105-3000 ;  ;  Horacio ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:18;;7;;;;3598
+140;Le Meridien  S.A. ; tallersm@lemeridiem.com.ar ; Balbin  ;2669;;;30-69649910-8;1;;; 4713-7600 ;  ; José María ; 15-6168-1048 ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:19;;28;;;2957;493
+141;Lenterdit SA ;  ; Ombú  ;2668;;;33-57332947-9;0;;;  ;  ;  ; 15-6098-2100 ;12;12;;;NULL;12/04/19 12:35;30/09/19 16:25;;7;;;NULL;1698
+142;Lenterdit SA ; alejandrobravo@lenterdit.com.ar ; Matheu  ;2242;;;33-57332947-9;1;;; 5263-3215 ;  ;  ;  ;48;48;;;NULL;12/04/19 12:35;20/11/19 18:23;;7;;;;1698
+143;Lenterdit SA ;  ; Pque indusrial La Matanza ;  ;;;33-57332947-9;1;;;  ;  ;  ;  ;24;24;;;NULL;12/04/19 12:35;20/11/19 18:25;;7;;;;1702
+144;Leopardi Hernán y Leopardi Silvia SH ; ventas@hersil.com.ar ; San Carlos  ;2645;;;30-70745207-9;1;;1686; 4662-4660  ;  ; Jorge ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:27;;14;;;269;1518
+145;Luca Cocinas SRL ;  ; Rio Negro  ;970;;;33-70299728-9;1;;;  ;  ; Rodolfo Silva ; 15-6933-4472  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:28;;7;;;;3325
+146;Luces  Argentinas S.A. ; adminrolux@fibercorp.com.ar ; FRANCIA  ;1180;;;30-70721231-0;1;;; 4736-7117 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:29;;12;;;3247;1042
+147;Lusqtoff Argentina S.A.; asistentecontable@lusqtoff.com.ar ; 2 de Abril  ;1911;;;30-71207115-6;1;;1742;  0237-4685261;  ; Ricardo Martinoglio ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:39;;7;;;362;2249
+148;Maderera Morón S.A. ; madereramoron@aserraderos.com.ar ; Colón ;749;;;30-59689492-1;1;;1708; 4629-6941 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:40;;7;;;363;2254
+149;Mallol Hnos. S.A. ; compras@mallol.com.ar ; Tucuman  E/ Intendente Grant y Cañada de Juan Cruz  ;1175;;;30-51646824-2;1;;; 4629-3168 ;  ; Sergio ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:42;;11;;;;2254
+150;Manufacturera de calzado San José SRL (Ex Sangiuliano) ; alejandra@lauradinizio.com.ar ; Roma  ;85;;;30-71401174-6;1;;; 4662-5390  ;  ; Alejandra  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:43;;11;;;;1518
+151;Maquinarias Caseros S.A. ; mcaseros@mcaseros.com ; Ave Cnel F Uzal  ;3431;;;30-52132924-2;1;;; 4794-1699 ;  ;  German Chichiarelli ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:45;;13;;;3411;3416
+152;Marcos y Hugo Libedinsky S.A. ; rrhh@imasalud.com.ar ; Agüero  ;1395;;;30-61932955-0;1;;1708; 4645-9064 ;  ;  Silvana o Melisa ;  ;12;12;;;NULL;12/04/19 12:35;20/11/19 18:50;;7;;;363;2254
+153;Mar-Mo S.R.L ; mar-mosrl@arnet.com.ar ; Av Gral Hornos  ;2084;;;30-65638347-6;1;;; 4759-5552  - Mariano o 15-54204113 ;  ; Diego ;  15-4973-5405 ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:48;;1;;;;3325
+154;Mediglove S.R.L.; rosana.alvarez@mediglove.com.ar ; Pedro de Mendoza  ;1883;;;30-70794870-8;1;;1686; 4452-7777 ;  ;  Rosana ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 18:53;;15;;;269;1518
+155;Mega Julio César ; carpinteriamega@yahoo.com.ar  ; Pedro Díaz   ;2535;;;20-21923746-5;1;;1686;  ;  ; Sra Zulma ; 15-6701-8662  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:01;;11;;;269;1518
+156;MN Resortes S.A. ; recepcion@mnresortes.com.ar ; Malaspina  ;433;;;30-69703526-1;1;;1686; 4450-4729 ;  ; Fernando Palacios ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:25;;11;;;269;1518
+157;Merlo Televisora Color SA ; m.ceciliasanchezchiera@gmail.com ; Pitagoras  ;1138;;;30-66603522-0;1;;1722; 0220-4835017  ;  ; Cecilia ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:06;;7;;;356;2248
+158;Metalurgica Atuel S.R.L. ; metatuel@yahoo.com.ar ; Lopardo  ;188;;;30-70811680-3;1;;1686; 4452-4918 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:09;;14;;;269;1518
+159;Metalurgica Borra S.R.L. ; info@metalurgicaborrasrl.com.ar ; Gorriti  ;3755;;;30-71010585-1;1;;1655;  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:11;;15;;;;493
+160;Metalurgica Lagilla SRL ; daniela@lagilla.com ; Mirave   ;1627;;;30-70891660-5;1;;;  ;  ;  ; 11-6588-1210 ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:14;;7;;;;1559
+161;Metalurgica Tesei SA ; metalurgicatesei@speedy.com.ar ; Roma   ;220;;;30-70875878-3;1;;1686; 4452-0881  ;  ; Griselda ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:15;;11;;;269;1518
+162;Michelli S.A ; compras@micheliaguas.com.ar ; Av. La Plata  ;1759;;;30-50113859-9;1;;; 4921-0028 ;  ; Aida o Guillermo ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:20;;7;;;;3598
+163;Miguel Angel De Marzio S.A .; info@plasticosdemarzio.com.ar ; Maestra Rodriguez  ;2122;;;30-62982638-2;1;;1686; 4452-7445  ;  ; Nilda ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:21;;11;;;269;1518
+164;Miguel Angel De Marzio S.A .; info@plasticosdemarzio.com.ar ; Av. Camargo  ;2172;;;30-62982638-2;1;;1686; 4452-7445 ;  ; Nilda ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:22;;11;;;269;1518
+165;Miguel Angel De Marzio SA ; info@plasticosdemarzio.com.ar ; Av. Camargo  ; 1990/1196 ;;;30-62982638-2;1;;1686; 4452-7445 ;  ; Nilda ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:23;;11;;;269;1518
+166;Monofilamentos Internacional S.A. ; diego_savastano@hotmail.com ; Remedios de Escalada  ;485;;;30-60998387-2;1;;; 4139-0751 ;  ; Silvana ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:26;;11;;;;1518
+167;Muntal S.A. ; info@muntal.net ; ESPINOSA  ;2436;;;30-65991275-5;1;;; 4584- 8600 ;  ;  Andrea ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:41;;13;;;;3598
+168;Muñiz Walter Alfredo ; tubosol2006@yahoo.com.ar ; Roma  ;112;;;20-17708376-4;1;;1686; 4662-5327 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:34;;14;;;269;1518
+169;Novatech S.A.  ; novatech@sinectis.com.ar ; M.T.DE ALVEAR   ;4655;;;30-65402434-7;1;;; 4759-1451 ;  ;  ; 15-4439-9285 ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:48;;7;;;;3325
+170;Nuevo Ideal S.A. ; nuevoideal@speedy.com.ar ;Alicia Moreau de Justo;3146;;;30-68013871-7;1;;; 4669-0170 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;12/11/19 16:17;;7;;;;1698
+171;Nuevo Ideal S.A.  ; nuevoideal@speedy.com.ar ; Ruta 3 Km 42 S/Nº ;  ;;;30-68013871-7;1;;; 4699-0170 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:45;;7;;;;1702
+172;Nuevo Ideal S.A. ; nuevoideal@speedy.com.ar ; Gral Paz ;  ;;;30-68013871-7;1;;; 4699-0170 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:49;;7;;;;1698
+173;Nutrifrost S.A. ;  walter.tocalino@nutrifrost.com.ar ;  Panamericana Km. 49.5 –  Calle 22.N°164.  ;  ;;;30-71155421-8;0;;1629;  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 16:45;;11;;;434;434
+174;Nuwax Argentina SRL ; nuwaxragentina@speedy.com.ar ; Aviador Subtte. A. Fernandez   ;2258;;;30-57308317-9;1;;1686;  ;  ; Martin Cabrera ; 15-6272-5397 ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:52;;14;;;269;1518
+175;Odar Odontologia Argentina S.A. ; rolando@odontoar.com.ar ; Suipacha  ;556;;;30-70854577-1;1;;;  ;  ;  Rolando Drault;541167414904;6;8;;;NULL;12/04/19 12:35;20/11/19 19:53;;15;;;;3598
+176;Odontosec SA ; rolando@odontoar.com.ar ; Santigo de la carreras  ;10;;;30-70950244-8;1;;;  ;  ; Rolando Draut ; 15-6741-4904  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:55;;15;;;;3598
+177;Oscar Entin Filtración Industrial S.A  ; gomez@oscarentin.com ; Castro  ;1757;;;30-65495203-1;1;;; 4921-0632 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:57;;7;;;;3598
+178;Oscar Entin Filtración Industrial S.A  ; amarcellini@oscarentin.com ; Las Casas  ;3728;;;30-65495203-1;1;;; 4921-0632 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 19:58;;7;;;;3598
+179;Paletta  Oscar Alberto ; exse@speedy.com.ar ; ROSAS CASTILLO   ;2080;;;20-14565819-6;1;;; 4452-3379  ;  ; Paleta Oscar ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 16:35;;14;;;NULL;1
+180;Parallel S.A. ; pablo.ferreccio@parallel-sa.com ; Av Constituyentes  ;3999;;;30-57321525-5;1;;; 4890-2112 ;  ; Sordi Juan Cruz ;  15-3545-7873 ;6;8;;;NULL;12/04/19 12:35;24/05/19 16:42;;13;;;NULL;1
+181;Parallel S.A. ; pablo.ferreccio@parallel-sa.com ; Vieytes  2º A ;1039;;;30-57321525-5;1;;; 4732-3232 ;  ; Juan Pablo Sylvester  ;  15-4994-0086 ;6;8;;;NULL;12/04/19 12:35;28/01/20 17:06;;13;;;3587;2901
+182;Pinturas Megalux SRL; fruggiano@pinturasmegalux.com ; Roetger  ;265;;;30-69648801-7;1;;1686; 4662-5580  ;  ; Fernando ;  ;6;8;;;NULL;12/04/19 12:35;06/01/20 12:38;;11;;;1519;1518
+183;Plegadora Hurlingham ; clirma@hotmail.com ; Pedro Diaz  ; 1280/88 ;;; 30-71008359-9;0;;; 4662-3652  ;  ; Pascual ;  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:16;;1;;;NULL;1518
+184;Plow SRL ; produccion@gloter.net ; concepcion Arenal  ;2481;;;30-70808452-9;1;;1686; 4459-2873 / 2855 ;121;  Sr. Dario ;  ;6;8;;;NULL;12/04/19 12:35;06/01/20 12:59;;11;;;1518;1518
+185;Plus  Service S.R.L. ; plusservicesrl@yahoo.com.ar ; Chacabuco  ;4301;;;33-64448451-9;1;;1653; 4738-3590 ;  ;  CONTADOR ROSETO ; 15-5039-1127  ;6;8;;;NULL;12/04/19 12:35;06/01/20 14:40;;13;;;2957;1350
+186;PMA S.R.L. ; compras@tecnotrans.com.ar ;Marmol;1571;;;30-71056543-7;1;;1661; 5263-3727 ;  ;  Rocio  ; 115263-3727 ;6;8;;;NULL;12/04/19 12:35;06/01/20 19:46;;11;;;2982;324
+187;Pomerol S.A. ; recepcion@pomerol.com.ar ;  GERVASIO POSADAS    ;2234;;;30-50469068-3;1;;; 4760-9771  ;  ; Milagros ;  ;6;8;;;NULL;12/04/19 12:35;07/01/20 18:53;;13;;;3411;3415
+188;Ponce Carlos Antonio ; cigueñalesmoron@uolsinectis.com.ar ; Entre Ríos  ;639;;;20-07861089-2;1;Cigueñales Moron;1708; 4627-5984  ;  ; Romina ;  ;6;8;;;NULL;12/04/19 12:35;07/01/20 19:15;;7;;;2253;2254
+189;Posta S.R.L. ; viviana@posta-srl.com.ar ; Leonismo Argentino  ;3077;;;30-67827925-7;1;;; 4751-3429 ;  ;  Viviana Carbone ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 17:04;;7;;;NULL;1
+190;Power Systems Argentina S.A ;  catalina.cando@powersa.com.ar ; Zapiola  ;4248;;;30-70791053-0;1;;;  ;  ;  ; 11-5218-2434 ;6;8;;;NULL;12/04/19 12:35;24/05/19 16:41;;7;;;NULL;1
+191;Procesos Producros y Servicios  S.A. ; esteban.firpo@pps-web.com.ar ; Av. Camargo  ;2347;;;30-65825105-4;1;;; 4459-6800 15 4050 4509 ;  ; Esteban Firpo  ; 15-4050-4509 ;6;8;;;NULL;12/04/19 12:35;24/05/19 16:39;;8;;;NULL;1
+192;Prodular SRL ; leonardoboido@hotmail.com ; Fray Mocho ;1901;;;30-71239537-7;1;;;  ;  ; Alejandro ; 15-6361-5771 ;6;8;;;NULL;12/04/19 12:35;24/05/19 16:37;;14;;;NULL;1
+193;Provin Pack S.A. ;  ; Perito Moreno  -Pque Ind Canning ;375;;;30-71526828-7;1;;; 11-6034-9570 ;  ;  Losardo Franco ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:18;;28;;;;1
+194;Proyectos Sustentables S.A. ; aprskavacgc@hotmail.com ; Lisandro de la Torre  ;2179;;;30-71238943-1;0;;1414; 15-3572-4059 ;  ;  Sra. Ana ;  ;6;8;;;NULL;12/04/19 12:35;05/11/19 16:46;;7;;;;1
+195;Pulp Trays  S.R.L.; gustavo.badenes@moleze.com.ar ; Perito Moreno  -Pque Ind Canning ;375;;;33-71243268-9;1;Moleze;1804; 5361-5999 ;  ; Gustavo Badenes  ; 15-6094-4292 ;6;8;;;NULL;12/04/19 12:35;29/01/20 10:37;;28;;;1129;1111
+196;Pultec S.A. ; info@plasticosdemarzio.com.ar ; Maestra Rodriguez  ;2129;;;30-71454123-0;1;;1686; 4452-7445 ;  ;  Nilda ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 18:42;;11;;;269;269
+197;Rao Extrusora S.A. ; raoestrusorasa@Gmail.com ; Necochea  ;586;;;30-61373561-1;1;;1686; 4665-9432 ;  ;  Modesto Mastromónaco ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:36;;28;;;1518;1518
+198;Readyser Distribuciones SRL ; alejandrobravo@lenterdit.com.ar ; Coronel Brandsen  ;5196;;;33-57332947-9;0;;1754;  ;  ;  ;  ;6;6;;;NULL;12/04/19 12:35;05/11/19 16:47;;7;;;;169
+199;Reciclados Romano S.R.L. ; contacto@recicladosromano.com.ar ; Av. Camargo  ;2126;;;30-71077278-5;1;;1686; 4665-7764  ;  ; Ana María ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 18:55;;11;;;269;269
+200;Reciclados Well Plast SA ;  ; Urcola Nº  ;40;;;30-71486610-5;1;;1646; 6700-1676  ;  ; Jose Tesa ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 19:11;;13;;;512;512
+201;Rectificación Morón S. A. ; administracion@rectificacionmoron.com.ar ; Avenida Zeballos  ;1968;;;30-50286425-0;1;;1708; 4629-3031 / 7947 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 19:00;;13;;;363;363
+202;Recupal Argentina SA ;  recupal@solunet.com.ar  ; Predio Inta ;  ;;;30-70735161-2;1;;; 4662-5644 ;  ;  ; 15-3335-9658  ;6;8;;;NULL;12/04/19 12:35;24/05/19 19:25;;7;;;NULL;1
+203;Resipol S.A. ; marta@medanos.com.ar ; Av. Julio A Roca  ;2928;;;30-67705876-1;1;;1686; 4665-4835 / 4579 /2970 ;  ;  Marta / José ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:37;;28;;;1518;1518
+204;Ribeiro Sergio Luis ; info@proteccar.com.ar ; MOZART  ;160;;;20-22986088-8;1;;1686; 4450-9080  ;  ; Ribeiro Sergio ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 19:02;;14;;;269;269
+205;Riccioni SRL ;  ; Santa Rosa  ;1174;;; 30-71192688-3;0;;;  ;  ; Eduardo Albano  ; 15-5307-42797  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:18;;1;;;NULL;1559
+206;Romalus S.R.L ; virginiapb@rerar.com.ar ; J. de Garay  ;5530;;;30-55766232-0;1;;; 4759-3966 / 0979 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;24/05/19 19:07;;14;;;NULL;111
+207;Rotger Javier Eduardo ; jcrotger@yahoo.com ; Felipe Pastre  ;1875;;;20-26756521-0;1;;1686; 4665-9188 ;  ; Jorge ; 15-64226404 ;6;8;;;NULL;12/04/19 12:35;24/05/19 18:44;;11;;;269;269
+208;Rotomoldeo SRL ; info@rotoys.com ; Salvador María del Carril  ;74;;;33-70797394-9;1;;1708; 4609-0061 / 62 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:31;;28;;;363;363
+209;Russo Favio Marcos ;  ; J. M. Rosas   ;73;;;20-22509736-5;1;;1708; 4627-7431 ;  ;  Sr. Favio Russo ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:32;;28;;;363;363
+210;S.M. Combustibles S.R.L. ; villarosa2002@yahoo.com.ar ; Ruta Panamericana y San Martin S/Nº ;  ;;;30-70860110-8;1;;1629;  ;  ;  ; 15-5426-2755 ;6;8;;;NULL;12/04/19 12:35;24/05/19 19:45;;12;;;434;434
+211;Sanlap S.A. ; infoquimicos@sanlap.com.ar  ; Juan Diaz de Solis  ;351;;;30-69796333-9;1;;1686; 4662-8003 ;  ;  Virginia ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:38;;28;;;1518;1518
+212;Seis Erre Alimentos SA ; seiserre_adm@seiserre.com.ar ; Jose Bianco  ;758;;;30-70731762-7;1;;1684; 4758-1112 ;  ;  María Susana ;  ;12;12;;;NULL;12/04/19 12:35;29/05/19 16:05;;7;;;563;156
+213;Sembrado S.A. ; sembrado@speedy.com.ar ; Pucaini  ;2255;;;30-68580577-0;1;;1686; 4613-1680 ;  ;  Jorge Capria ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:08;;14;;;269;269
+214;Sentex SA ; produccion@sentex.com ; Av Independencia  E/Uruguay y Rioja ;3080;;;30-70763465-7;1;;; 4932-2300  ;101; Adriana Centurion  ; 15-2233-1717 ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:17;;7;;;NULL;1
+215;Servicios Transcar S.R.L. ; carlosjaller@hotmail.com  ; Los Patos  ;2022;;;30-70771217-8;1;;1686; 4452-0005  ;  ; Patricia ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 16:08;;11;;;269;269
+216;Silicom Argentina ;  wanda@siliconargentinasrl.com.ar  ; ARTIGAS  ;2633;;;20-11815985-4;1;;;  ;  ; Sayanes Wanda ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:17;;13;;;NULL;1
+217;Silicom Argentina ; wanda@siliconargentinasrl.com.ar ; Arregui   ;2495;;;20-11815985-4;1;;;  ;  ; Sayanes Wanda ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:18;;13;;;NULL;1
+218;Soucar S.R.L. ; soucar-srl@yahoo.com.ar  ; Av. Camargo  ;1930;;;30-59835697-8;1;;1686; 4452-2891 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:45;;11;;;1520;1518
+219;Recagno Borghini Maria Paula (EX Southern Cross Chemical SRL) ; info@sccargentina.com.ar ; Miranda  ;562;;;30-70935280-2;1;;1686; 4662-9977 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:37;;28;;;1519;1518
+220;St Labhras S.A. ; federicorava@hotmail.com.ar ; Urano  ;1777;;;30-71405835-1;1;;; 4693-6541 ;  ; Analia  ; 15-5827-6649 ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:44;;28;;;;1
+221;Sulvy II SRL ; info@sulvy.com.ar / chferrari@sulvy.com.ar ; Miranda  ;549;;;30-70056844-6;1;;; 4622-2558 ;  ; Cristian Ferrari ; 15-5663-8650 ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:41;;1;;;NULL;1
+222;Sur Polimeros S.A. ; gabrielcabrerizo@surpolimeros.com.ar ; Aviador Subtte. A. Fernandez   ;1958;;;30-70264553-7;1;;1686; 4452-8033 ;  ; Gabriel ;  ;6;8;;;NULL;12/04/19 12:35;08/11/19 14:51;;11;;;269;1518
+223;TAG ENERGY SRL (ex Tagliaferri Alejandro y  Fernandez Viviana B. S.H.) ; martin.robledo@shellcenter.com.ar ;Ricardo Balbin ;2568;;;30-71542442-4;1;;1663; 4451-7183 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;30/12/19 18:40;;11;;;2982;667
+224;Tagliaferri Mario  Alfredo ; shelltag@yahoo.com.ar ; TRIUNVIRATO  ;4913;;;23-14455964-9;1;;; 4840-0471 ;  ;  ; 15-6768-1961 ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:35;;28;;;;1
+225;Take 56 SRL   (9 de Abril) ;  take56@take56.com.ar;  Gilberto Elizalde;7532;;;30-70916902-1;1;;1839;  4693-1290;  ; Marcio  ; 11-4081-1466 ;6;8;;;NULL;12/04/19 12:35;30/12/19 18:47;;28;;;1110;1110
+226;Talleres de Rectificación y Ajuste Trya SRL  ; polterjulio@speedy.com.ar ; Avelino Diaz  ; 641/3 ;;; 30-50463978-5;0;;; 4924-1517 ;  ;  ;  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:20;;1;;;NULL;3598
+227;Tecmyl SA ; info@tecmyl.com.ar ; Sbtte Fernandez  ;2263;;;33-71204826-9;1;;1686; 4459-4366 ;  ;  ;  ;NULL;8;;;NULL;12/04/19 12:35;30/12/19 18:29;;14;;;1518;1518
+228;Tecnoindustria SA ; info@tecnoindustriasa.com.ar ; Juan Diaz de Solis  ;408;;;30-70786135-1;1;;1686; 4452-7200   ;  ; José Luis Ventre  ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:40;;14;;;1518;1518
+229;TecnoTrans S.R.L.  ; compras@tecnotrans.com.ar ; MoisesLebensohn  ;1081;;;30-65440517-0;1;;1650; 5263-3727 ;  ; Rocio  ;  11-5263-3727 ;6;8;;;NULL;12/04/19 12:35;30/12/19 18:08;;11;;;2982;667
+230;Textil Itas S.A. ; textilitas@yahoo.com.ar ; L. MARIA CAMPOS  ;690;;;30-50405534-1;1;;; 4629-9657 / 5753 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;30/12/19 18:17;;7;;;2251;2254
+231;Thomart GNC S.A. ;  thomartgncsa@yahoo.com.ar ; Av Vergara   ;1561;;;33-70099786-9;1;;1686; 4450-6090  ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;30/12/19 15:32;;28;;;1518;1518
+232;Tinpet S.R.L. ; tinpetcarmenvillar@yahoo.com.ar ; AV. MITRE  ;5455;;;30-70924867-3;1;;1678; 4716-0029 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;30/12/19 14:58;;14;;;3324;3325
+233;Tomé Dos Anjos Goncalves, Carlos Malberto Calichio y Osvaldo Héctor D´Elia ; rectificadorafag@ciudad.com ; PRINGLES  ;3111;;;30-70793106-6;1;;; 4759-0792  ;  ; Ezequiel ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:32;;14;;;NULL;1
+234;Topigraf S.A. ; topigrafsa@yahoo.com.ar ; Atuel  ;185;;;30-71118306-6;1;;1686; 4452-1247  ;  ; Daniel Rosellio ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:32;;11;;;269;269
+235;Transpar S.A. ; administracion@transparsa.com ; Av. Julio A Roca  ;620;;;30-63376964-4;1;;1686; 4665-3778 / 9473 ;  ;  Rodrigo ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:33;;14;;;269;269
+236;Transporte Luke  SRL; analiatrama@yahoo.com.ar ; Guarani  ; 321/315 ;;;30-70798524-7;1;;1437; 4911-3459  ;  ; Analia Trama ;  ;6;8;;;NULL;12/04/19 12:35;30/12/19 19:31;;7;;;3598;3598
+237;Truck Oil Service SRL ; genco.oilservice@gmail.com ; Osvaldo Cruz  y Herrera Nº 2179/91 ;2005;;; 30-71414605-6;0;;;  ;  ; Daniel Ripa ; 15-3489-2502  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:20;;1;;;NULL;3598
+238;Unical S.A. ; UNICAL@RCC.COM.AR ; Uspallata  ;671;;;30-63110485-8;1;;1686; 4665-7299 ;  ; Leonel ;  ;6;8;;;NULL;12/04/19 12:35;02/01/20 12:57;;28;;;1518;1518
+239;Utility S.A. ; mariela@gversailles.com.ar ; J. Berduck   ;1875;;;30-63112559-6;1;;; 4665-4011 ;  ;  Mariela ;  15-5249-1684 ;6;8;;;NULL;12/04/19 12:35;05/11/19 16:41;;11;;;269;269
+240;Valkin SRL ; valkinsrl@hotmail.com ; Urano  ;1803;;;30-71167283-0;1;;1776;  ;  ;  Vanesa;  ;6;8;;;NULL;12/04/19 12:35;02/01/20 13:52;;28;;;1;1110
+241;Vallejo Roberto Daniel ; gabesroma@hotmail.com ; Roma  ;273;;;20-10233359-5;1;;1686; 4665-9584 ;  ;  Roberto Vallejo ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:45;;11;;;269;269
+242;Velez Sarfield Cow ;  ; M. Maza  ;3372;;;30-70838652-5;1;;;  ;  ; 3 Sr. Gilberto ; 15-5228-625 ;6;8;;;NULL;12/04/19 12:35;02/01/20 13:17;;28;;;1803;1800
+243;Verge Roberto Daniel ; roberto.verge@epekom.com ; Conesa  ;1986;;;24-14715827-1;1;;1663; 4455-0471 / 1812 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;02/01/20 19:24;;11;;;2983;1223
+244;Sucesion de Vignona  Francisco Nicolás ;  ; Juan Manuel de Rosas  ;11550;;;20-93338012-3;1;;; 4457-5572 ;  ;  ;  ;6;8;;;NULL;12/04/19 12:35;18/12/19 16:14;;7;;;;1
+245;VILL GRAF S.R.L ; villgraf@speedy.com.ar ; O´Brien  ;564;;;30-59275743-1;0;;1686; 4665-1978 ;  ; Guillermo ;  ;6;8;;;NULL;12/04/19 12:35;20/11/19 17:42;;10;;;269;269
+246;Villaverde Hugo Domingo - Viviendas Oasis ; oasisfabrica@hotmail.com ; Roma  ;  139/49 ;;;23-13020038-9;1;;1686; 4452-6821 ;  ; Villaverde Hugo ; 15-4444-4153  ;6;8;;;NULL;12/04/19 12:35;02/01/20 17:02;;14;;;1518;1518
+247;Volta Ambiental SRL ; voltaambientalsrl@yahoo.com.ar ; Florencio Sanchez  ;156;;; 30-71007763-7;0;;; 4453-8299  ;  ; Sr. Esteban ;  ;1;3;;;NULL;12/04/19 12:35;15/04/19 14:21;;1;;;NULL;1694
+248;Warpfil S.A. ;  jme@warpfil.com.ar  ; Pque Cantabrica ;  ;;;30-70837159-5;1;;; 4489-2317  ;  ;  Pablo    ; 15-3347-2557 ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:49;;7;;;NULL;1
+249;Zamer Rene Carlos ; renezamerrectificaciones@yahoo.com.ar ; Av Juan Manuel de Rosas  ;11836;;;20-10881879-5;1;;; 4457-9434  ;  ; Andrea ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:49;;7;;;NULL;1
+250;Zerovnick  Estanislao Martin ;  ; Roetger  ;457;;;20-11171899-8;1;;1686; 4459-1697 ;  ;  Zerovsnik Estanislao ;  ;6;8;;;NULL;12/04/19 12:35;29/05/19 17:50;;11;;;269;269
+251;Lopez Salgueiro S.R.L.;info@salgueiro.com;Tronador;232;;;30-70832039-7;0;Lopez Salgueiro S.R.L.;;47490682;;Sebastian Salguero;;1;3;;;NULL;20/05/19 13:45;20/05/19 13:45;;4;;;NULL;1510
+252;50 mas retailers;svidal2osle.com.ar / mrekos@osle.com.ar;Av. Mitre ;1079;;;30-71149636-6;0;50 mas retailers;;46641200;126;Melanie Reckos;1536872359;0;0;;;NULL;24/05/19 17:07;28/05/19 17:06;;4;;;NULL;1
+253;Mastercom S.R.L.;;Av. Pedro Diaz;2381;;;30-67893296-1;1;;1686;4662-4237;;Julio Diaz;;6;8;;;NULL;24/05/19 18:38;20/11/19 18:51;;28;;;1519;1518
+255;Weretka Basilio;danielweretka@gmail.com;Perez Galdos;9535;;;20-12849789-8;1;Metrofilm;;4769-8037;;Daniel / Ivana;;6;8;;;NULL;29/05/19 17:54;20/11/19 17:42;;28;;;;3333
+256;PRUEBA NO USAR;;a;a;;;20-31653027-4;1;PRUEBA NO USAR;;;;;;0;10000;;;NULL;30/05/19 17:01;30/05/19 17:01;;4;;;NULL;3598
+257;Fundación Tzedaka;scupersmid@tzedaka.org.ar;Chorrarin;1280;;;30-64666369-1;0;Fundacion Tzedaka;;48111430;;Samanta Cupersmid;;0;0;;;NULL;31/05/19 17:46;31/05/19 17:46;;4;;;NULL;3598
+258;Safe Parking S.R.L.;marisa@safeparking.com.ar;Tucuman;1470;;;30-71450776-8;0;Safe Parking S.R.L.;;;;Marisa Fernandez;1556224733;0;0;;;NULL;31/05/19 18:16;31/05/19 18:16;;4;;;NULL;3598
+261;Parking Uruguay S.R.L.;Diegochivo78@yahoo.com;Uruguay;160;;;30-71229652-2;0;Parking Uruguay S.R.L.;1015;;;Diego Fernandez;1565033001;NULL;NULL;;;NULL;02/07/19 19:58;02/07/19 19:58;;4;;;NULL;3598
+262;Odonto FJ S.R.L.;lucasbgarat@gmail.com;Suipacha;676;;;30-71585067-9;0;Odonto FJ S.R.L.;;1533814167;;Lucas beaton Garat;;0;0;;;NULL;23/07/19 13:07;23/07/19 13:07;;4;;;NULL;3598
+264;casa prueba 1;;;;;;11-11111111-1;0;casa;;;;;;1;2;;;;03/08/19 15:36;11/01/20 16:32;;1;;;;173
+265;Casa Osle S.A.C.I.F.I.Y.A. (logistica);;Av Lemos ;1639;;;30-52162224-1;1;;;4664-1200;;Silvia Vidal/ Melanie Rekos;;12;12;;;NULL;08/08/19 13:56;20/11/19 17:53;;13;;;1996;2124
+272;Epocoat;compras@epocoat.com.ar;Miranda ;548;;;30-70932940-1;1;;1686;4662-4335 ;; Julian Alessandrini;;NULL;NULL;;;NULL;04/09/19 17:24;19/11/19 15:16;;11;;;;1518
+273;Flavia Veronica Gerez y Nestor E Castellano SH;flavia.gerez@renewhouse.com.ar;Av Juan B Justo;9643;;;30-70717478-8;1;;1408;4644-6010/1580;;Flavia Gerez;156248485;6;8;;;NULL;04/09/19 23:11;20/11/19 16:36;;28;;;;3598
+275;Consmetica Primont;;Centenera ;805;;;30-66115371-3;1;;1686;;;;;6;8;;;NULL;08/10/19 14:05;08/10/19 14:05;;11;;;1518;1518
+276;Nusdeo Domenico;mllnn@yahoo.com.ar;Mario Bravo ;16;;;20-92383233-6;1;;1686;4450-5072 Cdora Mariela L Nusdeo;;Mariela Nusdeo;;6;8;;;NULL;15/10/19 19:41;15/10/19 19:41;;11;;;1518;1518
+277;ESSENTIAL S A (Zarate);;Justa lima de Atucha ;354;;;30-65376481-9;0;ESSENTIAL S A;;;;;;NULL;NULL;;;NULL;04/11/19 18:13;04/11/19 18:13;;24;;;3590;3594
+278;Caso y Vazquez;info@metalurgicamoron.com.ar;Vicente Lopez;577;;;30-70840043-9;1;;1708;4627-2557/4115-8092 ;;Sr Fernando ;15-6214-7283;6;8;;;NULL;12/11/19 13:02;12/11/19 13:02;;7;;;2251;2254
+279;Cosmética Primont S.R.L.;;Centenera;806;;;30-66115371-3;1;Cosmética Primont S.R.L.;1686;4452-5555 / 4665-1716;;;;6;8;;;NULL;12/11/19 13:36;16/12/19 13:45;;11;;;1518;1518
+280;Morixe Hermanos S.A.C.I.;ggalarza@alimentosmodernos.com.ar; Panamericana Km. 49.5 –  Calle 22.N°164. ;;;;30-52534638-9;1;;;4762-0293 / 11-3281-6662 Gabriel Galarza;;;;NULL;NULL;;;NULL;04/12/19 13:41;04/12/19 13:41;;28;;;2464;2472
+281;Lenterdit S.A.;;Matheu y Ruta 4;2290;;;33-57332947-9;1;;;;;;;NULL;NULL;;;NULL;04/12/19 14:21;04/12/19 14:21;;7;;;;1698
+282;RQB Argentina SA ;ventascamudi@gmail.com;Pucaini ;2405;;;30-71444824-9;1;Camudi;;4459-7215 ;;Karina o Paula;;6;8;;;NULL;09/12/19 19:55;09/12/19 19:55;;11;;;1518;1518
+283;Silicom Argentina SRL;;Argentina;3950;;;30-53916677-4;1;;;4441-3517 ;;Hugo;;6;8;;;NULL;18/12/19 15:45;18/12/19 15:45;;7;;;2940;1698
+284;Procesadora Alianza;procesadoraalianza@gmail.com;Av General Eugenio Garzon;5168;;;30-71619606-9;1;;;4682-7222;;Carina;15-5718-5687;6;8;;;NULL;30/12/19 12:53;30/12/19 12:53;;28;;;3598;3598
+285;Conyca S:R.L;info@conyca.com.ar/ jperrucci@conyca.com.ar/sgcaligiuri@conyca.com.ar;Atuel ;202;;;30-71162218-3;1;;1686;4452-9058 ;;Josefina / Agustin;;6;8;;;NULL;30/12/19 12:57;30/12/19 12:57;;11;;;1518;1518
+286;prueba responsable;;pedro de mendoza;1111;1;;11-11111111-1;0;;;;;;;1;2;;;NULL;11/01/20 15:30;11/01/20 15:30;;1;;;1;1096
+287;De Buena Ley S.R.L.;;Av. Arturo Jauretche;1029;Planta Baja;42;33-71660437-9;0;Boho Garden;1686;54 9 11 3132-7997;;Fernando Juarez;54 9 11 3132-7997;NULL;NULL;;;NULL;16/01/20 11:58;16/01/20 12:05;;4;;;1518;1518
