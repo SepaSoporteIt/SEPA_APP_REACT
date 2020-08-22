@@ -13,8 +13,19 @@
         "expiration": "Expiration",
         "study": "Study",
         "localidad-and-partido": "Localidad/Partido",
-        "visits": "Visits",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+      },
+      "company": {
+        "main": "Company",
+        "company": "Company"
+      },
+      "employee": {
+        "main": "Employee",
+        "employee": "Employee"
+      },
+      "expiration": {
+        "main": "Expiration",
+        "expiration": "Expiration"
       },
       "account": {
         "main": "Account",
