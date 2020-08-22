@@ -88,9 +88,13 @@ export const CompanyDetail = (props: ICompanyDetailProps) => {
           </dt>
           <dd>{companyEntity.departament}</dd>
           <dt>
-            <Translate contentKey="sepaApp.company.localidadId">Localidad Id</Translate>
+            <Translate contentKey="sepaApp.company.localidadId">Localidad</Translate>
           </dt>
-          <dd>{companyEntity.localidadAndPartido ? companyEntity.localidadAndPartido.localidad + " " + companyEntity.localidadAndPartido.partido : ''}</dd>
+          <dd>{companyEntity.localidadAndPartido ? companyEntity.localidadAndPartido.localidad : 'Localidad no asignada'}</dd>
+          <dt>
+            <Translate contentKey="sepaApp.company.partidoId">Partido</Translate>
+          </dt>
+          <dd>{companyEntity.localidadAndPartido ? companyEntity.localidadAndPartido.partido : 'Partido no asignado'}</dd>
           <dt>
             <span id="postalCode">
               <Translate contentKey="sepaApp.company.postalCode">Postal Code</Translate>

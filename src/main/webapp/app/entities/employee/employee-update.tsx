@@ -203,15 +203,15 @@ export const EmployeeUpdate = (props: IEmployeeUpdateProps) => {
                 <AvField id="employee-departament" type="text" name="departament" />
               </AvGroup>
               <AvGroup>
-                <Label for="employee-localidadId">
-                  <Translate contentKey="sepaApp.employee.localidadId">Localidad Id</Translate>
+                <Label for="employee-localidadAndPartido">
+                  <Translate contentKey="sepaApp.employee.localidadAndPartido">Localidad And Partido</Translate>
                 </Label>
-                <AvInput id="employee-localidadId" type="select" className="form-control" name="localidadId.id">
+                <AvInput id="employee-localidadAndPartido" type="select" className="form-control" name="localidadAndPartido.id">
                   <option value="" key="0" />
                   {localidadAndPartidos
                     ? localidadAndPartidos.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.localidad + " " + otherEntity.partido}
+                          {otherEntity.localidad + " - " + otherEntity.partido}
                         </option>
                       ))
                     : null}

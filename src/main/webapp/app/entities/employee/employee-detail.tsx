@@ -119,9 +119,13 @@ export const EmployeeDetail = (props: IEmployeeDetailProps) => {
           </dt>
           <dd>{employeeEntity.departament}</dd>
           <dt>
-            <Translate contentKey="sepaApp.employee.localidadId">Localidad Id</Translate>
+            <Translate contentKey="sepaApp.employee.localidadId">Localidad</Translate>
           </dt>
-          <dd>{employeeEntity.localidadAndPartido ? employeeEntity.localidadAndPartido.localidad + " " + employeeEntity.localidadAndPartido.partido: ''}</dd>
+          <dd>{employeeEntity.localidadAndPartido ? employeeEntity.localidadAndPartido.localidad: 'Localidad no asignada'}</dd>
+          <dt>
+            <Translate contentKey="sepaApp.employee.partidoId">Partido</Translate>
+          </dt>
+          <dd>{employeeEntity.localidadAndPartido ? employeeEntity.localidadAndPartido.partido: 'Partido no asignado'}</dd>
 
           <h3>
             <Translate contentKey="sepaApp.employee.detail.others">Others</Translate>

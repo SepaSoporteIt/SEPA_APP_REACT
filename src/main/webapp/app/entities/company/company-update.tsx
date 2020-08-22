@@ -24,7 +24,7 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
   const [employeeId, setEmployeeId] = useState('0');
   const [industryTypeId, setIndustryTypeId] = useState('0');
   const [secIndustryTypeId, setSecIndustryTypeId] = useState('0');
-  const [localidadIdId, setLocalidadIdId] = useState('0');
+  const [localidadAndPartidoId, setLocalidadAndPartidoId] = useState('0');
   const [isNew, setIsNew] = useState(!props.match.params || !props.match.params.id);
 
   const { companyEntity, employees, industryTypes, localidadAndPartidos, loading, updating } = props;
@@ -193,14 +193,14 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
               </AvGroup>
               <AvGroup>
                 <Label for="company-localidadId">
-                  <Translate contentKey="sepaApp.company.localidadId">Localidad Id</Translate>
+                  <Translate contentKey="sepaApp.company.localidadAndPartido">Localidad Id</Translate>
                 </Label>
-                <AvInput id="company-localidadId" type="select" className="form-control" name="localidadId.id">
+                <AvInput id="company-localidadAndPartido" type="select" className="form-control" name="localidadAndPartido.id">
                   <option value="" key="0" />
                   {localidadAndPartidos
                     ? localidadAndPartidos.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.localidad + " " + otherEntity.partido}
+                          {otherEntity.localidad + " - " + otherEntity.partido}
                         </option>
                       ))
                     : null}

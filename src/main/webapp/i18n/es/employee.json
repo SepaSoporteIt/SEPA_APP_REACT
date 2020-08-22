@@ -45,7 +45,8 @@
       "updatedAt": "Modificado el",
       "localidadId": "Localidad",
       "isDisabled": "Dado de Baja?",
-      "partidoId": "Partido"
+      "partidoId": "Partido",
+      "localidadAndPartido": "Localidad y Partido"
     }
   }
 }

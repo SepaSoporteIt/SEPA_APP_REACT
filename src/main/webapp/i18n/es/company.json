@@ -57,7 +57,8 @@
       "secIndustryType": "2º CIIU",
       "isDisabled": "Dado de baja?",
       "localidadId": "Localidad",
-      "partidoId": "Partido"
+      "partidoId": "Partido",
+      "localidadAndPartido": "Localidad y Partido"
     }
   }
 }

@@ -57,7 +57,8 @@
       "secIndustryType": "Sec Industry Tipe",
       "isDisabled": "Is Disabled?",
       "localidadId": "Localidad",
-      "partidoId": "Partido"
+      "partidoId": "Partido",
+      "localidadAndPartido": "Localidad and Partido"
     }
   }
 }
