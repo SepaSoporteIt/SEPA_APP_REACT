@@ -2,37 +2,51 @@
   "sepaApp": {
     "employee": {
       "home": {
-        "title": "Employees",
-        "createLabel": "Crear nuevo Employee",
-        "createOrEditLabel": "Crear o editar Employee",
-        "notFound": "Ningún Employees encontrado"
+        "title": "Profesional",
+        "createLabel": "Crear nuevo Profesional",
+        "createOrEditLabel": "Crear o editar Profesional",
+        "search": "Buscar Profesional",
+        "notFound": "Ningún Profesional encontrado"
       },
-      "created": "Un nuevo Employee ha sido creado con el identificador {{ param }}",
-      "updated": "Un Employee ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Employee ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Profesional ha sido creado con el identificador {{ param }}",
+      "updated": "Un Profesional ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Profesional ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Employee {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Profesional {{ id }}?"
       },
       "detail": {
-        "title": "Employee"
+        "title": "Profesional",
+        "personalData": "Datos Personales",
+        "matData": "Datos de Matrícula",
+        "addressData": "Datos del Domicilio",
+        "others": "Otros"
       },
-      "name": "Name",
-      "surname": "Surname",
+      "booleans": {
+        "true": "Si",
+        "false": "No"
+      },
+      "name": "Nombre",
+      "surname": "Apellido",
+      "fullName": "Nombre Completo",
       "email": "Email",
-      "tlf": "Tlf",
-      "isInternal": "Is Internal",
-      "matNumber": "Mat Number",
+      "tlf": "Teléfono",
+      "isInternal": "Es Interno?",
+      "matNumber": "Número de Matricula",
       "cuit": "Cuit",
-      "addressDirection": "Address Direction",
-      "addressNumber": "Address Number",
-      "floor": "Floor",
-      "departament": "Departament",
-      "degree": "Degree",
-      "especializacion": "Especializacion",
+      "addressDirection": "Calle",
+      "addressNumber": "Número",
+      "floor": "Piso",
+      "departament": "Departamento",
+      "degree": "Título",
+      "especializacion": "Especialización",
       "celular": "Celular",
       "comentario": "Comentario",
-      "isDisabled": "Is Disabled",
-      "localidadAndPartido": "Localidad And Partido"
+      "createdAt": "Creado el",
+      "updatedAt": "Modificado el",
+      "localidadId": "Localidad",
+      "isDisabled": "Dado de Baja?",
+      "partidoId": "Partido",
+      "localidadAndPartido": "Localidad y Partido"
     }
   }
 }

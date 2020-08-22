@@ -5,6 +5,7 @@
         "title": "Companies",
         "createLabel": "Create a new Company",
         "createOrEditLabel": "Create or edit a Company",
+        "search": "Search for Company",
         "notFound": "No Companies found"
       },
       "created": "A new Company is created with identifier {{ param }}",
@@ -14,13 +15,25 @@
         "question": "Are you sure you want to delete Company {{ id }}?"
       },
       "detail": {
-        "title": "Company"
+        "title": "Company",
+        "basicData": "Basic Data",
+        "clientAddress": "Stablishment Address",
+        "contactData": "Contact Data",
+        "afipActivity": "Activity designed by the AFIP",
+        "serviceData": "Service Data",
+        "others": "Others"
+      },
+      "booleans": {
+        "true": "Yes",
+        "false": "No"
+      },
+      "errors": {
+        "noEmployee": "No Employee Assigned"
       },
       "name": "Name",
       "email": "Email",
       "addressDirection": "Address Direction",
       "addressNumber": "Address Number",
-      "betweenStreets": "Between Streets",
       "floor": "Floor",
       "departament": "Departament",
       "cuit": "Cuit",
@@ -36,11 +49,16 @@
       "habPrim": "Hab Prim",
       "habSec": "Hab Sec",
       "comment": "Comment",
-      "isDisabled": "Is Disabled",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At",
+      "betweenStreets": "Between Streets",
       "employee": "Employee",
-      "industryType": "Industry Type",
-      "secIndustryType": "Sec Industry Type",
-      "localidadAndPartido": "Localidad And Partido"
+      "industryType": "Prim Industry Tipe",
+      "secIndustryType": "Sec Industry Tipe",
+      "isDisabled": "Is Disabled?",
+      "localidadId": "Localidad",
+      "partidoId": "Partido",
+      "localidadAndPartido": "Localidad and Partido"
     }
   }
 }
