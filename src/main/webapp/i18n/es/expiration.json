@@ -2,30 +2,41 @@
   "sepaApp": {
     "expiration": {
       "home": {
-        "title": "Expirations",
-        "createLabel": "Crear nuevo Expiration",
-        "createOrEditLabel": "Crear o editar Expiration",
-        "notFound": "Ningún Expirations encontrado"
+        "title": "Vencimientos",
+        "createLabel": "Crear nuevo Vencimiento",
+        "createOrEditLabel": "Crear o modificar Vencimiento",
+        "search": "Buscar Vencimiento",
+        "notFound": "Ningún Vencimiento encontrado"
       },
-      "created": "Un nuevo Expiration ha sido creado con el identificador {{ param }}",
-      "updated": "Un Expiration ha sido actualizado con el identificador {{ param }}",
-      "deleted": "Un Expiration ha sido eliminado con el identificador {{ param }}",
+      "created": "Un nuevo Vencimiento ha sido creado con el identificador {{ param }}",
+      "updated": "Un Vencimiento ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Vencimiento ha sido eliminado con el identificador {{ param }}",
       "delete": {
-        "question": "¿Seguro que quiere eliminar Expiration {{ id }}?"
+        "question": "¿Seguro que quiere eliminar el Vencimiento {{ id }}?"
       },
       "detail": {
-        "title": "Expiration"
+        "title": "Vencimiento",
+        "automaticField": "Este campo se completará automaticamente"
       },
-      "startDate": "Start Date",
-      "endDate": "End Date",
-      "status": "Status",
-      "comments": "Comments",
-      "uniqueCode": "Unique Code",
-      "responsible": "Responsible",
-      "isCompleted": "Is Completed",
-      "company": "Company",
-      "employee": "Employee",
-      "study": "Study"
+      "booleans": {
+        "true": "Si",
+        "false": "No"
+      },
+      "errors": {
+        "noCompany": "Cliente no Asignado",
+        "noResponsible": "Profesional no Asignado en el Cliente Seleccionado",
+        "noEmployee": "Profesional no Asignado"
+      },
+      "startDate": "Fecha de inicio",
+      "endDate": "Fecha de finalización",
+      "status": "Estado",
+      "comments": "Comentario",
+      "uniqueCode": "Codigo Único",
+      "responsible": "Responsable",
+      "company": "Cliente",
+      "isCompleted": "Está completo?",
+      "employee": "Realizado Por",
+      "study": "Estudio"
     }
   }
 }

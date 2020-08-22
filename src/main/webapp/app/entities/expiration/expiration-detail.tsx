@@ -22,45 +22,19 @@ export const ExpirationDetail = (props: IExpirationDetailProps) => {
     <Row>
       <Col md="8">
         <h2>
-          <Translate contentKey="sepaApp.expiration.detail.title">Expiration</Translate> [<b>{expirationEntity.id}</b>]
+          <Translate contentKey="sepaApp.expiration.detail.title">Expiration</Translate> [<b>{expirationEntity.uniqueCode}</b>]
         </h2>
         <dl className="jh-entity-details">
           <dt>
-            <span id="startDate">
-              <Translate contentKey="sepaApp.expiration.startDate">Start Date</Translate>
-            </span>
-          </dt>
-          <dd>
-            {expirationEntity.startDate ? (
-              <TextFormat value={expirationEntity.startDate} type="date" format={APP_LOCAL_DATE_FORMAT} />
-            ) : null}
-          </dd>
-          <dt>
-            <span id="endDate">
-              <Translate contentKey="sepaApp.expiration.endDate">End Date</Translate>
-            </span>
-          </dt>
-          <dd>
-            {expirationEntity.endDate ? <TextFormat value={expirationEntity.endDate} type="date" format={APP_LOCAL_DATE_FORMAT} /> : null}
-          </dd>
-          <dt>
-            <span id="status">
-              <Translate contentKey="sepaApp.expiration.status">Status</Translate>
-            </span>
-          </dt>
-          <dd>{expirationEntity.status}</dd>
-          <dt>
-            <span id="comments">
-              <Translate contentKey="sepaApp.expiration.comments">Comments</Translate>
-            </span>
-          </dt>
-          <dd>{expirationEntity.comments}</dd>
-          <dt>
             <span id="uniqueCode">
-              <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate>
+              <Translate contentKey="sepaApp.expiration.uniqueCode">Unique Code</Translate> 
             </span>
           </dt>
           <dd>{expirationEntity.uniqueCode}</dd>
+          <dt>
+            <Translate contentKey="sepaApp.expiration.company">Company</Translate>
+          </dt>
+          <dd>{expirationEntity.company ? expirationEntity.company.name + " - " + expirationEntity.company.addressDirection + " " + expirationEntity.company.addressNumber: ''}</dd>
           <dt>
             <span id="responsible">
               <Translate contentKey="sepaApp.expiration.responsible">Responsible</Translate>
@@ -68,23 +42,47 @@ export const ExpirationDetail = (props: IExpirationDetailProps) => {
           </dt>
           <dd>{expirationEntity.responsible}</dd>
           <dt>
+            <Translate contentKey="sepaApp.expiration.study">Study</Translate>
+          </dt>
+          <dd>{expirationEntity.study ? expirationEntity.study.name : ''}</dd>
+          <dt>
+            <span id="status">
+              <Translate contentKey="sepaApp.expiration.status">Status</Translate>
+            </span>
+          </dt>
+          <dd>{expirationEntity.status}</dd>
+          <dt>
             <span id="isCompleted">
               <Translate contentKey="sepaApp.expiration.isCompleted">Is Completed</Translate>
             </span>
           </dt>
-          <dd>{expirationEntity.isCompleted ? 'true' : 'false'}</dd>
+          <dd>{expirationEntity.isCompleted ? <Translate contentKey="sepaApp.expiration.booleans.true">true</Translate> : <Translate contentKey="sepaApp.expiration.booleans.false">false</Translate>}</dd>
           <dt>
-            <Translate contentKey="sepaApp.expiration.company">Company</Translate>
+            <span id="startDate">
+              <Translate contentKey="sepaApp.expiration.startDate">Start Date</Translate>
+            </span>
           </dt>
-          <dd>{expirationEntity.company ? expirationEntity.company.id : ''}</dd>
+          <dd>
+            <TextFormat value={expirationEntity.startDate} type="date" format={APP_LOCAL_DATE_FORMAT} />
+          </dd>
+          <dt>
+            <span id="endDate">
+              <Translate contentKey="sepaApp.expiration.endDate">End Date</Translate>
+            </span>
+          </dt>
+          <dd>
+            <TextFormat value={expirationEntity.endDate} type="date" format={APP_LOCAL_DATE_FORMAT} />
+          </dd>
           <dt>
             <Translate contentKey="sepaApp.expiration.employee">Employee</Translate>
           </dt>
-          <dd>{expirationEntity.employee ? expirationEntity.employee.id : ''}</dd>
+          <dd>{expirationEntity.employee ? expirationEntity.employee.name + " " + expirationEntity.employee.surname: ''}</dd>
           <dt>
-            <Translate contentKey="sepaApp.expiration.study">Study</Translate>
+            <span id="comments">
+              <Translate contentKey="sepaApp.expiration.comments">Comments</Translate>
+            </span>
           </dt>
-          <dd>{expirationEntity.study ? expirationEntity.study.id : ''}</dd>
+          <dd>{expirationEntity.comments}</dd>
         </dl>
         <Button tag={Link} to="/expiration" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}

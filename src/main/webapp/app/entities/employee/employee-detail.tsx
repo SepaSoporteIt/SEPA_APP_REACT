@@ -21,10 +21,17 @@ export const EmployeeDetail = (props: IEmployeeDetailProps) => {
   return (
     <Row>
       <Col md="8">
-        <h2>
-          <Translate contentKey="sepaApp.employee.detail.title">Employee</Translate> [<b>{employeeEntity.id}</b>]
-        </h2>
-        <dl className="jh-entity-details">
+
+
+
+
+      <h2>
+          <Translate contentKey="sepaApp.employee.detail.title">Employee</Translate> [<b>{employeeEntity.name + " " + employeeEntity.surname}</b>]
+      </h2>
+      <dl className="jh-entity-details">
+          <h3>
+            <Translate contentKey="sepaApp.employee.detail.personalData">Personal Data</Translate>
+          </h3>
           <dt>
             <span id="name">
               <Translate contentKey="sepaApp.employee.name">Name</Translate>
@@ -38,23 +45,27 @@ export const EmployeeDetail = (props: IEmployeeDetailProps) => {
           </dt>
           <dd>{employeeEntity.surname}</dd>
           <dt>
-            <span id="email">
-              <Translate contentKey="sepaApp.employee.email">Email</Translate>
-            </span>
-          </dt>
-          <dd>{employeeEntity.email}</dd>
-          <dt>
             <span id="tlf">
               <Translate contentKey="sepaApp.employee.tlf">Tlf</Translate>
             </span>
           </dt>
           <dd>{employeeEntity.tlf}</dd>
           <dt>
-            <span id="isInternal">
-              <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate>
+            <span id="celular">
+              <Translate contentKey="sepaApp.employee.celular">Celular</Translate>
             </span>
           </dt>
-          <dd>{employeeEntity.isInternal ? 'true' : 'false'}</dd>
+          <dd>{employeeEntity.celular}</dd>
+          <dt>
+            <span id="email">
+              <Translate contentKey="sepaApp.employee.email">Email</Translate>
+            </span>
+          </dt>
+          <dd>{employeeEntity.email}</dd>
+          
+          <h3>
+            <Translate contentKey="sepaApp.employee.detail.matData">Tuition Data</Translate>
+          </h3>
           <dt>
             <span id="matNumber">
               <Translate contentKey="sepaApp.employee.matNumber">Mat Number</Translate>
@@ -67,6 +78,22 @@ export const EmployeeDetail = (props: IEmployeeDetailProps) => {
             </span>
           </dt>
           <dd>{employeeEntity.cuit}</dd>
+          <dt>
+            <span id="degree">
+              <Translate contentKey="sepaApp.employee.degree">Degree</Translate>
+            </span>
+          </dt>
+          <dd>{employeeEntity.degree}</dd>
+          <dt>
+            <span id="especializacion">
+              <Translate contentKey="sepaApp.employee.especializacion">Especializacion</Translate>
+            </span>
+          </dt>
+          <dd>{employeeEntity.especializacion}</dd>
+
+          <h3>
+            <Translate contentKey="sepaApp.employee.detail.addressData">Address Data</Translate>
+          </h3>
           <dt>
             <span id="addressDirection">
               <Translate contentKey="sepaApp.employee.addressDirection">Address Direction</Translate>
@@ -92,40 +119,33 @@ export const EmployeeDetail = (props: IEmployeeDetailProps) => {
           </dt>
           <dd>{employeeEntity.departament}</dd>
           <dt>
-            <span id="degree">
-              <Translate contentKey="sepaApp.employee.degree">Degree</Translate>
-            </span>
+            <Translate contentKey="sepaApp.employee.localidadId">Localidad Id</Translate>
           </dt>
-          <dd>{employeeEntity.degree}</dd>
+          <dd>{employeeEntity.localidadAndPartido ? employeeEntity.localidadAndPartido.localidad + " " + employeeEntity.localidadAndPartido.partido: ''}</dd>
+
+          <h3>
+            <Translate contentKey="sepaApp.employee.detail.others">Others</Translate>
+          </h3>
           <dt>
-            <span id="especializacion">
-              <Translate contentKey="sepaApp.employee.especializacion">Especializacion</Translate>
+            <span id="isInternal">
+              <Translate contentKey="sepaApp.employee.isInternal">Is Internal</Translate>
             </span>
           </dt>
-          <dd>{employeeEntity.especializacion}</dd>
-          <dt>
-            <span id="celular">
-              <Translate contentKey="sepaApp.employee.celular">Celular</Translate>
-            </span>
-          </dt>
-          <dd>{employeeEntity.celular}</dd>
-          <dt>
-            <span id="comentario">
-              <Translate contentKey="sepaApp.employee.comentario">Comentario</Translate>
-            </span>
-          </dt>
-          <dd>{employeeEntity.comentario}</dd>
+          <dd>{employeeEntity.isInternal ? <Translate contentKey="sepaApp.employee.booleans.true">true</Translate> : <Translate contentKey="sepaApp.employee.booleans.false">false</Translate>}</dd>
           <dt>
             <span id="isDisabled">
               <Translate contentKey="sepaApp.employee.isDisabled">Is Disabled</Translate>
             </span>
           </dt>
-          <dd>{employeeEntity.isDisabled ? 'true' : 'false'}</dd>
+          <dd>{employeeEntity.isDisabled ? <Translate contentKey="sepaApp.employee.booleans.true">true</Translate> : <Translate contentKey="sepaApp.employee.booleans.false">false</Translate>}</dd>
           <dt>
-            <Translate contentKey="sepaApp.employee.localidadAndPartido">Localidad And Partido</Translate>
+            <span id="comentario">
+              <Translate contentKey="sepaApp.employee.comentario">Comentario</Translate>
+            </span>
           </dt>
-          <dd>{employeeEntity.localidadAndPartido ? employeeEntity.localidadAndPartido.id : ''}</dd>
-        </dl>
+        <dd>{employeeEntity.comentario}</dd>
+      </dl>
+      
         <Button tag={Link} to="/employee" replace color="info">
           <FontAwesomeIcon icon="arrow-left" />{' '}
           <span className="d-none d-md-inline">
