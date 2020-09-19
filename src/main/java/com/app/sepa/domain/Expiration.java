@@ -233,4 +233,33 @@ public class Expiration implements Serializable {
             ", isCompleted='" + isIsCompleted() + "'" +
             "}";
     }
+
+    public void checkDate()
+    {
+        LocalDate actualEndDate = getEndDate();
+        LocalDate actualWarningDate = actualEndDate.minusDays(30);
+    
+        if (actualEndDate.isBefore(LocalDate.now()))
+        {
+            setStatus(Status.VENCIDO);
+        }
+        else if (actualWarningDate.isBefore(LocalDate.now()))
+        {
+            setStatus(Status.A_VENCER);
+        }
+    }
+
+    public void generateUniqueCode()
+    {
+        String companyId;
+        String employeeId;
+        String studyId;
+
+        companyId = getCompany() == null ? "0" : getCompany().getId().toString();
+        employeeId = getEmployee() == null ? "0" : getEmployee().getId().toString();
+        studyId = getStudy() == null ? "0" : getStudy().getId().toString();
+        
+        String initialDate = getStartDate().toString();
+        setUniqueCode(companyId+"-"+employeeId+"-"+studyId+"-"+initialDate);
+    }
 }

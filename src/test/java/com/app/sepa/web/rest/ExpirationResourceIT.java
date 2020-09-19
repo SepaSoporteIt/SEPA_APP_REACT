@@ -41,8 +41,8 @@ public class ExpirationResourceIT {
     private static final LocalDate DEFAULT_END_DATE = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_END_DATE = LocalDate.now(ZoneId.systemDefault());
 
-    private static final Status DEFAULT_STATUS = Status.VENCIDO;
-    private static final Status UPDATED_STATUS = Status.A_VENCER;
+    private static final Status DEFAULT_STATUS = Status.VIGENTE;
+    private static final Status UPDATED_STATUS = Status.VIGENTE;
 
     private static final String DEFAULT_COMMENTS = "AAAAAAAAAA";
     private static final String UPDATED_COMMENTS = "BBBBBBBBBB";
