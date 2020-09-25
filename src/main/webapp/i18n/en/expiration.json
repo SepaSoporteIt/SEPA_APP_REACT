@@ -28,7 +28,7 @@
         "noEmployee": "No Employee Assigned"
       },
       "startDate": "Start Date",
-      "endDate": "End Date",
+      "endDate": "Expiration Date",
       "status": "Status",
       "comments": "Comments",
       "uniqueCode": "Unique Code",
