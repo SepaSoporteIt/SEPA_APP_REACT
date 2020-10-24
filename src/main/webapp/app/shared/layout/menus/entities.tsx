@@ -13,17 +13,8 @@ export const EntitiesMenu = props => (
     id="entity-menu"
     style={{ maxHeight: '80vh', overflow: 'auto' }}
   >
-    <MenuItem icon="asterisk" to="/company">
-      <Translate contentKey="global.menu.entities.company" />
-    </MenuItem>
     <MenuItem icon="asterisk" to="/industry-type">
       <Translate contentKey="global.menu.entities.industryType" />
-    </MenuItem>
-    <MenuItem icon="asterisk" to="/employee">
-      <Translate contentKey="global.menu.entities.employee" />
-    </MenuItem>
-    <MenuItem icon="asterisk" to="/expiration">
-      <Translate contentKey="global.menu.entities.expiration" />
     </MenuItem>
     <MenuItem icon="asterisk" to="/study">
       <Translate contentKey="global.menu.entities.study" />

@@ -14,7 +14,7 @@ export const ExpirationMenu = props => (
     style={{ maxHeight: '80vh', overflow: 'auto' }}
   >
     <MenuItem icon="asterisk" to="/expiration">
-      <Translate contentKey="global.menu.entities.expiration" />
+      <Translate contentKey="global.menu.expiration.title" />
     </MenuItem>
     {/* jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here */}
   </NavDropdown>

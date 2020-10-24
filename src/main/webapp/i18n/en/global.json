@@ -7,10 +7,7 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
-        "company": "Company",
         "industryType": "Industry Type",
-        "employee": "Employee",
-        "expiration": "Expiration",
         "study": "Study",
         "localidad-and-partido": "Localidad/Partido",
         "visits": "Visits",
@@ -18,15 +15,15 @@
       },
       "company": {
         "main": "Company",
-        "company": "Company"
+        "title": "Company"
       },
       "employee": {
         "main": "Employee",
-        "employee": "Employee"
+        "title": "Employee"
       },
       "expiration": {
         "main": "Expiration",
-        "expiration": "Expiration"
+        "title": "Expiration"
       },
       "account": {
         "main": "Account",

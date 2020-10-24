@@ -4,7 +4,7 @@
       "home": {
         "title": "Vencimientos",
         "createLabel": "Crear nuevo Vencimiento",
-        "createOrEditLabel": "Crear o modificar Vencimiento",
+        "createOrEditLabel": "Crear o Editar Vencimiento",
         "search": "Buscar Vencimiento",
         "notFound": "Ningún Vencimiento encontrado"
       },
@@ -28,7 +28,7 @@
         "noEmployee": "Profesional no Asignado"
       },
       "startDate": "Fecha de inicio",
-      "endDate": "Fecha de finalización",
+      "endDate": "Vencimiento",
       "status": "Estado",
       "comments": "Comentario",
       "uniqueCode": "Codigo Único",
