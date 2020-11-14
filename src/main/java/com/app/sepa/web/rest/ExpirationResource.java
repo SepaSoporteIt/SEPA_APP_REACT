@@ -8,6 +8,7 @@ import com.app.sepa.web.rest.errors.BadRequestAlertException;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,6 +18,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +26,8 @@ import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,9 +37,11 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 @Transactional
+
 public class ExpirationResource {
 
     private final Logger log = LoggerFactory.getLogger(ExpirationResource.class);
+    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     private static final String ENTITY_NAME = "expiration";
 
@@ -63,8 +69,8 @@ public class ExpirationResource {
         if (expiration.getId() != null) {
             throw new BadRequestAlertException("A new expiration cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        GenerateUniqueCode(expiration);
-        CheckDatesLogic();
+        expiration.generateUniqueCode();
+        expiration.checkDate();
         Expiration result = expirationRepository.save(expiration);
         return ResponseEntity.created(new URI("/api/expirations/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -86,8 +92,8 @@ public class ExpirationResource {
         if (expiration.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        GenerateUniqueCode(expiration);
-        CheckDatesLogic();
+        expiration.generateUniqueCode();
+        expiration.checkDate();
         Expiration result = expirationRepository.save(expiration);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, expiration.getId().toString()))
@@ -103,7 +109,6 @@ public class ExpirationResource {
     @GetMapping("/expirations")
     public ResponseEntity<List<Expiration>> getAllExpirations(Pageable pageable) {
         log.debug("REST request to get a page of Expirations");
-        CheckDatesLogic();
         Page<Expiration> page = expirationRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
@@ -135,63 +140,24 @@ public class ExpirationResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
 
-    public void GenerateUniqueCode(Expiration actualExpiration)
-    {
-        String companyId;
-        String employeeId;
-        String studyId;
-
-        if (actualExpiration.getCompany() == null)
-        {
-            companyId = "0";
-        }
-        else
-        {
-            companyId = actualExpiration.getCompany().getId().toString();
-        }
-
-        if (actualExpiration.getEmployee() == null)
-        {
-            employeeId = "0";
-        }
-        else
-        {
-            employeeId = actualExpiration.getEmployee().getId().toString();
-        }
-
-        if (actualExpiration.getStudy() == null)
-        {
-            studyId = "0";
-        }
-        else
-        {
-            studyId = actualExpiration.getStudy().getId().toString();
-        }
-        
-        String initialDate = actualExpiration.getStartDate().toString();
-        actualExpiration.setUniqueCode(companyId+"-"+employeeId+"-"+studyId+"-"+initialDate);
-    }
-
     /**
      * Change the state of all expirations based on the actual date and the due date.
      */
-    public void CheckDatesLogic()
+    @Scheduled(fixedDelay = 18000000)
+    public void CheckDatesLogicInAllExpirations()
     {
+        log.info("Started check on expitations at {}", dateTimeFormatter.format(LocalDateTime.now()));
         expirationList = expirationRepository.findAll();
 
-        for (Expiration expiration : expirationList) {
-
-            LocalDate actualEndDate = expiration.getEndDate();
-            LocalDate actualWarningDate = actualEndDate.minusDays(30);
-
-            if (actualEndDate.isBefore(LocalDate.now()))
+        if (!expirationList.isEmpty())
+        {
+            for (Expiration expiration : expirationList) 
             {
-                expiration.setStatus(Status.VENCIDO);
-            }
-            else if (actualWarningDate.isBefore(LocalDate.now()))
-            {
-                expiration.setStatus(Status.A_VENCER);
+                expiration.checkDate();
             }
         }
+        else
+            log.info("There's no expiration on the DB");
+        log.info("Finished check on expitations at {}", dateTimeFormatter.format(LocalDateTime.now()));
     }
 }
