@@ -8,9 +8,6 @@
       "entities": {
         "main": "Entidades",
         "industryType": "Tipos de Industria",
-        "company": "Clientes",
-        "employee": "Profesionales",
-        "expiration": "Vencimientos",
         "study": "Estudios",
         "localidad-and-partido": "Localidad/Partido",
         "visits": "Visitas",
@@ -18,15 +15,15 @@
       },
       "company": {
         "main": "Clientes",
-        "company": "Clientes"
+        "title": "Clientes"
       },
       "employee": {
         "main": "Profesionales",
-        "employee": "Profesionales"
+        "title": "Profesionales"
       },
       "expiration": {
         "main": "Vencimientos",
-        "expiration": "Vencimientos"
+        "title": "Vencimientos"
       },
       "account": {
         "main": "Cuenta",
