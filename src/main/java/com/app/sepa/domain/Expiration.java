@@ -274,4 +274,19 @@ public class Expiration implements Serializable {
         
         setUniqueCode(companyId+"-"+employeeId+"-"+studyId+"-"+initialDate);
     }
+
+    public void setExpirationResponsible()
+    {
+        Company company;
+        Employee employee;
+
+        company = getCompany();
+        if (company == null)
+            return;
+        
+        employee = company.getEmployee();
+        if (employee == null)
+            return;
+        setResponsible(employee.getName() + " " + employee.getSurname());
+    }
 }
