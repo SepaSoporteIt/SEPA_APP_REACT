@@ -270,7 +270,7 @@ public class Expiration implements Serializable {
         String initialDate = startDate.toString();
         String companyId = company.getId().toString();
         String employeeId = employee.getId().toString();
-        String studyId = study.toString();
+        String studyId = study.getId().toString();
         
         setUniqueCode(companyId+"-"+employeeId+"-"+studyId+"-"+initialDate);
     }
