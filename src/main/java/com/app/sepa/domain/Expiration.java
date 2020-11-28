@@ -239,6 +239,12 @@ public class Expiration implements Serializable {
         LocalDate actualEndDate = getEndDate();
         LocalDate actualWarningDate = actualEndDate.minusDays(30);
     
+        Status status;
+        status = getStatus();
+        
+        if (status == Status.VIGENTE || status == Status.A_VENCER)
+            return;
+
         if (actualEndDate.isBefore(LocalDate.now()))
         {
             setStatus(Status.VENCIDO);
@@ -251,15 +257,42 @@ public class Expiration implements Serializable {
 
     public void generateUniqueCode()
     {
-        String companyId;
-        String employeeId;
-        String studyId;
+        Company company;
+        Employee employee;
+        Study study;
+        LocalDate startDate;
 
-        companyId = getCompany() == null ? "0" : getCompany().getId().toString();
-        employeeId = getEmployee() == null ? "0" : getEmployee().getId().toString();
-        studyId = getStudy() == null ? "0" : getStudy().getId().toString();
+        company = getCompany();
+        employee = getEmployee();
+        study = getStudy();
+        startDate = getStartDate();
         
-        String initialDate = getStartDate().toString();
+        if (company == null || employee == null || study == null || startDate == null)
+        {
+            setUniqueCode("Faltan datos");
+            return;
+        }
+        
+        String initialDate = startDate.toString();
+        String companyId = company.getId().toString();
+        String employeeId = employee.getId().toString();
+        String studyId = study.getId().toString();
+        
         setUniqueCode(companyId+"-"+employeeId+"-"+studyId+"-"+initialDate);
+    }
+
+    public void setExpirationResponsible()
+    {
+        Company company;
+        Employee employee;
+
+        company = getCompany();
+        if (company == null)
+            return;
+        
+        employee = company.getEmployee();
+        if (employee == null)
+            return;
+        setResponsible(employee.getName() + " " + employee.getSurname());
     }
 }
