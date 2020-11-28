@@ -237,6 +237,9 @@ public class Expiration implements Serializable {
     public void checkDate()
     {
         LocalDate actualEndDate = getEndDate();
+        if (actualEndDate == null)
+            return;
+            
         LocalDate actualWarningDate = actualEndDate.minusDays(30);
     
         Status status;
@@ -244,7 +247,7 @@ public class Expiration implements Serializable {
         
         if (status == Status.VIGENTE || status == Status.A_VENCER)
             return;
-
+        
         if (actualEndDate.isBefore(LocalDate.now()))
         {
             setStatus(Status.VENCIDO);
