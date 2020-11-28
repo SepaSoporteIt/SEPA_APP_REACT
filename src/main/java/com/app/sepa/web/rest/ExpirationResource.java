@@ -113,20 +113,6 @@ public class ExpirationResource {
     public ResponseEntity<List<Expiration>> getAllExpirations(Pageable pageable) {
         log.debug("REST request to get a page of Expirations");
         Page<Expiration> page = expirationRepository.findAll(pageable);
-        
-        expirationList = expirationRepository.findAll();
-
-        if (!expirationList.isEmpty())
-        {
-            for (Expiration expiration : expirationList) 
-            {
-                expiration.generateUniqueCode();
-                expiration.setExpirationResponsible();
-                expiration.checkDate();
-            }
-        }
-        else
-            log.info("There's no expiration on the DB");
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
