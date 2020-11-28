@@ -71,6 +71,8 @@ public class ExpirationResource {
         }
         expiration.generateUniqueCode();
         expiration.checkDate();
+        expiration.setExpirationResponsible();
+
         Expiration result = expirationRepository.save(expiration);
         return ResponseEntity.created(new URI("/api/expirations/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
@@ -94,6 +96,7 @@ public class ExpirationResource {
         }
         expiration.generateUniqueCode();
         expiration.checkDate();
+        expiration.setExpirationResponsible();
         Expiration result = expirationRepository.save(expiration);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, expiration.getId().toString()))
@@ -118,6 +121,8 @@ public class ExpirationResource {
             for (Expiration expiration : expirationList) 
             {
                 expiration.generateUniqueCode();
+                expiration.setExpirationResponsible();
+                expiration.checkDate();
             }
         }
         else
