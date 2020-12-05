@@ -244,7 +244,7 @@ public class Expiration implements Serializable {
         Status status;
         status = getStatus();
         
-        if ((status != Status.VIGENTE || status != Status.A_VENCER) && !isCompleted)
+        if (!(status == Status.VIGENTE || status == Status.A_VENCER) || isCompleted)
             return;
 
         if (actualEndDate.isBefore(LocalDate.now()))
@@ -291,12 +291,14 @@ public class Expiration implements Serializable {
         company = getCompany();
         if (company == null)
         {
+            setResponsible("Cliente no asignado");
             return;
         }
         
-        employee = company.getEmployee();
+        employee = getCompany().getEmployee();
         if (employee == null)
         {
+            setResponsible("Empleado no asignado en el cliente seleccionado");
             return;
         }
         setResponsible(employee.getName() + " " + employee.getSurname());
