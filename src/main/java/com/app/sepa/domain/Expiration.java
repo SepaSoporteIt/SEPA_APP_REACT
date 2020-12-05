@@ -19,7 +19,6 @@ import com.app.sepa.domain.enumeration.Status;
 @Table(name = "expiration")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Expiration implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -245,9 +244,9 @@ public class Expiration implements Serializable {
         Status status;
         status = getStatus();
         
-        if (status == Status.VIGENTE || status == Status.A_VENCER)
+        if ((status != Status.VIGENTE || status != Status.A_VENCER) && !isCompleted)
             return;
-        
+
         if (actualEndDate.isBefore(LocalDate.now()))
         {
             setStatus(Status.VENCIDO);
@@ -291,11 +290,17 @@ public class Expiration implements Serializable {
 
         company = getCompany();
         if (company == null)
+        {
             return;
+        }
         
         employee = company.getEmployee();
         if (employee == null)
+        {
             return;
+        }
         setResponsible(employee.getName() + " " + employee.getSurname());
     }
 }
+        
+            
