@@ -485,4 +485,11 @@ public class Company implements Serializable {
             ", isDisabled='" + isIsDisabled() + "'" +
             "}";
     }
+
+    public String getEmployeeName()
+    {
+        if (employee!=null)
+            return (employee.getName() + " " + employee.getSurname());
+        return "!!";
+    }
 }

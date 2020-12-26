@@ -286,7 +286,7 @@ public class Expiration implements Serializable {
     public void setExpirationResponsible()
     {
         Company company;
-        Employee employee;
+        String employeeName;
 
         company = getCompany();
         if (company == null)
@@ -295,13 +295,13 @@ public class Expiration implements Serializable {
             return;
         }
         
-        employee = getCompany().getEmployee();
-        if (employee == null)
+        employeeName = company.getEmployeeName();
+        if (employeeName == "!!")
         {
             setResponsible("Empleado no asignado en el cliente seleccionado");
             return;
         }
-        setResponsible(employee.getName() + " " + employee.getSurname());
+        setResponsible(employeeName);
     }
 }
         
