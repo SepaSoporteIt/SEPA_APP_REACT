@@ -58,7 +58,8 @@
       "isDisabled": "Dado de baja?",
       "localidadId": "Localidad",
       "partidoId": "Partido",
-      "localidadAndPartido": "Localidad y Partido"
+      "localidadAndPartido": "Localidad y Partido",
+      "cuitHelper": "(El CUIT debe tener el formato **-********-*)"
     }
   }
 }

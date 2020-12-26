@@ -58,7 +58,8 @@
       "isDisabled": "Is Disabled?",
       "localidadId": "Localidad",
       "partidoId": "Partido",
-      "localidadAndPartido": "Localidad and Partido"
+      "localidadAndPartido": "Localidad and Partido",
+      "cuitHelper": "(CUIT format must be **-********-*)"
     }
   }
 }

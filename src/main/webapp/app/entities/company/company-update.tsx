@@ -117,6 +117,11 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                 <Label id="cuitLabel" for="company-cuit">
                   <Translate contentKey="sepaApp.company.cuit">Cuit</Translate>
                 </Label>
+                &nbsp;
+                &nbsp;
+                <Label>
+                  <Translate contentKey="sepaApp.company.cuitHelper">Cuit Helper</Translate>
+                </Label>
                 <AvField
                   id="company-cuit"
                   type="text"
