@@ -349,4 +349,21 @@ public class Employee implements Serializable {
             ", isDisabled='" + isIsDisabled() + "'" +
             "}";
     }
+
+    public void checkEmployeeCUIT()
+    {
+        String newCuit = this.cuit;
+        int lenght = newCuit.length();
+        if (lenght == 13)
+        {
+            if (newCuit.charAt(2) == '-' && newCuit.charAt(11) == '-')
+                return;
+        }
+        if (lenght == 11)
+        {
+            this.cuit = (newCuit.substring(0, 2) + "-" + newCuit.substring(2, 10) + "-" + newCuit.substring(10));
+            return;
+        }
+        this.cuit =  "CUIT INVALIDO";
+    }
 }
