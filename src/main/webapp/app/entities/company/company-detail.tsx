@@ -146,11 +146,11 @@ export const CompanyDetail = (props: ICompanyDetailProps) => {
           <dt>
             <Translate contentKey="sepaApp.company.industryType">Prim Industry Tipe</Translate>
           </dt>
-          <dd>{companyEntity.industryType ? companyEntity.industryType.ciiu : ''}</dd>
+          <dd>{companyEntity.industryType ? companyEntity.industryType.ciiu + " - " + companyEntity.industryType.name : ''}</dd>
           <dt>
             <Translate contentKey="sepaApp.company.secIndustryType">Sec Industry Tipe</Translate>
           </dt>
-          <dd>{companyEntity.secIndustryType ? companyEntity.secIndustryType.ciiu : ''}</dd>
+          <dd>{companyEntity.secIndustryType ? companyEntity.secIndustryType.ciiu + " - " + companyEntity.secIndustryType.name: ''}</dd>
           </dl>
 
           <dl className="jh-entity-details">
