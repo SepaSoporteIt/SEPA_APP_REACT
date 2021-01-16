@@ -70,7 +70,8 @@
         },
         "register": {
           "noaccount": "¿Aún no tienes una cuenta?",
-          "link": "Crea una cuenta"
+          "link": "Crea una cuenta",
+          "notlogged": "Parece que aún no iniciaste sesión"
         }
       },
       "error": {
