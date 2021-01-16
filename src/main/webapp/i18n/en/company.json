@@ -30,6 +30,9 @@
       "errors": {
         "noEmployee": "No Employee Assigned"
       },
+      "helpers": {
+        "ciiuHelper": "It is recommended to use the numeric code for a quick search"
+      },
       "name": "Name",
       "email": "Email",
       "addressDirection": "Address Direction",

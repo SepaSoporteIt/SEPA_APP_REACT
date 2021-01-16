@@ -30,6 +30,9 @@
       "errors": {
         "noEmployee": "Profesional no Asignado"
       },
+      "helpers": {
+        "ciiuHelper": "Se recomienda utilizar el código numérico para una búsqueda rápida"
+      },
       "name": "Razón social",
       "email": "Email",
       "addressDirection": "Calle",

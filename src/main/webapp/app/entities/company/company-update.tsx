@@ -255,6 +255,11 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                 <Translate contentKey="sepaApp.company.detail.afipActivity">Activity stablished by AFIP</Translate>
               </h3>
               <AvGroup>
+                <Label>
+                  <Translate contentKey="sepaApp.company.helpers.ciiuHelper">CIUU helper</Translate>
+                </Label>
+              </AvGroup>
+              <AvGroup>
                 <Label for="company-industryType">
                   <Translate contentKey="sepaApp.company.industryType">1º CIIU</Translate>
                 </Label>
@@ -263,7 +268,7 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                   {industryTypes
                     ? industryTypes.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.ciiu}
+                          {otherEntity.ciiu + " - " + otherEntity.name}
                         </option>
                       ))
                     : null}
@@ -278,7 +283,7 @@ export const CompanyUpdate = (props: ICompanyUpdateProps) => {
                   {industryTypes
                     ? industryTypes.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.ciiu}
+                          {otherEntity.ciiu + " - " + otherEntity.name}
                         </option>
                       ))
                     : null}
